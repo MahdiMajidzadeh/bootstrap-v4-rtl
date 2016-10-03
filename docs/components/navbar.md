@@ -1,6 +1,7 @@
 ---
 layout: docs
 title: Navbar
+description: Documentation and examples for Bootstrap's powerful, responsive navigation header.
 group: components
 ---
 
@@ -49,14 +50,14 @@ Here's an example of all the sub-components included in a default, light navbar:
   </ul>
   <form class="form-inline pull-xs-right">
     <input class="form-control" type="text" placeholder="Search">
-    <button class="btn btn-success-outline" type="submit">Search</button>
+    <button class="btn btn-outline-success" type="submit">Search</button>
   </form>
 </nav>
 {% endexample %}
 
 ### Brand
 
-The `.navbar-brand` can be applied to most elements, but an anchor works best.
+The `.navbar-brand` can be applied to most elements, but an anchor works best as some elements might require utility classes or custom styles.
 
 {% example html %}
 <nav class="navbar navbar-light bg-faded">
@@ -64,7 +65,7 @@ The `.navbar-brand` can be applied to most elements, but an anchor works best.
 </nav>
 
 <nav class="navbar navbar-light bg-faded">
-  <h1 class="navbar-brand">Navbar</h1>
+  <h1 class="navbar-brand m-b-0">Navbar</h1>
 </nav>
 
 {% endexample %}
@@ -131,7 +132,7 @@ Here are some examples to show what we mean.
     </ul>
     <form class="form-inline pull-xs-right">
       <input class="form-control" type="text" placeholder="Search">
-      <button class="btn btn-info-outline" type="submit">Search</button>
+      <button class="btn btn-outline-info" type="submit">Search</button>
     </form>
   </nav>
   <nav class="navbar navbar-dark bg-primary">
@@ -152,7 +153,7 @@ Here are some examples to show what we mean.
     </ul>
     <form class="form-inline pull-xs-right">
       <input class="form-control" type="text" placeholder="Search">
-      <button class="btn btn-secondary-outline" type="submit">Search</button>
+      <button class="btn btn-outline-secondary" type="submit">Search</button>
     </form>
   </nav>
   <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
@@ -173,7 +174,7 @@ Here are some examples to show what we mean.
     </ul>
     <form class="form-inline pull-xs-right">
       <input class="form-control" type="text" placeholder="Search">
-      <button class="btn btn-primary-outline" type="submit">Search</button>
+      <button class="btn btn-outline-primary" type="submit">Search</button>
     </form>
   </nav>
 </div>
@@ -240,16 +241,14 @@ Navbars can be statically placed (their default behavior), static without rounde
 Our collapse plugin allows you to use a `<button>` or `<a>` to toggle hidden content.
 
 {% example html %}
-<div class="collapse" id="exCollapsingNavbar">
-  <div class="bg-inverse p-a-1">
-    <h4>Collapsed content</h4>
-    <span class="text-muted">Toggleable via the navbar brand.</span>
-  </div>
-</div>
 <nav class="navbar navbar-light bg-faded">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-    &#9776;
-  </button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"></button>
+  <div class="collapse" id="exCollapsingNavbar">
+    <div class="bg-inverse p-a-1">
+      <h4>Collapsed content</h4>
+      <span class="text-muted">Toggleable via the navbar brand.</span>
+    </div>
+  </div>
 </nav>
 {% endexample %}
 
@@ -257,9 +256,7 @@ For more complex navbar patterns, like those used in Bootstrap v3, use the `.nav
 
 {% example html %}
 <nav class="navbar navbar-light bg-faded">
-  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
-    &#9776;
-  </button>
+  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation"></button>
   <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
     <a class="navbar-brand" href="#">Responsive navbar</a>
     <ul class="nav navbar-nav">

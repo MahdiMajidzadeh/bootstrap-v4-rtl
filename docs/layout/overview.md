@@ -1,6 +1,7 @@
 ---
 layout: docs
 title: Overview
+description: Components and options for laying out your Bootstrap project, including wrapping containers, a powerful grid system, a flexible media object, and responsive utility classes.
 group: layout
 redirect_from: "/layout/"
 ---
@@ -51,20 +52,20 @@ Since Bootstrap is developed to be mobile first, we use a handful of [media quer
 Bootstrap primarily uses the following media query ranges—or breakpoints—in our source Sass files for our layout, grid system, and components.
 
 {% highlight scss %}
-// Extra small devices (portrait phones, less than 34em)
+// Extra small devices (portrait phones, less than 544px)
 // No media query since this is the default in Bootstrap
 
-// Small devices (landscape phones, 34em and up)
-@media (min-width: 34em) { ... }
+// Small devices (landscape phones, 544px and up)
+@media (min-width: 544px) { ... }
 
-// Medium devices (tablets, 48em and up)
-@media (min-width: 48em) { ... }
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
 
-// Large devices (desktops, 62em and up)
-@media (min-width: 62em) { ... }
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
 
-// Extra large devices (large desktops, 75em and up)
-@media (min-width: 75em) { ... }
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
 {% endhighlight %}
 
 Since we write our source CSS in Sass, all our media queries are available via Sass mixins:
@@ -87,17 +88,17 @@ Since we write our source CSS in Sass, all our media queries are available via S
 We occasionally use media queries that go in the other direction (the given screen size *or smaller*):
 
 {% highlight scss %}
-// Extra small devices (portrait phones, less than 34em)
-@media (max-width: 33.9em) { ... }
+// Extra small devices (portrait phones, less than 544px)
+@media (max-width: 543px) { ... }
 
-// Small devices (landscape phones, less than 48em)
-@media (max-width: 47.9em) { ... }
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767px) { ... }
 
-// Medium devices (tablets, less than 62em)
-@media (max-width: 61.9em) { ... }
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991px) { ... }
 
-// Large devices (desktops, less than 75em)
-@media (max-width: 74.9em) { ... }
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199px) { ... }
 
 // Extra large devices (large desktops)
 // No media query since the extra-large breakpoint has no upper bound on its width
@@ -110,5 +111,47 @@ Once again, these media queries are also available via Sass mixins:
 @include media-breakpoint-down(sm) { ... }
 @include media-breakpoint-down(md) { ... }
 @include media-breakpoint-down(lg) { ... }
-@include media-breakpoint-down(xl) { ... }
+{% endhighlight %}
+
+We also have media between the breakpoint's minimum and maximum widths for only the given screen size:
+
+{% highlight scss %}
+// Extra small devices (portrait phones, less than 544px)
+@media (max-width: 543px) { ... }
+
+// Small devices (landscape phones, 544px and up)
+@media (min-width: 544px) and (max-width: 767px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+{% endhighlight %}
+
+These media queries are also available via Sass mixins:
+
+{% highlight scss %}
+@include media-breakpoint-only(xs) { ... }
+@include media-breakpoint-only(sm) { ... }
+@include media-breakpoint-only(md) { ... }
+@include media-breakpoint-only(lg) { ... }
+@include media-breakpoint-only(xl) { ... }
+{% endhighlight %}
+
+And finally media that spans multiple breakpoint widths:
+
+{% highlight scss %}
+// Example
+// Medium devices (tablets, 768px and up) and  Large devices (desktops, 992px and up)
+@media (min-width: 768px) and (max-width: 1199px) { ... }
+{% endhighlight %}
+
+The Sass mixin for the above example look like that shown beneath:
+
+{% highlight scss %}
+@include media-breakpoint-between(md, lg) { ... }
 {% endhighlight %}

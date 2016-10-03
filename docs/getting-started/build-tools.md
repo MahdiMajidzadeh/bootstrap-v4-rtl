@@ -1,6 +1,7 @@
 ---
 layout: docs
 title: Build tools
+description: Details on how to use Bootstrap's included build tools to compile source code, run tests, and more.
 group: getting-started
 ---
 
@@ -46,10 +47,11 @@ For example, run `TWBS_SASS=sass grunt` to test and build Bootstrap with Ruby Sa
 
 Bootstrap uses [Autoprefixer][autoprefixer] (included in our Gruntfile and build process) to automatically add vendor prefixes to some CSS properties at build time. Doing so saves us time and code by allowing us to write key parts of our CSS a single time while eliminating the need for vendor mixins like those found in v3.
 
+We maintain the list of browsers supported through Autoprefixer in a separate file within our GitHub repository. See [`/grunt/postcss.js`](https://github.com/twbs/bootstrap/blob/master/grunt/postcss.js) for details.
 
 ## Local documentation
 
-Running our documentation locally requires the use of Jekyll, a decently flexible static site generator that provides us basic includes, Markdown-based files, templates, and more. Here's how to get it started:
+Running our documentation locally requires the use of Jekyll, a decently flexible static site generator that provides us: basic includes, Markdown-based files, templates, and more. Here's how to get it started:
 
 1. Run through the [tooling setup](#tooling-setup) above to install Jekyll (the site builder) and other Ruby dependencies with `bundle install`.
 2. From the root `/bootstrap` directory, run `bundle exec jekyll serve` in the command line.

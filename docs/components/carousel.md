@@ -1,6 +1,7 @@
 ---
 layout: docs
 title: Carousel
+description: A slideshow component for cycling through elements—images or slides of text—like a carousel.
 group: components
 ---
 
@@ -158,9 +159,9 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
      </tr>
      <tr>
        <td>pause</td>
-       <td>string</td>
+       <td>string | null</td>
        <td>"hover"</td>
-       <td>Pauses the cycling of the carousel on mouseenter and resumes the cycling of the carousel on mouseleave.</td>
+       <td>If set to <code>"hover"</code>, pauses the cycling of the carousel on <code>mouseenter</code> and resumes the cycling of the carousel on <code>mouseleave</code>. If set to <code>null</code>, hovering over the carousel won't pause it.</td>
      </tr>
      <tr>
        <td>wrap</td>

@@ -27,14 +27,14 @@ module Jekyll
               @options[key.to_sym] = value || true
             end
           end
-          @options[:linenos] = "inline" if @options.key?(:linenos) and @options[:linenos] == true
+          @options[:linenos] = false
         else
           raise SyntaxError.new <<-eos
-Syntax Error in tag 'highlight' while parsing the following markup:
+Syntax Error in tag 'example' while parsing the following markup:
 
   #{markup}
 
-Valid syntax: highlight <lang> [linenos]
+Valid syntax: example <lang>
 eos
         end
       end
@@ -59,7 +59,7 @@ eos
       end
     
       def remove_holderjs(code)
-        code = code.gsub(/"holder.js.+?"/, '"..."')
+        code = code.gsub(/data-src="holder.js.+?"/, 'src="..."')
       end
 
       def render_rouge(code)

@@ -181,7 +181,7 @@ $(function () {
     var $div = $('<div id="modal-test"/>')
     $div
       .on('shown.bs.modal', function () {
-        assert.ok($('#modal-test').length, 'modal insterted into dom')
+        assert.ok($('#modal-test').length, 'modal inserted into dom')
         assert.ok($('#modal-test').is(':visible'), 'modal visible')
         $div.trigger($.Event('keydown', { which: 27 }))
 
@@ -228,6 +228,23 @@ $(function () {
       .on('hide.bs.modal', function () {
         triggered += 1
         assert.strictEqual(triggered, 1, 'modal hide triggered once')
+        done()
+      })
+      .bootstrapModal('show')
+  })
+
+  QUnit.test('should remove aria-hidden attribute when shown, add it back when hidden', function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    $('<div id="modal-test" aria-hidden="true"/>')
+      .on('shown.bs.modal', function () {
+        assert.notOk($('#modal-test').is('[aria-hidden]'), 'aria-hidden attribute removed')
+        $(this).bootstrapModal('hide')
+      })
+      .on('hidden.bs.modal', function () {
+        assert.ok($('#modal-test').is('[aria-hidden]'), 'aria-hidden attribute added')
+        assert.strictEqual($('#modal-test').attr('aria-hidden'), 'true', 'correct aria-hidden="true" added')
         done()
       })
       .bootstrapModal('show')
