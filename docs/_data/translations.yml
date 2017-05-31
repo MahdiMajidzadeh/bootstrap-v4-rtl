@@ -1,12 +1,12 @@
 - name: Chinese
   code: zh
   description: Bootstrap 中文文档
-  url: http://v4.bootcss.com/
+  url: https://v4.bootcss.com/
 
 - name: Chinese
   code: zh
   description: Bootstrap 4 中文文档教程
-  url: http://boot4.com/
+  url: http://wiki.jikexueyuan.com/project/bootstrap4/
 
 - name: Japanese
   code: ja
@@ -16,4 +16,4 @@
 - name: Brazilian Portuguese
   code: pt-BR
   description: Bootstrap 4 Português do Brasil
-  url: http://bootstrapbrasil.github.io/v4/
+  url: https://bootstrapbrasil.github.io/v4/

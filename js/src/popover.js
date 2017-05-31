@@ -3,7 +3,7 @@ import Tooltip from './tooltip'
 
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-alpha.4): popover.js
+ * Bootstrap (v4.0.0-alpha.6): popover.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
@@ -18,17 +18,19 @@ const Popover = (($) => {
    */
 
   const NAME                = 'popover'
-  const VERSION             = '4.0.0-alpha.4'
+  const VERSION             = '4.0.0-alpha.6'
   const DATA_KEY            = 'bs.popover'
   const EVENT_KEY           = `.${DATA_KEY}`
   const JQUERY_NO_CONFLICT  = $.fn[NAME]
+  const CLASS_PREFIX        = 'bs-popover'
+  const BSCLS_PREFIX_REGEX  = new RegExp(`(^|\\s)${CLASS_PREFIX}\\S+`, 'g')
 
   const Default = $.extend({}, Tooltip.Default, {
     placement : 'right',
     trigger   : 'click',
     content   : '',
     template  : '<div class="popover" role="tooltip">'
-              + '<div class="popover-arrow"></div>'
+              + '<div class="arrow" x-arrow></div>'
               + '<h3 class="popover-title"></h3>'
               + '<div class="popover-content"></div></div>'
   })
@@ -39,13 +41,12 @@ const Popover = (($) => {
 
   const ClassName = {
     FADE : 'fade',
-    IN  : 'in'
+    SHOW : 'show'
   }
 
   const Selector = {
     TITLE   : '.popover-title',
-    CONTENT : '.popover-content',
-    ARROW   : '.popover-arrow'
+    CONTENT : '.popover-content'
   }
 
   const Event = {
@@ -108,22 +109,22 @@ const Popover = (($) => {
       return this.getTitle() || this._getContent()
     }
 
+    addAttachmentClass(attachment) {
+      $(this.getTipElement()).addClass(`${CLASS_PREFIX}-${attachment}`)
+    }
+
     getTipElement() {
-      return (this.tip = this.tip || $(this.config.template)[0])
+      return this.tip = this.tip || $(this.config.template)[0]
     }
 
     setContent() {
-      let $tip = $(this.getTipElement())
+      const $tip = $(this.getTipElement())
 
       // we use append for html objects to maintain js events
       this.setElementContent($tip.find(Selector.TITLE), this.getTitle())
       this.setElementContent($tip.find(Selector.CONTENT), this._getContent())
 
-      $tip
-        .removeClass(ClassName.FADE)
-        .removeClass(ClassName.IN)
-
-      this.cleanupTether()
+      $tip.removeClass(`${ClassName.FADE} ${ClassName.SHOW}`)
     }
 
     // private
@@ -135,13 +136,21 @@ const Popover = (($) => {
               this.config.content)
     }
 
+    _cleanTipClass() {
+      const $tip = $(this.getTipElement())
+      const tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX)
+      if (tabClass !== null && tabClass.length > 0) {
+        $tip.removeClass(tabClass.join(''))
+      }
+    }
+
 
     // static
 
     static _jQueryInterface(config) {
       return this.each(function () {
-        let data   = $(this).data(DATA_KEY)
-        let _config = typeof config === 'object' ? config : null
+        let data      = $(this).data(DATA_KEY)
+        const _config = typeof config === 'object' ? config : null
 
         if (!data && /destroy|hide/.test(config)) {
           return

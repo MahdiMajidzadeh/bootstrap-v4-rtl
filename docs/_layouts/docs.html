@@ -21,13 +21,13 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-md-3 push-md-9 bd-sidebar">
+        <div class="col-12 col-md-3 push-md-9 bd-sidebar">
           {% include nav-docs.html %}
         </div>
-        <div class="col-xs-12 col-md-9 pull-md-3 bd-content">
+        <main class="col-12 col-md-9 pull-md-3 bd-content" role="main">
           <h1 class="bd-title" id="content">{{ page.title }}</h1>
           {{ content }}
-        </div>
+        </main>
       </div>
     </div>
 
