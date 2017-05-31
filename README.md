@@ -1,5 +1,9 @@
 # Bootstrap v4 RTL edition
 
-The RTL edition of [Bootstrap](http://getbootstrap.com)
+The RTL edition of [Bootstrap](http://getbootstrap.com) base on `v4.0.0-alpha.6`
 
-just add `.rtl` to any element you want and every thing inside that turn to rtl :)
+## How to use
+
+First add `bootstrap-rtl.css` to your page instead of `bootstrap-rtl.css`.
+
+And next add `class="rtl"` to any element you want make `rtl` like `body` : `<body class="rtl">`
