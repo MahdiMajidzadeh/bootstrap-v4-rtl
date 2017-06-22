@@ -25,12 +25,11 @@
     "composer.json",
     "CONTRIBUTING.md",
     "docs",
-    "Gruntfile.js",
     "js/tests",
     "test-infra"
   ],
   "dependencies": {
     "jquery": ">=1.9.1",
-    "popper.js": "^1.9.9"
+    "tether": "^1.4.0"
   }
 }

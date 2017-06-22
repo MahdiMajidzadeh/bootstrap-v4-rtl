@@ -56,7 +56,7 @@ const Collapse = (($) => {
   }
 
   const Selector = {
-    ACTIVES     : '.show, .collapsing',
+    ACTIVES     : '.card > .show, .card > .collapsing',
     DATA_TOGGLE : '[data-toggle="collapse"]'
   }
 
@@ -112,8 +112,11 @@ const Collapse = (($) => {
     }
 
     show() {
-      if (this._isTransitioning ||
-        $(this._element).hasClass(ClassName.SHOW)) {
+      if (this._isTransitioning) {
+        throw new Error('Collapse is transitioning')
+      }
+
+      if ($(this._element).hasClass(ClassName.SHOW)) {
         return
       }
 
@@ -121,7 +124,7 @@ const Collapse = (($) => {
       let activesData
 
       if (this._parent) {
-        actives = $.makeArray($(this._parent).children().children(Selector.ACTIVES))
+        actives = $.makeArray($(this._parent).find(Selector.ACTIVES))
         if (!actives.length) {
           actives = null
         }
@@ -154,6 +157,7 @@ const Collapse = (($) => {
         .addClass(ClassName.COLLAPSING)
 
       this._element.style[dimension] = 0
+      this._element.setAttribute('aria-expanded', true)
 
       if (this._triggerArray.length) {
         $(this._triggerArray)
@@ -192,8 +196,11 @@ const Collapse = (($) => {
     }
 
     hide() {
-      if (this._isTransitioning ||
-        !$(this._element).hasClass(ClassName.SHOW)) {
+      if (this._isTransitioning) {
+        throw new Error('Collapse is transitioning')
+      }
+
+      if (!$(this._element).hasClass(ClassName.SHOW)) {
         return
       }
 
@@ -204,8 +211,10 @@ const Collapse = (($) => {
       }
 
       const dimension       = this._getDimension()
+      const offsetDimension = dimension === Dimension.WIDTH ?
+        'offsetWidth' : 'offsetHeight'
 
-      this._element.style[dimension] = `${this._element.getBoundingClientRect()[dimension]}px`
+      this._element.style[dimension] = `${this._element[offsetDimension]}px`
 
       Util.reflow(this._element)
 
@@ -213,6 +222,8 @@ const Collapse = (($) => {
         .addClass(ClassName.COLLAPSING)
         .removeClass(ClassName.COLLAPSE)
         .removeClass(ClassName.SHOW)
+
+      this._element.setAttribute('aria-expanded', false)
 
       if (this._triggerArray.length) {
         $(this._triggerArray)
@@ -289,6 +300,7 @@ const Collapse = (($) => {
     _addAriaAndCollapsedClass(element, triggerArray) {
       if (element) {
         const isOpen = $(element).hasClass(ClassName.SHOW)
+        element.setAttribute('aria-expanded', isOpen)
 
         if (triggerArray.length) {
           $(triggerArray)
@@ -345,9 +357,7 @@ const Collapse = (($) => {
    */
 
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
-    if (!/input|textarea/i.test(event.target.tagName)) {
-      event.preventDefault()
-    }
+    event.preventDefault()
 
     const target = Collapse._getTargetFromElement(this)
     const data   = $(target).data(DATA_KEY)

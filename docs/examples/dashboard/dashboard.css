@@ -2,9 +2,9 @@
  * Base structure
  */
 
-/* Move down content because we have a fixed navbar that is 3.5rem tall */
+/* Move down content because we have a fixed navbar that is 50px tall */
 body {
-  padding-top: 3.5rem;
+  padding-top: 50px;
 }
 
 /*

@@ -46,7 +46,7 @@ $(function () {
 
   QUnit.test('should activate element by tab id', function (assert) {
     assert.expect(2)
-    var tabsHTML = '<ul class="nav">'
+    var tabsHTML = '<ul class="tabs">'
         + '<li><a href="#home">Home</a></li>'
         + '<li><a href="#profile">Profile</a></li>'
         + '</ul>'
@@ -62,7 +62,7 @@ $(function () {
 
   QUnit.test('should activate element by tab id', function (assert) {
     assert.expect(2)
-    var pillsHTML = '<ul class="nav nav-pills">'
+    var pillsHTML = '<ul class="pills">'
         + '<li><a href="#home">Home</a></li>'
         + '<li><a href="#profile">Profile</a></li>'
         + '</ul>'
@@ -78,7 +78,7 @@ $(function () {
 
   QUnit.test('should activate element by tab id in ordered list', function (assert) {
     assert.expect(2)
-    var pillsHTML = '<ol class="nav nav-pills">'
+    var pillsHTML = '<ol class="pills">'
         + '<li><a href="#home">Home</a></li>'
         + '<li><a href="#profile">Profile</a></li>'
         + '</ol>'
@@ -108,27 +108,11 @@ $(function () {
     assert.strictEqual($('#qunit-fixture').find('.active').attr('id'), 'home')
   })
 
-  QUnit.test('should activate element by tab id in list group', function (assert) {
-    assert.expect(2)
-    var tabsHTML =  '<div class="list-group">' +
-                      '<a href="#home">Home</a>' +
-                      '<a href="#profile">Profile</a>' +
-                    '</div>'
-
-    $('<nav><div id="home"></div><div id="profile"></div></nav>').appendTo('#qunit-fixture')
-
-    $(tabsHTML).find('a:last').bootstrapTab('show')
-    assert.strictEqual($('#qunit-fixture').find('.active').attr('id'), 'profile')
-
-    $(tabsHTML).find('a:first').bootstrapTab('show')
-    assert.strictEqual($('#qunit-fixture').find('.active').attr('id'), 'home')
-  })
-
   QUnit.test('should not fire shown when show is prevented', function (assert) {
     assert.expect(1)
     var done = assert.async()
 
-    $('<div class="nav"/>')
+    $('<div class="tab"/>')
       .on('show.bs.tab', function (e) {
         e.preventDefault()
         assert.ok(true, 'show event fired')
@@ -182,7 +166,7 @@ $(function () {
     assert.expect(2)
     var done = assert.async()
 
-    var dropHTML = '<ul class="drop nav">'
+    var dropHTML = '<ul class="drop">'
         + '<li class="dropdown"><a data-toggle="dropdown" href="#">1</a>'
         + '<ul class="dropdown-menu">'
         + '<li><a href="#1-1" data-toggle="tab">1-1</a></li>'
@@ -210,7 +194,7 @@ $(function () {
     assert.expect(2)
     var done = assert.async()
 
-    var tabsHTML = '<ul class="nav">'
+    var tabsHTML = '<ul class="tabs">'
         + '<li><a href="#home">Home</a></li>'
         + '<li><a href="#profile">Profile</a></li>'
         + '</ul>'
@@ -241,7 +225,7 @@ $(function () {
     assert.expect(1)
     var done = assert.async()
 
-    var tabsHTML = '<ul class="nav">'
+    var tabsHTML = '<ul class="tabs">'
         + '<li><a href="#home">Home</a></li>'
         + '<li><a href="#profile">Profile</a></li>'
         + '</ul>'
@@ -266,7 +250,7 @@ $(function () {
     assert.expect(2)
     var done = assert.async()
 
-    var tabsHTML = '<ul class="nav">'
+    var tabsHTML = '<ul class="tabs">'
         + '<li><a href="#home">Home</a></li>'
         + '<li><a href="#profile">Profile</a></li>'
         + '</ul>'

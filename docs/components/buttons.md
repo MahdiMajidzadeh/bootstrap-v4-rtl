@@ -151,13 +151,13 @@ Note that pre-checked buttons require you to manually add the `.active` class to
 
 {% example html %}
 <div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-secondary active">
+  <label class="btn btn-primary active">
     <input type="checkbox" checked autocomplete="off"> Checkbox 1 (pre-checked)
   </label>
-  <label class="btn btn-secondary">
+  <label class="btn btn-primary">
     <input type="checkbox" autocomplete="off"> Checkbox 2
   </label>
-  <label class="btn btn-secondary">
+  <label class="btn btn-primary">
     <input type="checkbox" autocomplete="off"> Checkbox 3
   </label>
 </div>
@@ -165,13 +165,13 @@ Note that pre-checked buttons require you to manually add the `.active` class to
 
 {% example html %}
 <div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-secondary active">
+  <label class="btn btn-primary active">
     <input type="radio" name="options" id="option1" autocomplete="off" checked> Radio 1 (preselected)
   </label>
-  <label class="btn btn-secondary">
+  <label class="btn btn-primary">
     <input type="radio" name="options" id="option2" autocomplete="off"> Radio 2
   </label>
-  <label class="btn btn-secondary">
+  <label class="btn btn-primary">
     <input type="radio" name="options" id="option3" autocomplete="off"> Radio 3
   </label>
 </div>

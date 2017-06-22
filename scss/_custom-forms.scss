@@ -1,4 +1,4 @@
-// scss-lint:disable PropertyCount, VendorPrefix
+// scss-lint:disable PropertyCount
 
 // Embedded icons from Open Iconic.
 // Released under MIT and copyright 2014 Waybury.
@@ -15,6 +15,7 @@
   min-height: (1rem * $line-height-base);
   padding-left: $custom-control-gutter;
   margin-right: $custom-control-spacer-x;
+  cursor: pointer;
 }
 
 .custom-control-input {
@@ -41,11 +42,13 @@
 
   &:disabled {
     ~ .custom-control-indicator {
+      cursor: $custom-control-disabled-cursor;
       background-color: $custom-control-disabled-indicator-bg;
     }
 
     ~ .custom-control-description {
       color: $custom-control-disabled-description-color;
+      cursor: $custom-control-disabled-cursor;
     }
   }
 }
@@ -133,7 +136,7 @@
 .custom-select {
   display: inline-block;
   max-width: 100%;
-  $select-border-width: ($custom-select-border-width * 2);
+  $select-border-width: ($border-width * 2);
   height: calc(#{$input-height} + #{$select-border-width});
   padding: $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding) $custom-select-padding-y $custom-select-padding-x;
   line-height: $custom-select-line-height;
@@ -143,7 +146,9 @@
   background-size: $custom-select-bg-size;
   border: $custom-select-border-width solid $custom-select-border-color;
   @include border-radius($custom-select-border-radius);
-  appearance: none;
+  // Use vendor prefixes as `appearance` isn't part of the CSS spec.
+  -moz-appearance: none;
+  -webkit-appearance: none;
 
   &:focus {
     border-color: $custom-select-focus-border-color;
@@ -163,6 +168,7 @@
 
   &:disabled {
     color: $custom-select-disabled-color;
+    cursor: $cursor-disabled;
     background-color: $custom-select-disabled-bg;
   }
 
@@ -194,6 +200,7 @@
   max-width: 100%;
   height: $custom-file-height;
   margin-bottom: 0;
+  cursor: pointer;
 }
 
 .custom-file-input {
@@ -201,6 +208,7 @@
   max-width: 100%;
   height: $custom-file-height;
   margin: 0;
+  filter: alpha(opacity = 0);
   opacity: 0;
 
   &:focus ~ .custom-file-control {
@@ -226,7 +234,7 @@
   @include box-shadow($custom-file-box-shadow);
 
   @each $lang, $text in map-get($custom-file-text, placeholder) {
-    &:lang(#{$lang}):empty::after {
+    &:lang(#{$lang})::after {
       content: $text;
     }
   }

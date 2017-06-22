@@ -18,106 +18,75 @@
   @include border-radius($border-radius-lg);
   @include box-shadow($popover-box-shadow);
 
-  // Arrows
-  //
-  // .arrow is outer, .arrow::after is inner
-
-  .arrow {
-    position: absolute;
-    display: block;
-    width: $popover-arrow-width;
-    height: $popover-arrow-height;
-  }
-
-  .arrow::before,
-  .arrow::after {
-    position: absolute;
-    display: block;
-    border-color: transparent;
-    border-style: solid;
-  }
-
-  .arrow::before {
-    content: "";
-    border-width: $popover-arrow-outer-width;
-  }
-  .arrow::after {
-    content: "";
-    border-width: $popover-arrow-outer-width;
-  }
 
   // Popover directions
 
-  &.bs-popover-top {
-    margin-bottom: $popover-arrow-width;
+  &.popover-top,
+  &.bs-tether-element-attached-bottom {
+    margin-top: -$popover-arrow-width;
 
-    .arrow {
-      bottom: 0;
-    }
-
-    .arrow::before,
-    .arrow::after {
+    &::before,
+    &::after {
+      left: 50%;
       border-bottom-width: 0;
     }
 
-    .arrow::before {
+    &::before {
       bottom: -$popover-arrow-outer-width;
-      margin-left: -($popover-arrow-outer-width - 5);
+      margin-left: -$popover-arrow-outer-width;
       border-top-color: $popover-arrow-outer-color;
     }
 
-    .arrow::after {
+    &::after {
       bottom: -($popover-arrow-outer-width - 1);
-      margin-left: -($popover-arrow-outer-width - 5);
+      margin-left: -$popover-arrow-width;
       border-top-color: $popover-arrow-color;
     }
   }
 
-  &.bs-popover-right {
+  &.popover-right,
+  &.bs-tether-element-attached-left {
     margin-left: $popover-arrow-width;
 
-    .arrow {
-      left: 0;
-    }
-
-    .arrow::before,
-    .arrow::after {
-      margin-top: -($popover-arrow-outer-width - 3);
+    &::before,
+    &::after {
+      top: 50%;
       border-left-width: 0;
     }
 
-    .arrow::before {
+    &::before {
       left: -$popover-arrow-outer-width;
+      margin-top: -$popover-arrow-outer-width;
       border-right-color: $popover-arrow-outer-color;
     }
 
-    .arrow::after {
+    &::after {
       left: -($popover-arrow-outer-width - 1);
+      margin-top: -($popover-arrow-outer-width - 1);
       border-right-color: $popover-arrow-color;
     }
   }
 
-  &.bs-popover-bottom {
+  &.popover-bottom,
+  &.bs-tether-element-attached-top {
     margin-top: $popover-arrow-width;
 
-    .arrow {
-      top: 0;
-    }
-
-    .arrow::before,
-    .arrow::after {
-      margin-left: -($popover-arrow-width - 3);
+    &::before,
+    &::after {
+      left: 50%;
       border-top-width: 0;
     }
 
-    .arrow::before {
+    &::before {
       top: -$popover-arrow-outer-width;
+      margin-left: -$popover-arrow-outer-width;
       border-bottom-color: $popover-arrow-outer-color;
     }
 
-    .arrow::after {
+    &::after {
       top: -($popover-arrow-outer-width - 1);
-      border-bottom-color: $popover-arrow-color;
+      margin-left: -$popover-arrow-width;
+      border-bottom-color: $popover-title-bg;
     }
 
     // This will remove the popover-title's border just below the arrow
@@ -133,41 +102,26 @@
     }
   }
 
-  &.bs-popover-left {
-    margin-right: $popover-arrow-width;
+  &.popover-left,
+  &.bs-tether-element-attached-right {
+    margin-left: -$popover-arrow-width;
 
-    .arrow {
-      right: 0;
-    }
-
-    .arrow::before,
-    .arrow::after {
-      margin-top: -($popover-arrow-outer-width - 3);
+    &::before,
+    &::after {
+      top: 50%;
       border-right-width: 0;
     }
 
-    .arrow::before {
+    &::before {
       right: -$popover-arrow-outer-width;
+      margin-top: -$popover-arrow-outer-width;
       border-left-color: $popover-arrow-outer-color;
     }
 
-    .arrow::after {
+    &::after {
       right: -($popover-arrow-outer-width - 1);
+      margin-top: -($popover-arrow-outer-width - 1);
       border-left-color: $popover-arrow-color;
-    }
-  }
-  &.bs-popover-auto {
-    &[x-placement^="top"] {
-      @extend .bs-popover-top;
-    }
-    &[x-placement^="right"] {
-      @extend .bs-popover-right;
-    }
-    &[x-placement^="bottom"] {
-      @extend .bs-popover-bottom;
-    }
-    &[x-placement^="left"] {
-      @extend .bs-popover-left;
     }
   }
 }
@@ -178,7 +132,6 @@
   padding: $popover-title-padding-y $popover-title-padding-x;
   margin-bottom: 0; // Reset the default from Reboot
   font-size: $font-size-base;
-  color: $popover-title-color;
   background-color: $popover-title-bg;
   border-bottom: $popover-border-width solid darken($popover-title-bg, 5%);
   $offset-border-width: calc(#{$border-radius-lg} - #{$popover-border-width});
@@ -191,5 +144,28 @@
 
 .popover-content {
   padding: $popover-content-padding-y $popover-content-padding-x;
-  color: $popover-content-color;
+}
+
+
+// Arrows
+//
+// .popover-arrow is outer, .popover-arrow::after is inner
+
+.popover::before,
+.popover::after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.popover::before {
+  content: "";
+  border-width: $popover-arrow-outer-width;
+}
+.popover::after {
+  content: "";
+  border-width: $popover-arrow-width;
 }

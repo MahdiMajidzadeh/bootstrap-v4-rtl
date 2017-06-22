@@ -10,6 +10,7 @@
   @include hover-focus {
     color: $close-color;
     text-decoration: none;
+    cursor: pointer;
     opacity: .75;
   }
 }
@@ -22,6 +23,7 @@
 // scss-lint:disable QualifyingElement
 button.close {
   padding: 0;
+  cursor: pointer;
   background: transparent;
   border: 0;
   -webkit-appearance: none;

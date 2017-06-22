@@ -17,16 +17,15 @@ const Carousel = (($) => {
    * ------------------------------------------------------------------------
    */
 
-  const NAME                   = 'carousel'
-  const VERSION                = '4.0.0-alpha.6'
-  const DATA_KEY               = 'bs.carousel'
-  const EVENT_KEY              = `.${DATA_KEY}`
-  const DATA_API_KEY           = '.data-api'
-  const JQUERY_NO_CONFLICT     = $.fn[NAME]
-  const TRANSITION_DURATION    = 600
-  const ARROW_LEFT_KEYCODE     = 37 // KeyboardEvent.which value for left arrow key
-  const ARROW_RIGHT_KEYCODE    = 39 // KeyboardEvent.which value for right arrow key
-  const TOUCHEVENT_COMPAT_WAIT = 500 // Time for mouse compat events to fire after touch
+  const NAME                = 'carousel'
+  const VERSION             = '4.0.0-alpha.6'
+  const DATA_KEY            = 'bs.carousel'
+  const EVENT_KEY           = `.${DATA_KEY}`
+  const DATA_API_KEY        = '.data-api'
+  const JQUERY_NO_CONFLICT  = $.fn[NAME]
+  const TRANSITION_DURATION = 600
+  const ARROW_LEFT_KEYCODE  = 37 // KeyboardEvent.which value for left arrow key
+  const ARROW_RIGHT_KEYCODE = 39 // KeyboardEvent.which value for right arrow key
 
   const Default = {
     interval : 5000,
@@ -57,7 +56,6 @@ const Carousel = (($) => {
     KEYDOWN        : `keydown${EVENT_KEY}`,
     MOUSEENTER     : `mouseenter${EVENT_KEY}`,
     MOUSELEAVE     : `mouseleave${EVENT_KEY}`,
-    TOUCHEND       : `touchend${EVENT_KEY}`,
     LOAD_DATA_API  : `load${EVENT_KEY}${DATA_API_KEY}`,
     CLICK_DATA_API : `click${EVENT_KEY}${DATA_API_KEY}`
   }
@@ -100,8 +98,6 @@ const Carousel = (($) => {
       this._isPaused          = false
       this._isSliding         = false
 
-      this.touchTimeout       = null
-
       this._config            = this._getConfig(config)
       this._element           = $(element)[0]
       this._indicatorsElement = $(this._element).find(Selector.INDICATORS)[0]
@@ -124,9 +120,10 @@ const Carousel = (($) => {
     // public
 
     next() {
-      if (!this._isSliding) {
-        this._slide(Direction.NEXT)
+      if (this._isSliding) {
+        throw new Error('Carousel is sliding')
       }
+      this._slide(Direction.NEXT)
     }
 
     nextWhenVisible() {
@@ -137,9 +134,10 @@ const Carousel = (($) => {
     }
 
     prev() {
-      if (!this._isSliding) {
-        this._slide(Direction.PREV)
+      if (this._isSliding) {
+        throw new Error('Carousel is sliding')
       }
+      this._slide(Direction.PREVIOUS)
     }
 
     pause(event) {
@@ -197,7 +195,7 @@ const Carousel = (($) => {
 
       const direction = index > activeIndex ?
         Direction.NEXT :
-        Direction.PREV
+        Direction.PREVIOUS
 
       this._slide(direction, this._items[index])
     }
@@ -231,26 +229,11 @@ const Carousel = (($) => {
           .on(Event.KEYDOWN, (event) => this._keydown(event))
       }
 
-      if (this._config.pause === 'hover') {
+      if (this._config.pause === 'hover' &&
+        !('ontouchstart' in document.documentElement)) {
         $(this._element)
           .on(Event.MOUSEENTER, (event) => this.pause(event))
           .on(Event.MOUSELEAVE, (event) => this.cycle(event))
-        if ('ontouchstart' in document.documentElement) {
-          // if it's a touch-enabled device, mouseenter/leave are fired as
-          // part of the mouse compatibility events on first tap - the carousel
-          // would stop cycling until user tapped out of it;
-          // here, we listen for touchend, explicitly pause the carousel
-          // (as if it's the second time we tap on it, mouseenter compat event
-          // is NOT fired) and after a timeout (to allow for mouse compatibility
-          // events to fire) we explicitly restart cycling
-          $(this._element).on(Event.TOUCHEND, () => {
-            this.pause()
-            if (this.touchTimeout) {
-              clearTimeout(this.touchTimeout)
-            }
-            this.touchTimeout = setTimeout((event) => this.cycle(event), TOUCHEVENT_COMPAT_WAIT + this._config.interval)
-          })
-        }
       }
     }
 
@@ -280,7 +263,7 @@ const Carousel = (($) => {
 
     _getItemByDirection(direction, activeElement) {
       const isNextDirection = direction === Direction.NEXT
-      const isPrevDirection = direction === Direction.PREV
+      const isPrevDirection = direction === Direction.PREVIOUS
       const activeIndex     = this._getItemIndex(activeElement)
       const lastItemIndex   = this._items.length - 1
       const isGoingToWrap   = isPrevDirection && activeIndex === 0 ||
@@ -290,7 +273,7 @@ const Carousel = (($) => {
         return activeElement
       }
 
-      const delta     = direction === Direction.PREV ? -1 : 1
+      const delta     = direction === Direction.PREVIOUS ? -1 : 1
       const itemIndex = (activeIndex + delta) % this._items.length
 
       return itemIndex === -1 ?
@@ -299,13 +282,9 @@ const Carousel = (($) => {
 
 
     _triggerSlideEvent(relatedTarget, eventDirectionName) {
-      const targetIndex = this._getItemIndex(relatedTarget)
-      const fromIndex = this._getItemIndex($(this._element).find(Selector.ACTIVE_ITEM)[0])
       const slideEvent = $.Event(Event.SLIDE, {
         relatedTarget,
-        direction: eventDirectionName,
-        from: fromIndex,
-        to: targetIndex
+        direction: eventDirectionName
       })
 
       $(this._element).trigger(slideEvent)
@@ -331,10 +310,9 @@ const Carousel = (($) => {
 
     _slide(direction, element) {
       const activeElement = $(this._element).find(Selector.ACTIVE_ITEM)[0]
-      const activeElementIndex = this._getItemIndex(activeElement)
       const nextElement   = element || activeElement &&
         this._getItemByDirection(direction, activeElement)
-      const nextElementIndex = this._getItemIndex(nextElement)
+
       const isCycling = Boolean(this._interval)
 
       let directionalClassName
@@ -376,9 +354,7 @@ const Carousel = (($) => {
 
       const slidEvent = $.Event(Event.SLID, {
         relatedTarget: nextElement,
-        direction: eventDirectionName,
-        from: activeElementIndex,
-        to: nextElementIndex
+        direction: eventDirectionName
       })
 
       if (Util.supportsTransitionEnd() &&
