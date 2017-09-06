@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://v4-alpha.getbootstrap.com">
+  <a href="https://getbootstrap.com">
     <img src="http://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width=72 height=72>
   </a>
 
@@ -8,7 +8,7 @@
   <p align="center">
     Sleek, intuitive, and powerful front-end framework for faster and easier web development.
     <br>
-    <a href="https://v4-alpha.getbootstrap.com"><strong>Explore Bootstrap docs &raquo;</strong></a>
+    <a href="https://getbootstrap.com"><strong>Explore Bootstrap docs &raquo;</strong></a>
     <br>
   </p>
 </p>
