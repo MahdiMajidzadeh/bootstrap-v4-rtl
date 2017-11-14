@@ -8425,6 +8425,58 @@ a.text-dark:focus, a.text-dark:hover {
   padding-left: 40px;
 }
 
+.rtl .close {
+  float: left;
+}
+
+.rtl .modal-header .close {
+  margin: -15px auto -15px -15px;
+}
+
+.rtl .modal-footer > :not(:first-child) {
+  margin-right: .25rem;
+}
+
+.rtl .alert-dismissible .close {
+  right: inherit;
+  left: 0;
+}
+
+.rtl .dropdown-toggle::after {
+  margin-right: .255em;
+  margin-left: 0;
+}
+
+.rtl .form-check-input {
+  margin-right: -1.25rem;
+  margin-left: inherit;
+}
+
+.rtl .form-check-label {
+  padding-right: 1.25rem;
+  padding-left: inherit;
+}
+
+.rtl .input-group .form-control:not(:last-child),
+.rtl .input-group-addon:not(:last-child),
+.rtl .input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn,
+.rtl .input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle),
+.rtl .input-group-btn:not(:last-child) > .btn,
+.rtl .input-group-btn:not(:last-child) > .btn-group > .btn,
+.rtl .input-group-btn:not(:last-child) > .dropdown-toggle {
+  border-radius: .25rem .25rem 0 0;
+}
+
+.rtl .input-group .form-control:not(:first-child),
+.rtl .input-group-addon:not(:first-child),
+.rtl .input-group-btn:not(:first-child) > .btn,
+.rtl .input-group-btn:not(:first-child) > .btn-group > .btn,
+.rtl .input-group-btn:not(:first-child) > .dropdown-toggle,
+.rtl .input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn,
+.rtl .input-group-btn:not(:last-child) > .btn:not(:first-child) {
+  border-radius: 0 0 .25rem .25rem;
+}
+
 .rtl .col-xs-1,
 .rtl .col-xs-10,
 .rtl .col-xs-11,
