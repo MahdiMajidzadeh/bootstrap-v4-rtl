@@ -8412,6 +8412,28 @@ a.text-dark:focus, a.text-dark:hover {
   border-radius: .2rem 0 0 .2rem;
 }
 
+.rtl .btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-radius: .2rem 0 0 .2rem;
+}
+
+.rtl .custom-control {
+  padding-right: 1.5rem;
+  padding-left: inherit;
+  margin-right: inherit;
+  margin-left: 1rem;
+}
+
+.rtl .custom-control-indicator {
+  right: 0;
+  left: inherit;
+}
+
+.rtl .custom-file-control::before {
+  right: inherit;
+  left: -1px;
+  border-radius: .25rem 0 0 .25rem;
+}
+
 .rtl .radio input,
 .rtl .radio-inline,
 .rtl .checkbox input,
