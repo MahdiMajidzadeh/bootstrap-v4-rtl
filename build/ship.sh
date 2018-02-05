@@ -40,11 +40,30 @@ printf "\n${magenta}Compile latest CSS and JS...${end}"
 printf "\n${magenta}=======================================================\n${end}"
 npm run dist
 
+# Generate the SRI hashes
+printf "\n${magenta}=======================================================${end}"
+printf "\n${magenta}Generate the SRI hashes...${end}"
+printf "\n${magenta}=======================================================\n${end}"
+npm run release-sri
+
 # Compress the dist files
 printf "\n${magenta}=======================================================${end}"
 printf "\n${magenta}Compressing the dist files...${end}"
 printf "\n${magenta}=======================================================\n${end}"
 npm run release-zip
+
+# Compile the docs
+printf "\n${magenta}=======================================================${end}"
+printf "\n${magenta}Compile hosted documentation...${end}"
+printf "\n${magenta}=======================================================\n${end}"
+npm run docs-github
+
+# Copy the contents of the built docs site over to `bs-docs` repo
+printf "\n${magenta}=======================================================${end}"
+printf "\n${magenta}Copy it over...${end}"
+printf "\n${magenta}=======================================================\n${end}"
+cp -rf _gh_pages/. ../bs-docs/
+printf "\nDone!\n"
 
 printf "\n${green}=======================================================${end}"
 printf "\n${green}Success, $1 is ready to review and publish.${end}"
