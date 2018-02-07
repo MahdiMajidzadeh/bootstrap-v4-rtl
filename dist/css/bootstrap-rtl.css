@@ -8995,6 +8995,11 @@ a.text-dark:hover, a.text-dark:focus {
   text-align: right;
 }
 
+.rtl .alert-dismissible {
+  padding-right: 1.25rem;
+  padding-left: 4rem;
+}
+
 .rtl .dropdown-menu {
   text-align: right;
 }
@@ -9017,6 +9022,36 @@ a.text-dark:hover, a.text-dark:focus {
   border-radius: .2rem 0 0 .2rem;
 }
 
+.rtl .custom-control-label::after,
+.rtl .custom-control-label::before {
+  right: 0;
+  left: inherit;
+}
+
+.rtl .custom-select {
+  padding: 0.375rem 0.75rem 0.375rem 1.75rem;
+  background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat left 0.75rem center;
+  background-size: 8px 10px;
+}
+
+.rtl .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.rtl .input-group > .input-group-append:last-child > .input-group-text:not(:last-child),
+.rtl .input-group > .input-group-append:not(:last-child) > .btn,
+.rtl .input-group > .input-group-append:not(:last-child) > .input-group-text,
+.rtl .input-group > .input-group-prepend > .btn,
+.rtl .input-group > .input-group-prepend > .input-group-text {
+  border-radius: 0 .2rem .2rem 0;
+}
+
+.rtl .input-group > .input-group-append > .btn,
+.rtl .input-group > .input-group-append > .input-group-text,
+.rtl .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+.rtl .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child),
+.rtl .input-group > .input-group-prepend:not(:first-child) > .btn,
+.rtl .input-group > .input-group-prepend:not(:first-child) > .input-group-text {
+  border-radius: .2rem 0 0 .2rem;
+}
+
 .rtl .custom-control {
   padding-right: 1.5rem;
   padding-left: inherit;
@@ -9029,8 +9064,8 @@ a.text-dark:hover, a.text-dark:focus {
   left: inherit;
 }
 
-.rtl .custom-file-control::before {
-  right: calc(100% - 77px);
+.rtl .custom-file-label::after {
+  right: initial;
   left: -1px;
   border-radius: .25rem 0 0 .25rem;
 }
@@ -9078,26 +9113,6 @@ a.text-dark:hover, a.text-dark:focus {
 .rtl .form-check-label {
   padding-right: 1.25rem;
   padding-left: inherit;
-}
-
-.rtl .input-group .form-control:not(:last-child),
-.rtl .input-group-addon:not(:last-child),
-.rtl .input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn,
-.rtl .input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle),
-.rtl .input-group-btn:not(:last-child) > .btn,
-.rtl .input-group-btn:not(:last-child) > .btn-group > .btn,
-.rtl .input-group-btn:not(:last-child) > .dropdown-toggle {
-  border-radius: .25rem .25rem 0 0;
-}
-
-.rtl .input-group .form-control:not(:first-child),
-.rtl .input-group-addon:not(:first-child),
-.rtl .input-group-btn:not(:first-child) > .btn,
-.rtl .input-group-btn:not(:first-child) > .btn-group > .btn,
-.rtl .input-group-btn:not(:first-child) > .dropdown-toggle,
-.rtl .input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn,
-.rtl .input-group-btn:not(:last-child) > .btn:not(:first-child) {
-  border-radius: 0 0 .25rem .25rem;
 }
 
 .rtl .col-xs-1,

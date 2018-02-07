@@ -19,6 +19,11 @@
     text-align: right;
   }
 
+  .alert-dismissible {
+    padding-right: 1.25rem;
+    padding-left: 4rem;
+  }
+
   .dropdown-menu {
     text-align: right;
   }
@@ -41,6 +46,36 @@
     border-radius: .2rem 0 0 .2rem;
   }
 
+  .custom-control-label::after,
+  .custom-control-label::before {
+    right: 0;
+    left: inherit;
+  }
+
+  .custom-select {
+    padding: $custom-select-padding-y $custom-select-padding-x $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding);
+    background: $custom-select-bg $custom-select-indicator no-repeat left $custom-select-padding-x center;
+    background-size: $custom-select-bg-size;
+  }
+
+  .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+  .input-group > .input-group-append:last-child > .input-group-text:not(:last-child),
+  .input-group > .input-group-append:not(:last-child) > .btn,
+  .input-group > .input-group-append:not(:last-child) > .input-group-text,
+  .input-group > .input-group-prepend > .btn,
+  .input-group > .input-group-prepend > .input-group-text{
+    border-radius: 0 .2rem .2rem 0;
+  }
+
+  .input-group > .input-group-append > .btn,
+  .input-group > .input-group-append > .input-group-text,
+  .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+  .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child),
+  .input-group > .input-group-prepend:not(:first-child) > .btn,
+  .input-group > .input-group-prepend:not(:first-child) > .input-group-text {
+    border-radius: .2rem 0 0 .2rem;
+  }
+
   .custom-control {
     padding-right: 1.5rem;
     padding-left: inherit;
@@ -52,8 +87,8 @@
     left: inherit;
   }
 
-  .custom-file-control::before {
-    right: calc(100% - 77px);
+  .custom-file-label::after {
+    right: initial;
     left: -1px;
     border-radius: .25rem 0 0 .25rem;
   }
@@ -101,26 +136,6 @@
   .form-check-label {
     padding-right: 1.25rem;
     padding-left: inherit;
-  }
-
-  .input-group .form-control:not(:last-child),
-  .input-group-addon:not(:last-child),
-  .input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn,
-  .input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle),
-  .input-group-btn:not(:last-child) > .btn,
-  .input-group-btn:not(:last-child) > .btn-group > .btn,
-  .input-group-btn:not(:last-child) > .dropdown-toggle {
-    border-radius: .25rem .25rem 0 0;
-  }
-
-  .input-group .form-control:not(:first-child),
-  .input-group-addon:not(:first-child),
-  .input-group-btn:not(:first-child) > .btn,
-  .input-group-btn:not(:first-child) > .btn-group > .btn,
-  .input-group-btn:not(:first-child) > .dropdown-toggle,
-  .input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn,
-  .input-group-btn:not(:last-child) > .btn:not(:first-child) {
-    border-radius: 0 0 .25rem .25rem;
   }
 
   .col-xs-1,
