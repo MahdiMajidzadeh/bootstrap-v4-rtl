@@ -6,12 +6,6 @@
     padding-right: 0;
   }
 
-  // .navbar-brand {
-  //   float: right;
-  //   margin-right: inherit;
-  //   margin-left: 1rem;
-  // }
-
   .navbar-nav .nav-item {
     float: right;
   }
@@ -59,7 +53,7 @@
   }
 
   .custom-file-control::before {
-    right: calc(100% - 77px);;
+    right: calc(100% - 77px);
     left: -1px;
     border-radius: .25rem 0 0 .25rem;
   }
@@ -144,20 +138,6 @@
     float: right;
   }
 
-  // .pull-xs-0 {
-  //   left: auto;
-  // }
-
-  // @for $i from 1 through 12 {
-  //   .pull-xs-#{$i} {
-  //     left: ($i / 12) * 100 + 0%;
-  //   }
-  // }
-
-  // .push-xs-0 {
-  //   right: auto;
-  // }
-
   @for $i from 1 through 12 {
     .push-xs-#{$i} {
       right: ($i / 12) * 100 + 0%;
@@ -186,26 +166,6 @@
       float: right;
     }
 
-    // .pull-sm-0 {
-    //   left: auto;
-    // }
-
-    // @for $i from 1 through 12 {
-    //   .pull-sm-#{$i} {
-    //     left: ($i / 12) * 100 + 0%;
-    //   }
-    // }
-
-    // .push-sm-0 {
-    //   right: auto;
-    // }
-
-    // @for $i from 1 through 12 {
-    //   .push-sm-#{$i} {
-    //     right: ($i / 12) * 100 + 0%;
-    //   }
-    // }
-
     @for $i from 0 through 12 {
       .offset-sm-#{$i} {
         margin-right: ($i / 12) * 100 + 0%;
@@ -228,26 +188,6 @@
     .col-md-9 {
       float: right;
     }
-
-    // .pull-md-0 {
-    //   left: auto;
-    // }
-
-    // @for $i from 1 through 12 {
-    //   .pull-md-#{$i} {
-    //     left: ($i / 12) * 100 + 0%;
-    //   }
-    // }
-
-    // .push-md-0 {
-    //   right: auto;
-    // }
-
-    // @for $i from 1 through 12 {
-    //   .push-md-#{$i} {
-    //     right: ($i / 12) * 100 + 0%;
-    //   }
-    // }
 
     @for $i from 0 through 12 {
       .offset-md-#{$i} {
@@ -272,26 +212,6 @@
       float: right;
     }
 
-    // .pull-lg-0 {
-    //   left: auto;
-    // }
-
-    // @for $i from 1 through 12 {
-    //   .pull-lg-#{$i} {
-    //     left: ($i / 12) * 100 + 0%;
-    //   }
-    // }
-
-    // .push-lg-0 {
-    //   right: auto;
-    // }
-
-    // @for $i from 1 through 12 {
-    //   .push-lg-#{$i} {
-    //     right: ($i / 12) * 100 + 0%;
-    //   }
-    // }
-
     @for $i from 0 through 12 {
       .offset-lg-#{$i} {
         margin-right: ($i / 12) * 100 + 0%;
@@ -314,26 +234,6 @@
     .col-xl-12 {
       float: right;
     }
-
-    // .pull-xl-0 {
-    //   left: auto;
-    // }
-
-    // @for $i from 1 through 12 {
-    //   .pull-xl-#{$i} {
-    //     left: ($i / 12) * 100 + 0%;
-    //   }
-    // }
-
-    // .push-xl-0 {
-    //   right: auto;
-    // }
-
-    // @for $i from 1 through 12 {
-    //   .push-xl-#{$i} {
-    //     right: ($i / 12) * 100 + 0%;
-    //   }
-    // }
 
     @for $i from 0 through 12 {
       .offset-xl-#{$i} {

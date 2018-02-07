@@ -1,7 +1,7 @@
 /*!
- * Bootstrap Grid v4.0.0-beta.2 (https://getbootstrap.com)
- * Copyright 2016-2017 Mahdi Majidzadeh
- * Copyright 2016-2017 Mahdi Majidzadeh
+ * Bootstrap v4.0.0 (https://getbootstrap.com)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
@@ -9,7 +9,6 @@
 @import "variables";
 @import "mixins";
 @import "root";
-@import "print";
 @import "reboot";
 @import "type";
 @import "images";
@@ -40,5 +39,6 @@
 @import "popover";
 @import "carousel";
 @import "utilities";
+@import "print";
 
 @import "rtl";

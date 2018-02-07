@@ -33,9 +33,6 @@ vendor/bundle
 *.sublime-workspace
 nbproject
 Thumbs.db
-yarn.lock
-package-lock
-Gemfile.lock
 
 # Komodo
 .komodotools
@@ -47,3 +44,5 @@ twbsconfig.yml
 
 # Folders to ignore
 node_modules
+
+yarn\.lock
