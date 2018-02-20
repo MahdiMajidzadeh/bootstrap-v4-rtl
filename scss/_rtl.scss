@@ -25,6 +25,7 @@
   }
 
   .dropdown-menu {
+    right: 0;
     text-align: right;
   }
 
@@ -34,16 +35,16 @@
   }
 
   .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
-    border-radius: 0 .2rem .2rem 0;
+    border-radius: 0 $border-radius $border-radius 0;
   }
 
   .btn-group > .btn:last-child:not(:first-child),
   .btn-group > .dropdown-toggle:not(:first-child) {
-    border-radius: .2rem 0 0 .2rem;
+    border-radius: $border-radius 0 0 $border-radius;
   }
 
   .btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child{
-    border-radius: .2rem 0 0 .2rem;
+    border-radius: $border-radius 0 0 $border-radius;
   }
 
   .custom-control-label::after,
@@ -64,7 +65,7 @@
   .input-group > .input-group-append:not(:last-child) > .input-group-text,
   .input-group > .input-group-prepend > .btn,
   .input-group > .input-group-prepend > .input-group-text{
-    border-radius: 0 .2rem .2rem 0;
+    border-radius: 0 $border-radius $border-radius 0;
   }
 
   .input-group > .input-group-append > .btn,
@@ -73,7 +74,22 @@
   .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child),
   .input-group > .input-group-prepend:not(:first-child) > .btn,
   .input-group > .input-group-prepend:not(:first-child) > .input-group-text {
-    border-radius: .2rem 0 0 .2rem;
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  .input-group > .custom-select:not(:first-child),
+  .input-group > .form-control:not(:first-child) {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  .input-group > .custom-select:not(:last-child),
+  .input-group > .form-control:not(:last-child) {
+    border-radius: 0 $border-radius $border-radius 0;
+  }
+
+  .input-group > .custom-select:not(:last-child):not(:first-child),
+  .input-group > .form-control:not(:last-child):not(:first-child) {
+    border-radius: 0;
   }
 
   .custom-control {

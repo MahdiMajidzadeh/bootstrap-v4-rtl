@@ -9001,6 +9001,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .rtl .dropdown-menu {
+  right: 0;
   text-align: right;
 }
 
@@ -9010,16 +9011,16 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .rtl .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
-  border-radius: 0 .2rem .2rem 0;
+  border-radius: 0 0.25rem 0.25rem 0;
 }
 
 .rtl .btn-group > .btn:last-child:not(:first-child),
 .rtl .btn-group > .dropdown-toggle:not(:first-child) {
-  border-radius: .2rem 0 0 .2rem;
+  border-radius: 0.25rem 0 0 0.25rem;
 }
 
 .rtl .btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
-  border-radius: .2rem 0 0 .2rem;
+  border-radius: 0.25rem 0 0 0.25rem;
 }
 
 .rtl .custom-control-label::after,
@@ -9040,7 +9041,7 @@ a.text-dark:hover, a.text-dark:focus {
 .rtl .input-group > .input-group-append:not(:last-child) > .input-group-text,
 .rtl .input-group > .input-group-prepend > .btn,
 .rtl .input-group > .input-group-prepend > .input-group-text {
-  border-radius: 0 .2rem .2rem 0;
+  border-radius: 0 0.25rem 0.25rem 0;
 }
 
 .rtl .input-group > .input-group-append > .btn,
@@ -9049,7 +9050,22 @@ a.text-dark:hover, a.text-dark:focus {
 .rtl .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child),
 .rtl .input-group > .input-group-prepend:not(:first-child) > .btn,
 .rtl .input-group > .input-group-prepend:not(:first-child) > .input-group-text {
-  border-radius: .2rem 0 0 .2rem;
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.rtl .input-group > .custom-select:not(:first-child),
+.rtl .input-group > .form-control:not(:first-child) {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.rtl .input-group > .custom-select:not(:last-child),
+.rtl .input-group > .form-control:not(:last-child) {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.rtl .input-group > .custom-select:not(:last-child):not(:first-child),
+.rtl .input-group > .form-control:not(:last-child):not(:first-child) {
+  border-radius: 0;
 }
 
 .rtl .custom-control {
