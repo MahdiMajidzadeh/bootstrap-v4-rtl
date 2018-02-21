@@ -34,10 +34,6 @@ Within the download you'll find the following directories and files, logically g
 ```
 bootstrap/
 ├── css/
-│   ├── bootstrap.css
-│   ├── bootstrap.css.map
-│   ├── bootstrap.min.css
-│   └── bootstrap.min.css.map
 │   ├── bootstrap-rtl.css
 │   ├── bootstrap-rtl.css.map
 │   ├── bootstrap-rtl.min.css
