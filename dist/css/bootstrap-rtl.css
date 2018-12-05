@@ -9540,16 +9540,19 @@ a.text-dark:hover, a.text-dark:focus {
   padding-right: 3rem !important;
 }
 
-.rtl .mr-auto,
-.rtl .mx-auto {
+.rtl .mr-auto {
   margin-right: 0 !important;
   margin-left: auto !important;
 }
 
-.rtl .ml-auto,
-.rtl .mx-auto {
+.rtl .ml-auto {
   margin-right: auto !important;
   margin-left: 0 !important;
+}
+
+.rtl .mx-auto {
+  margin-right: auto !important;
+  margin-left: auto !important;
 }
 
 @media (min-width: 576px) {
@@ -9673,15 +9676,17 @@ a.text-dark:hover, a.text-dark:focus {
     padding-left: 0 !important;
     padding-right: 3rem !important;
   }
-  .rtl .mr-sm-auto,
-  .rtl .mx-sm-auto {
+  .rtl .mr-sm-auto {
     margin-right: 0 !important;
     margin-left: auto !important;
   }
-  .rtl .ml-sm-auto,
-  .rtl .mx-sm-auto {
+  .rtl .ml-sm-auto {
     margin-right: auto !important;
     margin-left: 0 !important;
+  }
+  .rtl .mx-sm-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
   }
 }
 
@@ -9806,15 +9811,17 @@ a.text-dark:hover, a.text-dark:focus {
     padding-left: 0 !important;
     padding-right: 3rem !important;
   }
-  .rtl .mr-md-auto,
-  .rtl .mx-md-auto {
+  .rtl .mr-md-auto {
     margin-right: 0 !important;
     margin-left: auto !important;
   }
-  .rtl .ml-md-auto,
-  .rtl .mx-md-auto {
+  .rtl .ml-md-auto {
     margin-right: auto !important;
     margin-left: 0 !important;
+  }
+  .rtl .mx-md-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
   }
 }
 
@@ -9939,15 +9946,17 @@ a.text-dark:hover, a.text-dark:focus {
     padding-left: 0 !important;
     padding-right: 3rem !important;
   }
-  .rtl .mr-lg-auto,
-  .rtl .mx-lg-auto {
+  .rtl .mr-lg-auto {
     margin-right: 0 !important;
     margin-left: auto !important;
   }
-  .rtl .ml-lg-auto,
-  .rtl .mx-lg-auto {
+  .rtl .ml-lg-auto {
     margin-right: auto !important;
     margin-left: 0 !important;
+  }
+  .rtl .mx-lg-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
   }
 }
 
@@ -10072,15 +10081,61 @@ a.text-dark:hover, a.text-dark:focus {
     padding-left: 0 !important;
     padding-right: 3rem !important;
   }
-  .rtl .mr-xl-auto,
-  .rtl .mx-xl-auto {
+  .rtl .mr-xl-auto {
     margin-right: 0 !important;
     margin-left: auto !important;
   }
-  .rtl .ml-xl-auto,
-  .rtl .mx-xl-auto {
+  .rtl .ml-xl-auto {
     margin-right: auto !important;
     margin-left: 0 !important;
+  }
+  .rtl .mx-xl-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+}
+
+.rtl .text-right {
+  text-align: left !important;
+}
+
+.rtl .text-left {
+  text-align: right !important;
+}
+
+@media (min-width: 576px) {
+  .rtl .text-sm-right {
+    text-align: left !important;
+  }
+  .rtl .text-sm-left {
+    text-align: right !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .rtl .text-md-right {
+    text-align: left !important;
+  }
+  .rtl .text-md-left {
+    text-align: right !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .rtl .text-lg-right {
+    text-align: left !important;
+  }
+  .rtl .text-lg-left {
+    text-align: right !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .rtl .text-xl-right {
+    text-align: left !important;
+  }
+  .rtl .text-xl-left {
+    text-align: right !important;
   }
 }
 /*# sourceMappingURL=bootstrap-rtl.css.map */
