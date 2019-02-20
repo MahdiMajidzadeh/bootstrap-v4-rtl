@@ -6,27 +6,18 @@
     <title>Bootstrap Plugin Test Suite</title>
 
     <!-- jQuery -->
-    <script>
-      (function () {
-        var path = '../../assets/js/vendor/jquery-slim.min.js'
-        // get jquery param from the query string.
-        var jQueryVersion = location.search.match(/[?&]jquery=(.*?)(?=&|$)/)
-
-        // If a version was specified, use that version from jQuery CDN
-        if (jQueryVersion) {
-          path = 'https://code.jquery.com/jquery-' + jQueryVersion[1] + '.min.js'
-        }
-        document.write('<script src="' + path + '"><\/script>')
-      }())
-    </script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="../../node_modules/popper.js/dist/umd/popper.min.js"></script>
 
     <!-- QUnit -->
-    <link rel="stylesheet" href="../../node_modules/qunitjs/qunit/qunit.css" media="screen">
-    <script src="../../node_modules/qunitjs/qunit/qunit.js"></script>
+    <link rel="stylesheet" href="../../node_modules/qunit/qunit/qunit.css" media="screen">
+    <script src="../../node_modules/qunit/qunit/qunit.js"></script>
 
     <!-- Sinon -->
     <script src="../../node_modules/sinon/pkg/sinon-no-sourcemaps.js"></script>
+
+    <!-- Hammer simulator -->
+    <script src="../../node_modules/hammer-simulator/index.js"></script>
 
     <script>
       // Disable jQuery event aliases to ensure we don't accidentally use any of them
@@ -107,6 +98,11 @@
 
     <!-- Transpiled Plugins -->
     <script src="../dist/util.js"></script>
+    <script src="../dist/dom/polyfill.js"></script>
+    <script src="../dist/dom/manipulator.js"></script>
+    <script src="../dist/dom/eventHandler.js"></script>
+    <script src="../dist/dom/selectorEngine.js"></script>
+    <script src="../dist/dom/data.js"></script>
     <script src="../dist/alert.js"></script>
     <script src="../dist/button.js"></script>
     <script src="../dist/carousel.js"></script>
@@ -117,8 +113,13 @@
     <script src="../dist/tab.js"></script>
     <script src="../dist/tooltip.js"></script>
     <script src="../dist/popover.js"></script>
+    <script src="../dist/toast.js"></script>
 
     <!-- Unit Tests -->
+    <script src="unit/dom/eventHandler.js"></script>
+    <script src="unit/dom/manipulator.js"></script>
+    <script src="unit/dom/data.js"></script>
+    <script src="unit/dom/selectorEngine.js"></script>
     <script src="unit/alert.js"></script>
     <script src="unit/button.js"></script>
     <script src="unit/carousel.js"></script>
@@ -130,6 +131,7 @@
     <script src="unit/tooltip.js"></script>
     <script src="unit/popover.js"></script>
     <script src="unit/util.js"></script>
+    <script src="unit/toast.js"></script>
   </head>
   <body>
     <div id="qunit-container">
