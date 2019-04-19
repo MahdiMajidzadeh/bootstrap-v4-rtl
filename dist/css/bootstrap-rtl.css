@@ -9587,6 +9587,7 @@ a.text-dark:hover, a.text-dark:focus {
 .rtl .dropdown-menu,
 [dir="rtl"] .dropdown-menu {
   right: 0;
+  left: inherit;
   text-align: right;
 }
 
