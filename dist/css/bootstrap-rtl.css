@@ -9758,6 +9758,16 @@ a.text-dark:hover, a.text-dark:focus {
   padding-left: inherit;
 }
 
+.rtl .pagination,
+.rtl .list-unstyled,
+.rtl .list-inline,
+[dir="rtl"] .pagination,
+[dir="rtl"] .list-unstyled,
+[dir="rtl"] .list-inline {
+  padding-right: 0;
+  padding-left: inherit;
+}
+
 .rtl .offset-1,
 [dir="rtl"] .offset-1 {
   margin-right: 8.333333%;
