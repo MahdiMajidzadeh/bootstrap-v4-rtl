@@ -156,6 +156,13 @@
     padding-left: inherit;
   }
 
+  .pagination,
+  .list-unstyled,
+  .list-inline {
+    padding-right: 0;
+    padding-left: inherit;
+  }
+
   @mixin make-col-offset($size, $columns: $grid-columns) {
     $num: $size / $columns;
     margin-right: if($num == 0, 0, percentage($num));
