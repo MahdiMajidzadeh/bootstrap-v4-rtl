@@ -132,8 +132,11 @@
     margin: -15px auto -15px -15px;
   }
 
-  .modal-footer > :not(:first-child) {
-    margin-right: .25rem;
+  .modal-footer {
+    > :not(:first-child) { margin-right: .25rem; }
+    > :not(:last-child) { margin-left: .25rem; }
+    > :first-child { margin-right: 0; }
+    > :last-child { margin-left: 0; }
   }
 
   .alert-dismissible .close {
