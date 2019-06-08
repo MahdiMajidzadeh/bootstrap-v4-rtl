@@ -32,13 +32,13 @@
 .page-item {
   &:first-child {
     .page-link {
-      margin-left: 0;
-      @include border-left-radius($border-radius);
+      margin-right: 0;
+      @include border-right-radius($border-radius);
     }
   }
   &:last-child {
     .page-link {
-      @include border-right-radius($border-radius);
+      @include border-left-radius($border-radius);
     }
   }
 
