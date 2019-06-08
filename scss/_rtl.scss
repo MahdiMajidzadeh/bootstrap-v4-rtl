@@ -45,13 +45,13 @@
     border-radius: $border-radius 0 0 $border-radius;
   }
 
-  .btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child{
+  .btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
     border-radius: $border-radius 0 0 $border-radius;
   }
 
   .custom-control-label::after,
   .custom-control-label::before {
-    right: 0;
+    right: -1.5rem;
     left: inherit;
   }
 
@@ -66,7 +66,7 @@
   .input-group > .input-group-append:not(:last-child) > .btn,
   .input-group > .input-group-append:not(:last-child) > .input-group-text,
   .input-group > .input-group-prepend > .btn,
-  .input-group > .input-group-prepend > .input-group-text{
+  .input-group > .input-group-prepend > .input-group-text {
     border-radius: 0 $border-radius $border-radius 0;
   }
 
@@ -100,6 +100,7 @@
     margin-right: inherit;
     margin-left: 1rem;
   }
+
   .custom-control-indicator {
     right: 0;
     left: inherit;
@@ -119,6 +120,183 @@
     margin-left: inherit;
   }
 
+  @mixin form-validation-state($state, $color, $icon) {
+    .#{$state}-feedback {
+      display: none;
+      width: 100%;
+      margin-top: $form-feedback-margin-top;
+      @include font-size($form-feedback-font-size);
+      color: $color;
+    }
+
+    .#{$state}-tooltip {
+      position: absolute;
+      top: 100%;
+      z-index: 5;
+      display: none;
+      max-width: 100%; // Contain to parent when possible
+      padding: $form-feedback-tooltip-padding-y $form-feedback-tooltip-padding-x;
+      margin-top: .1rem;
+      @include font-size($form-feedback-tooltip-font-size);
+      line-height: $form-feedback-tooltip-line-height;
+      color: color-yiq($color);
+      background-color: rgba($color, $form-feedback-tooltip-opacity);
+      @include border-radius($form-feedback-tooltip-border-radius);
+    }
+
+    .form-control {
+      .was-validated &:#{$state},
+      &.is-#{$state} {
+        border-color: $color;
+
+        @if $enable-validation-icons {
+          padding-right: $input-padding-x;
+          padding-left: $input-height-inner;
+          background-image: $icon;
+          background-repeat: no-repeat;
+          background-position: center left $input-height-inner-quarter;
+          background-size: $input-height-inner-half $input-height-inner-half;
+        }
+
+        &:focus {
+          border-color: $color;
+          box-shadow: 0 0 0 $input-focus-width rgba($color, .25);
+        }
+
+        ~ .#{$state}-feedback,
+        ~ .#{$state}-tooltip {
+          display: block;
+        }
+      }
+    }
+
+    // stylelint-disable-next-line selector-no-qualifying-type
+    textarea.form-control {
+      .was-validated &:#{$state},
+      &.is-#{$state} {
+        @if $enable-validation-icons {
+          padding-right: $input-height-inner;
+          background-position: top $input-height-inner-quarter right $input-height-inner-quarter;
+        }
+      }
+    }
+
+    .custom-select {
+      .was-validated &:#{$state},
+      &.is-#{$state} {
+        border-color: $color;
+
+        @if $enable-validation-icons {
+          padding-right: $custom-select-feedback-icon-padding-right;
+          background: $custom-select-background, $icon $custom-select-bg no-repeat $custom-select-feedback-icon-position / $custom-select-feedback-icon-size;
+        }
+
+        &:focus {
+          border-color: $color;
+          box-shadow: 0 0 0 $input-focus-width rgba($color, .25);
+        }
+
+        ~ .#{$state}-feedback,
+        ~ .#{$state}-tooltip {
+          display: block;
+        }
+      }
+    }
+
+
+    .form-control-file {
+      .was-validated &:#{$state},
+      &.is-#{$state} {
+        ~ .#{$state}-feedback,
+        ~ .#{$state}-tooltip {
+          display: block;
+        }
+      }
+    }
+
+    .form-check-input {
+      .was-validated &:#{$state},
+      &.is-#{$state} {
+        ~ .form-check-label {
+          color: $color;
+        }
+
+        ~ .#{$state}-feedback,
+        ~ .#{$state}-tooltip {
+          display: block;
+        }
+      }
+    }
+
+    .custom-control-input {
+      .was-validated &:#{$state},
+      &.is-#{$state} {
+        ~ .custom-control-label {
+          color: $color;
+
+          &::before {
+            border-color: $color;
+          }
+        }
+
+        ~ .#{$state}-feedback,
+        ~ .#{$state}-tooltip {
+          display: block;
+        }
+
+        &:checked {
+          ~ .custom-control-label::before {
+            border-color: lighten($color, 10%);
+            @include gradient-bg(lighten($color, 10%));
+          }
+        }
+
+        &:focus {
+          ~ .custom-control-label::before {
+            box-shadow: 0 0 0 $input-focus-width rgba($color, .25);
+          }
+
+          &:not(:checked) ~ .custom-control-label::before {
+            border-color: $color;
+          }
+        }
+      }
+    }
+
+    // custom file
+    .custom-file-input {
+      .was-validated &:#{$state},
+      &.is-#{$state} {
+        ~ .custom-file-label {
+          border-color: $color;
+        }
+
+        ~ .#{$state}-feedback,
+        ~ .#{$state}-tooltip {
+          display: block;
+        }
+
+        &:focus {
+          ~ .custom-file-label {
+            border-color: $color;
+            box-shadow: 0 0 0 $input-focus-width rgba($color, .25);
+          }
+        }
+      }
+    }
+  }
+
+  // Form validation
+  //
+  // Provide feedback to users when form field values are valid or invalid. Works
+  // primarily for client-side validation via scoped `:invalid` and `:valid`
+  // pseudo-classes but also includes `.is-invalid` and `.is-valid` classes for
+  // server side validation.
+
+  @each $state, $data in $form-validation-states {
+    @include form-validation-state($state, map-get($data, color), map-get($data, icon));
+  }
+
   .list-group {
     padding-right: 0;
     padding-left: 40px;
@@ -133,10 +311,21 @@
   }
 
   .modal-footer {
-    > :not(:first-child) { margin-right: .25rem; }
-    > :not(:last-child) { margin-left: .25rem; }
-    > :first-child { margin-right: 0; }
-    > :last-child { margin-left: 0; }
+    > :not(:first-child) {
+      margin-right: .25rem;
+    }
+
+    > :not(:last-child) {
+      margin-left: .25rem;
+    }
+
+    > :first-child {
+      margin-right: 0;
+    }
+
+    > :last-child {
+      margin-left: 0;
+    }
   }
 
   .alert-dismissible .close {
@@ -164,6 +353,48 @@
   .list-inline {
     padding-right: 0;
     padding-left: inherit;
+  }
+
+  @mixin pagination-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+    .page-link {
+      padding: $padding-y $padding-x;
+      @include font-size($font-size);
+      line-height: $line-height;
+    }
+    .page-item {
+      &:first-child {
+        .page-link {
+          @include border-right-radius($border-radius);
+        }
+      }
+      &:last-child {
+        .page-link {
+          @include border-left-radius($border-radius);
+        }
+      }
+    }
+  }
+
+  .page-item {
+    &:first-child {
+      .page-link {
+        @include border-right-radius($border-radius);
+      }
+    }
+
+    &:last-child {
+      .page-link {
+        @include border-left-radius($border-radius);
+      }
+    }
+  }
+
+  .pagination-lg {
+    @include pagination-size($pagination-padding-y-lg, $pagination-padding-x-lg, $font-size-lg, $line-height-lg, $border-radius-lg);
+  }
+
+  .pagination-sm {
+    @include pagination-size($pagination-padding-y-sm, $pagination-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
   }
 
   @mixin make-col-offset($size, $columns: $grid-columns) {
@@ -213,15 +444,15 @@
         }
       }
 
-      .mr#{$infix}-auto{
+      .mr#{$infix}-auto {
         margin-right: 0 !important;
         margin-left: auto !important;
       }
-      .ml#{$infix}-auto{
+      .ml#{$infix}-auto {
         margin-right: auto !important;
         margin-left: 0 !important;
       }
-      .mx#{$infix}-auto{
+      .mx#{$infix}-auto {
         margin-right: auto !important;
         margin-left: auto !important;
       }
@@ -231,8 +462,28 @@
   @each $breakpoint in map-keys($grid-breakpoints) {
     @include media-breakpoint-up($breakpoint) {
       $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-      .text#{$infix}-right   { text-align: left !important; }
-      .text#{$infix}-left  { text-align: right !important; }
+      .text#{$infix}-right {
+        text-align: left !important;
+      }
+      .text#{$infix}-left {
+        text-align: right !important;
+      }
+    }
+  }
+
+  .breadcrumb-item {
+    // The separator between breadcrumbs (by default, a forward-slash: "/")
+    + .breadcrumb-item {
+      padding-right: $breadcrumb-item-padding-x;
+      padding-left: 0;
+
+      &::before {
+        padding-right: 0;
+        padding-left: $breadcrumb-item-padding-x;
+      }
+
+      color: $breadcrumb-divider-color;
+      content: $breadcrumb-divider;
     }
   }
 }
