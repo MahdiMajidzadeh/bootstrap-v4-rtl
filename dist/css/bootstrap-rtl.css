@@ -9734,6 +9734,21 @@ a.text-dark:hover, a.text-dark:focus {
   margin-right: .25rem;
 }
 
+.rtl .modal-footer > :not(:last-child),
+[dir="rtl"] .modal-footer > :not(:last-child) {
+  margin-left: .25rem;
+}
+
+.rtl .modal-footer > :first-child,
+[dir="rtl"] .modal-footer > :first-child {
+  margin-right: 0;
+}
+
+.rtl .modal-footer > :last-child,
+[dir="rtl"] .modal-footer > :last-child {
+  margin-left: 0;
+}
+
 .rtl .alert-dismissible .close,
 [dir="rtl"] .alert-dismissible .close {
   right: inherit;

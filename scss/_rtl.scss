@@ -133,11 +133,20 @@
   }
 
   .modal-footer {
-    > :not(:first-child) { margin-right: .25rem; }
-    > :not(:last-child) { margin-left: .25rem; }
-    > :first-child { margin-right: 0; }
-    > :last-child { margin-left: 0; }
+    > :not(:first-child) {
+      margin-right: .25rem;
+    }
+    > :not(:last-child) {
+      margin-left: .25rem;
+    }
+    > :first-child {
+      margin-right: 0;
+    }
+    > :last-child {
+      margin-left: 0;
+    }
   }
+
 
   .alert-dismissible .close {
     right: inherit;
