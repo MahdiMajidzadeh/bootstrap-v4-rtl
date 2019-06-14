@@ -9618,7 +9618,7 @@ a.text-dark:hover, a.text-dark:focus {
 .rtl .custom-control-label::before,
 [dir="rtl"] .custom-control-label::after,
 [dir="rtl"] .custom-control-label::before {
-  right: 0;
+  right: -1.5rem;
   left: inherit;
 }
 
@@ -9713,6 +9713,20 @@ a.text-dark:hover, a.text-dark:focus {
   margin-left: inherit;
 }
 
+.rtl .breadcrumb-item + .breadcrumb-item,
+[dir="rtl"] .breadcrumb-item + .breadcrumb-item {
+  padding-right: 0.5rem;
+  padding-left: 0;
+  color: #6c757d;
+  content: "/";
+}
+
+.rtl .breadcrumb-item + .breadcrumb-item::before,
+[dir="rtl"] .breadcrumb-item + .breadcrumb-item::before {
+  padding-right: 0;
+  padding-left: 0.5rem;
+}
+
 .rtl .list-group,
 [dir="rtl"] .list-group {
   padding-right: 0;
@@ -9781,6 +9795,22 @@ a.text-dark:hover, a.text-dark:focus {
 [dir="rtl"] .list-inline {
   padding-right: 0;
   padding-left: inherit;
+}
+
+.rtl .pagination .page-item:first-child .page-link,
+[dir="rtl"] .pagination .page-item:first-child .page-link {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.rtl .pagination .page-item:last-child .page-link,
+[dir="rtl"] .pagination .page-item:last-child .page-link {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
 }
 
 .rtl .offset-1,

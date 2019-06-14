@@ -120,29 +120,19 @@
     margin-left: inherit;
   }
 
-  @mixin form-validation-state($state, $color, $icon) {
-    .form-control {
-      .was-validated &:#{$state},
-      &.is-#{$state} {
+  .breadcrumb-item {
+    + .breadcrumb-item {
+      padding-right: $breadcrumb-item-padding-x;
+      padding-left: 0;
 
-        @if $enable-validation-icons {
-          padding-right: $input-padding-x;
-          padding-left: $input-height-inner;
-          background-position: center left $input-height-inner-quarter;
-        }
+      &::before {
+        padding-right: 0;
+        padding-left: $breadcrumb-item-padding-x;
       }
+
+      color: $breadcrumb-divider-color;
+      content: $breadcrumb-divider;
     }
-  }
-
-  // Form validation
-  //
-  // Provide feedback to users when form field values are valid or invalid. Works
-  // primarily for client-side validation via scoped `:invalid` and `:valid`
-  // pseudo-classes but also includes `.is-invalid` and `.is-valid` classes for
-  // server side validation.
-
-  @each $state, $data in $form-validation-states {
-    @include form-validation-state($state, map-get($data, color), map-get($data, icon));
   }
 
   .list-group {
@@ -176,7 +166,6 @@
     }
   }
 
-
   .alert-dismissible .close {
     right: inherit;
     left: 0;
@@ -204,7 +193,7 @@
     padding-left: inherit;
   }
 
-  @mixin pagination-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+  .pagination{
     .page-item {
       &:first-child {
         .page-link {
@@ -212,6 +201,7 @@
           @include border-left-radius(0);
         }
       }
+
       &:last-child {
         .page-link {
           @include border-right-radius(0);
@@ -219,29 +209,6 @@
         }
       }
     }
-  }
-  .page-item {
-    &:first-child {
-      .page-link {
-        @include border-right-radius($border-radius);
-        @include border-left-radius(0);
-      }
-    }
-
-    &:last-child {
-      .page-link {
-        @include border-right-radius(0);
-        @include border-left-radius($border-radius);
-      }
-    }
-  }
-
-  .pagination-lg {
-    @include pagination-size($pagination-padding-y-lg, $pagination-padding-x-lg, $font-size-lg, $line-height-lg, $border-radius-lg);
-  }
-
-  .pagination-sm {
-    @include pagination-size($pagination-padding-y-sm, $pagination-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
   }
 
   @mixin make-col-offset($size, $columns: $grid-columns) {
@@ -315,22 +282,6 @@
       .text#{$infix}-left {
         text-align: right !important;
       }
-    }
-  }
-
-  .breadcrumb-item {
-    // The separator between breadcrumbs (by default, a forward-slash: "/")
-    + .breadcrumb-item {
-      padding-right: $breadcrumb-item-padding-x;
-      padding-left: 0;
-
-      &::before {
-        padding-right: 0;
-        padding-left: $breadcrumb-item-padding-x;
-      }
-
-      color: $breadcrumb-divider-color;
-      content: $breadcrumb-divider;
     }
   }
 }
