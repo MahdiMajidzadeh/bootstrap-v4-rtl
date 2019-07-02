@@ -27,6 +27,8 @@ Install with npm:
 
 Add `rtl` class to any element and every thing inside that turn to RTL layout
 
+**NOTE:** This package is designed for multilanguage projects to change all page direction just with adding `rtl` class, so all left and right classes is reversed when you are in rtl
+
 ## What's included
 
 Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
