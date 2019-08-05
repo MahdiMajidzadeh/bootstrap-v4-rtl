@@ -61,6 +61,29 @@
     background-size: $custom-select-bg-size;
   }
 
+  // switches
+  //
+  // Tweak a few things for RTL switches
+  .custom-switch {
+    padding-right: $custom-switch-width + $custom-control-gutter; //rtl
+
+    .custom-control-label {
+      &::before {
+        right: -($custom-switch-width + $custom-control-gutter); //rtl
+      }
+
+      &::after {
+        right: calc(#{-($custom-switch-width + $custom-control-gutter)} + #{$custom-control-indicator-border-width * 2}); //rtl
+      }
+    }
+
+    .custom-control-input:checked~.custom-control-label {
+      &::after {
+        transform: translateX(- $custom-switch-width + $custom-control-indicator-size); //rtl
+      }
+    }
+  }
+
   .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
   .input-group > .input-group-append:last-child > .input-group-text:not(:last-child),
   .input-group > .input-group-append:not(:last-child) > .btn,
