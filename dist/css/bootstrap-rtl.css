@@ -1742,6 +1742,11 @@ pre code {
   opacity: 1;
 }
 
+.form-control::-moz-placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
 .form-control:-ms-input-placeholder {
   color: #6c757d;
   opacity: 1;
@@ -3535,9 +3540,7 @@ input[type="button"].btn-block {
   height: calc(1rem - 4px);
   background-color: #adb5bd;
   border-radius: 0.5rem;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
   transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3548,7 +3551,6 @@ input[type="button"].btn-block {
 
 .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
   background-color: #fff;
-  -webkit-transform: translateX(0.75rem);
   transform: translateX(0.75rem);
 }
 
@@ -4500,9 +4502,9 @@ input[type="button"].btn-block {
 
 @media (min-width: 576px) {
   .card-columns {
-    -webkit-column-count: 3;
+    -moz-column-count: 3;
     column-count: 3;
-    -webkit-column-gap: 1.25rem;
+    -moz-column-gap: 1.25rem;
     column-gap: 1.25rem;
     orphans: 1;
     widows: 1;
@@ -5464,10 +5466,7 @@ a.close.disabled {
 }
 
 .modal.fade .modal-dialog {
-  transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-  -webkit-transform: translate(0, -50px);
   transform: translate(0, -50px);
 }
 
@@ -5478,7 +5477,6 @@ a.close.disabled {
 }
 
 .modal.show .modal-dialog {
-  -webkit-transform: none;
   transform: none;
 }
 
@@ -5945,9 +5943,7 @@ a.close.disabled {
   margin-right: -100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transition: -webkit-transform 0.6s ease-in-out;
   transition: transform 0.6s ease-in-out;
-  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -5964,20 +5960,17 @@ a.close.disabled {
 
 .carousel-item-next:not(.carousel-item-left),
 .active.carousel-item-right {
-  -webkit-transform: translateX(100%);
   transform: translateX(100%);
 }
 
 .carousel-item-prev:not(.carousel-item-right),
 .active.carousel-item-left {
-  -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
 }
 
 .carousel-fade .carousel-item {
   opacity: 0;
   transition-property: opacity;
-  -webkit-transform: none;
   transform: none;
 }
 
@@ -6113,14 +6106,12 @@ a.close.disabled {
 
 @-webkit-keyframes spinner-border {
   to {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
 
 @keyframes spinner-border {
   to {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -6145,7 +6136,6 @@ a.close.disabled {
 
 @-webkit-keyframes spinner-grow {
   0% {
-    -webkit-transform: scale(0);
     transform: scale(0);
   }
   50% {
@@ -6155,7 +6145,6 @@ a.close.disabled {
 
 @keyframes spinner-grow {
   0% {
-    -webkit-transform: scale(0);
     transform: scale(0);
   }
   50% {
@@ -9614,6 +9603,27 @@ a.text-dark:hover, a.text-dark:focus {
   border-radius: 0.25rem 0 0 0.25rem;
 }
 
+.rtl .custom-control,
+[dir="rtl"] .custom-control {
+  padding-right: 1.5rem;
+  padding-left: inherit;
+  margin-right: inherit;
+  margin-left: 1rem;
+}
+
+.rtl .custom-control-indicator,
+[dir="rtl"] .custom-control-indicator {
+  right: 0;
+  left: inherit;
+}
+
+.rtl .custom-file-label::after,
+[dir="rtl"] .custom-file-label::after {
+  right: initial;
+  left: -1px;
+  border-radius: .25rem 0 0 .25rem;
+}
+
 .rtl .custom-control-label::after,
 .rtl .custom-control-label::before,
 [dir="rtl"] .custom-control-label::after,
@@ -9627,6 +9637,27 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 0.375rem 0.75rem 0.375rem 1.75rem;
   background: #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat left 0.75rem center;
   background-size: 8px 10px;
+}
+
+.rtl .custom-switch,
+[dir="rtl"] .custom-switch {
+  padding-right: 2.25rem;
+  padding-left: inherit;
+}
+
+.rtl .custom-switch .custom-control-label::before,
+[dir="rtl"] .custom-switch .custom-control-label::before {
+  right: -2.25rem;
+}
+
+.rtl .custom-switch .custom-control-label::after,
+[dir="rtl"] .custom-switch .custom-control-label::after {
+  right: calc(-2.25rem + 2px);
+}
+
+.rtl .custom-switch .custom-control-input:checked ~ .custom-control-label::after,
+[dir="rtl"] .custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+  transform: translateX(-0.75rem);
 }
 
 .rtl .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
@@ -9678,27 +9709,6 @@ a.text-dark:hover, a.text-dark:focus {
 [dir="rtl"] .input-group > .custom-select:not(:last-child):not(:first-child),
 [dir="rtl"] .input-group > .form-control:not(:last-child):not(:first-child) {
   border-radius: 0;
-}
-
-.rtl .custom-control,
-[dir="rtl"] .custom-control {
-  padding-right: 1.5rem;
-  padding-left: inherit;
-  margin-right: inherit;
-  margin-left: 1rem;
-}
-
-.rtl .custom-control-indicator,
-[dir="rtl"] .custom-control-indicator {
-  right: 0;
-  left: inherit;
-}
-
-.rtl .custom-file-label::after,
-[dir="rtl"] .custom-file-label::after {
-  right: initial;
-  left: -1px;
-  border-radius: .25rem 0 0 .25rem;
 }
 
 .rtl .radio input,
