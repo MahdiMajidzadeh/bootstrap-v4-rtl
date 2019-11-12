@@ -47,19 +47,6 @@ bootstrap/
 
 We provide compiled CSS and JS (`bootstrap.*`), as well as compiled and minified CSS and JS (`bootstrap.min.*`). CSS [source maps](https://developers.google.com/web/tools/chrome-devtools/debug/readability/source-maps) (`bootstrap.*.map`) are available for use with certain browsers' developer tools.
 
-## Creators
+## Contributors
 
-**Mark Otto**
-
-- <https://twitter.com/mdo>
-- <https://github.com/mdo>
-
-**Jacob Thornton**
-
-- <https://twitter.com/fat>
-- <https://github.com/fat>
-
-**Mahdi Majidzadeh** (rtl version)
-
-- <https://twitter.com/mahdimajidzadeh>
-- <https://github.com/mahdimajidzadeh>
+Mahdi Majidzadeh [twitter](https://twitter.com/mahdimajidzadeh) - [github](https://github.com/mahdimajidzadeh)
