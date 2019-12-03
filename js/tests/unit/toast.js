@@ -146,11 +146,11 @@ $(function () {
       .bootstrapToast()
       .appendTo($('#qunit-fixture'))
 
-    assert.ok(typeof Toast._getInstance($toast[0]) !== 'undefined')
+    assert.ok(typeof $toast.data('bs.toast') !== 'undefined')
 
     $toast.bootstrapToast('dispose')
 
-    assert.ok(Toast._getInstance($toast[0]) === null)
+    assert.ok(typeof $toast.data('bs.toast') === 'undefined')
   })
 
   QUnit.test('should allow to destroy toast and hide it before that', function (assert) {
@@ -171,11 +171,11 @@ $(function () {
     $toast.one('shown.bs.toast', function () {
       setTimeout(function () {
         assert.ok($toast.hasClass('show'))
-        assert.ok(typeof Toast._getInstance($toast[0]) !== 'undefined')
+        assert.ok(typeof $toast.data('bs.toast') !== 'undefined')
 
         $toast.bootstrapToast('dispose')
 
-        assert.ok(Toast._getInstance($toast[0]) === null)
+        assert.ok(typeof $toast.data('bs.toast') === 'undefined')
         assert.ok($toast.hasClass('show') === false)
 
         done()
@@ -253,7 +253,78 @@ $(function () {
     var $toast = $(toastHtml)
       .bootstrapToast()
 
-    var toast = Toast._getInstance($toast[0])
+    var toast = $toast.data('bs.toast')
     assert.strictEqual(toast._config.delay, defaultDelay)
+  })
+
+  QUnit.test('should not trigger shown if show is prevented', function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    var toastHtml =
+      '<div class="toast" data-delay="1" data-autohide="false">' +
+        '<div class="toast-body">' +
+          'a simple toast' +
+        '</div>' +
+      '</div>'
+
+    var $toast = $(toastHtml)
+      .bootstrapToast()
+      .appendTo($('#qunit-fixture'))
+
+    var shownCalled = false
+    function assertDone() {
+      setTimeout(function () {
+        assert.strictEqual(shownCalled, false)
+        done()
+      }, 20)
+    }
+
+    $toast
+      .on('show.bs.toast', function (event) {
+        event.preventDefault()
+        assertDone()
+      })
+      .on('shown.bs.toast', function () {
+        shownCalled = true
+      })
+      .bootstrapToast('show')
+  })
+
+  QUnit.test('should not trigger hidden if hide is prevented', function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    var toastHtml =
+      '<div class="toast" data-delay="1" data-autohide="false">' +
+        '<div class="toast-body">' +
+          'a simple toast' +
+        '</div>' +
+      '</div>'
+
+    var $toast = $(toastHtml)
+      .bootstrapToast()
+      .appendTo($('#qunit-fixture'))
+
+    var hiddenCalled = false
+    function assertDone() {
+      setTimeout(function () {
+        assert.strictEqual(hiddenCalled, false)
+        done()
+      }, 20)
+    }
+
+    $toast
+      .on('shown.bs.toast', function () {
+        $toast.bootstrapToast('hide')
+      })
+      .on('hide.bs.toast', function (event) {
+        event.preventDefault()
+        assertDone()
+      })
+      .on('hidden.bs.toast', function () {
+        hiddenCalled = true
+      })
+      .bootstrapToast('show')
   })
 })

@@ -1,11 +1,9 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.3.1): tools/sanitizer.js
+ * Bootstrap (v4.4.1): tools/sanitizer.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
-
-import Util from '../util'
 
 const uriAttrs = [
   'background',
@@ -103,7 +101,7 @@ export function sanitizeHtml(unsafeHtml, whiteList, sanitizeFn) {
   const domParser = new window.DOMParser()
   const createdDocument = domParser.parseFromString(unsafeHtml, 'text/html')
   const whitelistKeys = Object.keys(whiteList)
-  const elements = Util.makeArray(createdDocument.body.querySelectorAll('*'))
+  const elements = [].slice.call(createdDocument.body.querySelectorAll('*'))
 
   for (let i = 0, len = elements.length; i < len; i++) {
     const el = elements[i]
@@ -115,7 +113,7 @@ export function sanitizeHtml(unsafeHtml, whiteList, sanitizeFn) {
       continue
     }
 
-    const attributeList = Util.makeArray(el.attributes)
+    const attributeList = [].slice.call(el.attributes)
     const whitelistedAttributes = [].concat(whiteList['*'] || [], whiteList[elName] || [])
 
     attributeList.forEach((attr) => {

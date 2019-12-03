@@ -1,17 +1,15 @@
 /*!
-  * Bootstrap tab.js v4.3.1-0 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2019 Mahdi Majidzadeh
+  * Bootstrap tab.js v4.4.1 (https://getbootstrap.com/)
+  * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('./dom/data.js'), require('./dom/eventHandler.js'), require('./dom/selectorEngine.js'), require('./util.js')) :
-  typeof define === 'function' && define.amd ? define(['./dom/data.js', './dom/eventHandler.js', './dom/selectorEngine.js', './util.js'], factory) :
-  (global = global || self, global.Tab = factory(global.Data, global.EventHandler, global.SelectorEngine, global.Util));
-}(this, function (Data, EventHandler, SelectorEngine, Util) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('jquery'), require('./util.js')) :
+  typeof define === 'function' && define.amd ? define(['jquery', './util.js'], factory) :
+  (global = global || self, global.Tab = factory(global.jQuery, global.Util));
+}(this, (function ($, Util) { 'use strict';
 
-  Data = Data && Data.hasOwnProperty('default') ? Data['default'] : Data;
-  EventHandler = EventHandler && EventHandler.hasOwnProperty('default') ? EventHandler['default'] : EventHandler;
-  SelectorEngine = SelectorEngine && SelectorEngine.hasOwnProperty('default') ? SelectorEngine['default'] : SelectorEngine;
+  $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
   Util = Util && Util.hasOwnProperty('default') ? Util['default'] : Util;
 
   function _defineProperties(target, props) {
@@ -37,10 +35,11 @@
    */
 
   var NAME = 'tab';
-  var VERSION = '4.3.1';
+  var VERSION = '4.4.1';
   var DATA_KEY = 'bs.tab';
   var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
+  var JQUERY_NO_CONFLICT = $.fn[NAME];
   var Event = {
     HIDE: "hide" + EVENT_KEY,
     HIDDEN: "hidden" + EVENT_KEY,
@@ -59,24 +58,22 @@
     DROPDOWN: '.dropdown',
     NAV_LIST_GROUP: '.nav, .list-group',
     ACTIVE: '.active',
-    ACTIVE_UL: ':scope > li > .active',
+    ACTIVE_UL: '> li > .active',
     DATA_TOGGLE: '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]',
     DROPDOWN_TOGGLE: '.dropdown-toggle',
-    DROPDOWN_ACTIVE_CHILD: ':scope > .dropdown-menu .active'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
+    DROPDOWN_ACTIVE_CHILD: '> .dropdown-menu .active'
   };
+  /**
+   * ------------------------------------------------------------------------
+   * Class Definition
+   * ------------------------------------------------------------------------
+   */
 
   var Tab =
   /*#__PURE__*/
   function () {
     function Tab(element) {
       this._element = element;
-      Data.setData(this._element, DATA_KEY, this);
     } // Getters
 
 
@@ -86,50 +83,53 @@
     _proto.show = function show() {
       var _this = this;
 
-      if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && this._element.classList.contains(ClassName.ACTIVE) || this._element.classList.contains(ClassName.DISABLED)) {
+      if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && $(this._element).hasClass(ClassName.ACTIVE) || $(this._element).hasClass(ClassName.DISABLED)) {
         return;
       }
 
       var target;
       var previous;
-      var listElement = SelectorEngine.closest(this._element, Selector.NAV_LIST_GROUP);
+      var listElement = $(this._element).closest(Selector.NAV_LIST_GROUP)[0];
       var selector = Util.getSelectorFromElement(this._element);
 
       if (listElement) {
         var itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? Selector.ACTIVE_UL : Selector.ACTIVE;
-        previous = Util.makeArray(SelectorEngine.find(itemSelector, listElement));
+        previous = $.makeArray($(listElement).find(itemSelector));
         previous = previous[previous.length - 1];
       }
 
-      var hideEvent = null;
-
-      if (previous) {
-        hideEvent = EventHandler.trigger(previous, Event.HIDE, {
-          relatedTarget: this._element
-        });
-      }
-
-      var showEvent = EventHandler.trigger(this._element, Event.SHOW, {
+      var hideEvent = $.Event(Event.HIDE, {
+        relatedTarget: this._element
+      });
+      var showEvent = $.Event(Event.SHOW, {
         relatedTarget: previous
       });
 
-      if (showEvent.defaultPrevented || hideEvent !== null && hideEvent.defaultPrevented) {
+      if (previous) {
+        $(previous).trigger(hideEvent);
+      }
+
+      $(this._element).trigger(showEvent);
+
+      if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) {
         return;
       }
 
       if (selector) {
-        target = SelectorEngine.findOne(selector);
+        target = document.querySelector(selector);
       }
 
       this._activate(this._element, listElement);
 
       var complete = function complete() {
-        EventHandler.trigger(previous, Event.HIDDEN, {
+        var hiddenEvent = $.Event(Event.HIDDEN, {
           relatedTarget: _this._element
         });
-        EventHandler.trigger(_this._element, Event.SHOWN, {
+        var shownEvent = $.Event(Event.SHOWN, {
           relatedTarget: previous
         });
+        $(previous).trigger(hiddenEvent);
+        $(_this._element).trigger(shownEvent);
       };
 
       if (target) {
@@ -140,7 +140,7 @@
     };
 
     _proto.dispose = function dispose() {
-      Data.removeData(this._element, DATA_KEY);
+      $.removeData(this._element, DATA_KEY);
       this._element = null;
     } // Private
     ;
@@ -148,9 +148,9 @@
     _proto._activate = function _activate(element, container, callback) {
       var _this2 = this;
 
-      var activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? SelectorEngine.find(Selector.ACTIVE_UL, container) : SelectorEngine.children(container, Selector.ACTIVE);
+      var activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? $(container).find(Selector.ACTIVE_UL) : $(container).children(Selector.ACTIVE);
       var active = activeElements[0];
-      var isTransitioning = callback && active && active.classList.contains(ClassName.FADE);
+      var isTransitioning = callback && active && $(active).hasClass(ClassName.FADE);
 
       var complete = function complete() {
         return _this2._transitionComplete(element, active, callback);
@@ -158,9 +158,7 @@
 
       if (active && isTransitioning) {
         var transitionDuration = Util.getTransitionDurationFromElement(active);
-        active.classList.remove(ClassName.SHOW);
-        EventHandler.one(active, Util.TRANSITION_END, complete);
-        Util.emulateTransitionEnd(active, transitionDuration);
+        $(active).removeClass(ClassName.SHOW).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
         complete();
       }
@@ -168,11 +166,11 @@
 
     _proto._transitionComplete = function _transitionComplete(element, active, callback) {
       if (active) {
-        active.classList.remove(ClassName.ACTIVE);
-        var dropdownChild = SelectorEngine.findOne(Selector.DROPDOWN_ACTIVE_CHILD, active.parentNode);
+        $(active).removeClass(ClassName.ACTIVE);
+        var dropdownChild = $(active.parentNode).find(Selector.DROPDOWN_ACTIVE_CHILD)[0];
 
         if (dropdownChild) {
-          dropdownChild.classList.remove(ClassName.ACTIVE);
+          $(dropdownChild).removeClass(ClassName.ACTIVE);
         }
 
         if (active.getAttribute('role') === 'tab') {
@@ -180,7 +178,7 @@
         }
       }
 
-      element.classList.add(ClassName.ACTIVE);
+      $(element).addClass(ClassName.ACTIVE);
 
       if (element.getAttribute('role') === 'tab') {
         element.setAttribute('aria-selected', true);
@@ -192,13 +190,12 @@
         element.classList.add(ClassName.SHOW);
       }
 
-      if (element.parentNode && element.parentNode.classList.contains(ClassName.DROPDOWN_MENU)) {
-        var dropdownElement = SelectorEngine.closest(element, Selector.DROPDOWN);
+      if (element.parentNode && $(element.parentNode).hasClass(ClassName.DROPDOWN_MENU)) {
+        var dropdownElement = $(element).closest(Selector.DROPDOWN)[0];
 
         if (dropdownElement) {
-          Util.makeArray(SelectorEngine.find(Selector.DROPDOWN_TOGGLE)).forEach(function (dropdown) {
-            return dropdown.classList.add(ClassName.ACTIVE);
-          });
+          var dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(Selector.DROPDOWN_TOGGLE));
+          $(dropdownToggleList).addClass(ClassName.ACTIVE);
         }
 
         element.setAttribute('aria-expanded', true);
@@ -212,7 +209,13 @@
 
     Tab._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var data = Data.getData(this, DATA_KEY) || new Tab(this);
+        var $this = $(this);
+        var data = $this.data(DATA_KEY);
+
+        if (!data) {
+          data = new Tab(this);
+          $this.data(DATA_KEY, data);
+        }
 
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
@@ -222,10 +225,6 @@
           data[config]();
         }
       });
-    };
-
-    Tab._getInstance = function _getInstance(element) {
-      return Data.getData(element, DATA_KEY);
     };
 
     _createClass(Tab, null, [{
@@ -244,10 +243,10 @@
    */
 
 
-  EventHandler.on(document, Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
+  $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
     event.preventDefault();
-    var data = Data.getData(this, DATA_KEY) || new Tab(this);
-    data.show();
+
+    Tab._jQueryInterface.call($(this), 'show');
   });
   /**
    * ------------------------------------------------------------------------
@@ -255,20 +254,15 @@
    * ------------------------------------------------------------------------
    */
 
-  var $ = Util.jQuery;
+  $.fn[NAME] = Tab._jQueryInterface;
+  $.fn[NAME].Constructor = Tab;
 
-  if (typeof $ !== 'undefined') {
-    var JQUERY_NO_CONFLICT = $.fn[NAME];
-    $.fn[NAME] = Tab._jQueryInterface;
-    $.fn[NAME].Constructor = Tab;
-
-    $.fn[NAME].noConflict = function () {
-      $.fn[NAME] = JQUERY_NO_CONFLICT;
-      return Tab._jQueryInterface;
-    };
-  }
+  $.fn[NAME].noConflict = function () {
+    $.fn[NAME] = JQUERY_NO_CONFLICT;
+    return Tab._jQueryInterface;
+  };
 
   return Tab;
 
-}));
+})));
 //# sourceMappingURL=tab.js.map

@@ -1,14 +1,11 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.3.1): button.js
+ * Bootstrap (v4.4.1): button.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-import Data from './dom/data'
-import EventHandler from './dom/eventHandler'
-import SelectorEngine from './dom/selectorEngine'
-import Util from './util'
+import $ from 'jquery'
 
 /**
  * ------------------------------------------------------------------------
@@ -17,10 +14,11 @@ import Util from './util'
  */
 
 const NAME                = 'button'
-const VERSION             = '4.3.1'
+const VERSION             = '4.4.1'
 const DATA_KEY            = 'bs.button'
 const EVENT_KEY           = `.${DATA_KEY}`
 const DATA_API_KEY        = '.data-api'
+const JQUERY_NO_CONFLICT  = $.fn[NAME]
 
 const ClassName = {
   ACTIVE : 'active',
@@ -29,17 +27,20 @@ const ClassName = {
 }
 
 const Selector = {
-  DATA_TOGGLE_CARROT : '[data-toggle^="button"]',
-  DATA_TOGGLE        : '[data-toggle="buttons"]',
-  INPUT              : 'input:not([type="hidden"])',
-  ACTIVE             : '.active',
-  BUTTON             : '.btn'
+  DATA_TOGGLE_CARROT   : '[data-toggle^="button"]',
+  DATA_TOGGLES         : '[data-toggle="buttons"]',
+  DATA_TOGGLE          : '[data-toggle="button"]',
+  DATA_TOGGLES_BUTTONS : '[data-toggle="buttons"] .btn',
+  INPUT                : 'input:not([type="hidden"])',
+  ACTIVE               : '.active',
+  BUTTON               : '.btn'
 }
 
 const Event = {
   CLICK_DATA_API      : `click${EVENT_KEY}${DATA_API_KEY}`,
-  FOCUS_DATA_API      : `focus${EVENT_KEY}${DATA_API_KEY}`,
-  BLUR_DATA_API       : `blur${EVENT_KEY}${DATA_API_KEY}`
+  FOCUS_BLUR_DATA_API : `focus${EVENT_KEY}${DATA_API_KEY} ` +
+                          `blur${EVENT_KEY}${DATA_API_KEY}`,
+  LOAD_DATA_API       : `load${EVENT_KEY}${DATA_API_KEY}`
 }
 
 /**
@@ -51,7 +52,6 @@ const Event = {
 class Button {
   constructor(element) {
     this._element = element
-    Data.setData(element, DATA_KEY, this)
   }
 
   // Getters
@@ -65,14 +65,12 @@ class Button {
   toggle() {
     let triggerChangeEvent = true
     let addAriaPressed = true
-
-    const rootElement = SelectorEngine.closest(
-      this._element,
-      Selector.DATA_TOGGLE
-    )
+    const rootElement = $(this._element).closest(
+      Selector.DATA_TOGGLES
+    )[0]
 
     if (rootElement) {
-      const input = SelectorEngine.findOne(Selector.INPUT, this._element)
+      const input = this._element.querySelector(Selector.INPUT)
 
       if (input) {
         if (input.type === 'radio') {
@@ -80,24 +78,24 @@ class Button {
             this._element.classList.contains(ClassName.ACTIVE)) {
             triggerChangeEvent = false
           } else {
-            const activeElement = SelectorEngine.findOne(Selector.ACTIVE, rootElement)
+            const activeElement = rootElement.querySelector(Selector.ACTIVE)
 
             if (activeElement) {
-              activeElement.classList.remove(ClassName.ACTIVE)
+              $(activeElement).removeClass(ClassName.ACTIVE)
             }
           }
+        } else if (input.type === 'checkbox') {
+          if (this._element.tagName === 'LABEL' && input.checked === this._element.classList.contains(ClassName.ACTIVE)) {
+            triggerChangeEvent = false
+          }
+        } else {
+          // if it's not a radio button or checkbox don't add a pointless/invalid checked property to the input
+          triggerChangeEvent = false
         }
 
         if (triggerChangeEvent) {
-          if (input.hasAttribute('disabled') ||
-            rootElement.hasAttribute('disabled') ||
-            input.classList.contains('disabled') ||
-            rootElement.classList.contains('disabled')) {
-            return
-          }
-
           input.checked = !this._element.classList.contains(ClassName.ACTIVE)
-          EventHandler.trigger(input, 'change')
+          $(input).trigger('change')
         }
 
         input.focus()
@@ -105,18 +103,20 @@ class Button {
       }
     }
 
-    if (addAriaPressed) {
-      this._element.setAttribute('aria-pressed',
-        !this._element.classList.contains(ClassName.ACTIVE))
-    }
+    if (!(this._element.hasAttribute('disabled') || this._element.classList.contains('disabled'))) {
+      if (addAriaPressed) {
+        this._element.setAttribute('aria-pressed',
+          !this._element.classList.contains(ClassName.ACTIVE))
+      }
 
-    if (triggerChangeEvent) {
-      this._element.classList.toggle(ClassName.ACTIVE)
+      if (triggerChangeEvent) {
+        $(this._element).toggleClass(ClassName.ACTIVE)
+      }
     }
   }
 
   dispose() {
-    Data.removeData(this._element, DATA_KEY)
+    $.removeData(this._element, DATA_KEY)
     this._element = null
   }
 
@@ -124,20 +124,17 @@ class Button {
 
   static _jQueryInterface(config) {
     return this.each(function () {
-      let data = Data.getData(this, DATA_KEY)
+      let data = $(this).data(DATA_KEY)
 
       if (!data) {
         data = new Button(this)
+        $(this).data(DATA_KEY, data)
       }
 
       if (config === 'toggle') {
         data[config]()
       }
     })
-  }
-
-  static _getInstance(element) {
-    return Data.getData(element, DATA_KEY)
   }
 }
 
@@ -147,49 +144,70 @@ class Button {
  * ------------------------------------------------------------------------
  */
 
-EventHandler.on(document, Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, (event) => {
-  event.preventDefault()
+$(document)
+  .on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, (event) => {
+    let button = event.target
 
-  let button = event.target
-  if (!button.classList.contains(ClassName.BUTTON)) {
-    button = SelectorEngine.closest(button, Selector.BUTTON)
+    if (!$(button).hasClass(ClassName.BUTTON)) {
+      button = $(button).closest(Selector.BUTTON)[0]
+    }
+
+    if (!button || button.hasAttribute('disabled') || button.classList.contains('disabled')) {
+      event.preventDefault() // work around Firefox bug #1540995
+    } else {
+      const inputBtn = button.querySelector(Selector.INPUT)
+
+      if (inputBtn && (inputBtn.hasAttribute('disabled') || inputBtn.classList.contains('disabled'))) {
+        event.preventDefault() // work around Firefox bug #1540995
+        return
+      }
+
+      Button._jQueryInterface.call($(button), 'toggle')
+    }
+  })
+  .on(Event.FOCUS_BLUR_DATA_API, Selector.DATA_TOGGLE_CARROT, (event) => {
+    const button = $(event.target).closest(Selector.BUTTON)[0]
+    $(button).toggleClass(ClassName.FOCUS, /^focus(in)?$/.test(event.type))
+  })
+
+$(window).on(Event.LOAD_DATA_API, () => {
+  // ensure correct active class is set to match the controls' actual values/states
+
+  // find all checkboxes/readio buttons inside data-toggle groups
+  let buttons = [].slice.call(document.querySelectorAll(Selector.DATA_TOGGLES_BUTTONS))
+  for (let i = 0, len = buttons.length; i < len; i++) {
+    const button = buttons[i]
+    const input = button.querySelector(Selector.INPUT)
+    if (input.checked || input.hasAttribute('checked')) {
+      button.classList.add(ClassName.ACTIVE)
+    } else {
+      button.classList.remove(ClassName.ACTIVE)
+    }
   }
 
-  let data = Data.getData(button, DATA_KEY)
-  if (!data) {
-    data = new Button(button)
-    Data.setData(button, DATA_KEY, data)
+  // find all button toggles
+  buttons = [].slice.call(document.querySelectorAll(Selector.DATA_TOGGLE))
+  for (let i = 0, len = buttons.length; i < len; i++) {
+    const button = buttons[i]
+    if (button.getAttribute('aria-pressed') === 'true') {
+      button.classList.add(ClassName.ACTIVE)
+    } else {
+      button.classList.remove(ClassName.ACTIVE)
+    }
   }
-  data.toggle()
-})
-
-EventHandler.on(document, Event.FOCUS_DATA_API, Selector.DATA_TOGGLE_CARROT, (event) => {
-  const button = SelectorEngine.closest(event.target, Selector.BUTTON)
-  button.classList.add(ClassName.FOCUS)
-})
-
-EventHandler.on(document, Event.BLUR_DATA_API, Selector.DATA_TOGGLE_CARROT, (event) => {
-  const button = SelectorEngine.closest(event.target, Selector.BUTTON)
-  button.classList.remove(ClassName.FOCUS)
 })
 
 /**
  * ------------------------------------------------------------------------
  * jQuery
  * ------------------------------------------------------------------------
- * add .button to jQuery only if jQuery is present
  */
 
-const $ = Util.jQuery
-if (typeof $ !== 'undefined') {
-  const JQUERY_NO_CONFLICT  = $.fn[NAME]
-  $.fn[NAME]                = Button._jQueryInterface
-  $.fn[NAME].Constructor    = Button
-
-  $.fn[NAME].noConflict  = () => {
-    $.fn[NAME] = JQUERY_NO_CONFLICT
-    return Button._jQueryInterface
-  }
+$.fn[NAME] = Button._jQueryInterface
+$.fn[NAME].Constructor = Button
+$.fn[NAME].noConflict = () => {
+  $.fn[NAME] = JQUERY_NO_CONFLICT
+  return Button._jQueryInterface
 }
 
 export default Button

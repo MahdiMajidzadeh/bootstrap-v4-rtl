@@ -1,8 +1,6 @@
 $(function () {
   'use strict'
 
-  var Alert = typeof window.bootstrap !== 'undefined' ? window.bootstrap.Alert : window.Alert
-
   QUnit.module('alert plugin')
 
   QUnit.test('should be defined on jquery object', function (assert) {
@@ -44,8 +42,8 @@ $(function () {
 
     var $alert = $(alertHTML).bootstrapAlert().appendTo($('#qunit-fixture'))
 
-    var closeBtn = $alert.find('.close')[0]
-    closeBtn.dispatchEvent(new Event('click'))
+    $alert.find('.close').trigger('click')
+
     assert.strictEqual($alert.hasClass('show'), false, 'remove .show class on .close click')
   })
 
@@ -60,31 +58,28 @@ $(function () {
 
     assert.notEqual($('#qunit-fixture').find('.alert').length, 0, 'element added to dom')
 
-    $alert[0].addEventListener('closed.bs.alert', function () {
-      assert.strictEqual($('#qunit-fixture').find('.alert').length, 0, 'element removed from dom')
-      done()
-    })
-
-    var closeBtn = $alert.find('.close')[0]
-    closeBtn.dispatchEvent(new Event('click'))
+    $alert
+      .one('closed.bs.alert', function () {
+        assert.strictEqual($('#qunit-fixture').find('.alert').length, 0, 'element removed from dom')
+        done()
+      })
+      .find('.close')
+      .trigger('click')
   })
 
   QUnit.test('should not fire closed when close is prevented', function (assert) {
     assert.expect(1)
     var done = assert.async()
-    var $alert = $('<div class="alert"/>')
-    $alert.appendTo('#qunit-fixture')
-
-    $alert[0].addEventListener('close.bs.alert', function (e) {
-      e.preventDefault()
-      assert.ok(true, 'close event fired')
-      done()
-    })
-    $alert[0].addEventListener('closed.bs.alert', function () {
-      assert.ok(false, 'closed event fired')
-    })
-
-    $alert.bootstrapAlert('close')
+    $('<div class="alert"/>')
+      .on('close.bs.alert', function (e) {
+        e.preventDefault()
+        assert.ok(true, 'close event fired')
+        done()
+      })
+      .on('closed.bs.alert', function () {
+        assert.ok(false, 'closed event fired')
+      })
+      .bootstrapAlert('close')
   })
 
   QUnit.test('close should use internal _element if no element provided', function (assert) {
@@ -93,9 +88,9 @@ $(function () {
     var done = assert.async()
     var $el = $('<div/>')
     var $alert = $el.bootstrapAlert()
-    var alertInstance = Alert._getInstance($alert[0])
+    var alertInstance = $alert.data('bs.alert')
 
-    $alert[0].addEventListener('closed.bs.alert', function () {
+    $alert.one('closed.bs.alert', function () {
       assert.ok('alert closed')
       done()
     })
@@ -109,11 +104,11 @@ $(function () {
     var $el = $('<div/>')
     var $alert = $el.bootstrapAlert()
 
-    assert.ok(typeof Alert._getInstance($alert[0]) !== 'undefined')
+    assert.ok(typeof $alert.data('bs.alert') !== 'undefined')
 
-    Alert._getInstance($alert[0]).dispose()
+    $alert.data('bs.alert').dispose()
 
-    assert.ok(Alert._getInstance($alert[0]) === null)
+    assert.ok(typeof $alert.data('bs.button') === 'undefined')
   })
 
   QUnit.test('should return alert version', function (assert) {

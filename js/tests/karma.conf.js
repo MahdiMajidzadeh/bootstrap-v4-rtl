@@ -27,7 +27,7 @@ const reporters = ['dots']
 const detectBrowsers = {
   usePhantomJS: false,
   postDetection(availableBrowser) {
-    if (typeof process.env.TRAVIS_JOB_ID !== 'undefined' || availableBrowser.includes('Chrome')) {
+    if (process.env.CI === true || availableBrowser.includes('Chrome')) {
       return ['ChromeHeadless']
     }
 
@@ -93,17 +93,9 @@ if (bundle) {
   reporters.push('BrowserStack')
   files = files.concat([
     'node_modules/jquery/dist/jquery.slim.min.js',
-    'js/coverage/dist/util.js',
-    'js/coverage/dist/dom/polyfill.js',
-    'js/coverage/dist/dom/eventHandler.js',
-    'js/coverage/dist/dom/selectorEngine.js',
-    'js/coverage/dist/dom/data.js',
-    'js/coverage/dist/dom/manipulator.js',
-    'js/coverage/dist/dom/!(polyfill).js',
-    'js/coverage/dist/tooltip.js',
-    'js/coverage/dist/!(util|index|tooltip).js', // include all of our js/dist files except util.js, index.js and tooltip.js
-    'js/tests/unit/*.js',
-    'js/tests/unit/dom/*.js'
+    'js/dist/util.js',
+    'js/dist/tooltip.js',
+    'js/dist/!(util|index|tooltip).js' // include all of our js/dist files except util.js, index.js and tooltip.js
   ])
 } else {
   frameworks.push('detectBrowsers')
@@ -116,16 +108,8 @@ if (bundle) {
   files = files.concat([
     jqueryFile,
     'js/coverage/dist/util.js',
-    'js/coverage/dist/dom/polyfill.js',
-    'js/coverage/dist/dom/eventHandler.js',
-    'js/coverage/dist/dom/selectorEngine.js',
-    'js/coverage/dist/dom/data.js',
-    'js/coverage/dist/dom/manipulator.js',
-    'js/coverage/dist/dom/!(polyfill).js',
     'js/coverage/dist/tooltip.js',
-    'js/coverage/dist/!(util|index|tooltip).js', // include all of our js/dist files except util.js, index.js and tooltip.js
-    'js/tests/unit/*.js',
-    'js/tests/unit/dom/*.js'
+    'js/coverage/dist/!(util|index|tooltip).js' // include all of our js/dist files except util.js, index.js and tooltip.js
   ])
   reporters.push('coverage-istanbul')
   conf.customLaunchers = customLaunchers
@@ -140,16 +124,6 @@ if (bundle) {
         branches: 86,
         functions: 89,
         lines: 90
-      },
-      each: {
-        overrides: {
-          'js/src/dom/polyfill.js': {
-            statements: 39,
-            lines: 37,
-            branches: 19,
-            functions: 50
-          }
-        }
       }
     }
   }
