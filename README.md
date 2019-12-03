@@ -5,7 +5,7 @@
 
   <h3 align="center">Bootstrap RTL</h3>
   <p align="center">
-  based on version 4.3.1
+  based on version 4.4.1
   </p>
   <p align="center">
     Sleek, intuitive, and powerful front-end framework for faster and easier web development.
