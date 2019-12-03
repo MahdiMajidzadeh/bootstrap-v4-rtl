@@ -8,7 +8,7 @@ const banner  = require('./banner.js')
 const BUNDLE  = process.env.BUNDLE === 'true'
 
 let fileDest  = 'bootstrap.js'
-const external = ['popper.js']
+const external = ['jquery', 'popper.js']
 const plugins = [
   babel({
     exclude: 'node_modules/**', // Only transpile our source code
@@ -17,11 +17,12 @@ const plugins = [
       'createClass',
       'inheritsLoose',
       'defineProperty',
-      'objectSpread'
+      'objectSpread2'
     ]
   })
 ]
 const globals = {
+  jquery: 'jQuery', // Ensure we use jQuery which is always available even in noConflict mode
   'popper.js': 'Popper'
 }
 
