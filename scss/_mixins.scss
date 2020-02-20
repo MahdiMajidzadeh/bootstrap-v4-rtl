@@ -2,21 +2,11 @@
 //
 // Used in conjunction with global variables to enable certain theme features.
 
-@mixin box-shadow($shadow...) {
-  @if $enable-shadows {
-    box-shadow: $shadow;
-  }
-}
+// Vendor
+@import "vendor/rfs";
 
-@mixin transition($transition...) {
-  @if $enable-transitions {
-    @if length($transition) == 0 {
-      transition: $transition-base;
-    } @else {
-      transition: $transition;
-    }
-  }
-}
+// Deprecate
+@import "mixins/deprecate";
 
 // Utilities
 @import "mixins/breakpoints";
@@ -30,13 +20,12 @@
 @import "mixins/text-emphasis";
 @import "mixins/text-hide";
 @import "mixins/text-truncate";
-@import "mixins/transforms";
 @import "mixins/visibility";
 
-// // Components
+// Components
 @import "mixins/alert";
 @import "mixins/buttons";
-@import "mixins/cards";
+@import "mixins/caret";
 @import "mixins/pagination";
 @import "mixins/lists";
 @import "mixins/list-group";
@@ -44,14 +33,15 @@
 @import "mixins/forms";
 @import "mixins/table-row";
 
-// // Skins
+// Skins
 @import "mixins/background-variant";
 @import "mixins/border-radius";
+@import "mixins/box-shadow";
 @import "mixins/gradients";
+@import "mixins/transition";
 
-// // Layout
+// Layout
 @import "mixins/clearfix";
-// @import "mixins/navbar-align";
 @import "mixins/grid-framework";
 @import "mixins/grid";
 @import "mixins/float";

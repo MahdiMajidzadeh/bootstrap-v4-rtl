@@ -1,278 +1,260 @@
-import Util from './util'
-
-
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.0.0-alpha.6): tab.js
+ * Bootstrap (v4.4.1): tab.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-const Tab = (($) => {
+import $ from 'jquery'
+import Util from './util'
 
+/**
+ * ------------------------------------------------------------------------
+ * Constants
+ * ------------------------------------------------------------------------
+ */
 
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
+const NAME               = 'tab'
+const VERSION            = '4.4.1'
+const DATA_KEY           = 'bs.tab'
+const EVENT_KEY          = `.${DATA_KEY}`
+const DATA_API_KEY       = '.data-api'
+const JQUERY_NO_CONFLICT = $.fn[NAME]
 
-  const NAME                = 'tab'
-  const VERSION             = '4.0.0-alpha.6'
-  const DATA_KEY            = 'bs.tab'
-  const EVENT_KEY           = `.${DATA_KEY}`
-  const DATA_API_KEY        = '.data-api'
-  const JQUERY_NO_CONFLICT  = $.fn[NAME]
-  const TRANSITION_DURATION = 150
+const Event = {
+  HIDE           : `hide${EVENT_KEY}`,
+  HIDDEN         : `hidden${EVENT_KEY}`,
+  SHOW           : `show${EVENT_KEY}`,
+  SHOWN          : `shown${EVENT_KEY}`,
+  CLICK_DATA_API : `click${EVENT_KEY}${DATA_API_KEY}`
+}
 
-  const Event = {
-    HIDE           : `hide${EVENT_KEY}`,
-    HIDDEN         : `hidden${EVENT_KEY}`,
-    SHOW           : `show${EVENT_KEY}`,
-    SHOWN          : `shown${EVENT_KEY}`,
-    CLICK_DATA_API : `click${EVENT_KEY}${DATA_API_KEY}`
+const ClassName = {
+  DROPDOWN_MENU : 'dropdown-menu',
+  ACTIVE        : 'active',
+  DISABLED      : 'disabled',
+  FADE          : 'fade',
+  SHOW          : 'show'
+}
+
+const Selector = {
+  DROPDOWN              : '.dropdown',
+  NAV_LIST_GROUP        : '.nav, .list-group',
+  ACTIVE                : '.active',
+  ACTIVE_UL             : '> li > .active',
+  DATA_TOGGLE           : '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]',
+  DROPDOWN_TOGGLE       : '.dropdown-toggle',
+  DROPDOWN_ACTIVE_CHILD : '> .dropdown-menu .active'
+}
+
+/**
+ * ------------------------------------------------------------------------
+ * Class Definition
+ * ------------------------------------------------------------------------
+ */
+
+class Tab {
+  constructor(element) {
+    this._element = element
   }
 
-  const ClassName = {
-    DROPDOWN_MENU : 'dropdown-menu',
-    ACTIVE        : 'active',
-    DISABLED      : 'disabled',
-    FADE          : 'fade',
-    SHOW          : 'show'
+  // Getters
+
+  static get VERSION() {
+    return VERSION
   }
 
-  const Selector = {
-    A                     : 'a',
-    LI                    : 'li',
-    DROPDOWN              : '.dropdown',
-    LIST                  : 'ul:not(.dropdown-menu), ol:not(.dropdown-menu), nav:not(.dropdown-menu)',
-    FADE_CHILD            : '> .nav-item .fade, > .fade',
-    ACTIVE                : '.active',
-    ACTIVE_CHILD          : '> .nav-item > .active, > .active',
-    DATA_TOGGLE           : '[data-toggle="tab"], [data-toggle="pill"]',
-    DROPDOWN_TOGGLE       : '.dropdown-toggle',
-    DROPDOWN_ACTIVE_CHILD : '> .dropdown-menu .active'
-  }
+  // Public
 
-
-  /**
-   * ------------------------------------------------------------------------
-   * Class Definition
-   * ------------------------------------------------------------------------
-   */
-
-  class Tab {
-
-    constructor(element) {
-      this._element = element
+  show() {
+    if (this._element.parentNode &&
+        this._element.parentNode.nodeType === Node.ELEMENT_NODE &&
+        $(this._element).hasClass(ClassName.ACTIVE) ||
+        $(this._element).hasClass(ClassName.DISABLED)) {
+      return
     }
 
+    let target
+    let previous
+    const listElement = $(this._element).closest(Selector.NAV_LIST_GROUP)[0]
+    const selector = Util.getSelectorFromElement(this._element)
 
-    // getters
-
-    static get VERSION() {
-      return VERSION
+    if (listElement) {
+      const itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? Selector.ACTIVE_UL : Selector.ACTIVE
+      previous = $.makeArray($(listElement).find(itemSelector))
+      previous = previous[previous.length - 1]
     }
 
+    const hideEvent = $.Event(Event.HIDE, {
+      relatedTarget: this._element
+    })
 
-    // public
+    const showEvent = $.Event(Event.SHOW, {
+      relatedTarget: previous
+    })
 
-    show() {
-      if (this._element.parentNode &&
-          this._element.parentNode.nodeType === Node.ELEMENT_NODE &&
-          $(this._element).hasClass(ClassName.ACTIVE) ||
-          $(this._element).hasClass(ClassName.DISABLED)) {
-        return
-      }
+    if (previous) {
+      $(previous).trigger(hideEvent)
+    }
 
-      let target
-      let previous
-      const listElement = $(this._element).closest(Selector.LIST)[0]
-      const selector    = Util.getSelectorFromElement(this._element)
+    $(this._element).trigger(showEvent)
 
-      if (listElement) {
-        previous = $.makeArray($(listElement).find(Selector.ACTIVE))
-        previous = previous[previous.length - 1]
-      }
+    if (showEvent.isDefaultPrevented() ||
+        hideEvent.isDefaultPrevented()) {
+      return
+    }
 
-      const hideEvent = $.Event(Event.HIDE, {
+    if (selector) {
+      target = document.querySelector(selector)
+    }
+
+    this._activate(
+      this._element,
+      listElement
+    )
+
+    const complete = () => {
+      const hiddenEvent = $.Event(Event.HIDDEN, {
         relatedTarget: this._element
       })
 
-      const showEvent = $.Event(Event.SHOW, {
+      const shownEvent = $.Event(Event.SHOWN, {
         relatedTarget: previous
       })
 
-      if (previous) {
-        $(previous).trigger(hideEvent)
+      $(previous).trigger(hiddenEvent)
+      $(this._element).trigger(shownEvent)
+    }
+
+    if (target) {
+      this._activate(target, target.parentNode, complete)
+    } else {
+      complete()
+    }
+  }
+
+  dispose() {
+    $.removeData(this._element, DATA_KEY)
+    this._element = null
+  }
+
+  // Private
+
+  _activate(element, container, callback) {
+    const activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL')
+      ? $(container).find(Selector.ACTIVE_UL)
+      : $(container).children(Selector.ACTIVE)
+
+    const active = activeElements[0]
+    const isTransitioning = callback && (active && $(active).hasClass(ClassName.FADE))
+    const complete = () => this._transitionComplete(
+      element,
+      active,
+      callback
+    )
+
+    if (active && isTransitioning) {
+      const transitionDuration = Util.getTransitionDurationFromElement(active)
+
+      $(active)
+        .removeClass(ClassName.SHOW)
+        .one(Util.TRANSITION_END, complete)
+        .emulateTransitionEnd(transitionDuration)
+    } else {
+      complete()
+    }
+  }
+
+  _transitionComplete(element, active, callback) {
+    if (active) {
+      $(active).removeClass(ClassName.ACTIVE)
+
+      const dropdownChild = $(active.parentNode).find(
+        Selector.DROPDOWN_ACTIVE_CHILD
+      )[0]
+
+      if (dropdownChild) {
+        $(dropdownChild).removeClass(ClassName.ACTIVE)
       }
 
-      $(this._element).trigger(showEvent)
-
-      if (showEvent.isDefaultPrevented() ||
-         hideEvent.isDefaultPrevented()) {
-        return
-      }
-
-      if (selector) {
-        target = $(selector)[0]
-      }
-
-      this._activate(
-        this._element,
-        listElement
-      )
-
-      const complete = () => {
-        const hiddenEvent = $.Event(Event.HIDDEN, {
-          relatedTarget: this._element
-        })
-
-        const shownEvent = $.Event(Event.SHOWN, {
-          relatedTarget: previous
-        })
-
-        $(previous).trigger(hiddenEvent)
-        $(this._element).trigger(shownEvent)
-      }
-
-      if (target) {
-        this._activate(target, target.parentNode, complete)
-      } else {
-        complete()
+      if (active.getAttribute('role') === 'tab') {
+        active.setAttribute('aria-selected', false)
       }
     }
 
-    dispose() {
-      $.removeClass(this._element, DATA_KEY)
-      this._element = null
+    $(element).addClass(ClassName.ACTIVE)
+    if (element.getAttribute('role') === 'tab') {
+      element.setAttribute('aria-selected', true)
     }
 
+    Util.reflow(element)
 
-    // private
-
-    _activate(element, container, callback) {
-      const active          = $(container).find(Selector.ACTIVE_CHILD)[0]
-      const isTransitioning = callback
-        && Util.supportsTransitionEnd()
-        && (active && $(active).hasClass(ClassName.FADE)
-           || Boolean($(container).find(Selector.FADE_CHILD)[0]))
-
-      const complete = () => this._transitionComplete(
-        element,
-        active,
-        isTransitioning,
-        callback
-      )
-
-      if (active && isTransitioning) {
-        $(active)
-          .one(Util.TRANSITION_END, complete)
-          .emulateTransitionEnd(TRANSITION_DURATION)
-
-      } else {
-        complete()
-      }
-
-      if (active) {
-        $(active).removeClass(ClassName.SHOW)
-      }
+    if (element.classList.contains(ClassName.FADE)) {
+      element.classList.add(ClassName.SHOW)
     }
 
-    _transitionComplete(element, active, isTransitioning, callback) {
-      if (active) {
-        $(active).removeClass(ClassName.ACTIVE)
+    if (element.parentNode && $(element.parentNode).hasClass(ClassName.DROPDOWN_MENU)) {
+      const dropdownElement = $(element).closest(Selector.DROPDOWN)[0]
 
-        const dropdownChild = $(active.parentNode).find(
-          Selector.DROPDOWN_ACTIVE_CHILD
-        )[0]
+      if (dropdownElement) {
+        const dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(Selector.DROPDOWN_TOGGLE))
 
-        if (dropdownChild) {
-          $(dropdownChild).removeClass(ClassName.ACTIVE)
-        }
-
-        active.setAttribute('aria-expanded', false)
+        $(dropdownToggleList).addClass(ClassName.ACTIVE)
       }
 
-      $(element).addClass(ClassName.ACTIVE)
       element.setAttribute('aria-expanded', true)
-
-      if (isTransitioning) {
-        Util.reflow(element)
-        $(element).addClass(ClassName.SHOW)
-      } else {
-        $(element).removeClass(ClassName.FADE)
-      }
-
-      if (element.parentNode &&
-          $(element.parentNode).hasClass(ClassName.DROPDOWN_MENU)) {
-
-        const dropdownElement = $(element).closest(Selector.DROPDOWN)[0]
-        if (dropdownElement) {
-          $(dropdownElement).find(Selector.DROPDOWN_TOGGLE).addClass(ClassName.ACTIVE)
-        }
-
-        element.setAttribute('aria-expanded', true)
-      }
-
-      if (callback) {
-        callback()
-      }
     }
 
-
-    // static
-
-    static _jQueryInterface(config) {
-      return this.each(function () {
-        const $this = $(this)
-        let data    = $this.data(DATA_KEY)
-
-        if (!data) {
-          data = new Tab(this)
-          $this.data(DATA_KEY, data)
-        }
-
-        if (typeof config === 'string') {
-          if (data[config] === undefined) {
-            throw new Error(`No method named "${config}"`)
-          }
-          data[config]()
-        }
-      })
+    if (callback) {
+      callback()
     }
-
   }
 
+  // Static
 
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
+  static _jQueryInterface(config) {
+    return this.each(function () {
+      const $this = $(this)
+      let data = $this.data(DATA_KEY)
 
-  $(document)
-    .on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
-      event.preventDefault()
-      Tab._jQueryInterface.call($(this), 'show')
+      if (!data) {
+        data = new Tab(this)
+        $this.data(DATA_KEY, data)
+      }
+
+      if (typeof config === 'string') {
+        if (typeof data[config] === 'undefined') {
+          throw new TypeError(`No method named "${config}"`)
+        }
+        data[config]()
+      }
     })
-
-
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $.fn[NAME]             = Tab._jQueryInterface
-  $.fn[NAME].Constructor = Tab
-  $.fn[NAME].noConflict  = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT
-    return Tab._jQueryInterface
   }
+}
 
-  return Tab
+/**
+ * ------------------------------------------------------------------------
+ * Data Api implementation
+ * ------------------------------------------------------------------------
+ */
 
-})(jQuery)
+$(document)
+  .on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
+    event.preventDefault()
+    Tab._jQueryInterface.call($(this), 'show')
+  })
+
+/**
+ * ------------------------------------------------------------------------
+ * jQuery
+ * ------------------------------------------------------------------------
+ */
+
+$.fn[NAME] = Tab._jQueryInterface
+$.fn[NAME].Constructor = Tab
+$.fn[NAME].noConflict = () => {
+  $.fn[NAME] = JQUERY_NO_CONFLICT
+  return Tab._jQueryInterface
+}
 
 export default Tab
