@@ -77,13 +77,13 @@
     return target;
   }
 
-  var cov_2nwxrlavlq = function () {
-    var path = "/home/h3isenbug/code/bootstrap-v4-rtl/js/src/modal.js";
-    var hash = "8b2d43874d33a0613381292ca72fd438e2a9863e";
+  var cov_10c74op6cl = function () {
+    var path = "/Library/WebServer/Documents/bootstrap-v4-rtl/js/src/modal.js";
+    var hash = "452e160e496237dc0ee5287230121267cc88fa3b";
     var global = new Function("return this")();
     var gcv = "__coverage__";
     var coverageData = {
-      path: "/home/h3isenbug/code/bootstrap-v4-rtl/js/src/modal.js",
+      path: "/Library/WebServer/Documents/bootstrap-v4-rtl/js/src/modal.js",
       statementMap: {
         "0": {
           start: {
@@ -6397,7 +6397,7 @@
         "66": [0, 0]
       },
       _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-      hash: "8b2d43874d33a0613381292ca72fd438e2a9863e"
+      hash: "452e160e496237dc0ee5287230121267cc88fa3b"
     };
     var coverage = global[gcv] || (global[gcv] = {});
 
@@ -6413,27 +6413,27 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME = (cov_2nwxrlavlq.s[0]++, 'modal');
-  var VERSION = (cov_2nwxrlavlq.s[1]++, '4.4.1');
-  var DATA_KEY = (cov_2nwxrlavlq.s[2]++, 'bs.modal');
-  var EVENT_KEY = (cov_2nwxrlavlq.s[3]++, "." + DATA_KEY);
-  var DATA_API_KEY = (cov_2nwxrlavlq.s[4]++, '.data-api');
-  var JQUERY_NO_CONFLICT = (cov_2nwxrlavlq.s[5]++, $.fn[NAME]);
-  var ESCAPE_KEYCODE = (cov_2nwxrlavlq.s[6]++, 27); // KeyboardEvent.which value for Escape (Esc) key
+  var NAME = (cov_10c74op6cl.s[0]++, 'modal');
+  var VERSION = (cov_10c74op6cl.s[1]++, '4.4.1');
+  var DATA_KEY = (cov_10c74op6cl.s[2]++, 'bs.modal');
+  var EVENT_KEY = (cov_10c74op6cl.s[3]++, "." + DATA_KEY);
+  var DATA_API_KEY = (cov_10c74op6cl.s[4]++, '.data-api');
+  var JQUERY_NO_CONFLICT = (cov_10c74op6cl.s[5]++, $.fn[NAME]);
+  var ESCAPE_KEYCODE = (cov_10c74op6cl.s[6]++, 27); // KeyboardEvent.which value for Escape (Esc) key
 
-  var Default = (cov_2nwxrlavlq.s[7]++, {
+  var Default = (cov_10c74op6cl.s[7]++, {
     backdrop: true,
     keyboard: true,
     focus: true,
     show: true
   });
-  var DefaultType = (cov_2nwxrlavlq.s[8]++, {
+  var DefaultType = (cov_10c74op6cl.s[8]++, {
     backdrop: '(boolean|string)',
     keyboard: 'boolean',
     focus: 'boolean',
     show: 'boolean'
   });
-  var Event = (cov_2nwxrlavlq.s[9]++, {
+  var Event = (cov_10c74op6cl.s[9]++, {
     HIDE: "hide" + EVENT_KEY,
     HIDE_PREVENTED: "hidePrevented" + EVENT_KEY,
     HIDDEN: "hidden" + EVENT_KEY,
@@ -6447,7 +6447,7 @@
     MOUSEDOWN_DISMISS: "mousedown.dismiss" + EVENT_KEY,
     CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
   });
-  var ClassName = (cov_2nwxrlavlq.s[10]++, {
+  var ClassName = (cov_10c74op6cl.s[10]++, {
     SCROLLABLE: 'modal-dialog-scrollable',
     SCROLLBAR_MEASURER: 'modal-scrollbar-measure',
     BACKDROP: 'modal-backdrop',
@@ -6456,7 +6456,7 @@
     SHOW: 'show',
     STATIC: 'modal-static'
   });
-  var Selector = (cov_2nwxrlavlq.s[11]++, {
+  var Selector = (cov_10c74op6cl.s[11]++, {
     DIALOG: '.modal-dialog',
     MODAL_BODY: '.modal-body',
     DATA_TOGGLE: '[data-toggle="modal"]',
@@ -6470,28 +6470,26 @@
    * ------------------------------------------------------------------------
    */
 
-  var Modal =
-  /*#__PURE__*/
-  function () {
+  var Modal = /*#__PURE__*/function () {
     function Modal(element, config) {
-      cov_2nwxrlavlq.f[0]++;
-      cov_2nwxrlavlq.s[12]++;
+      cov_10c74op6cl.f[0]++;
+      cov_10c74op6cl.s[12]++;
       this._config = this._getConfig(config);
-      cov_2nwxrlavlq.s[13]++;
+      cov_10c74op6cl.s[13]++;
       this._element = element;
-      cov_2nwxrlavlq.s[14]++;
+      cov_10c74op6cl.s[14]++;
       this._dialog = element.querySelector(Selector.DIALOG);
-      cov_2nwxrlavlq.s[15]++;
+      cov_10c74op6cl.s[15]++;
       this._backdrop = null;
-      cov_2nwxrlavlq.s[16]++;
+      cov_10c74op6cl.s[16]++;
       this._isShown = false;
-      cov_2nwxrlavlq.s[17]++;
+      cov_10c74op6cl.s[17]++;
       this._isBodyOverflowing = false;
-      cov_2nwxrlavlq.s[18]++;
+      cov_10c74op6cl.s[18]++;
       this._ignoreBackdropClick = false;
-      cov_2nwxrlavlq.s[19]++;
+      cov_10c74op6cl.s[19]++;
       this._isTransitioning = false;
-      cov_2nwxrlavlq.s[20]++;
+      cov_10c74op6cl.s[20]++;
       this._scrollbarWidth = 0;
     } // Getters
 
@@ -6500,100 +6498,100 @@
 
     // Public
     _proto.toggle = function toggle(relatedTarget) {
-      cov_2nwxrlavlq.f[3]++;
-      cov_2nwxrlavlq.s[23]++;
-      return this._isShown ? (cov_2nwxrlavlq.b[0][0]++, this.hide()) : (cov_2nwxrlavlq.b[0][1]++, this.show(relatedTarget));
+      cov_10c74op6cl.f[3]++;
+      cov_10c74op6cl.s[23]++;
+      return this._isShown ? (cov_10c74op6cl.b[0][0]++, this.hide()) : (cov_10c74op6cl.b[0][1]++, this.show(relatedTarget));
     };
 
     _proto.show = function show(relatedTarget) {
       var _this = this;
 
-      cov_2nwxrlavlq.f[4]++;
-      cov_2nwxrlavlq.s[24]++;
+      cov_10c74op6cl.f[4]++;
+      cov_10c74op6cl.s[24]++;
 
-      if ((cov_2nwxrlavlq.b[2][0]++, this._isShown) || (cov_2nwxrlavlq.b[2][1]++, this._isTransitioning)) {
-        cov_2nwxrlavlq.b[1][0]++;
-        cov_2nwxrlavlq.s[25]++;
+      if ((cov_10c74op6cl.b[2][0]++, this._isShown) || (cov_10c74op6cl.b[2][1]++, this._isTransitioning)) {
+        cov_10c74op6cl.b[1][0]++;
+        cov_10c74op6cl.s[25]++;
         return;
       } else {
-        cov_2nwxrlavlq.b[1][1]++;
+        cov_10c74op6cl.b[1][1]++;
       }
 
-      cov_2nwxrlavlq.s[26]++;
+      cov_10c74op6cl.s[26]++;
 
       if ($(this._element).hasClass(ClassName.FADE)) {
-        cov_2nwxrlavlq.b[3][0]++;
-        cov_2nwxrlavlq.s[27]++;
+        cov_10c74op6cl.b[3][0]++;
+        cov_10c74op6cl.s[27]++;
         this._isTransitioning = true;
       } else {
-        cov_2nwxrlavlq.b[3][1]++;
+        cov_10c74op6cl.b[3][1]++;
       }
 
-      var showEvent = (cov_2nwxrlavlq.s[28]++, $.Event(Event.SHOW, {
+      var showEvent = (cov_10c74op6cl.s[28]++, $.Event(Event.SHOW, {
         relatedTarget: relatedTarget
       }));
-      cov_2nwxrlavlq.s[29]++;
+      cov_10c74op6cl.s[29]++;
       $(this._element).trigger(showEvent);
-      cov_2nwxrlavlq.s[30]++;
+      cov_10c74op6cl.s[30]++;
 
-      if ((cov_2nwxrlavlq.b[5][0]++, this._isShown) || (cov_2nwxrlavlq.b[5][1]++, showEvent.isDefaultPrevented())) {
-        cov_2nwxrlavlq.b[4][0]++;
-        cov_2nwxrlavlq.s[31]++;
+      if ((cov_10c74op6cl.b[5][0]++, this._isShown) || (cov_10c74op6cl.b[5][1]++, showEvent.isDefaultPrevented())) {
+        cov_10c74op6cl.b[4][0]++;
+        cov_10c74op6cl.s[31]++;
         return;
       } else {
-        cov_2nwxrlavlq.b[4][1]++;
+        cov_10c74op6cl.b[4][1]++;
       }
 
-      cov_2nwxrlavlq.s[32]++;
+      cov_10c74op6cl.s[32]++;
       this._isShown = true;
-      cov_2nwxrlavlq.s[33]++;
+      cov_10c74op6cl.s[33]++;
 
       this._checkScrollbar();
 
-      cov_2nwxrlavlq.s[34]++;
+      cov_10c74op6cl.s[34]++;
 
       this._setScrollbar();
 
-      cov_2nwxrlavlq.s[35]++;
+      cov_10c74op6cl.s[35]++;
 
       this._adjustDialog();
 
-      cov_2nwxrlavlq.s[36]++;
+      cov_10c74op6cl.s[36]++;
 
       this._setEscapeEvent();
 
-      cov_2nwxrlavlq.s[37]++;
+      cov_10c74op6cl.s[37]++;
 
       this._setResizeEvent();
 
-      cov_2nwxrlavlq.s[38]++;
+      cov_10c74op6cl.s[38]++;
       $(this._element).on(Event.CLICK_DISMISS, Selector.DATA_DISMISS, function (event) {
-        cov_2nwxrlavlq.f[5]++;
-        cov_2nwxrlavlq.s[39]++;
+        cov_10c74op6cl.f[5]++;
+        cov_10c74op6cl.s[39]++;
         return _this.hide(event);
       });
-      cov_2nwxrlavlq.s[40]++;
+      cov_10c74op6cl.s[40]++;
       $(this._dialog).on(Event.MOUSEDOWN_DISMISS, function () {
-        cov_2nwxrlavlq.f[6]++;
-        cov_2nwxrlavlq.s[41]++;
+        cov_10c74op6cl.f[6]++;
+        cov_10c74op6cl.s[41]++;
         $(_this._element).one(Event.MOUSEUP_DISMISS, function (event) {
-          cov_2nwxrlavlq.f[7]++;
-          cov_2nwxrlavlq.s[42]++;
+          cov_10c74op6cl.f[7]++;
+          cov_10c74op6cl.s[42]++;
 
           if ($(event.target).is(_this._element)) {
-            cov_2nwxrlavlq.b[6][0]++;
-            cov_2nwxrlavlq.s[43]++;
+            cov_10c74op6cl.b[6][0]++;
+            cov_10c74op6cl.s[43]++;
             _this._ignoreBackdropClick = true;
           } else {
-            cov_2nwxrlavlq.b[6][1]++;
+            cov_10c74op6cl.b[6][1]++;
           }
         });
       });
-      cov_2nwxrlavlq.s[44]++;
+      cov_10c74op6cl.s[44]++;
 
       this._showBackdrop(function () {
-        cov_2nwxrlavlq.f[8]++;
-        cov_2nwxrlavlq.s[45]++;
+        cov_10c74op6cl.f[8]++;
+        cov_10c74op6cl.s[45]++;
         return _this._showElement(relatedTarget);
       });
     };
@@ -6601,94 +6599,94 @@
     _proto.hide = function hide(event) {
       var _this2 = this;
 
-      cov_2nwxrlavlq.f[9]++;
-      cov_2nwxrlavlq.s[46]++;
+      cov_10c74op6cl.f[9]++;
+      cov_10c74op6cl.s[46]++;
 
       if (event) {
-        cov_2nwxrlavlq.b[7][0]++;
-        cov_2nwxrlavlq.s[47]++;
+        cov_10c74op6cl.b[7][0]++;
+        cov_10c74op6cl.s[47]++;
         event.preventDefault();
       } else {
-        cov_2nwxrlavlq.b[7][1]++;
+        cov_10c74op6cl.b[7][1]++;
       }
 
-      cov_2nwxrlavlq.s[48]++;
+      cov_10c74op6cl.s[48]++;
 
-      if ((cov_2nwxrlavlq.b[9][0]++, !this._isShown) || (cov_2nwxrlavlq.b[9][1]++, this._isTransitioning)) {
-        cov_2nwxrlavlq.b[8][0]++;
-        cov_2nwxrlavlq.s[49]++;
+      if ((cov_10c74op6cl.b[9][0]++, !this._isShown) || (cov_10c74op6cl.b[9][1]++, this._isTransitioning)) {
+        cov_10c74op6cl.b[8][0]++;
+        cov_10c74op6cl.s[49]++;
         return;
       } else {
-        cov_2nwxrlavlq.b[8][1]++;
+        cov_10c74op6cl.b[8][1]++;
       }
 
-      var hideEvent = (cov_2nwxrlavlq.s[50]++, $.Event(Event.HIDE));
-      cov_2nwxrlavlq.s[51]++;
+      var hideEvent = (cov_10c74op6cl.s[50]++, $.Event(Event.HIDE));
+      cov_10c74op6cl.s[51]++;
       $(this._element).trigger(hideEvent);
-      cov_2nwxrlavlq.s[52]++;
+      cov_10c74op6cl.s[52]++;
 
-      if ((cov_2nwxrlavlq.b[11][0]++, !this._isShown) || (cov_2nwxrlavlq.b[11][1]++, hideEvent.isDefaultPrevented())) {
-        cov_2nwxrlavlq.b[10][0]++;
-        cov_2nwxrlavlq.s[53]++;
+      if ((cov_10c74op6cl.b[11][0]++, !this._isShown) || (cov_10c74op6cl.b[11][1]++, hideEvent.isDefaultPrevented())) {
+        cov_10c74op6cl.b[10][0]++;
+        cov_10c74op6cl.s[53]++;
         return;
       } else {
-        cov_2nwxrlavlq.b[10][1]++;
+        cov_10c74op6cl.b[10][1]++;
       }
 
-      cov_2nwxrlavlq.s[54]++;
+      cov_10c74op6cl.s[54]++;
       this._isShown = false;
-      var transition = (cov_2nwxrlavlq.s[55]++, $(this._element).hasClass(ClassName.FADE));
-      cov_2nwxrlavlq.s[56]++;
+      var transition = (cov_10c74op6cl.s[55]++, $(this._element).hasClass(ClassName.FADE));
+      cov_10c74op6cl.s[56]++;
 
       if (transition) {
-        cov_2nwxrlavlq.b[12][0]++;
-        cov_2nwxrlavlq.s[57]++;
+        cov_10c74op6cl.b[12][0]++;
+        cov_10c74op6cl.s[57]++;
         this._isTransitioning = true;
       } else {
-        cov_2nwxrlavlq.b[12][1]++;
+        cov_10c74op6cl.b[12][1]++;
       }
 
-      cov_2nwxrlavlq.s[58]++;
+      cov_10c74op6cl.s[58]++;
 
       this._setEscapeEvent();
 
-      cov_2nwxrlavlq.s[59]++;
+      cov_10c74op6cl.s[59]++;
 
       this._setResizeEvent();
 
-      cov_2nwxrlavlq.s[60]++;
+      cov_10c74op6cl.s[60]++;
       $(document).off(Event.FOCUSIN);
-      cov_2nwxrlavlq.s[61]++;
+      cov_10c74op6cl.s[61]++;
       $(this._element).removeClass(ClassName.SHOW);
-      cov_2nwxrlavlq.s[62]++;
+      cov_10c74op6cl.s[62]++;
       $(this._element).off(Event.CLICK_DISMISS);
-      cov_2nwxrlavlq.s[63]++;
+      cov_10c74op6cl.s[63]++;
       $(this._dialog).off(Event.MOUSEDOWN_DISMISS);
-      cov_2nwxrlavlq.s[64]++;
+      cov_10c74op6cl.s[64]++;
 
       if (transition) {
-        cov_2nwxrlavlq.b[13][0]++;
-        var transitionDuration = (cov_2nwxrlavlq.s[65]++, Util.getTransitionDurationFromElement(this._element));
-        cov_2nwxrlavlq.s[66]++;
+        cov_10c74op6cl.b[13][0]++;
+        var transitionDuration = (cov_10c74op6cl.s[65]++, Util.getTransitionDurationFromElement(this._element));
+        cov_10c74op6cl.s[66]++;
         $(this._element).one(Util.TRANSITION_END, function (event) {
-          cov_2nwxrlavlq.f[10]++;
-          cov_2nwxrlavlq.s[67]++;
+          cov_10c74op6cl.f[10]++;
+          cov_10c74op6cl.s[67]++;
           return _this2._hideModal(event);
         }).emulateTransitionEnd(transitionDuration);
       } else {
-        cov_2nwxrlavlq.b[13][1]++;
-        cov_2nwxrlavlq.s[68]++;
+        cov_10c74op6cl.b[13][1]++;
+        cov_10c74op6cl.s[68]++;
 
         this._hideModal();
       }
     };
 
     _proto.dispose = function dispose() {
-      cov_2nwxrlavlq.f[11]++;
-      cov_2nwxrlavlq.s[69]++;
+      cov_10c74op6cl.f[11]++;
+      cov_10c74op6cl.s[69]++;
       [window, this._element, this._dialog].forEach(function (htmlElement) {
-        cov_2nwxrlavlq.f[12]++;
-        cov_2nwxrlavlq.s[70]++;
+        cov_10c74op6cl.f[12]++;
+        cov_10c74op6cl.s[70]++;
         return $(htmlElement).off(EVENT_KEY);
       });
       /**
@@ -6697,87 +6695,87 @@
        * It will remove `Event.CLICK_DATA_API` event that should remain
        */
 
-      cov_2nwxrlavlq.s[71]++;
+      cov_10c74op6cl.s[71]++;
       $(document).off(Event.FOCUSIN);
-      cov_2nwxrlavlq.s[72]++;
+      cov_10c74op6cl.s[72]++;
       $.removeData(this._element, DATA_KEY);
-      cov_2nwxrlavlq.s[73]++;
+      cov_10c74op6cl.s[73]++;
       this._config = null;
-      cov_2nwxrlavlq.s[74]++;
+      cov_10c74op6cl.s[74]++;
       this._element = null;
-      cov_2nwxrlavlq.s[75]++;
+      cov_10c74op6cl.s[75]++;
       this._dialog = null;
-      cov_2nwxrlavlq.s[76]++;
+      cov_10c74op6cl.s[76]++;
       this._backdrop = null;
-      cov_2nwxrlavlq.s[77]++;
+      cov_10c74op6cl.s[77]++;
       this._isShown = null;
-      cov_2nwxrlavlq.s[78]++;
+      cov_10c74op6cl.s[78]++;
       this._isBodyOverflowing = null;
-      cov_2nwxrlavlq.s[79]++;
+      cov_10c74op6cl.s[79]++;
       this._ignoreBackdropClick = null;
-      cov_2nwxrlavlq.s[80]++;
+      cov_10c74op6cl.s[80]++;
       this._isTransitioning = null;
-      cov_2nwxrlavlq.s[81]++;
+      cov_10c74op6cl.s[81]++;
       this._scrollbarWidth = null;
     };
 
     _proto.handleUpdate = function handleUpdate() {
-      cov_2nwxrlavlq.f[13]++;
-      cov_2nwxrlavlq.s[82]++;
+      cov_10c74op6cl.f[13]++;
+      cov_10c74op6cl.s[82]++;
 
       this._adjustDialog();
     } // Private
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      cov_2nwxrlavlq.f[14]++;
-      cov_2nwxrlavlq.s[83]++;
-      config = _objectSpread2({}, Default, {}, config);
-      cov_2nwxrlavlq.s[84]++;
+      cov_10c74op6cl.f[14]++;
+      cov_10c74op6cl.s[83]++;
+      config = _objectSpread2(_objectSpread2({}, Default), config);
+      cov_10c74op6cl.s[84]++;
       Util.typeCheckConfig(NAME, config, DefaultType);
-      cov_2nwxrlavlq.s[85]++;
+      cov_10c74op6cl.s[85]++;
       return config;
     };
 
     _proto._triggerBackdropTransition = function _triggerBackdropTransition() {
       var _this3 = this;
 
-      cov_2nwxrlavlq.f[15]++;
-      cov_2nwxrlavlq.s[86]++;
+      cov_10c74op6cl.f[15]++;
+      cov_10c74op6cl.s[86]++;
 
       if (this._config.backdrop === 'static') {
-        cov_2nwxrlavlq.b[14][0]++;
-        var hideEventPrevented = (cov_2nwxrlavlq.s[87]++, $.Event(Event.HIDE_PREVENTED));
-        cov_2nwxrlavlq.s[88]++;
+        cov_10c74op6cl.b[14][0]++;
+        var hideEventPrevented = (cov_10c74op6cl.s[87]++, $.Event(Event.HIDE_PREVENTED));
+        cov_10c74op6cl.s[88]++;
         $(this._element).trigger(hideEventPrevented);
-        cov_2nwxrlavlq.s[89]++;
+        cov_10c74op6cl.s[89]++;
 
         if (hideEventPrevented.defaultPrevented) {
-          cov_2nwxrlavlq.b[15][0]++;
-          cov_2nwxrlavlq.s[90]++;
+          cov_10c74op6cl.b[15][0]++;
+          cov_10c74op6cl.s[90]++;
           return;
         } else {
-          cov_2nwxrlavlq.b[15][1]++;
+          cov_10c74op6cl.b[15][1]++;
         }
 
-        cov_2nwxrlavlq.s[91]++;
+        cov_10c74op6cl.s[91]++;
 
         this._element.classList.add(ClassName.STATIC);
 
-        var modalTransitionDuration = (cov_2nwxrlavlq.s[92]++, Util.getTransitionDurationFromElement(this._element));
-        cov_2nwxrlavlq.s[93]++;
+        var modalTransitionDuration = (cov_10c74op6cl.s[92]++, Util.getTransitionDurationFromElement(this._element));
+        cov_10c74op6cl.s[93]++;
         $(this._element).one(Util.TRANSITION_END, function () {
-          cov_2nwxrlavlq.f[16]++;
-          cov_2nwxrlavlq.s[94]++;
+          cov_10c74op6cl.f[16]++;
+          cov_10c74op6cl.s[94]++;
 
           _this3._element.classList.remove(ClassName.STATIC);
         }).emulateTransitionEnd(modalTransitionDuration);
-        cov_2nwxrlavlq.s[95]++;
+        cov_10c74op6cl.s[95]++;
 
         this._element.focus();
       } else {
-        cov_2nwxrlavlq.b[14][1]++;
-        cov_2nwxrlavlq.s[96]++;
+        cov_10c74op6cl.b[14][1]++;
+        cov_10c74op6cl.s[96]++;
         this.hide();
       }
     };
@@ -6785,99 +6783,99 @@
     _proto._showElement = function _showElement(relatedTarget) {
       var _this4 = this;
 
-      cov_2nwxrlavlq.f[17]++;
-      var transition = (cov_2nwxrlavlq.s[97]++, $(this._element).hasClass(ClassName.FADE));
-      var modalBody = (cov_2nwxrlavlq.s[98]++, this._dialog ? (cov_2nwxrlavlq.b[16][0]++, this._dialog.querySelector(Selector.MODAL_BODY)) : (cov_2nwxrlavlq.b[16][1]++, null));
-      cov_2nwxrlavlq.s[99]++;
+      cov_10c74op6cl.f[17]++;
+      var transition = (cov_10c74op6cl.s[97]++, $(this._element).hasClass(ClassName.FADE));
+      var modalBody = (cov_10c74op6cl.s[98]++, this._dialog ? (cov_10c74op6cl.b[16][0]++, this._dialog.querySelector(Selector.MODAL_BODY)) : (cov_10c74op6cl.b[16][1]++, null));
+      cov_10c74op6cl.s[99]++;
 
-      if ((cov_2nwxrlavlq.b[18][0]++, !this._element.parentNode) || (cov_2nwxrlavlq.b[18][1]++, this._element.parentNode.nodeType !== Node.ELEMENT_NODE)) {
-        cov_2nwxrlavlq.b[17][0]++;
-        cov_2nwxrlavlq.s[100]++;
+      if ((cov_10c74op6cl.b[18][0]++, !this._element.parentNode) || (cov_10c74op6cl.b[18][1]++, this._element.parentNode.nodeType !== Node.ELEMENT_NODE)) {
+        cov_10c74op6cl.b[17][0]++;
+        cov_10c74op6cl.s[100]++;
         // Don't move modal's DOM position
         document.body.appendChild(this._element);
       } else {
-        cov_2nwxrlavlq.b[17][1]++;
+        cov_10c74op6cl.b[17][1]++;
       }
 
-      cov_2nwxrlavlq.s[101]++;
+      cov_10c74op6cl.s[101]++;
       this._element.style.display = 'block';
-      cov_2nwxrlavlq.s[102]++;
+      cov_10c74op6cl.s[102]++;
 
       this._element.removeAttribute('aria-hidden');
 
-      cov_2nwxrlavlq.s[103]++;
+      cov_10c74op6cl.s[103]++;
 
       this._element.setAttribute('aria-modal', true);
 
-      cov_2nwxrlavlq.s[104]++;
+      cov_10c74op6cl.s[104]++;
 
-      if ((cov_2nwxrlavlq.b[20][0]++, $(this._dialog).hasClass(ClassName.SCROLLABLE)) && (cov_2nwxrlavlq.b[20][1]++, modalBody)) {
-        cov_2nwxrlavlq.b[19][0]++;
-        cov_2nwxrlavlq.s[105]++;
+      if ((cov_10c74op6cl.b[20][0]++, $(this._dialog).hasClass(ClassName.SCROLLABLE)) && (cov_10c74op6cl.b[20][1]++, modalBody)) {
+        cov_10c74op6cl.b[19][0]++;
+        cov_10c74op6cl.s[105]++;
         modalBody.scrollTop = 0;
       } else {
-        cov_2nwxrlavlq.b[19][1]++;
-        cov_2nwxrlavlq.s[106]++;
+        cov_10c74op6cl.b[19][1]++;
+        cov_10c74op6cl.s[106]++;
         this._element.scrollTop = 0;
       }
 
-      cov_2nwxrlavlq.s[107]++;
+      cov_10c74op6cl.s[107]++;
 
       if (transition) {
-        cov_2nwxrlavlq.b[21][0]++;
-        cov_2nwxrlavlq.s[108]++;
+        cov_10c74op6cl.b[21][0]++;
+        cov_10c74op6cl.s[108]++;
         Util.reflow(this._element);
       } else {
-        cov_2nwxrlavlq.b[21][1]++;
+        cov_10c74op6cl.b[21][1]++;
       }
 
-      cov_2nwxrlavlq.s[109]++;
+      cov_10c74op6cl.s[109]++;
       $(this._element).addClass(ClassName.SHOW);
-      cov_2nwxrlavlq.s[110]++;
+      cov_10c74op6cl.s[110]++;
 
       if (this._config.focus) {
-        cov_2nwxrlavlq.b[22][0]++;
-        cov_2nwxrlavlq.s[111]++;
+        cov_10c74op6cl.b[22][0]++;
+        cov_10c74op6cl.s[111]++;
 
         this._enforceFocus();
       } else {
-        cov_2nwxrlavlq.b[22][1]++;
+        cov_10c74op6cl.b[22][1]++;
       }
 
-      var shownEvent = (cov_2nwxrlavlq.s[112]++, $.Event(Event.SHOWN, {
+      var shownEvent = (cov_10c74op6cl.s[112]++, $.Event(Event.SHOWN, {
         relatedTarget: relatedTarget
       }));
-      cov_2nwxrlavlq.s[113]++;
+      cov_10c74op6cl.s[113]++;
 
       var transitionComplete = function transitionComplete() {
-        cov_2nwxrlavlq.f[18]++;
-        cov_2nwxrlavlq.s[114]++;
+        cov_10c74op6cl.f[18]++;
+        cov_10c74op6cl.s[114]++;
 
         if (_this4._config.focus) {
-          cov_2nwxrlavlq.b[23][0]++;
-          cov_2nwxrlavlq.s[115]++;
+          cov_10c74op6cl.b[23][0]++;
+          cov_10c74op6cl.s[115]++;
 
           _this4._element.focus();
         } else {
-          cov_2nwxrlavlq.b[23][1]++;
+          cov_10c74op6cl.b[23][1]++;
         }
 
-        cov_2nwxrlavlq.s[116]++;
+        cov_10c74op6cl.s[116]++;
         _this4._isTransitioning = false;
-        cov_2nwxrlavlq.s[117]++;
+        cov_10c74op6cl.s[117]++;
         $(_this4._element).trigger(shownEvent);
       };
 
-      cov_2nwxrlavlq.s[118]++;
+      cov_10c74op6cl.s[118]++;
 
       if (transition) {
-        cov_2nwxrlavlq.b[24][0]++;
-        var transitionDuration = (cov_2nwxrlavlq.s[119]++, Util.getTransitionDurationFromElement(this._dialog));
-        cov_2nwxrlavlq.s[120]++;
+        cov_10c74op6cl.b[24][0]++;
+        var transitionDuration = (cov_10c74op6cl.s[119]++, Util.getTransitionDurationFromElement(this._dialog));
+        cov_10c74op6cl.s[120]++;
         $(this._dialog).one(Util.TRANSITION_END, transitionComplete).emulateTransitionEnd(transitionDuration);
       } else {
-        cov_2nwxrlavlq.b[24][1]++;
-        cov_2nwxrlavlq.s[121]++;
+        cov_10c74op6cl.b[24][1]++;
+        cov_10c74op6cl.s[121]++;
         transitionComplete();
       }
     };
@@ -6885,20 +6883,20 @@
     _proto._enforceFocus = function _enforceFocus() {
       var _this5 = this;
 
-      cov_2nwxrlavlq.f[19]++;
-      cov_2nwxrlavlq.s[122]++;
+      cov_10c74op6cl.f[19]++;
+      cov_10c74op6cl.s[122]++;
       $(document).off(Event.FOCUSIN) // Guard against infinite focus loop
       .on(Event.FOCUSIN, function (event) {
-        cov_2nwxrlavlq.f[20]++;
-        cov_2nwxrlavlq.s[123]++;
+        cov_10c74op6cl.f[20]++;
+        cov_10c74op6cl.s[123]++;
 
-        if ((cov_2nwxrlavlq.b[26][0]++, document !== event.target) && (cov_2nwxrlavlq.b[26][1]++, _this5._element !== event.target) && (cov_2nwxrlavlq.b[26][2]++, $(_this5._element).has(event.target).length === 0)) {
-          cov_2nwxrlavlq.b[25][0]++;
-          cov_2nwxrlavlq.s[124]++;
+        if ((cov_10c74op6cl.b[26][0]++, document !== event.target) && (cov_10c74op6cl.b[26][1]++, _this5._element !== event.target) && (cov_10c74op6cl.b[26][2]++, $(_this5._element).has(event.target).length === 0)) {
+          cov_10c74op6cl.b[25][0]++;
+          cov_10c74op6cl.s[124]++;
 
           _this5._element.focus();
         } else {
-          cov_2nwxrlavlq.b[25][1]++;
+          cov_10c74op6cl.b[25][1]++;
         }
       });
     };
@@ -6906,35 +6904,35 @@
     _proto._setEscapeEvent = function _setEscapeEvent() {
       var _this6 = this;
 
-      cov_2nwxrlavlq.f[21]++;
-      cov_2nwxrlavlq.s[125]++;
+      cov_10c74op6cl.f[21]++;
+      cov_10c74op6cl.s[125]++;
 
-      if ((cov_2nwxrlavlq.b[28][0]++, this._isShown) && (cov_2nwxrlavlq.b[28][1]++, this._config.keyboard)) {
-        cov_2nwxrlavlq.b[27][0]++;
-        cov_2nwxrlavlq.s[126]++;
+      if ((cov_10c74op6cl.b[28][0]++, this._isShown) && (cov_10c74op6cl.b[28][1]++, this._config.keyboard)) {
+        cov_10c74op6cl.b[27][0]++;
+        cov_10c74op6cl.s[126]++;
         $(this._element).on(Event.KEYDOWN_DISMISS, function (event) {
-          cov_2nwxrlavlq.f[22]++;
-          cov_2nwxrlavlq.s[127]++;
+          cov_10c74op6cl.f[22]++;
+          cov_10c74op6cl.s[127]++;
 
           if (event.which === ESCAPE_KEYCODE) {
-            cov_2nwxrlavlq.b[29][0]++;
-            cov_2nwxrlavlq.s[128]++;
+            cov_10c74op6cl.b[29][0]++;
+            cov_10c74op6cl.s[128]++;
 
             _this6._triggerBackdropTransition();
           } else {
-            cov_2nwxrlavlq.b[29][1]++;
+            cov_10c74op6cl.b[29][1]++;
           }
         });
       } else {
-        cov_2nwxrlavlq.b[27][1]++;
-        cov_2nwxrlavlq.s[129]++;
+        cov_10c74op6cl.b[27][1]++;
+        cov_10c74op6cl.s[129]++;
 
         if (!this._isShown) {
-          cov_2nwxrlavlq.b[30][0]++;
-          cov_2nwxrlavlq.s[130]++;
+          cov_10c74op6cl.b[30][0]++;
+          cov_10c74op6cl.s[130]++;
           $(this._element).off(Event.KEYDOWN_DISMISS);
         } else {
-          cov_2nwxrlavlq.b[30][1]++;
+          cov_10c74op6cl.b[30][1]++;
         }
       }
     };
@@ -6942,20 +6940,20 @@
     _proto._setResizeEvent = function _setResizeEvent() {
       var _this7 = this;
 
-      cov_2nwxrlavlq.f[23]++;
-      cov_2nwxrlavlq.s[131]++;
+      cov_10c74op6cl.f[23]++;
+      cov_10c74op6cl.s[131]++;
 
       if (this._isShown) {
-        cov_2nwxrlavlq.b[31][0]++;
-        cov_2nwxrlavlq.s[132]++;
+        cov_10c74op6cl.b[31][0]++;
+        cov_10c74op6cl.s[132]++;
         $(window).on(Event.RESIZE, function (event) {
-          cov_2nwxrlavlq.f[24]++;
-          cov_2nwxrlavlq.s[133]++;
+          cov_10c74op6cl.f[24]++;
+          cov_10c74op6cl.s[133]++;
           return _this7.handleUpdate(event);
         });
       } else {
-        cov_2nwxrlavlq.b[31][1]++;
-        cov_2nwxrlavlq.s[134]++;
+        cov_10c74op6cl.b[31][1]++;
+        cov_10c74op6cl.s[134]++;
         $(window).off(Event.RESIZE);
       }
     };
@@ -6963,196 +6961,196 @@
     _proto._hideModal = function _hideModal() {
       var _this8 = this;
 
-      cov_2nwxrlavlq.f[25]++;
-      cov_2nwxrlavlq.s[135]++;
+      cov_10c74op6cl.f[25]++;
+      cov_10c74op6cl.s[135]++;
       this._element.style.display = 'none';
-      cov_2nwxrlavlq.s[136]++;
+      cov_10c74op6cl.s[136]++;
 
       this._element.setAttribute('aria-hidden', true);
 
-      cov_2nwxrlavlq.s[137]++;
+      cov_10c74op6cl.s[137]++;
 
       this._element.removeAttribute('aria-modal');
 
-      cov_2nwxrlavlq.s[138]++;
+      cov_10c74op6cl.s[138]++;
       this._isTransitioning = false;
-      cov_2nwxrlavlq.s[139]++;
+      cov_10c74op6cl.s[139]++;
 
       this._showBackdrop(function () {
-        cov_2nwxrlavlq.f[26]++;
-        cov_2nwxrlavlq.s[140]++;
+        cov_10c74op6cl.f[26]++;
+        cov_10c74op6cl.s[140]++;
         $(document.body).removeClass(ClassName.OPEN);
-        cov_2nwxrlavlq.s[141]++;
+        cov_10c74op6cl.s[141]++;
 
         _this8._resetAdjustments();
 
-        cov_2nwxrlavlq.s[142]++;
+        cov_10c74op6cl.s[142]++;
 
         _this8._resetScrollbar();
 
-        cov_2nwxrlavlq.s[143]++;
+        cov_10c74op6cl.s[143]++;
         $(_this8._element).trigger(Event.HIDDEN);
       });
     };
 
     _proto._removeBackdrop = function _removeBackdrop() {
-      cov_2nwxrlavlq.f[27]++;
-      cov_2nwxrlavlq.s[144]++;
+      cov_10c74op6cl.f[27]++;
+      cov_10c74op6cl.s[144]++;
 
       if (this._backdrop) {
-        cov_2nwxrlavlq.b[32][0]++;
-        cov_2nwxrlavlq.s[145]++;
+        cov_10c74op6cl.b[32][0]++;
+        cov_10c74op6cl.s[145]++;
         $(this._backdrop).remove();
-        cov_2nwxrlavlq.s[146]++;
+        cov_10c74op6cl.s[146]++;
         this._backdrop = null;
       } else {
-        cov_2nwxrlavlq.b[32][1]++;
+        cov_10c74op6cl.b[32][1]++;
       }
     };
 
     _proto._showBackdrop = function _showBackdrop(callback) {
       var _this9 = this;
 
-      cov_2nwxrlavlq.f[28]++;
-      var animate = (cov_2nwxrlavlq.s[147]++, $(this._element).hasClass(ClassName.FADE) ? (cov_2nwxrlavlq.b[33][0]++, ClassName.FADE) : (cov_2nwxrlavlq.b[33][1]++, ''));
-      cov_2nwxrlavlq.s[148]++;
+      cov_10c74op6cl.f[28]++;
+      var animate = (cov_10c74op6cl.s[147]++, $(this._element).hasClass(ClassName.FADE) ? (cov_10c74op6cl.b[33][0]++, ClassName.FADE) : (cov_10c74op6cl.b[33][1]++, ''));
+      cov_10c74op6cl.s[148]++;
 
-      if ((cov_2nwxrlavlq.b[35][0]++, this._isShown) && (cov_2nwxrlavlq.b[35][1]++, this._config.backdrop)) {
-        cov_2nwxrlavlq.b[34][0]++;
-        cov_2nwxrlavlq.s[149]++;
+      if ((cov_10c74op6cl.b[35][0]++, this._isShown) && (cov_10c74op6cl.b[35][1]++, this._config.backdrop)) {
+        cov_10c74op6cl.b[34][0]++;
+        cov_10c74op6cl.s[149]++;
         this._backdrop = document.createElement('div');
-        cov_2nwxrlavlq.s[150]++;
+        cov_10c74op6cl.s[150]++;
         this._backdrop.className = ClassName.BACKDROP;
-        cov_2nwxrlavlq.s[151]++;
+        cov_10c74op6cl.s[151]++;
 
         if (animate) {
-          cov_2nwxrlavlq.b[36][0]++;
-          cov_2nwxrlavlq.s[152]++;
+          cov_10c74op6cl.b[36][0]++;
+          cov_10c74op6cl.s[152]++;
 
           this._backdrop.classList.add(animate);
         } else {
-          cov_2nwxrlavlq.b[36][1]++;
+          cov_10c74op6cl.b[36][1]++;
         }
 
-        cov_2nwxrlavlq.s[153]++;
+        cov_10c74op6cl.s[153]++;
         $(this._backdrop).appendTo(document.body);
-        cov_2nwxrlavlq.s[154]++;
+        cov_10c74op6cl.s[154]++;
         $(this._element).on(Event.CLICK_DISMISS, function (event) {
-          cov_2nwxrlavlq.f[29]++;
-          cov_2nwxrlavlq.s[155]++;
+          cov_10c74op6cl.f[29]++;
+          cov_10c74op6cl.s[155]++;
 
           if (_this9._ignoreBackdropClick) {
-            cov_2nwxrlavlq.b[37][0]++;
-            cov_2nwxrlavlq.s[156]++;
+            cov_10c74op6cl.b[37][0]++;
+            cov_10c74op6cl.s[156]++;
             _this9._ignoreBackdropClick = false;
-            cov_2nwxrlavlq.s[157]++;
+            cov_10c74op6cl.s[157]++;
             return;
           } else {
-            cov_2nwxrlavlq.b[37][1]++;
+            cov_10c74op6cl.b[37][1]++;
           }
 
-          cov_2nwxrlavlq.s[158]++;
+          cov_10c74op6cl.s[158]++;
 
           if (event.target !== event.currentTarget) {
-            cov_2nwxrlavlq.b[38][0]++;
-            cov_2nwxrlavlq.s[159]++;
+            cov_10c74op6cl.b[38][0]++;
+            cov_10c74op6cl.s[159]++;
             return;
           } else {
-            cov_2nwxrlavlq.b[38][1]++;
+            cov_10c74op6cl.b[38][1]++;
           }
 
-          cov_2nwxrlavlq.s[160]++;
+          cov_10c74op6cl.s[160]++;
 
           _this9._triggerBackdropTransition();
         });
-        cov_2nwxrlavlq.s[161]++;
+        cov_10c74op6cl.s[161]++;
 
         if (animate) {
-          cov_2nwxrlavlq.b[39][0]++;
-          cov_2nwxrlavlq.s[162]++;
+          cov_10c74op6cl.b[39][0]++;
+          cov_10c74op6cl.s[162]++;
           Util.reflow(this._backdrop);
         } else {
-          cov_2nwxrlavlq.b[39][1]++;
+          cov_10c74op6cl.b[39][1]++;
         }
 
-        cov_2nwxrlavlq.s[163]++;
+        cov_10c74op6cl.s[163]++;
         $(this._backdrop).addClass(ClassName.SHOW);
-        cov_2nwxrlavlq.s[164]++;
+        cov_10c74op6cl.s[164]++;
 
         if (!callback) {
-          cov_2nwxrlavlq.b[40][0]++;
-          cov_2nwxrlavlq.s[165]++;
+          cov_10c74op6cl.b[40][0]++;
+          cov_10c74op6cl.s[165]++;
           return;
         } else {
-          cov_2nwxrlavlq.b[40][1]++;
+          cov_10c74op6cl.b[40][1]++;
         }
 
-        cov_2nwxrlavlq.s[166]++;
+        cov_10c74op6cl.s[166]++;
 
         if (!animate) {
-          cov_2nwxrlavlq.b[41][0]++;
-          cov_2nwxrlavlq.s[167]++;
+          cov_10c74op6cl.b[41][0]++;
+          cov_10c74op6cl.s[167]++;
           callback();
-          cov_2nwxrlavlq.s[168]++;
+          cov_10c74op6cl.s[168]++;
           return;
         } else {
-          cov_2nwxrlavlq.b[41][1]++;
+          cov_10c74op6cl.b[41][1]++;
         }
 
-        var backdropTransitionDuration = (cov_2nwxrlavlq.s[169]++, Util.getTransitionDurationFromElement(this._backdrop));
-        cov_2nwxrlavlq.s[170]++;
+        var backdropTransitionDuration = (cov_10c74op6cl.s[169]++, Util.getTransitionDurationFromElement(this._backdrop));
+        cov_10c74op6cl.s[170]++;
         $(this._backdrop).one(Util.TRANSITION_END, callback).emulateTransitionEnd(backdropTransitionDuration);
       } else {
-        cov_2nwxrlavlq.b[34][1]++;
-        cov_2nwxrlavlq.s[171]++;
+        cov_10c74op6cl.b[34][1]++;
+        cov_10c74op6cl.s[171]++;
 
-        if ((cov_2nwxrlavlq.b[43][0]++, !this._isShown) && (cov_2nwxrlavlq.b[43][1]++, this._backdrop)) {
-          cov_2nwxrlavlq.b[42][0]++;
-          cov_2nwxrlavlq.s[172]++;
+        if ((cov_10c74op6cl.b[43][0]++, !this._isShown) && (cov_10c74op6cl.b[43][1]++, this._backdrop)) {
+          cov_10c74op6cl.b[42][0]++;
+          cov_10c74op6cl.s[172]++;
           $(this._backdrop).removeClass(ClassName.SHOW);
-          cov_2nwxrlavlq.s[173]++;
+          cov_10c74op6cl.s[173]++;
 
           var callbackRemove = function callbackRemove() {
-            cov_2nwxrlavlq.f[30]++;
-            cov_2nwxrlavlq.s[174]++;
+            cov_10c74op6cl.f[30]++;
+            cov_10c74op6cl.s[174]++;
 
             _this9._removeBackdrop();
 
-            cov_2nwxrlavlq.s[175]++;
+            cov_10c74op6cl.s[175]++;
 
             if (callback) {
-              cov_2nwxrlavlq.b[44][0]++;
-              cov_2nwxrlavlq.s[176]++;
+              cov_10c74op6cl.b[44][0]++;
+              cov_10c74op6cl.s[176]++;
               callback();
             } else {
-              cov_2nwxrlavlq.b[44][1]++;
+              cov_10c74op6cl.b[44][1]++;
             }
           };
 
-          cov_2nwxrlavlq.s[177]++;
+          cov_10c74op6cl.s[177]++;
 
           if ($(this._element).hasClass(ClassName.FADE)) {
-            cov_2nwxrlavlq.b[45][0]++;
+            cov_10c74op6cl.b[45][0]++;
 
-            var _backdropTransitionDuration = (cov_2nwxrlavlq.s[178]++, Util.getTransitionDurationFromElement(this._backdrop));
+            var _backdropTransitionDuration = (cov_10c74op6cl.s[178]++, Util.getTransitionDurationFromElement(this._backdrop));
 
-            cov_2nwxrlavlq.s[179]++;
+            cov_10c74op6cl.s[179]++;
             $(this._backdrop).one(Util.TRANSITION_END, callbackRemove).emulateTransitionEnd(_backdropTransitionDuration);
           } else {
-            cov_2nwxrlavlq.b[45][1]++;
-            cov_2nwxrlavlq.s[180]++;
+            cov_10c74op6cl.b[45][1]++;
+            cov_10c74op6cl.s[180]++;
             callbackRemove();
           }
         } else {
-          cov_2nwxrlavlq.b[42][1]++;
-          cov_2nwxrlavlq.s[181]++;
+          cov_10c74op6cl.b[42][1]++;
+          cov_10c74op6cl.s[181]++;
 
           if (callback) {
-            cov_2nwxrlavlq.b[46][0]++;
-            cov_2nwxrlavlq.s[182]++;
+            cov_10c74op6cl.b[46][0]++;
+            cov_10c74op6cl.s[182]++;
             callback();
           } else {
-            cov_2nwxrlavlq.b[46][1]++;
+            cov_10c74op6cl.b[46][1]++;
           }
         }
       }
@@ -7163,189 +7161,189 @@
     ;
 
     _proto._adjustDialog = function _adjustDialog() {
-      cov_2nwxrlavlq.f[31]++;
-      var isModalOverflowing = (cov_2nwxrlavlq.s[183]++, this._element.scrollHeight > document.documentElement.clientHeight);
-      cov_2nwxrlavlq.s[184]++;
+      cov_10c74op6cl.f[31]++;
+      var isModalOverflowing = (cov_10c74op6cl.s[183]++, this._element.scrollHeight > document.documentElement.clientHeight);
+      cov_10c74op6cl.s[184]++;
 
-      if ((cov_2nwxrlavlq.b[48][0]++, !this._isBodyOverflowing) && (cov_2nwxrlavlq.b[48][1]++, isModalOverflowing)) {
-        cov_2nwxrlavlq.b[47][0]++;
-        cov_2nwxrlavlq.s[185]++;
+      if ((cov_10c74op6cl.b[48][0]++, !this._isBodyOverflowing) && (cov_10c74op6cl.b[48][1]++, isModalOverflowing)) {
+        cov_10c74op6cl.b[47][0]++;
+        cov_10c74op6cl.s[185]++;
         this._element.style.paddingLeft = this._scrollbarWidth + "px";
       } else {
-        cov_2nwxrlavlq.b[47][1]++;
+        cov_10c74op6cl.b[47][1]++;
       }
 
-      cov_2nwxrlavlq.s[186]++;
+      cov_10c74op6cl.s[186]++;
 
-      if ((cov_2nwxrlavlq.b[50][0]++, this._isBodyOverflowing) && (cov_2nwxrlavlq.b[50][1]++, !isModalOverflowing)) {
-        cov_2nwxrlavlq.b[49][0]++;
-        cov_2nwxrlavlq.s[187]++;
+      if ((cov_10c74op6cl.b[50][0]++, this._isBodyOverflowing) && (cov_10c74op6cl.b[50][1]++, !isModalOverflowing)) {
+        cov_10c74op6cl.b[49][0]++;
+        cov_10c74op6cl.s[187]++;
         this._element.style.paddingRight = this._scrollbarWidth + "px";
       } else {
-        cov_2nwxrlavlq.b[49][1]++;
+        cov_10c74op6cl.b[49][1]++;
       }
     };
 
     _proto._resetAdjustments = function _resetAdjustments() {
-      cov_2nwxrlavlq.f[32]++;
-      cov_2nwxrlavlq.s[188]++;
+      cov_10c74op6cl.f[32]++;
+      cov_10c74op6cl.s[188]++;
       this._element.style.paddingLeft = '';
-      cov_2nwxrlavlq.s[189]++;
+      cov_10c74op6cl.s[189]++;
       this._element.style.paddingRight = '';
     };
 
     _proto._checkScrollbar = function _checkScrollbar() {
-      cov_2nwxrlavlq.f[33]++;
-      var rect = (cov_2nwxrlavlq.s[190]++, document.body.getBoundingClientRect());
-      cov_2nwxrlavlq.s[191]++;
+      cov_10c74op6cl.f[33]++;
+      var rect = (cov_10c74op6cl.s[190]++, document.body.getBoundingClientRect());
+      cov_10c74op6cl.s[191]++;
       this._isBodyOverflowing = rect.left + rect.right < window.innerWidth;
-      cov_2nwxrlavlq.s[192]++;
+      cov_10c74op6cl.s[192]++;
       this._scrollbarWidth = this._getScrollbarWidth();
     };
 
     _proto._setScrollbar = function _setScrollbar() {
       var _this10 = this;
 
-      cov_2nwxrlavlq.f[34]++;
-      cov_2nwxrlavlq.s[193]++;
+      cov_10c74op6cl.f[34]++;
+      cov_10c74op6cl.s[193]++;
 
       if (this._isBodyOverflowing) {
-        cov_2nwxrlavlq.b[51][0]++;
+        cov_10c74op6cl.b[51][0]++;
         // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
         //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
-        var fixedContent = (cov_2nwxrlavlq.s[194]++, [].slice.call(document.querySelectorAll(Selector.FIXED_CONTENT)));
-        var stickyContent = (cov_2nwxrlavlq.s[195]++, [].slice.call(document.querySelectorAll(Selector.STICKY_CONTENT))); // Adjust fixed content padding
+        var fixedContent = (cov_10c74op6cl.s[194]++, [].slice.call(document.querySelectorAll(Selector.FIXED_CONTENT)));
+        var stickyContent = (cov_10c74op6cl.s[195]++, [].slice.call(document.querySelectorAll(Selector.STICKY_CONTENT))); // Adjust fixed content padding
 
-        cov_2nwxrlavlq.s[196]++;
+        cov_10c74op6cl.s[196]++;
         $(fixedContent).each(function (index, element) {
-          cov_2nwxrlavlq.f[35]++;
-          var actualPadding = (cov_2nwxrlavlq.s[197]++, element.style.paddingRight);
-          var calculatedPadding = (cov_2nwxrlavlq.s[198]++, $(element).css('padding-right'));
-          cov_2nwxrlavlq.s[199]++;
+          cov_10c74op6cl.f[35]++;
+          var actualPadding = (cov_10c74op6cl.s[197]++, element.style.paddingRight);
+          var calculatedPadding = (cov_10c74op6cl.s[198]++, $(element).css('padding-right'));
+          cov_10c74op6cl.s[199]++;
           $(element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this10._scrollbarWidth + "px");
         }); // Adjust sticky content margin
 
-        cov_2nwxrlavlq.s[200]++;
+        cov_10c74op6cl.s[200]++;
         $(stickyContent).each(function (index, element) {
-          cov_2nwxrlavlq.f[36]++;
-          var actualMargin = (cov_2nwxrlavlq.s[201]++, element.style.marginRight);
-          var calculatedMargin = (cov_2nwxrlavlq.s[202]++, $(element).css('margin-right'));
-          cov_2nwxrlavlq.s[203]++;
+          cov_10c74op6cl.f[36]++;
+          var actualMargin = (cov_10c74op6cl.s[201]++, element.style.marginRight);
+          var calculatedMargin = (cov_10c74op6cl.s[202]++, $(element).css('margin-right'));
+          cov_10c74op6cl.s[203]++;
           $(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this10._scrollbarWidth + "px");
         }); // Adjust body padding
 
-        var actualPadding = (cov_2nwxrlavlq.s[204]++, document.body.style.paddingRight);
-        var calculatedPadding = (cov_2nwxrlavlq.s[205]++, $(document.body).css('padding-right'));
-        cov_2nwxrlavlq.s[206]++;
+        var actualPadding = (cov_10c74op6cl.s[204]++, document.body.style.paddingRight);
+        var calculatedPadding = (cov_10c74op6cl.s[205]++, $(document.body).css('padding-right'));
+        cov_10c74op6cl.s[206]++;
         $(document.body).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + "px");
       } else {
-        cov_2nwxrlavlq.b[51][1]++;
+        cov_10c74op6cl.b[51][1]++;
       }
 
-      cov_2nwxrlavlq.s[207]++;
+      cov_10c74op6cl.s[207]++;
       $(document.body).addClass(ClassName.OPEN);
     };
 
     _proto._resetScrollbar = function _resetScrollbar() {
-      cov_2nwxrlavlq.f[37]++;
+      cov_10c74op6cl.f[37]++;
       // Restore fixed content padding
-      var fixedContent = (cov_2nwxrlavlq.s[208]++, [].slice.call(document.querySelectorAll(Selector.FIXED_CONTENT)));
-      cov_2nwxrlavlq.s[209]++;
+      var fixedContent = (cov_10c74op6cl.s[208]++, [].slice.call(document.querySelectorAll(Selector.FIXED_CONTENT)));
+      cov_10c74op6cl.s[209]++;
       $(fixedContent).each(function (index, element) {
-        cov_2nwxrlavlq.f[38]++;
-        var padding = (cov_2nwxrlavlq.s[210]++, $(element).data('padding-right'));
-        cov_2nwxrlavlq.s[211]++;
+        cov_10c74op6cl.f[38]++;
+        var padding = (cov_10c74op6cl.s[210]++, $(element).data('padding-right'));
+        cov_10c74op6cl.s[211]++;
         $(element).removeData('padding-right');
-        cov_2nwxrlavlq.s[212]++;
-        element.style.paddingRight = padding ? (cov_2nwxrlavlq.b[52][0]++, padding) : (cov_2nwxrlavlq.b[52][1]++, '');
+        cov_10c74op6cl.s[212]++;
+        element.style.paddingRight = padding ? (cov_10c74op6cl.b[52][0]++, padding) : (cov_10c74op6cl.b[52][1]++, '');
       }); // Restore sticky content
 
-      var elements = (cov_2nwxrlavlq.s[213]++, [].slice.call(document.querySelectorAll("" + Selector.STICKY_CONTENT)));
-      cov_2nwxrlavlq.s[214]++;
+      var elements = (cov_10c74op6cl.s[213]++, [].slice.call(document.querySelectorAll("" + Selector.STICKY_CONTENT)));
+      cov_10c74op6cl.s[214]++;
       $(elements).each(function (index, element) {
-        cov_2nwxrlavlq.f[39]++;
-        var margin = (cov_2nwxrlavlq.s[215]++, $(element).data('margin-right'));
-        cov_2nwxrlavlq.s[216]++;
+        cov_10c74op6cl.f[39]++;
+        var margin = (cov_10c74op6cl.s[215]++, $(element).data('margin-right'));
+        cov_10c74op6cl.s[216]++;
 
         if (typeof margin !== 'undefined') {
-          cov_2nwxrlavlq.b[53][0]++;
-          cov_2nwxrlavlq.s[217]++;
+          cov_10c74op6cl.b[53][0]++;
+          cov_10c74op6cl.s[217]++;
           $(element).css('margin-right', margin).removeData('margin-right');
         } else {
-          cov_2nwxrlavlq.b[53][1]++;
+          cov_10c74op6cl.b[53][1]++;
         }
       }); // Restore body padding
 
-      var padding = (cov_2nwxrlavlq.s[218]++, $(document.body).data('padding-right'));
-      cov_2nwxrlavlq.s[219]++;
+      var padding = (cov_10c74op6cl.s[218]++, $(document.body).data('padding-right'));
+      cov_10c74op6cl.s[219]++;
       $(document.body).removeData('padding-right');
-      cov_2nwxrlavlq.s[220]++;
-      document.body.style.paddingRight = padding ? (cov_2nwxrlavlq.b[54][0]++, padding) : (cov_2nwxrlavlq.b[54][1]++, '');
+      cov_10c74op6cl.s[220]++;
+      document.body.style.paddingRight = padding ? (cov_10c74op6cl.b[54][0]++, padding) : (cov_10c74op6cl.b[54][1]++, '');
     };
 
     _proto._getScrollbarWidth = function _getScrollbarWidth() {
-      cov_2nwxrlavlq.f[40]++;
+      cov_10c74op6cl.f[40]++;
       // thx d.walsh
-      var scrollDiv = (cov_2nwxrlavlq.s[221]++, document.createElement('div'));
-      cov_2nwxrlavlq.s[222]++;
+      var scrollDiv = (cov_10c74op6cl.s[221]++, document.createElement('div'));
+      cov_10c74op6cl.s[222]++;
       scrollDiv.className = ClassName.SCROLLBAR_MEASURER;
-      cov_2nwxrlavlq.s[223]++;
+      cov_10c74op6cl.s[223]++;
       document.body.appendChild(scrollDiv);
-      var scrollbarWidth = (cov_2nwxrlavlq.s[224]++, scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth);
-      cov_2nwxrlavlq.s[225]++;
+      var scrollbarWidth = (cov_10c74op6cl.s[224]++, scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth);
+      cov_10c74op6cl.s[225]++;
       document.body.removeChild(scrollDiv);
-      cov_2nwxrlavlq.s[226]++;
+      cov_10c74op6cl.s[226]++;
       return scrollbarWidth;
     } // Static
     ;
 
     Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
-      cov_2nwxrlavlq.f[41]++;
-      cov_2nwxrlavlq.s[227]++;
+      cov_10c74op6cl.f[41]++;
+      cov_10c74op6cl.s[227]++;
       return this.each(function () {
-        cov_2nwxrlavlq.f[42]++;
-        var data = (cov_2nwxrlavlq.s[228]++, $(this).data(DATA_KEY));
+        cov_10c74op6cl.f[42]++;
+        var data = (cov_10c74op6cl.s[228]++, $(this).data(DATA_KEY));
 
-        var _config = (cov_2nwxrlavlq.s[229]++, _objectSpread2({}, Default, {}, $(this).data(), {}, (cov_2nwxrlavlq.b[56][0]++, typeof config === 'object') && (cov_2nwxrlavlq.b[56][1]++, config) ? (cov_2nwxrlavlq.b[55][0]++, config) : (cov_2nwxrlavlq.b[55][1]++, {})));
+        var _config = (cov_10c74op6cl.s[229]++, _objectSpread2(_objectSpread2(_objectSpread2({}, Default), $(this).data()), (cov_10c74op6cl.b[56][0]++, typeof config === 'object') && (cov_10c74op6cl.b[56][1]++, config) ? (cov_10c74op6cl.b[55][0]++, config) : (cov_10c74op6cl.b[55][1]++, {})));
 
-        cov_2nwxrlavlq.s[230]++;
+        cov_10c74op6cl.s[230]++;
 
         if (!data) {
-          cov_2nwxrlavlq.b[57][0]++;
-          cov_2nwxrlavlq.s[231]++;
+          cov_10c74op6cl.b[57][0]++;
+          cov_10c74op6cl.s[231]++;
           data = new Modal(this, _config);
-          cov_2nwxrlavlq.s[232]++;
+          cov_10c74op6cl.s[232]++;
           $(this).data(DATA_KEY, data);
         } else {
-          cov_2nwxrlavlq.b[57][1]++;
+          cov_10c74op6cl.b[57][1]++;
         }
 
-        cov_2nwxrlavlq.s[233]++;
+        cov_10c74op6cl.s[233]++;
 
         if (typeof config === 'string') {
-          cov_2nwxrlavlq.b[58][0]++;
-          cov_2nwxrlavlq.s[234]++;
+          cov_10c74op6cl.b[58][0]++;
+          cov_10c74op6cl.s[234]++;
 
           if (typeof data[config] === 'undefined') {
-            cov_2nwxrlavlq.b[59][0]++;
-            cov_2nwxrlavlq.s[235]++;
+            cov_10c74op6cl.b[59][0]++;
+            cov_10c74op6cl.s[235]++;
             throw new TypeError("No method named \"" + config + "\"");
           } else {
-            cov_2nwxrlavlq.b[59][1]++;
+            cov_10c74op6cl.b[59][1]++;
           }
 
-          cov_2nwxrlavlq.s[236]++;
+          cov_10c74op6cl.s[236]++;
           data[config](relatedTarget);
         } else {
-          cov_2nwxrlavlq.b[58][1]++;
-          cov_2nwxrlavlq.s[237]++;
+          cov_10c74op6cl.b[58][1]++;
+          cov_10c74op6cl.s[237]++;
 
           if (_config.show) {
-            cov_2nwxrlavlq.b[60][0]++;
-            cov_2nwxrlavlq.s[238]++;
+            cov_10c74op6cl.b[60][0]++;
+            cov_10c74op6cl.s[238]++;
             data.show(relatedTarget);
           } else {
-            cov_2nwxrlavlq.b[60][1]++;
+            cov_10c74op6cl.b[60][1]++;
           }
         }
       });
@@ -7354,15 +7352,15 @@
     _createClass(Modal, null, [{
       key: "VERSION",
       get: function get() {
-        cov_2nwxrlavlq.f[1]++;
-        cov_2nwxrlavlq.s[21]++;
+        cov_10c74op6cl.f[1]++;
+        cov_10c74op6cl.s[21]++;
         return VERSION;
       }
     }, {
       key: "Default",
       get: function get() {
-        cov_2nwxrlavlq.f[2]++;
-        cov_2nwxrlavlq.s[22]++;
+        cov_10c74op6cl.f[2]++;
+        cov_10c74op6cl.s[22]++;
         return Default;
       }
     }]);
@@ -7376,63 +7374,63 @@
    */
 
 
-  cov_2nwxrlavlq.s[239]++;
+  cov_10c74op6cl.s[239]++;
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
     var _this11 = this;
 
-    cov_2nwxrlavlq.f[43]++;
+    cov_10c74op6cl.f[43]++;
     var target;
-    var selector = (cov_2nwxrlavlq.s[240]++, Util.getSelectorFromElement(this));
-    cov_2nwxrlavlq.s[241]++;
+    var selector = (cov_10c74op6cl.s[240]++, Util.getSelectorFromElement(this));
+    cov_10c74op6cl.s[241]++;
 
     if (selector) {
-      cov_2nwxrlavlq.b[61][0]++;
-      cov_2nwxrlavlq.s[242]++;
+      cov_10c74op6cl.b[61][0]++;
+      cov_10c74op6cl.s[242]++;
       target = document.querySelector(selector);
     } else {
-      cov_2nwxrlavlq.b[61][1]++;
+      cov_10c74op6cl.b[61][1]++;
     }
 
-    var config = (cov_2nwxrlavlq.s[243]++, $(target).data(DATA_KEY) ? (cov_2nwxrlavlq.b[62][0]++, 'toggle') : (cov_2nwxrlavlq.b[62][1]++, _objectSpread2({}, $(target).data(), {}, $(this).data())));
-    cov_2nwxrlavlq.s[244]++;
+    var config = (cov_10c74op6cl.s[243]++, $(target).data(DATA_KEY) ? (cov_10c74op6cl.b[62][0]++, 'toggle') : (cov_10c74op6cl.b[62][1]++, _objectSpread2(_objectSpread2({}, $(target).data()), $(this).data())));
+    cov_10c74op6cl.s[244]++;
 
-    if ((cov_2nwxrlavlq.b[64][0]++, this.tagName === 'A') || (cov_2nwxrlavlq.b[64][1]++, this.tagName === 'AREA')) {
-      cov_2nwxrlavlq.b[63][0]++;
-      cov_2nwxrlavlq.s[245]++;
+    if ((cov_10c74op6cl.b[64][0]++, this.tagName === 'A') || (cov_10c74op6cl.b[64][1]++, this.tagName === 'AREA')) {
+      cov_10c74op6cl.b[63][0]++;
+      cov_10c74op6cl.s[245]++;
       event.preventDefault();
     } else {
-      cov_2nwxrlavlq.b[63][1]++;
+      cov_10c74op6cl.b[63][1]++;
     }
 
-    var $target = (cov_2nwxrlavlq.s[246]++, $(target).one(Event.SHOW, function (showEvent) {
-      cov_2nwxrlavlq.f[44]++;
-      cov_2nwxrlavlq.s[247]++;
+    var $target = (cov_10c74op6cl.s[246]++, $(target).one(Event.SHOW, function (showEvent) {
+      cov_10c74op6cl.f[44]++;
+      cov_10c74op6cl.s[247]++;
 
       if (showEvent.isDefaultPrevented()) {
-        cov_2nwxrlavlq.b[65][0]++;
-        cov_2nwxrlavlq.s[248]++;
+        cov_10c74op6cl.b[65][0]++;
+        cov_10c74op6cl.s[248]++;
         // Only register focus restorer if modal will actually get shown
         return;
       } else {
-        cov_2nwxrlavlq.b[65][1]++;
+        cov_10c74op6cl.b[65][1]++;
       }
 
-      cov_2nwxrlavlq.s[249]++;
+      cov_10c74op6cl.s[249]++;
       $target.one(Event.HIDDEN, function () {
-        cov_2nwxrlavlq.f[45]++;
-        cov_2nwxrlavlq.s[250]++;
+        cov_10c74op6cl.f[45]++;
+        cov_10c74op6cl.s[250]++;
 
         if ($(_this11).is(':visible')) {
-          cov_2nwxrlavlq.b[66][0]++;
-          cov_2nwxrlavlq.s[251]++;
+          cov_10c74op6cl.b[66][0]++;
+          cov_10c74op6cl.s[251]++;
 
           _this11.focus();
         } else {
-          cov_2nwxrlavlq.b[66][1]++;
+          cov_10c74op6cl.b[66][1]++;
         }
       });
     }));
-    cov_2nwxrlavlq.s[252]++;
+    cov_10c74op6cl.s[252]++;
 
     Modal._jQueryInterface.call($(target), config, this);
   });
@@ -7442,17 +7440,17 @@
    * ------------------------------------------------------------------------
    */
 
-  cov_2nwxrlavlq.s[253]++;
+  cov_10c74op6cl.s[253]++;
   $.fn[NAME] = Modal._jQueryInterface;
-  cov_2nwxrlavlq.s[254]++;
+  cov_10c74op6cl.s[254]++;
   $.fn[NAME].Constructor = Modal;
-  cov_2nwxrlavlq.s[255]++;
+  cov_10c74op6cl.s[255]++;
 
   $.fn[NAME].noConflict = function () {
-    cov_2nwxrlavlq.f[46]++;
-    cov_2nwxrlavlq.s[256]++;
+    cov_10c74op6cl.f[46]++;
+    cov_10c74op6cl.s[256]++;
     $.fn[NAME] = JQUERY_NO_CONFLICT;
-    cov_2nwxrlavlq.s[257]++;
+    cov_10c74op6cl.s[257]++;
     return Modal._jQueryInterface;
   };
 

@@ -28,13 +28,13 @@
     return Constructor;
   }
 
-  var cov_1ruf1a208i = function () {
-    var path = "/home/h3isenbug/code/bootstrap-v4-rtl/js/src/tab.js";
-    var hash = "0390d1103618c45ec534c7f021bf810659e1c1da";
+  var cov_heer65qvl = function () {
+    var path = "/Library/WebServer/Documents/bootstrap-v4-rtl/js/src/tab.js";
+    var hash = "3cdad5174844e7d2f8eb12dc497b20c578952e44";
     var global = new Function("return this")();
     var gcv = "__coverage__";
     var coverageData = {
-      path: "/home/h3isenbug/code/bootstrap-v4-rtl/js/src/tab.js",
+      path: "/Library/WebServer/Documents/bootstrap-v4-rtl/js/src/tab.js",
       statementMap: {
         "0": {
           start: {
@@ -2259,7 +2259,7 @@
         "26": [0, 0]
       },
       _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-      hash: "0390d1103618c45ec534c7f021bf810659e1c1da"
+      hash: "3cdad5174844e7d2f8eb12dc497b20c578952e44"
     };
     var coverage = global[gcv] || (global[gcv] = {});
 
@@ -2275,27 +2275,27 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME = (cov_1ruf1a208i.s[0]++, 'tab');
-  var VERSION = (cov_1ruf1a208i.s[1]++, '4.4.1');
-  var DATA_KEY = (cov_1ruf1a208i.s[2]++, 'bs.tab');
-  var EVENT_KEY = (cov_1ruf1a208i.s[3]++, "." + DATA_KEY);
-  var DATA_API_KEY = (cov_1ruf1a208i.s[4]++, '.data-api');
-  var JQUERY_NO_CONFLICT = (cov_1ruf1a208i.s[5]++, $.fn[NAME]);
-  var Event = (cov_1ruf1a208i.s[6]++, {
+  var NAME = (cov_heer65qvl.s[0]++, 'tab');
+  var VERSION = (cov_heer65qvl.s[1]++, '4.4.1');
+  var DATA_KEY = (cov_heer65qvl.s[2]++, 'bs.tab');
+  var EVENT_KEY = (cov_heer65qvl.s[3]++, "." + DATA_KEY);
+  var DATA_API_KEY = (cov_heer65qvl.s[4]++, '.data-api');
+  var JQUERY_NO_CONFLICT = (cov_heer65qvl.s[5]++, $.fn[NAME]);
+  var Event = (cov_heer65qvl.s[6]++, {
     HIDE: "hide" + EVENT_KEY,
     HIDDEN: "hidden" + EVENT_KEY,
     SHOW: "show" + EVENT_KEY,
     SHOWN: "shown" + EVENT_KEY,
     CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
   });
-  var ClassName = (cov_1ruf1a208i.s[7]++, {
+  var ClassName = (cov_heer65qvl.s[7]++, {
     DROPDOWN_MENU: 'dropdown-menu',
     ACTIVE: 'active',
     DISABLED: 'disabled',
     FADE: 'fade',
     SHOW: 'show'
   });
-  var Selector = (cov_1ruf1a208i.s[8]++, {
+  var Selector = (cov_heer65qvl.s[8]++, {
     DROPDOWN: '.dropdown',
     NAV_LIST_GROUP: '.nav, .list-group',
     ACTIVE: '.active',
@@ -2310,12 +2310,10 @@
    * ------------------------------------------------------------------------
    */
 
-  var Tab =
-  /*#__PURE__*/
-  function () {
+  var Tab = /*#__PURE__*/function () {
     function Tab(element) {
-      cov_1ruf1a208i.f[0]++;
-      cov_1ruf1a208i.s[9]++;
+      cov_heer65qvl.f[0]++;
+      cov_heer65qvl.s[9]++;
       this._element = element;
     } // Getters
 
@@ -2326,111 +2324,111 @@
     _proto.show = function show() {
       var _this = this;
 
-      cov_1ruf1a208i.f[2]++;
-      cov_1ruf1a208i.s[11]++;
+      cov_heer65qvl.f[2]++;
+      cov_heer65qvl.s[11]++;
 
-      if ((cov_1ruf1a208i.b[1][0]++, this._element.parentNode) && (cov_1ruf1a208i.b[1][1]++, this._element.parentNode.nodeType === Node.ELEMENT_NODE) && (cov_1ruf1a208i.b[1][2]++, $(this._element).hasClass(ClassName.ACTIVE)) || (cov_1ruf1a208i.b[1][3]++, $(this._element).hasClass(ClassName.DISABLED))) {
-        cov_1ruf1a208i.b[0][0]++;
-        cov_1ruf1a208i.s[12]++;
+      if ((cov_heer65qvl.b[1][0]++, this._element.parentNode) && (cov_heer65qvl.b[1][1]++, this._element.parentNode.nodeType === Node.ELEMENT_NODE) && (cov_heer65qvl.b[1][2]++, $(this._element).hasClass(ClassName.ACTIVE)) || (cov_heer65qvl.b[1][3]++, $(this._element).hasClass(ClassName.DISABLED))) {
+        cov_heer65qvl.b[0][0]++;
+        cov_heer65qvl.s[12]++;
         return;
       } else {
-        cov_1ruf1a208i.b[0][1]++;
+        cov_heer65qvl.b[0][1]++;
       }
 
       var target;
       var previous;
-      var listElement = (cov_1ruf1a208i.s[13]++, $(this._element).closest(Selector.NAV_LIST_GROUP)[0]);
-      var selector = (cov_1ruf1a208i.s[14]++, Util.getSelectorFromElement(this._element));
-      cov_1ruf1a208i.s[15]++;
+      var listElement = (cov_heer65qvl.s[13]++, $(this._element).closest(Selector.NAV_LIST_GROUP)[0]);
+      var selector = (cov_heer65qvl.s[14]++, Util.getSelectorFromElement(this._element));
+      cov_heer65qvl.s[15]++;
 
       if (listElement) {
-        cov_1ruf1a208i.b[2][0]++;
-        var itemSelector = (cov_1ruf1a208i.s[16]++, (cov_1ruf1a208i.b[4][0]++, listElement.nodeName === 'UL') || (cov_1ruf1a208i.b[4][1]++, listElement.nodeName === 'OL') ? (cov_1ruf1a208i.b[3][0]++, Selector.ACTIVE_UL) : (cov_1ruf1a208i.b[3][1]++, Selector.ACTIVE));
-        cov_1ruf1a208i.s[17]++;
+        cov_heer65qvl.b[2][0]++;
+        var itemSelector = (cov_heer65qvl.s[16]++, (cov_heer65qvl.b[4][0]++, listElement.nodeName === 'UL') || (cov_heer65qvl.b[4][1]++, listElement.nodeName === 'OL') ? (cov_heer65qvl.b[3][0]++, Selector.ACTIVE_UL) : (cov_heer65qvl.b[3][1]++, Selector.ACTIVE));
+        cov_heer65qvl.s[17]++;
         previous = $.makeArray($(listElement).find(itemSelector));
-        cov_1ruf1a208i.s[18]++;
+        cov_heer65qvl.s[18]++;
         previous = previous[previous.length - 1];
       } else {
-        cov_1ruf1a208i.b[2][1]++;
+        cov_heer65qvl.b[2][1]++;
       }
 
-      var hideEvent = (cov_1ruf1a208i.s[19]++, $.Event(Event.HIDE, {
+      var hideEvent = (cov_heer65qvl.s[19]++, $.Event(Event.HIDE, {
         relatedTarget: this._element
       }));
-      var showEvent = (cov_1ruf1a208i.s[20]++, $.Event(Event.SHOW, {
+      var showEvent = (cov_heer65qvl.s[20]++, $.Event(Event.SHOW, {
         relatedTarget: previous
       }));
-      cov_1ruf1a208i.s[21]++;
+      cov_heer65qvl.s[21]++;
 
       if (previous) {
-        cov_1ruf1a208i.b[5][0]++;
-        cov_1ruf1a208i.s[22]++;
+        cov_heer65qvl.b[5][0]++;
+        cov_heer65qvl.s[22]++;
         $(previous).trigger(hideEvent);
       } else {
-        cov_1ruf1a208i.b[5][1]++;
+        cov_heer65qvl.b[5][1]++;
       }
 
-      cov_1ruf1a208i.s[23]++;
+      cov_heer65qvl.s[23]++;
       $(this._element).trigger(showEvent);
-      cov_1ruf1a208i.s[24]++;
+      cov_heer65qvl.s[24]++;
 
-      if ((cov_1ruf1a208i.b[7][0]++, showEvent.isDefaultPrevented()) || (cov_1ruf1a208i.b[7][1]++, hideEvent.isDefaultPrevented())) {
-        cov_1ruf1a208i.b[6][0]++;
-        cov_1ruf1a208i.s[25]++;
+      if ((cov_heer65qvl.b[7][0]++, showEvent.isDefaultPrevented()) || (cov_heer65qvl.b[7][1]++, hideEvent.isDefaultPrevented())) {
+        cov_heer65qvl.b[6][0]++;
+        cov_heer65qvl.s[25]++;
         return;
       } else {
-        cov_1ruf1a208i.b[6][1]++;
+        cov_heer65qvl.b[6][1]++;
       }
 
-      cov_1ruf1a208i.s[26]++;
+      cov_heer65qvl.s[26]++;
 
       if (selector) {
-        cov_1ruf1a208i.b[8][0]++;
-        cov_1ruf1a208i.s[27]++;
+        cov_heer65qvl.b[8][0]++;
+        cov_heer65qvl.s[27]++;
         target = document.querySelector(selector);
       } else {
-        cov_1ruf1a208i.b[8][1]++;
+        cov_heer65qvl.b[8][1]++;
       }
 
-      cov_1ruf1a208i.s[28]++;
+      cov_heer65qvl.s[28]++;
 
       this._activate(this._element, listElement);
 
-      cov_1ruf1a208i.s[29]++;
+      cov_heer65qvl.s[29]++;
 
       var complete = function complete() {
-        cov_1ruf1a208i.f[3]++;
-        var hiddenEvent = (cov_1ruf1a208i.s[30]++, $.Event(Event.HIDDEN, {
+        cov_heer65qvl.f[3]++;
+        var hiddenEvent = (cov_heer65qvl.s[30]++, $.Event(Event.HIDDEN, {
           relatedTarget: _this._element
         }));
-        var shownEvent = (cov_1ruf1a208i.s[31]++, $.Event(Event.SHOWN, {
+        var shownEvent = (cov_heer65qvl.s[31]++, $.Event(Event.SHOWN, {
           relatedTarget: previous
         }));
-        cov_1ruf1a208i.s[32]++;
+        cov_heer65qvl.s[32]++;
         $(previous).trigger(hiddenEvent);
-        cov_1ruf1a208i.s[33]++;
+        cov_heer65qvl.s[33]++;
         $(_this._element).trigger(shownEvent);
       };
 
-      cov_1ruf1a208i.s[34]++;
+      cov_heer65qvl.s[34]++;
 
       if (target) {
-        cov_1ruf1a208i.b[9][0]++;
-        cov_1ruf1a208i.s[35]++;
+        cov_heer65qvl.b[9][0]++;
+        cov_heer65qvl.s[35]++;
 
         this._activate(target, target.parentNode, complete);
       } else {
-        cov_1ruf1a208i.b[9][1]++;
-        cov_1ruf1a208i.s[36]++;
+        cov_heer65qvl.b[9][1]++;
+        cov_heer65qvl.s[36]++;
         complete();
       }
     };
 
     _proto.dispose = function dispose() {
-      cov_1ruf1a208i.f[4]++;
-      cov_1ruf1a208i.s[37]++;
+      cov_heer65qvl.f[4]++;
+      cov_heer65qvl.s[37]++;
       $.removeData(this._element, DATA_KEY);
-      cov_1ruf1a208i.s[38]++;
+      cov_heer65qvl.s[38]++;
       this._element = null;
     } // Private
     ;
@@ -2438,159 +2436,159 @@
     _proto._activate = function _activate(element, container, callback) {
       var _this2 = this;
 
-      cov_1ruf1a208i.f[5]++;
-      var activeElements = (cov_1ruf1a208i.s[39]++, (cov_1ruf1a208i.b[11][0]++, container) && ((cov_1ruf1a208i.b[11][1]++, container.nodeName === 'UL') || (cov_1ruf1a208i.b[11][2]++, container.nodeName === 'OL')) ? (cov_1ruf1a208i.b[10][0]++, $(container).find(Selector.ACTIVE_UL)) : (cov_1ruf1a208i.b[10][1]++, $(container).children(Selector.ACTIVE)));
-      var active = (cov_1ruf1a208i.s[40]++, activeElements[0]);
-      var isTransitioning = (cov_1ruf1a208i.s[41]++, (cov_1ruf1a208i.b[12][0]++, callback) && (cov_1ruf1a208i.b[12][1]++, active) && (cov_1ruf1a208i.b[12][2]++, $(active).hasClass(ClassName.FADE)));
-      cov_1ruf1a208i.s[42]++;
+      cov_heer65qvl.f[5]++;
+      var activeElements = (cov_heer65qvl.s[39]++, (cov_heer65qvl.b[11][0]++, container) && ((cov_heer65qvl.b[11][1]++, container.nodeName === 'UL') || (cov_heer65qvl.b[11][2]++, container.nodeName === 'OL')) ? (cov_heer65qvl.b[10][0]++, $(container).find(Selector.ACTIVE_UL)) : (cov_heer65qvl.b[10][1]++, $(container).children(Selector.ACTIVE)));
+      var active = (cov_heer65qvl.s[40]++, activeElements[0]);
+      var isTransitioning = (cov_heer65qvl.s[41]++, (cov_heer65qvl.b[12][0]++, callback) && (cov_heer65qvl.b[12][1]++, active) && (cov_heer65qvl.b[12][2]++, $(active).hasClass(ClassName.FADE)));
+      cov_heer65qvl.s[42]++;
 
       var complete = function complete() {
-        cov_1ruf1a208i.f[6]++;
-        cov_1ruf1a208i.s[43]++;
+        cov_heer65qvl.f[6]++;
+        cov_heer65qvl.s[43]++;
         return _this2._transitionComplete(element, active, callback);
       };
 
-      cov_1ruf1a208i.s[44]++;
+      cov_heer65qvl.s[44]++;
 
-      if ((cov_1ruf1a208i.b[14][0]++, active) && (cov_1ruf1a208i.b[14][1]++, isTransitioning)) {
-        cov_1ruf1a208i.b[13][0]++;
-        var transitionDuration = (cov_1ruf1a208i.s[45]++, Util.getTransitionDurationFromElement(active));
-        cov_1ruf1a208i.s[46]++;
+      if ((cov_heer65qvl.b[14][0]++, active) && (cov_heer65qvl.b[14][1]++, isTransitioning)) {
+        cov_heer65qvl.b[13][0]++;
+        var transitionDuration = (cov_heer65qvl.s[45]++, Util.getTransitionDurationFromElement(active));
+        cov_heer65qvl.s[46]++;
         $(active).removeClass(ClassName.SHOW).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
-        cov_1ruf1a208i.b[13][1]++;
-        cov_1ruf1a208i.s[47]++;
+        cov_heer65qvl.b[13][1]++;
+        cov_heer65qvl.s[47]++;
         complete();
       }
     };
 
     _proto._transitionComplete = function _transitionComplete(element, active, callback) {
-      cov_1ruf1a208i.f[7]++;
-      cov_1ruf1a208i.s[48]++;
+      cov_heer65qvl.f[7]++;
+      cov_heer65qvl.s[48]++;
 
       if (active) {
-        cov_1ruf1a208i.b[15][0]++;
-        cov_1ruf1a208i.s[49]++;
+        cov_heer65qvl.b[15][0]++;
+        cov_heer65qvl.s[49]++;
         $(active).removeClass(ClassName.ACTIVE);
-        var dropdownChild = (cov_1ruf1a208i.s[50]++, $(active.parentNode).find(Selector.DROPDOWN_ACTIVE_CHILD)[0]);
-        cov_1ruf1a208i.s[51]++;
+        var dropdownChild = (cov_heer65qvl.s[50]++, $(active.parentNode).find(Selector.DROPDOWN_ACTIVE_CHILD)[0]);
+        cov_heer65qvl.s[51]++;
 
         if (dropdownChild) {
-          cov_1ruf1a208i.b[16][0]++;
-          cov_1ruf1a208i.s[52]++;
+          cov_heer65qvl.b[16][0]++;
+          cov_heer65qvl.s[52]++;
           $(dropdownChild).removeClass(ClassName.ACTIVE);
         } else {
-          cov_1ruf1a208i.b[16][1]++;
+          cov_heer65qvl.b[16][1]++;
         }
 
-        cov_1ruf1a208i.s[53]++;
+        cov_heer65qvl.s[53]++;
 
         if (active.getAttribute('role') === 'tab') {
-          cov_1ruf1a208i.b[17][0]++;
-          cov_1ruf1a208i.s[54]++;
+          cov_heer65qvl.b[17][0]++;
+          cov_heer65qvl.s[54]++;
           active.setAttribute('aria-selected', false);
         } else {
-          cov_1ruf1a208i.b[17][1]++;
+          cov_heer65qvl.b[17][1]++;
         }
       } else {
-        cov_1ruf1a208i.b[15][1]++;
+        cov_heer65qvl.b[15][1]++;
       }
 
-      cov_1ruf1a208i.s[55]++;
+      cov_heer65qvl.s[55]++;
       $(element).addClass(ClassName.ACTIVE);
-      cov_1ruf1a208i.s[56]++;
+      cov_heer65qvl.s[56]++;
 
       if (element.getAttribute('role') === 'tab') {
-        cov_1ruf1a208i.b[18][0]++;
-        cov_1ruf1a208i.s[57]++;
+        cov_heer65qvl.b[18][0]++;
+        cov_heer65qvl.s[57]++;
         element.setAttribute('aria-selected', true);
       } else {
-        cov_1ruf1a208i.b[18][1]++;
+        cov_heer65qvl.b[18][1]++;
       }
 
-      cov_1ruf1a208i.s[58]++;
+      cov_heer65qvl.s[58]++;
       Util.reflow(element);
-      cov_1ruf1a208i.s[59]++;
+      cov_heer65qvl.s[59]++;
 
       if (element.classList.contains(ClassName.FADE)) {
-        cov_1ruf1a208i.b[19][0]++;
-        cov_1ruf1a208i.s[60]++;
+        cov_heer65qvl.b[19][0]++;
+        cov_heer65qvl.s[60]++;
         element.classList.add(ClassName.SHOW);
       } else {
-        cov_1ruf1a208i.b[19][1]++;
+        cov_heer65qvl.b[19][1]++;
       }
 
-      cov_1ruf1a208i.s[61]++;
+      cov_heer65qvl.s[61]++;
 
-      if ((cov_1ruf1a208i.b[21][0]++, element.parentNode) && (cov_1ruf1a208i.b[21][1]++, $(element.parentNode).hasClass(ClassName.DROPDOWN_MENU))) {
-        cov_1ruf1a208i.b[20][0]++;
-        var dropdownElement = (cov_1ruf1a208i.s[62]++, $(element).closest(Selector.DROPDOWN)[0]);
-        cov_1ruf1a208i.s[63]++;
+      if ((cov_heer65qvl.b[21][0]++, element.parentNode) && (cov_heer65qvl.b[21][1]++, $(element.parentNode).hasClass(ClassName.DROPDOWN_MENU))) {
+        cov_heer65qvl.b[20][0]++;
+        var dropdownElement = (cov_heer65qvl.s[62]++, $(element).closest(Selector.DROPDOWN)[0]);
+        cov_heer65qvl.s[63]++;
 
         if (dropdownElement) {
-          cov_1ruf1a208i.b[22][0]++;
-          var dropdownToggleList = (cov_1ruf1a208i.s[64]++, [].slice.call(dropdownElement.querySelectorAll(Selector.DROPDOWN_TOGGLE)));
-          cov_1ruf1a208i.s[65]++;
+          cov_heer65qvl.b[22][0]++;
+          var dropdownToggleList = (cov_heer65qvl.s[64]++, [].slice.call(dropdownElement.querySelectorAll(Selector.DROPDOWN_TOGGLE)));
+          cov_heer65qvl.s[65]++;
           $(dropdownToggleList).addClass(ClassName.ACTIVE);
         } else {
-          cov_1ruf1a208i.b[22][1]++;
+          cov_heer65qvl.b[22][1]++;
         }
 
-        cov_1ruf1a208i.s[66]++;
+        cov_heer65qvl.s[66]++;
         element.setAttribute('aria-expanded', true);
       } else {
-        cov_1ruf1a208i.b[20][1]++;
+        cov_heer65qvl.b[20][1]++;
       }
 
-      cov_1ruf1a208i.s[67]++;
+      cov_heer65qvl.s[67]++;
 
       if (callback) {
-        cov_1ruf1a208i.b[23][0]++;
-        cov_1ruf1a208i.s[68]++;
+        cov_heer65qvl.b[23][0]++;
+        cov_heer65qvl.s[68]++;
         callback();
       } else {
-        cov_1ruf1a208i.b[23][1]++;
+        cov_heer65qvl.b[23][1]++;
       }
     } // Static
     ;
 
     Tab._jQueryInterface = function _jQueryInterface(config) {
-      cov_1ruf1a208i.f[8]++;
-      cov_1ruf1a208i.s[69]++;
+      cov_heer65qvl.f[8]++;
+      cov_heer65qvl.s[69]++;
       return this.each(function () {
-        cov_1ruf1a208i.f[9]++;
-        var $this = (cov_1ruf1a208i.s[70]++, $(this));
-        var data = (cov_1ruf1a208i.s[71]++, $this.data(DATA_KEY));
-        cov_1ruf1a208i.s[72]++;
+        cov_heer65qvl.f[9]++;
+        var $this = (cov_heer65qvl.s[70]++, $(this));
+        var data = (cov_heer65qvl.s[71]++, $this.data(DATA_KEY));
+        cov_heer65qvl.s[72]++;
 
         if (!data) {
-          cov_1ruf1a208i.b[24][0]++;
-          cov_1ruf1a208i.s[73]++;
+          cov_heer65qvl.b[24][0]++;
+          cov_heer65qvl.s[73]++;
           data = new Tab(this);
-          cov_1ruf1a208i.s[74]++;
+          cov_heer65qvl.s[74]++;
           $this.data(DATA_KEY, data);
         } else {
-          cov_1ruf1a208i.b[24][1]++;
+          cov_heer65qvl.b[24][1]++;
         }
 
-        cov_1ruf1a208i.s[75]++;
+        cov_heer65qvl.s[75]++;
 
         if (typeof config === 'string') {
-          cov_1ruf1a208i.b[25][0]++;
-          cov_1ruf1a208i.s[76]++;
+          cov_heer65qvl.b[25][0]++;
+          cov_heer65qvl.s[76]++;
 
           if (typeof data[config] === 'undefined') {
-            cov_1ruf1a208i.b[26][0]++;
-            cov_1ruf1a208i.s[77]++;
+            cov_heer65qvl.b[26][0]++;
+            cov_heer65qvl.s[77]++;
             throw new TypeError("No method named \"" + config + "\"");
           } else {
-            cov_1ruf1a208i.b[26][1]++;
+            cov_heer65qvl.b[26][1]++;
           }
 
-          cov_1ruf1a208i.s[78]++;
+          cov_heer65qvl.s[78]++;
           data[config]();
         } else {
-          cov_1ruf1a208i.b[25][1]++;
+          cov_heer65qvl.b[25][1]++;
         }
       });
     };
@@ -2598,8 +2596,8 @@
     _createClass(Tab, null, [{
       key: "VERSION",
       get: function get() {
-        cov_1ruf1a208i.f[1]++;
-        cov_1ruf1a208i.s[10]++;
+        cov_heer65qvl.f[1]++;
+        cov_heer65qvl.s[10]++;
         return VERSION;
       }
     }]);
@@ -2613,12 +2611,12 @@
    */
 
 
-  cov_1ruf1a208i.s[79]++;
+  cov_heer65qvl.s[79]++;
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
-    cov_1ruf1a208i.f[10]++;
-    cov_1ruf1a208i.s[80]++;
+    cov_heer65qvl.f[10]++;
+    cov_heer65qvl.s[80]++;
     event.preventDefault();
-    cov_1ruf1a208i.s[81]++;
+    cov_heer65qvl.s[81]++;
 
     Tab._jQueryInterface.call($(this), 'show');
   });
@@ -2628,17 +2626,17 @@
    * ------------------------------------------------------------------------
    */
 
-  cov_1ruf1a208i.s[82]++;
+  cov_heer65qvl.s[82]++;
   $.fn[NAME] = Tab._jQueryInterface;
-  cov_1ruf1a208i.s[83]++;
+  cov_heer65qvl.s[83]++;
   $.fn[NAME].Constructor = Tab;
-  cov_1ruf1a208i.s[84]++;
+  cov_heer65qvl.s[84]++;
 
   $.fn[NAME].noConflict = function () {
-    cov_1ruf1a208i.f[11]++;
-    cov_1ruf1a208i.s[85]++;
+    cov_heer65qvl.f[11]++;
+    cov_heer65qvl.s[85]++;
     $.fn[NAME] = JQUERY_NO_CONFLICT;
-    cov_1ruf1a208i.s[86]++;
+    cov_heer65qvl.s[86]++;
     return Tab._jQueryInterface;
   };
 

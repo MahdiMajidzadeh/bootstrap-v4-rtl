@@ -77,13 +77,13 @@
     return target;
   }
 
-  var cov_5mipcj6ja = function () {
-    var path = "/home/h3isenbug/code/bootstrap-v4-rtl/js/src/carousel.js";
-    var hash = "3e641db8af16d6edf57edd09f50834be3bae81bb";
+  var cov_1qrssl00mz = function () {
+    var path = "/Library/WebServer/Documents/bootstrap-v4-rtl/js/src/carousel.js";
+    var hash = "70ac15b3255bd2c7fe7a90308000ad0037559989";
     var global = new Function("return this")();
     var gcv = "__coverage__";
     var coverageData = {
-      path: "/home/h3isenbug/code/bootstrap-v4-rtl/js/src/carousel.js",
+      path: "/Library/WebServer/Documents/bootstrap-v4-rtl/js/src/carousel.js",
       statementMap: {
         "0": {
           start: {
@@ -6453,7 +6453,7 @@
         "71": [0, 0]
       },
       _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-      hash: "3e641db8af16d6edf57edd09f50834be3bae81bb"
+      hash: "70ac15b3255bd2c7fe7a90308000ad0037559989"
     };
     var coverage = global[gcv] || (global[gcv] = {});
 
@@ -6469,20 +6469,20 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME = (cov_5mipcj6ja.s[0]++, 'carousel');
-  var VERSION = (cov_5mipcj6ja.s[1]++, '4.4.1');
-  var DATA_KEY = (cov_5mipcj6ja.s[2]++, 'bs.carousel');
-  var EVENT_KEY = (cov_5mipcj6ja.s[3]++, "." + DATA_KEY);
-  var DATA_API_KEY = (cov_5mipcj6ja.s[4]++, '.data-api');
-  var JQUERY_NO_CONFLICT = (cov_5mipcj6ja.s[5]++, $.fn[NAME]);
-  var ARROW_LEFT_KEYCODE = (cov_5mipcj6ja.s[6]++, 37); // KeyboardEvent.which value for left arrow key
+  var NAME = (cov_1qrssl00mz.s[0]++, 'carousel');
+  var VERSION = (cov_1qrssl00mz.s[1]++, '4.4.1');
+  var DATA_KEY = (cov_1qrssl00mz.s[2]++, 'bs.carousel');
+  var EVENT_KEY = (cov_1qrssl00mz.s[3]++, "." + DATA_KEY);
+  var DATA_API_KEY = (cov_1qrssl00mz.s[4]++, '.data-api');
+  var JQUERY_NO_CONFLICT = (cov_1qrssl00mz.s[5]++, $.fn[NAME]);
+  var ARROW_LEFT_KEYCODE = (cov_1qrssl00mz.s[6]++, 37); // KeyboardEvent.which value for left arrow key
 
-  var ARROW_RIGHT_KEYCODE = (cov_5mipcj6ja.s[7]++, 39); // KeyboardEvent.which value for right arrow key
+  var ARROW_RIGHT_KEYCODE = (cov_1qrssl00mz.s[7]++, 39); // KeyboardEvent.which value for right arrow key
 
-  var TOUCHEVENT_COMPAT_WAIT = (cov_5mipcj6ja.s[8]++, 500); // Time for mouse compat events to fire after touch
+  var TOUCHEVENT_COMPAT_WAIT = (cov_1qrssl00mz.s[8]++, 500); // Time for mouse compat events to fire after touch
 
-  var SWIPE_THRESHOLD = (cov_5mipcj6ja.s[9]++, 40);
-  var Default = (cov_5mipcj6ja.s[10]++, {
+  var SWIPE_THRESHOLD = (cov_1qrssl00mz.s[9]++, 40);
+  var Default = (cov_1qrssl00mz.s[10]++, {
     interval: 5000,
     keyboard: true,
     slide: false,
@@ -6490,7 +6490,7 @@
     wrap: true,
     touch: true
   });
-  var DefaultType = (cov_5mipcj6ja.s[11]++, {
+  var DefaultType = (cov_1qrssl00mz.s[11]++, {
     interval: '(number|boolean)',
     keyboard: 'boolean',
     slide: '(boolean|string)',
@@ -6498,13 +6498,13 @@
     wrap: 'boolean',
     touch: 'boolean'
   });
-  var Direction = (cov_5mipcj6ja.s[12]++, {
+  var Direction = (cov_1qrssl00mz.s[12]++, {
     NEXT: 'next',
     PREV: 'prev',
     LEFT: 'left',
     RIGHT: 'right'
   });
-  var Event = (cov_5mipcj6ja.s[13]++, {
+  var Event = (cov_1qrssl00mz.s[13]++, {
     SLIDE: "slide" + EVENT_KEY,
     SLID: "slid" + EVENT_KEY,
     KEYDOWN: "keydown" + EVENT_KEY,
@@ -6519,7 +6519,7 @@
     LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY,
     CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
   });
-  var ClassName = (cov_5mipcj6ja.s[14]++, {
+  var ClassName = (cov_1qrssl00mz.s[14]++, {
     CAROUSEL: 'carousel',
     ACTIVE: 'active',
     SLIDE: 'slide',
@@ -6530,7 +6530,7 @@
     ITEM: 'carousel-item',
     POINTER_EVENT: 'pointer-event'
   });
-  var Selector = (cov_5mipcj6ja.s[15]++, {
+  var Selector = (cov_1qrssl00mz.s[15]++, {
     ACTIVE: '.active',
     ACTIVE_ITEM: '.active.carousel-item',
     ITEM: '.carousel-item',
@@ -6540,7 +6540,7 @@
     DATA_SLIDE: '[data-slide], [data-slide-to]',
     DATA_RIDE: '[data-ride="carousel"]'
   });
-  var PointerType = (cov_5mipcj6ja.s[16]++, {
+  var PointerType = (cov_1qrssl00mz.s[16]++, {
     TOUCH: 'touch',
     PEN: 'pen'
   });
@@ -6550,38 +6550,36 @@
    * ------------------------------------------------------------------------
    */
 
-  var Carousel =
-  /*#__PURE__*/
-  function () {
+  var Carousel = /*#__PURE__*/function () {
     function Carousel(element, config) {
-      cov_5mipcj6ja.f[0]++;
-      cov_5mipcj6ja.s[17]++;
+      cov_1qrssl00mz.f[0]++;
+      cov_1qrssl00mz.s[17]++;
       this._items = null;
-      cov_5mipcj6ja.s[18]++;
+      cov_1qrssl00mz.s[18]++;
       this._interval = null;
-      cov_5mipcj6ja.s[19]++;
+      cov_1qrssl00mz.s[19]++;
       this._activeElement = null;
-      cov_5mipcj6ja.s[20]++;
+      cov_1qrssl00mz.s[20]++;
       this._isPaused = false;
-      cov_5mipcj6ja.s[21]++;
+      cov_1qrssl00mz.s[21]++;
       this._isSliding = false;
-      cov_5mipcj6ja.s[22]++;
+      cov_1qrssl00mz.s[22]++;
       this.touchTimeout = null;
-      cov_5mipcj6ja.s[23]++;
+      cov_1qrssl00mz.s[23]++;
       this.touchStartX = 0;
-      cov_5mipcj6ja.s[24]++;
+      cov_1qrssl00mz.s[24]++;
       this.touchDeltaX = 0;
-      cov_5mipcj6ja.s[25]++;
+      cov_1qrssl00mz.s[25]++;
       this._config = this._getConfig(config);
-      cov_5mipcj6ja.s[26]++;
+      cov_1qrssl00mz.s[26]++;
       this._element = element;
-      cov_5mipcj6ja.s[27]++;
+      cov_1qrssl00mz.s[27]++;
       this._indicatorsElement = this._element.querySelector(Selector.INDICATORS);
-      cov_5mipcj6ja.s[28]++;
-      this._touchSupported = (cov_5mipcj6ja.b[0][0]++, 'ontouchstart' in document.documentElement) || (cov_5mipcj6ja.b[0][1]++, navigator.maxTouchPoints > 0);
-      cov_5mipcj6ja.s[29]++;
-      this._pointerEvent = Boolean((cov_5mipcj6ja.b[1][0]++, window.PointerEvent) || (cov_5mipcj6ja.b[1][1]++, window.MSPointerEvent));
-      cov_5mipcj6ja.s[30]++;
+      cov_1qrssl00mz.s[28]++;
+      this._touchSupported = (cov_1qrssl00mz.b[0][0]++, 'ontouchstart' in document.documentElement) || (cov_1qrssl00mz.b[0][1]++, navigator.maxTouchPoints > 0);
+      cov_1qrssl00mz.s[29]++;
+      this._pointerEvent = Boolean((cov_1qrssl00mz.b[1][0]++, window.PointerEvent) || (cov_1qrssl00mz.b[1][1]++, window.MSPointerEvent));
+      cov_1qrssl00mz.s[30]++;
 
       this._addEventListeners();
     } // Getters
@@ -6591,367 +6589,367 @@
 
     // Public
     _proto.next = function next() {
-      cov_5mipcj6ja.f[3]++;
-      cov_5mipcj6ja.s[33]++;
+      cov_1qrssl00mz.f[3]++;
+      cov_1qrssl00mz.s[33]++;
 
       if (!this._isSliding) {
-        cov_5mipcj6ja.b[2][0]++;
-        cov_5mipcj6ja.s[34]++;
+        cov_1qrssl00mz.b[2][0]++;
+        cov_1qrssl00mz.s[34]++;
 
         this._slide(Direction.NEXT);
       } else {
-        cov_5mipcj6ja.b[2][1]++;
+        cov_1qrssl00mz.b[2][1]++;
       }
     };
 
     _proto.nextWhenVisible = function nextWhenVisible() {
-      cov_5mipcj6ja.f[4]++;
-      cov_5mipcj6ja.s[35]++;
+      cov_1qrssl00mz.f[4]++;
+      cov_1qrssl00mz.s[35]++;
 
       // Don't call next when the page isn't visible
       // or the carousel or its parent isn't visible
-      if ((cov_5mipcj6ja.b[4][0]++, !document.hidden) && (cov_5mipcj6ja.b[4][1]++, $(this._element).is(':visible')) && (cov_5mipcj6ja.b[4][2]++, $(this._element).css('visibility') !== 'hidden')) {
-        cov_5mipcj6ja.b[3][0]++;
-        cov_5mipcj6ja.s[36]++;
+      if ((cov_1qrssl00mz.b[4][0]++, !document.hidden) && (cov_1qrssl00mz.b[4][1]++, $(this._element).is(':visible')) && (cov_1qrssl00mz.b[4][2]++, $(this._element).css('visibility') !== 'hidden')) {
+        cov_1qrssl00mz.b[3][0]++;
+        cov_1qrssl00mz.s[36]++;
         this.next();
       } else {
-        cov_5mipcj6ja.b[3][1]++;
+        cov_1qrssl00mz.b[3][1]++;
       }
     };
 
     _proto.prev = function prev() {
-      cov_5mipcj6ja.f[5]++;
-      cov_5mipcj6ja.s[37]++;
+      cov_1qrssl00mz.f[5]++;
+      cov_1qrssl00mz.s[37]++;
 
       if (!this._isSliding) {
-        cov_5mipcj6ja.b[5][0]++;
-        cov_5mipcj6ja.s[38]++;
+        cov_1qrssl00mz.b[5][0]++;
+        cov_1qrssl00mz.s[38]++;
 
         this._slide(Direction.PREV);
       } else {
-        cov_5mipcj6ja.b[5][1]++;
+        cov_1qrssl00mz.b[5][1]++;
       }
     };
 
     _proto.pause = function pause(event) {
-      cov_5mipcj6ja.f[6]++;
-      cov_5mipcj6ja.s[39]++;
+      cov_1qrssl00mz.f[6]++;
+      cov_1qrssl00mz.s[39]++;
 
       if (!event) {
-        cov_5mipcj6ja.b[6][0]++;
-        cov_5mipcj6ja.s[40]++;
+        cov_1qrssl00mz.b[6][0]++;
+        cov_1qrssl00mz.s[40]++;
         this._isPaused = true;
       } else {
-        cov_5mipcj6ja.b[6][1]++;
+        cov_1qrssl00mz.b[6][1]++;
       }
 
-      cov_5mipcj6ja.s[41]++;
+      cov_1qrssl00mz.s[41]++;
 
       if (this._element.querySelector(Selector.NEXT_PREV)) {
-        cov_5mipcj6ja.b[7][0]++;
-        cov_5mipcj6ja.s[42]++;
+        cov_1qrssl00mz.b[7][0]++;
+        cov_1qrssl00mz.s[42]++;
         Util.triggerTransitionEnd(this._element);
-        cov_5mipcj6ja.s[43]++;
+        cov_1qrssl00mz.s[43]++;
         this.cycle(true);
       } else {
-        cov_5mipcj6ja.b[7][1]++;
+        cov_1qrssl00mz.b[7][1]++;
       }
 
-      cov_5mipcj6ja.s[44]++;
+      cov_1qrssl00mz.s[44]++;
       clearInterval(this._interval);
-      cov_5mipcj6ja.s[45]++;
+      cov_1qrssl00mz.s[45]++;
       this._interval = null;
     };
 
     _proto.cycle = function cycle(event) {
-      cov_5mipcj6ja.f[7]++;
-      cov_5mipcj6ja.s[46]++;
+      cov_1qrssl00mz.f[7]++;
+      cov_1qrssl00mz.s[46]++;
 
       if (!event) {
-        cov_5mipcj6ja.b[8][0]++;
-        cov_5mipcj6ja.s[47]++;
+        cov_1qrssl00mz.b[8][0]++;
+        cov_1qrssl00mz.s[47]++;
         this._isPaused = false;
       } else {
-        cov_5mipcj6ja.b[8][1]++;
+        cov_1qrssl00mz.b[8][1]++;
       }
 
-      cov_5mipcj6ja.s[48]++;
+      cov_1qrssl00mz.s[48]++;
 
       if (this._interval) {
-        cov_5mipcj6ja.b[9][0]++;
-        cov_5mipcj6ja.s[49]++;
+        cov_1qrssl00mz.b[9][0]++;
+        cov_1qrssl00mz.s[49]++;
         clearInterval(this._interval);
-        cov_5mipcj6ja.s[50]++;
+        cov_1qrssl00mz.s[50]++;
         this._interval = null;
       } else {
-        cov_5mipcj6ja.b[9][1]++;
+        cov_1qrssl00mz.b[9][1]++;
       }
 
-      cov_5mipcj6ja.s[51]++;
+      cov_1qrssl00mz.s[51]++;
 
-      if ((cov_5mipcj6ja.b[11][0]++, this._config.interval) && (cov_5mipcj6ja.b[11][1]++, !this._isPaused)) {
-        cov_5mipcj6ja.b[10][0]++;
-        cov_5mipcj6ja.s[52]++;
-        this._interval = setInterval((document.visibilityState ? (cov_5mipcj6ja.b[12][0]++, this.nextWhenVisible) : (cov_5mipcj6ja.b[12][1]++, this.next)).bind(this), this._config.interval);
+      if ((cov_1qrssl00mz.b[11][0]++, this._config.interval) && (cov_1qrssl00mz.b[11][1]++, !this._isPaused)) {
+        cov_1qrssl00mz.b[10][0]++;
+        cov_1qrssl00mz.s[52]++;
+        this._interval = setInterval((document.visibilityState ? (cov_1qrssl00mz.b[12][0]++, this.nextWhenVisible) : (cov_1qrssl00mz.b[12][1]++, this.next)).bind(this), this._config.interval);
       } else {
-        cov_5mipcj6ja.b[10][1]++;
+        cov_1qrssl00mz.b[10][1]++;
       }
     };
 
     _proto.to = function to(index) {
       var _this = this;
 
-      cov_5mipcj6ja.f[8]++;
-      cov_5mipcj6ja.s[53]++;
+      cov_1qrssl00mz.f[8]++;
+      cov_1qrssl00mz.s[53]++;
       this._activeElement = this._element.querySelector(Selector.ACTIVE_ITEM);
-      var activeIndex = (cov_5mipcj6ja.s[54]++, this._getItemIndex(this._activeElement));
-      cov_5mipcj6ja.s[55]++;
+      var activeIndex = (cov_1qrssl00mz.s[54]++, this._getItemIndex(this._activeElement));
+      cov_1qrssl00mz.s[55]++;
 
-      if ((cov_5mipcj6ja.b[14][0]++, index > this._items.length - 1) || (cov_5mipcj6ja.b[14][1]++, index < 0)) {
-        cov_5mipcj6ja.b[13][0]++;
-        cov_5mipcj6ja.s[56]++;
+      if ((cov_1qrssl00mz.b[14][0]++, index > this._items.length - 1) || (cov_1qrssl00mz.b[14][1]++, index < 0)) {
+        cov_1qrssl00mz.b[13][0]++;
+        cov_1qrssl00mz.s[56]++;
         return;
       } else {
-        cov_5mipcj6ja.b[13][1]++;
+        cov_1qrssl00mz.b[13][1]++;
       }
 
-      cov_5mipcj6ja.s[57]++;
+      cov_1qrssl00mz.s[57]++;
 
       if (this._isSliding) {
-        cov_5mipcj6ja.b[15][0]++;
-        cov_5mipcj6ja.s[58]++;
+        cov_1qrssl00mz.b[15][0]++;
+        cov_1qrssl00mz.s[58]++;
         $(this._element).one(Event.SLID, function () {
-          cov_5mipcj6ja.f[9]++;
-          cov_5mipcj6ja.s[59]++;
+          cov_1qrssl00mz.f[9]++;
+          cov_1qrssl00mz.s[59]++;
           return _this.to(index);
         });
-        cov_5mipcj6ja.s[60]++;
+        cov_1qrssl00mz.s[60]++;
         return;
       } else {
-        cov_5mipcj6ja.b[15][1]++;
+        cov_1qrssl00mz.b[15][1]++;
       }
 
-      cov_5mipcj6ja.s[61]++;
+      cov_1qrssl00mz.s[61]++;
 
       if (activeIndex === index) {
-        cov_5mipcj6ja.b[16][0]++;
-        cov_5mipcj6ja.s[62]++;
+        cov_1qrssl00mz.b[16][0]++;
+        cov_1qrssl00mz.s[62]++;
         this.pause();
-        cov_5mipcj6ja.s[63]++;
+        cov_1qrssl00mz.s[63]++;
         this.cycle();
-        cov_5mipcj6ja.s[64]++;
+        cov_1qrssl00mz.s[64]++;
         return;
       } else {
-        cov_5mipcj6ja.b[16][1]++;
+        cov_1qrssl00mz.b[16][1]++;
       }
 
-      var direction = (cov_5mipcj6ja.s[65]++, index > activeIndex ? (cov_5mipcj6ja.b[17][0]++, Direction.NEXT) : (cov_5mipcj6ja.b[17][1]++, Direction.PREV));
-      cov_5mipcj6ja.s[66]++;
+      var direction = (cov_1qrssl00mz.s[65]++, index > activeIndex ? (cov_1qrssl00mz.b[17][0]++, Direction.NEXT) : (cov_1qrssl00mz.b[17][1]++, Direction.PREV));
+      cov_1qrssl00mz.s[66]++;
 
       this._slide(direction, this._items[index]);
     };
 
     _proto.dispose = function dispose() {
-      cov_5mipcj6ja.f[10]++;
-      cov_5mipcj6ja.s[67]++;
+      cov_1qrssl00mz.f[10]++;
+      cov_1qrssl00mz.s[67]++;
       $(this._element).off(EVENT_KEY);
-      cov_5mipcj6ja.s[68]++;
+      cov_1qrssl00mz.s[68]++;
       $.removeData(this._element, DATA_KEY);
-      cov_5mipcj6ja.s[69]++;
+      cov_1qrssl00mz.s[69]++;
       this._items = null;
-      cov_5mipcj6ja.s[70]++;
+      cov_1qrssl00mz.s[70]++;
       this._config = null;
-      cov_5mipcj6ja.s[71]++;
+      cov_1qrssl00mz.s[71]++;
       this._element = null;
-      cov_5mipcj6ja.s[72]++;
+      cov_1qrssl00mz.s[72]++;
       this._interval = null;
-      cov_5mipcj6ja.s[73]++;
+      cov_1qrssl00mz.s[73]++;
       this._isPaused = null;
-      cov_5mipcj6ja.s[74]++;
+      cov_1qrssl00mz.s[74]++;
       this._isSliding = null;
-      cov_5mipcj6ja.s[75]++;
+      cov_1qrssl00mz.s[75]++;
       this._activeElement = null;
-      cov_5mipcj6ja.s[76]++;
+      cov_1qrssl00mz.s[76]++;
       this._indicatorsElement = null;
     } // Private
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      cov_5mipcj6ja.f[11]++;
-      cov_5mipcj6ja.s[77]++;
-      config = _objectSpread2({}, Default, {}, config);
-      cov_5mipcj6ja.s[78]++;
+      cov_1qrssl00mz.f[11]++;
+      cov_1qrssl00mz.s[77]++;
+      config = _objectSpread2(_objectSpread2({}, Default), config);
+      cov_1qrssl00mz.s[78]++;
       Util.typeCheckConfig(NAME, config, DefaultType);
-      cov_5mipcj6ja.s[79]++;
+      cov_1qrssl00mz.s[79]++;
       return config;
     };
 
     _proto._handleSwipe = function _handleSwipe() {
-      cov_5mipcj6ja.f[12]++;
-      var absDeltax = (cov_5mipcj6ja.s[80]++, Math.abs(this.touchDeltaX));
-      cov_5mipcj6ja.s[81]++;
+      cov_1qrssl00mz.f[12]++;
+      var absDeltax = (cov_1qrssl00mz.s[80]++, Math.abs(this.touchDeltaX));
+      cov_1qrssl00mz.s[81]++;
 
       if (absDeltax <= SWIPE_THRESHOLD) {
-        cov_5mipcj6ja.b[18][0]++;
-        cov_5mipcj6ja.s[82]++;
+        cov_1qrssl00mz.b[18][0]++;
+        cov_1qrssl00mz.s[82]++;
         return;
       } else {
-        cov_5mipcj6ja.b[18][1]++;
+        cov_1qrssl00mz.b[18][1]++;
       }
 
-      var direction = (cov_5mipcj6ja.s[83]++, absDeltax / this.touchDeltaX);
-      cov_5mipcj6ja.s[84]++;
+      var direction = (cov_1qrssl00mz.s[83]++, absDeltax / this.touchDeltaX);
+      cov_1qrssl00mz.s[84]++;
       this.touchDeltaX = 0; // swipe left
 
-      cov_5mipcj6ja.s[85]++;
+      cov_1qrssl00mz.s[85]++;
 
       if (direction > 0) {
-        cov_5mipcj6ja.b[19][0]++;
-        cov_5mipcj6ja.s[86]++;
+        cov_1qrssl00mz.b[19][0]++;
+        cov_1qrssl00mz.s[86]++;
         this.prev();
       } else {
-        cov_5mipcj6ja.b[19][1]++;
+        cov_1qrssl00mz.b[19][1]++;
       } // swipe right
 
 
-      cov_5mipcj6ja.s[87]++;
+      cov_1qrssl00mz.s[87]++;
 
       if (direction < 0) {
-        cov_5mipcj6ja.b[20][0]++;
-        cov_5mipcj6ja.s[88]++;
+        cov_1qrssl00mz.b[20][0]++;
+        cov_1qrssl00mz.s[88]++;
         this.next();
       } else {
-        cov_5mipcj6ja.b[20][1]++;
+        cov_1qrssl00mz.b[20][1]++;
       }
     };
 
     _proto._addEventListeners = function _addEventListeners() {
       var _this2 = this;
 
-      cov_5mipcj6ja.f[13]++;
-      cov_5mipcj6ja.s[89]++;
+      cov_1qrssl00mz.f[13]++;
+      cov_1qrssl00mz.s[89]++;
 
       if (this._config.keyboard) {
-        cov_5mipcj6ja.b[21][0]++;
-        cov_5mipcj6ja.s[90]++;
+        cov_1qrssl00mz.b[21][0]++;
+        cov_1qrssl00mz.s[90]++;
         $(this._element).on(Event.KEYDOWN, function (event) {
-          cov_5mipcj6ja.f[14]++;
-          cov_5mipcj6ja.s[91]++;
+          cov_1qrssl00mz.f[14]++;
+          cov_1qrssl00mz.s[91]++;
           return _this2._keydown(event);
         });
       } else {
-        cov_5mipcj6ja.b[21][1]++;
+        cov_1qrssl00mz.b[21][1]++;
       }
 
-      cov_5mipcj6ja.s[92]++;
+      cov_1qrssl00mz.s[92]++;
 
       if (this._config.pause === 'hover') {
-        cov_5mipcj6ja.b[22][0]++;
-        cov_5mipcj6ja.s[93]++;
+        cov_1qrssl00mz.b[22][0]++;
+        cov_1qrssl00mz.s[93]++;
         $(this._element).on(Event.MOUSEENTER, function (event) {
-          cov_5mipcj6ja.f[15]++;
-          cov_5mipcj6ja.s[94]++;
+          cov_1qrssl00mz.f[15]++;
+          cov_1qrssl00mz.s[94]++;
           return _this2.pause(event);
         }).on(Event.MOUSELEAVE, function (event) {
-          cov_5mipcj6ja.f[16]++;
-          cov_5mipcj6ja.s[95]++;
+          cov_1qrssl00mz.f[16]++;
+          cov_1qrssl00mz.s[95]++;
           return _this2.cycle(event);
         });
       } else {
-        cov_5mipcj6ja.b[22][1]++;
+        cov_1qrssl00mz.b[22][1]++;
       }
 
-      cov_5mipcj6ja.s[96]++;
+      cov_1qrssl00mz.s[96]++;
 
       if (this._config.touch) {
-        cov_5mipcj6ja.b[23][0]++;
-        cov_5mipcj6ja.s[97]++;
+        cov_1qrssl00mz.b[23][0]++;
+        cov_1qrssl00mz.s[97]++;
 
         this._addTouchEventListeners();
       } else {
-        cov_5mipcj6ja.b[23][1]++;
+        cov_1qrssl00mz.b[23][1]++;
       }
     };
 
     _proto._addTouchEventListeners = function _addTouchEventListeners() {
       var _this3 = this;
 
-      cov_5mipcj6ja.f[17]++;
-      cov_5mipcj6ja.s[98]++;
+      cov_1qrssl00mz.f[17]++;
+      cov_1qrssl00mz.s[98]++;
 
       if (!this._touchSupported) {
-        cov_5mipcj6ja.b[24][0]++;
-        cov_5mipcj6ja.s[99]++;
+        cov_1qrssl00mz.b[24][0]++;
+        cov_1qrssl00mz.s[99]++;
         return;
       } else {
-        cov_5mipcj6ja.b[24][1]++;
+        cov_1qrssl00mz.b[24][1]++;
       }
 
-      cov_5mipcj6ja.s[100]++;
+      cov_1qrssl00mz.s[100]++;
 
       var start = function start(event) {
-        cov_5mipcj6ja.f[18]++;
-        cov_5mipcj6ja.s[101]++;
+        cov_1qrssl00mz.f[18]++;
+        cov_1qrssl00mz.s[101]++;
 
-        if ((cov_5mipcj6ja.b[26][0]++, _this3._pointerEvent) && (cov_5mipcj6ja.b[26][1]++, PointerType[event.originalEvent.pointerType.toUpperCase()])) {
-          cov_5mipcj6ja.b[25][0]++;
-          cov_5mipcj6ja.s[102]++;
+        if ((cov_1qrssl00mz.b[26][0]++, _this3._pointerEvent) && (cov_1qrssl00mz.b[26][1]++, PointerType[event.originalEvent.pointerType.toUpperCase()])) {
+          cov_1qrssl00mz.b[25][0]++;
+          cov_1qrssl00mz.s[102]++;
           _this3.touchStartX = event.originalEvent.clientX;
         } else {
-          cov_5mipcj6ja.b[25][1]++;
-          cov_5mipcj6ja.s[103]++;
+          cov_1qrssl00mz.b[25][1]++;
+          cov_1qrssl00mz.s[103]++;
 
           if (!_this3._pointerEvent) {
-            cov_5mipcj6ja.b[27][0]++;
-            cov_5mipcj6ja.s[104]++;
+            cov_1qrssl00mz.b[27][0]++;
+            cov_1qrssl00mz.s[104]++;
             _this3.touchStartX = event.originalEvent.touches[0].clientX;
           } else {
-            cov_5mipcj6ja.b[27][1]++;
+            cov_1qrssl00mz.b[27][1]++;
           }
         }
       };
 
-      cov_5mipcj6ja.s[105]++;
+      cov_1qrssl00mz.s[105]++;
 
       var move = function move(event) {
-        cov_5mipcj6ja.f[19]++;
-        cov_5mipcj6ja.s[106]++;
+        cov_1qrssl00mz.f[19]++;
+        cov_1qrssl00mz.s[106]++;
 
         // ensure swiping with one touch and not pinching
-        if ((cov_5mipcj6ja.b[29][0]++, event.originalEvent.touches) && (cov_5mipcj6ja.b[29][1]++, event.originalEvent.touches.length > 1)) {
-          cov_5mipcj6ja.b[28][0]++;
-          cov_5mipcj6ja.s[107]++;
+        if ((cov_1qrssl00mz.b[29][0]++, event.originalEvent.touches) && (cov_1qrssl00mz.b[29][1]++, event.originalEvent.touches.length > 1)) {
+          cov_1qrssl00mz.b[28][0]++;
+          cov_1qrssl00mz.s[107]++;
           _this3.touchDeltaX = 0;
         } else {
-          cov_5mipcj6ja.b[28][1]++;
-          cov_5mipcj6ja.s[108]++;
+          cov_1qrssl00mz.b[28][1]++;
+          cov_1qrssl00mz.s[108]++;
           _this3.touchDeltaX = event.originalEvent.touches[0].clientX - _this3.touchStartX;
         }
       };
 
-      cov_5mipcj6ja.s[109]++;
+      cov_1qrssl00mz.s[109]++;
 
       var end = function end(event) {
-        cov_5mipcj6ja.f[20]++;
-        cov_5mipcj6ja.s[110]++;
+        cov_1qrssl00mz.f[20]++;
+        cov_1qrssl00mz.s[110]++;
 
-        if ((cov_5mipcj6ja.b[31][0]++, _this3._pointerEvent) && (cov_5mipcj6ja.b[31][1]++, PointerType[event.originalEvent.pointerType.toUpperCase()])) {
-          cov_5mipcj6ja.b[30][0]++;
-          cov_5mipcj6ja.s[111]++;
+        if ((cov_1qrssl00mz.b[31][0]++, _this3._pointerEvent) && (cov_1qrssl00mz.b[31][1]++, PointerType[event.originalEvent.pointerType.toUpperCase()])) {
+          cov_1qrssl00mz.b[30][0]++;
+          cov_1qrssl00mz.s[111]++;
           _this3.touchDeltaX = event.originalEvent.clientX - _this3.touchStartX;
         } else {
-          cov_5mipcj6ja.b[30][1]++;
+          cov_1qrssl00mz.b[30][1]++;
         }
 
-        cov_5mipcj6ja.s[112]++;
+        cov_1qrssl00mz.s[112]++;
 
         _this3._handleSwipe();
 
-        cov_5mipcj6ja.s[113]++;
+        cov_1qrssl00mz.s[113]++;
 
         if (_this3._config.pause === 'hover') {
-          cov_5mipcj6ja.b[32][0]++;
-          cov_5mipcj6ja.s[114]++;
+          cov_1qrssl00mz.b[32][0]++;
+          cov_1qrssl00mz.s[114]++;
 
           // If it's a touch-enabled device, mouseenter/leave are fired as
           // part of the mouse compatibility events on first tap - the carousel
@@ -6962,408 +6960,408 @@
           // events to fire) we explicitly restart cycling
           _this3.pause();
 
-          cov_5mipcj6ja.s[115]++;
+          cov_1qrssl00mz.s[115]++;
 
           if (_this3.touchTimeout) {
-            cov_5mipcj6ja.b[33][0]++;
-            cov_5mipcj6ja.s[116]++;
+            cov_1qrssl00mz.b[33][0]++;
+            cov_1qrssl00mz.s[116]++;
             clearTimeout(_this3.touchTimeout);
           } else {
-            cov_5mipcj6ja.b[33][1]++;
+            cov_1qrssl00mz.b[33][1]++;
           }
 
-          cov_5mipcj6ja.s[117]++;
+          cov_1qrssl00mz.s[117]++;
           _this3.touchTimeout = setTimeout(function (event) {
-            cov_5mipcj6ja.f[21]++;
-            cov_5mipcj6ja.s[118]++;
+            cov_1qrssl00mz.f[21]++;
+            cov_1qrssl00mz.s[118]++;
             return _this3.cycle(event);
           }, TOUCHEVENT_COMPAT_WAIT + _this3._config.interval);
         } else {
-          cov_5mipcj6ja.b[32][1]++;
+          cov_1qrssl00mz.b[32][1]++;
         }
       };
 
-      cov_5mipcj6ja.s[119]++;
+      cov_1qrssl00mz.s[119]++;
       $(this._element.querySelectorAll(Selector.ITEM_IMG)).on(Event.DRAG_START, function (e) {
-        cov_5mipcj6ja.f[22]++;
-        cov_5mipcj6ja.s[120]++;
+        cov_1qrssl00mz.f[22]++;
+        cov_1qrssl00mz.s[120]++;
         return e.preventDefault();
       });
-      cov_5mipcj6ja.s[121]++;
+      cov_1qrssl00mz.s[121]++;
 
       if (this._pointerEvent) {
-        cov_5mipcj6ja.b[34][0]++;
-        cov_5mipcj6ja.s[122]++;
+        cov_1qrssl00mz.b[34][0]++;
+        cov_1qrssl00mz.s[122]++;
         $(this._element).on(Event.POINTERDOWN, function (event) {
-          cov_5mipcj6ja.f[23]++;
-          cov_5mipcj6ja.s[123]++;
+          cov_1qrssl00mz.f[23]++;
+          cov_1qrssl00mz.s[123]++;
           return start(event);
         });
-        cov_5mipcj6ja.s[124]++;
+        cov_1qrssl00mz.s[124]++;
         $(this._element).on(Event.POINTERUP, function (event) {
-          cov_5mipcj6ja.f[24]++;
-          cov_5mipcj6ja.s[125]++;
+          cov_1qrssl00mz.f[24]++;
+          cov_1qrssl00mz.s[125]++;
           return end(event);
         });
-        cov_5mipcj6ja.s[126]++;
+        cov_1qrssl00mz.s[126]++;
 
         this._element.classList.add(ClassName.POINTER_EVENT);
       } else {
-        cov_5mipcj6ja.b[34][1]++;
-        cov_5mipcj6ja.s[127]++;
+        cov_1qrssl00mz.b[34][1]++;
+        cov_1qrssl00mz.s[127]++;
         $(this._element).on(Event.TOUCHSTART, function (event) {
-          cov_5mipcj6ja.f[25]++;
-          cov_5mipcj6ja.s[128]++;
+          cov_1qrssl00mz.f[25]++;
+          cov_1qrssl00mz.s[128]++;
           return start(event);
         });
-        cov_5mipcj6ja.s[129]++;
+        cov_1qrssl00mz.s[129]++;
         $(this._element).on(Event.TOUCHMOVE, function (event) {
-          cov_5mipcj6ja.f[26]++;
-          cov_5mipcj6ja.s[130]++;
+          cov_1qrssl00mz.f[26]++;
+          cov_1qrssl00mz.s[130]++;
           return move(event);
         });
-        cov_5mipcj6ja.s[131]++;
+        cov_1qrssl00mz.s[131]++;
         $(this._element).on(Event.TOUCHEND, function (event) {
-          cov_5mipcj6ja.f[27]++;
-          cov_5mipcj6ja.s[132]++;
+          cov_1qrssl00mz.f[27]++;
+          cov_1qrssl00mz.s[132]++;
           return end(event);
         });
       }
     };
 
     _proto._keydown = function _keydown(event) {
-      cov_5mipcj6ja.f[28]++;
-      cov_5mipcj6ja.s[133]++;
+      cov_1qrssl00mz.f[28]++;
+      cov_1qrssl00mz.s[133]++;
 
       if (/input|textarea/i.test(event.target.tagName)) {
-        cov_5mipcj6ja.b[35][0]++;
-        cov_5mipcj6ja.s[134]++;
+        cov_1qrssl00mz.b[35][0]++;
+        cov_1qrssl00mz.s[134]++;
         return;
       } else {
-        cov_5mipcj6ja.b[35][1]++;
+        cov_1qrssl00mz.b[35][1]++;
       }
 
-      cov_5mipcj6ja.s[135]++;
+      cov_1qrssl00mz.s[135]++;
 
       switch (event.which) {
         case ARROW_LEFT_KEYCODE:
-          cov_5mipcj6ja.b[36][0]++;
-          cov_5mipcj6ja.s[136]++;
+          cov_1qrssl00mz.b[36][0]++;
+          cov_1qrssl00mz.s[136]++;
           event.preventDefault();
-          cov_5mipcj6ja.s[137]++;
+          cov_1qrssl00mz.s[137]++;
           this.prev();
-          cov_5mipcj6ja.s[138]++;
+          cov_1qrssl00mz.s[138]++;
           break;
 
         case ARROW_RIGHT_KEYCODE:
-          cov_5mipcj6ja.b[36][1]++;
-          cov_5mipcj6ja.s[139]++;
+          cov_1qrssl00mz.b[36][1]++;
+          cov_1qrssl00mz.s[139]++;
           event.preventDefault();
-          cov_5mipcj6ja.s[140]++;
+          cov_1qrssl00mz.s[140]++;
           this.next();
-          cov_5mipcj6ja.s[141]++;
+          cov_1qrssl00mz.s[141]++;
           break;
 
         default:
-          cov_5mipcj6ja.b[36][2]++;
+          cov_1qrssl00mz.b[36][2]++;
       }
     };
 
     _proto._getItemIndex = function _getItemIndex(element) {
-      cov_5mipcj6ja.f[29]++;
-      cov_5mipcj6ja.s[142]++;
-      this._items = (cov_5mipcj6ja.b[38][0]++, element) && (cov_5mipcj6ja.b[38][1]++, element.parentNode) ? (cov_5mipcj6ja.b[37][0]++, [].slice.call(element.parentNode.querySelectorAll(Selector.ITEM))) : (cov_5mipcj6ja.b[37][1]++, []);
-      cov_5mipcj6ja.s[143]++;
+      cov_1qrssl00mz.f[29]++;
+      cov_1qrssl00mz.s[142]++;
+      this._items = (cov_1qrssl00mz.b[38][0]++, element) && (cov_1qrssl00mz.b[38][1]++, element.parentNode) ? (cov_1qrssl00mz.b[37][0]++, [].slice.call(element.parentNode.querySelectorAll(Selector.ITEM))) : (cov_1qrssl00mz.b[37][1]++, []);
+      cov_1qrssl00mz.s[143]++;
       return this._items.indexOf(element);
     };
 
     _proto._getItemByDirection = function _getItemByDirection(direction, activeElement) {
-      cov_5mipcj6ja.f[30]++;
-      var isNextDirection = (cov_5mipcj6ja.s[144]++, direction === Direction.NEXT);
-      var isPrevDirection = (cov_5mipcj6ja.s[145]++, direction === Direction.PREV);
-      var activeIndex = (cov_5mipcj6ja.s[146]++, this._getItemIndex(activeElement));
-      var lastItemIndex = (cov_5mipcj6ja.s[147]++, this._items.length - 1);
-      var isGoingToWrap = (cov_5mipcj6ja.s[148]++, (cov_5mipcj6ja.b[39][0]++, isPrevDirection) && (cov_5mipcj6ja.b[39][1]++, activeIndex === 0) || (cov_5mipcj6ja.b[39][2]++, isNextDirection) && (cov_5mipcj6ja.b[39][3]++, activeIndex === lastItemIndex));
-      cov_5mipcj6ja.s[149]++;
+      cov_1qrssl00mz.f[30]++;
+      var isNextDirection = (cov_1qrssl00mz.s[144]++, direction === Direction.NEXT);
+      var isPrevDirection = (cov_1qrssl00mz.s[145]++, direction === Direction.PREV);
+      var activeIndex = (cov_1qrssl00mz.s[146]++, this._getItemIndex(activeElement));
+      var lastItemIndex = (cov_1qrssl00mz.s[147]++, this._items.length - 1);
+      var isGoingToWrap = (cov_1qrssl00mz.s[148]++, (cov_1qrssl00mz.b[39][0]++, isPrevDirection) && (cov_1qrssl00mz.b[39][1]++, activeIndex === 0) || (cov_1qrssl00mz.b[39][2]++, isNextDirection) && (cov_1qrssl00mz.b[39][3]++, activeIndex === lastItemIndex));
+      cov_1qrssl00mz.s[149]++;
 
-      if ((cov_5mipcj6ja.b[41][0]++, isGoingToWrap) && (cov_5mipcj6ja.b[41][1]++, !this._config.wrap)) {
-        cov_5mipcj6ja.b[40][0]++;
-        cov_5mipcj6ja.s[150]++;
+      if ((cov_1qrssl00mz.b[41][0]++, isGoingToWrap) && (cov_1qrssl00mz.b[41][1]++, !this._config.wrap)) {
+        cov_1qrssl00mz.b[40][0]++;
+        cov_1qrssl00mz.s[150]++;
         return activeElement;
       } else {
-        cov_5mipcj6ja.b[40][1]++;
+        cov_1qrssl00mz.b[40][1]++;
       }
 
-      var delta = (cov_5mipcj6ja.s[151]++, direction === Direction.PREV ? (cov_5mipcj6ja.b[42][0]++, -1) : (cov_5mipcj6ja.b[42][1]++, 1));
-      var itemIndex = (cov_5mipcj6ja.s[152]++, (activeIndex + delta) % this._items.length);
-      cov_5mipcj6ja.s[153]++;
-      return itemIndex === -1 ? (cov_5mipcj6ja.b[43][0]++, this._items[this._items.length - 1]) : (cov_5mipcj6ja.b[43][1]++, this._items[itemIndex]);
+      var delta = (cov_1qrssl00mz.s[151]++, direction === Direction.PREV ? (cov_1qrssl00mz.b[42][0]++, -1) : (cov_1qrssl00mz.b[42][1]++, 1));
+      var itemIndex = (cov_1qrssl00mz.s[152]++, (activeIndex + delta) % this._items.length);
+      cov_1qrssl00mz.s[153]++;
+      return itemIndex === -1 ? (cov_1qrssl00mz.b[43][0]++, this._items[this._items.length - 1]) : (cov_1qrssl00mz.b[43][1]++, this._items[itemIndex]);
     };
 
     _proto._triggerSlideEvent = function _triggerSlideEvent(relatedTarget, eventDirectionName) {
-      cov_5mipcj6ja.f[31]++;
-      var targetIndex = (cov_5mipcj6ja.s[154]++, this._getItemIndex(relatedTarget));
-      var fromIndex = (cov_5mipcj6ja.s[155]++, this._getItemIndex(this._element.querySelector(Selector.ACTIVE_ITEM)));
-      var slideEvent = (cov_5mipcj6ja.s[156]++, $.Event(Event.SLIDE, {
+      cov_1qrssl00mz.f[31]++;
+      var targetIndex = (cov_1qrssl00mz.s[154]++, this._getItemIndex(relatedTarget));
+      var fromIndex = (cov_1qrssl00mz.s[155]++, this._getItemIndex(this._element.querySelector(Selector.ACTIVE_ITEM)));
+      var slideEvent = (cov_1qrssl00mz.s[156]++, $.Event(Event.SLIDE, {
         relatedTarget: relatedTarget,
         direction: eventDirectionName,
         from: fromIndex,
         to: targetIndex
       }));
-      cov_5mipcj6ja.s[157]++;
+      cov_1qrssl00mz.s[157]++;
       $(this._element).trigger(slideEvent);
-      cov_5mipcj6ja.s[158]++;
+      cov_1qrssl00mz.s[158]++;
       return slideEvent;
     };
 
     _proto._setActiveIndicatorElement = function _setActiveIndicatorElement(element) {
-      cov_5mipcj6ja.f[32]++;
-      cov_5mipcj6ja.s[159]++;
+      cov_1qrssl00mz.f[32]++;
+      cov_1qrssl00mz.s[159]++;
 
       if (this._indicatorsElement) {
-        cov_5mipcj6ja.b[44][0]++;
-        var indicators = (cov_5mipcj6ja.s[160]++, [].slice.call(this._indicatorsElement.querySelectorAll(Selector.ACTIVE)));
-        cov_5mipcj6ja.s[161]++;
+        cov_1qrssl00mz.b[44][0]++;
+        var indicators = (cov_1qrssl00mz.s[160]++, [].slice.call(this._indicatorsElement.querySelectorAll(Selector.ACTIVE)));
+        cov_1qrssl00mz.s[161]++;
         $(indicators).removeClass(ClassName.ACTIVE);
-        var nextIndicator = (cov_5mipcj6ja.s[162]++, this._indicatorsElement.children[this._getItemIndex(element)]);
-        cov_5mipcj6ja.s[163]++;
+        var nextIndicator = (cov_1qrssl00mz.s[162]++, this._indicatorsElement.children[this._getItemIndex(element)]);
+        cov_1qrssl00mz.s[163]++;
 
         if (nextIndicator) {
-          cov_5mipcj6ja.b[45][0]++;
-          cov_5mipcj6ja.s[164]++;
+          cov_1qrssl00mz.b[45][0]++;
+          cov_1qrssl00mz.s[164]++;
           $(nextIndicator).addClass(ClassName.ACTIVE);
         } else {
-          cov_5mipcj6ja.b[45][1]++;
+          cov_1qrssl00mz.b[45][1]++;
         }
       } else {
-        cov_5mipcj6ja.b[44][1]++;
+        cov_1qrssl00mz.b[44][1]++;
       }
     };
 
     _proto._slide = function _slide(direction, element) {
       var _this4 = this;
 
-      cov_5mipcj6ja.f[33]++;
-      var activeElement = (cov_5mipcj6ja.s[165]++, this._element.querySelector(Selector.ACTIVE_ITEM));
-      var activeElementIndex = (cov_5mipcj6ja.s[166]++, this._getItemIndex(activeElement));
-      var nextElement = (cov_5mipcj6ja.s[167]++, (cov_5mipcj6ja.b[46][0]++, element) || (cov_5mipcj6ja.b[46][1]++, activeElement) && (cov_5mipcj6ja.b[46][2]++, this._getItemByDirection(direction, activeElement)));
-      var nextElementIndex = (cov_5mipcj6ja.s[168]++, this._getItemIndex(nextElement));
-      var isCycling = (cov_5mipcj6ja.s[169]++, Boolean(this._interval));
+      cov_1qrssl00mz.f[33]++;
+      var activeElement = (cov_1qrssl00mz.s[165]++, this._element.querySelector(Selector.ACTIVE_ITEM));
+      var activeElementIndex = (cov_1qrssl00mz.s[166]++, this._getItemIndex(activeElement));
+      var nextElement = (cov_1qrssl00mz.s[167]++, (cov_1qrssl00mz.b[46][0]++, element) || (cov_1qrssl00mz.b[46][1]++, activeElement) && (cov_1qrssl00mz.b[46][2]++, this._getItemByDirection(direction, activeElement)));
+      var nextElementIndex = (cov_1qrssl00mz.s[168]++, this._getItemIndex(nextElement));
+      var isCycling = (cov_1qrssl00mz.s[169]++, Boolean(this._interval));
       var directionalClassName;
       var orderClassName;
       var eventDirectionName;
-      cov_5mipcj6ja.s[170]++;
+      cov_1qrssl00mz.s[170]++;
 
       if (direction === Direction.NEXT) {
-        cov_5mipcj6ja.b[47][0]++;
-        cov_5mipcj6ja.s[171]++;
+        cov_1qrssl00mz.b[47][0]++;
+        cov_1qrssl00mz.s[171]++;
         directionalClassName = ClassName.LEFT;
-        cov_5mipcj6ja.s[172]++;
+        cov_1qrssl00mz.s[172]++;
         orderClassName = ClassName.NEXT;
-        cov_5mipcj6ja.s[173]++;
+        cov_1qrssl00mz.s[173]++;
         eventDirectionName = Direction.LEFT;
       } else {
-        cov_5mipcj6ja.b[47][1]++;
-        cov_5mipcj6ja.s[174]++;
+        cov_1qrssl00mz.b[47][1]++;
+        cov_1qrssl00mz.s[174]++;
         directionalClassName = ClassName.RIGHT;
-        cov_5mipcj6ja.s[175]++;
+        cov_1qrssl00mz.s[175]++;
         orderClassName = ClassName.PREV;
-        cov_5mipcj6ja.s[176]++;
+        cov_1qrssl00mz.s[176]++;
         eventDirectionName = Direction.RIGHT;
       }
 
-      cov_5mipcj6ja.s[177]++;
+      cov_1qrssl00mz.s[177]++;
 
-      if ((cov_5mipcj6ja.b[49][0]++, nextElement) && (cov_5mipcj6ja.b[49][1]++, $(nextElement).hasClass(ClassName.ACTIVE))) {
-        cov_5mipcj6ja.b[48][0]++;
-        cov_5mipcj6ja.s[178]++;
+      if ((cov_1qrssl00mz.b[49][0]++, nextElement) && (cov_1qrssl00mz.b[49][1]++, $(nextElement).hasClass(ClassName.ACTIVE))) {
+        cov_1qrssl00mz.b[48][0]++;
+        cov_1qrssl00mz.s[178]++;
         this._isSliding = false;
-        cov_5mipcj6ja.s[179]++;
+        cov_1qrssl00mz.s[179]++;
         return;
       } else {
-        cov_5mipcj6ja.b[48][1]++;
+        cov_1qrssl00mz.b[48][1]++;
       }
 
-      var slideEvent = (cov_5mipcj6ja.s[180]++, this._triggerSlideEvent(nextElement, eventDirectionName));
-      cov_5mipcj6ja.s[181]++;
+      var slideEvent = (cov_1qrssl00mz.s[180]++, this._triggerSlideEvent(nextElement, eventDirectionName));
+      cov_1qrssl00mz.s[181]++;
 
       if (slideEvent.isDefaultPrevented()) {
-        cov_5mipcj6ja.b[50][0]++;
-        cov_5mipcj6ja.s[182]++;
+        cov_1qrssl00mz.b[50][0]++;
+        cov_1qrssl00mz.s[182]++;
         return;
       } else {
-        cov_5mipcj6ja.b[50][1]++;
+        cov_1qrssl00mz.b[50][1]++;
       }
 
-      cov_5mipcj6ja.s[183]++;
+      cov_1qrssl00mz.s[183]++;
 
-      if ((cov_5mipcj6ja.b[52][0]++, !activeElement) || (cov_5mipcj6ja.b[52][1]++, !nextElement)) {
-        cov_5mipcj6ja.b[51][0]++;
-        cov_5mipcj6ja.s[184]++;
+      if ((cov_1qrssl00mz.b[52][0]++, !activeElement) || (cov_1qrssl00mz.b[52][1]++, !nextElement)) {
+        cov_1qrssl00mz.b[51][0]++;
+        cov_1qrssl00mz.s[184]++;
         // Some weirdness is happening, so we bail
         return;
       } else {
-        cov_5mipcj6ja.b[51][1]++;
+        cov_1qrssl00mz.b[51][1]++;
       }
 
-      cov_5mipcj6ja.s[185]++;
+      cov_1qrssl00mz.s[185]++;
       this._isSliding = true;
-      cov_5mipcj6ja.s[186]++;
+      cov_1qrssl00mz.s[186]++;
 
       if (isCycling) {
-        cov_5mipcj6ja.b[53][0]++;
-        cov_5mipcj6ja.s[187]++;
+        cov_1qrssl00mz.b[53][0]++;
+        cov_1qrssl00mz.s[187]++;
         this.pause();
       } else {
-        cov_5mipcj6ja.b[53][1]++;
+        cov_1qrssl00mz.b[53][1]++;
       }
 
-      cov_5mipcj6ja.s[188]++;
+      cov_1qrssl00mz.s[188]++;
 
       this._setActiveIndicatorElement(nextElement);
 
-      var slidEvent = (cov_5mipcj6ja.s[189]++, $.Event(Event.SLID, {
+      var slidEvent = (cov_1qrssl00mz.s[189]++, $.Event(Event.SLID, {
         relatedTarget: nextElement,
         direction: eventDirectionName,
         from: activeElementIndex,
         to: nextElementIndex
       }));
-      cov_5mipcj6ja.s[190]++;
+      cov_1qrssl00mz.s[190]++;
 
       if ($(this._element).hasClass(ClassName.SLIDE)) {
-        cov_5mipcj6ja.b[54][0]++;
-        cov_5mipcj6ja.s[191]++;
+        cov_1qrssl00mz.b[54][0]++;
+        cov_1qrssl00mz.s[191]++;
         $(nextElement).addClass(orderClassName);
-        cov_5mipcj6ja.s[192]++;
+        cov_1qrssl00mz.s[192]++;
         Util.reflow(nextElement);
-        cov_5mipcj6ja.s[193]++;
+        cov_1qrssl00mz.s[193]++;
         $(activeElement).addClass(directionalClassName);
-        cov_5mipcj6ja.s[194]++;
+        cov_1qrssl00mz.s[194]++;
         $(nextElement).addClass(directionalClassName);
-        var nextElementInterval = (cov_5mipcj6ja.s[195]++, parseInt(nextElement.getAttribute('data-interval'), 10));
-        cov_5mipcj6ja.s[196]++;
+        var nextElementInterval = (cov_1qrssl00mz.s[195]++, parseInt(nextElement.getAttribute('data-interval'), 10));
+        cov_1qrssl00mz.s[196]++;
 
         if (nextElementInterval) {
-          cov_5mipcj6ja.b[55][0]++;
-          cov_5mipcj6ja.s[197]++;
-          this._config.defaultInterval = (cov_5mipcj6ja.b[56][0]++, this._config.defaultInterval) || (cov_5mipcj6ja.b[56][1]++, this._config.interval);
-          cov_5mipcj6ja.s[198]++;
+          cov_1qrssl00mz.b[55][0]++;
+          cov_1qrssl00mz.s[197]++;
+          this._config.defaultInterval = (cov_1qrssl00mz.b[56][0]++, this._config.defaultInterval) || (cov_1qrssl00mz.b[56][1]++, this._config.interval);
+          cov_1qrssl00mz.s[198]++;
           this._config.interval = nextElementInterval;
         } else {
-          cov_5mipcj6ja.b[55][1]++;
-          cov_5mipcj6ja.s[199]++;
-          this._config.interval = (cov_5mipcj6ja.b[57][0]++, this._config.defaultInterval) || (cov_5mipcj6ja.b[57][1]++, this._config.interval);
+          cov_1qrssl00mz.b[55][1]++;
+          cov_1qrssl00mz.s[199]++;
+          this._config.interval = (cov_1qrssl00mz.b[57][0]++, this._config.defaultInterval) || (cov_1qrssl00mz.b[57][1]++, this._config.interval);
         }
 
-        var transitionDuration = (cov_5mipcj6ja.s[200]++, Util.getTransitionDurationFromElement(activeElement));
-        cov_5mipcj6ja.s[201]++;
+        var transitionDuration = (cov_1qrssl00mz.s[200]++, Util.getTransitionDurationFromElement(activeElement));
+        cov_1qrssl00mz.s[201]++;
         $(activeElement).one(Util.TRANSITION_END, function () {
-          cov_5mipcj6ja.f[34]++;
-          cov_5mipcj6ja.s[202]++;
+          cov_1qrssl00mz.f[34]++;
+          cov_1qrssl00mz.s[202]++;
           $(nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(ClassName.ACTIVE);
-          cov_5mipcj6ja.s[203]++;
+          cov_1qrssl00mz.s[203]++;
           $(activeElement).removeClass(ClassName.ACTIVE + " " + orderClassName + " " + directionalClassName);
-          cov_5mipcj6ja.s[204]++;
+          cov_1qrssl00mz.s[204]++;
           _this4._isSliding = false;
-          cov_5mipcj6ja.s[205]++;
+          cov_1qrssl00mz.s[205]++;
           setTimeout(function () {
-            cov_5mipcj6ja.f[35]++;
-            cov_5mipcj6ja.s[206]++;
+            cov_1qrssl00mz.f[35]++;
+            cov_1qrssl00mz.s[206]++;
             return $(_this4._element).trigger(slidEvent);
           }, 0);
         }).emulateTransitionEnd(transitionDuration);
       } else {
-        cov_5mipcj6ja.b[54][1]++;
-        cov_5mipcj6ja.s[207]++;
+        cov_1qrssl00mz.b[54][1]++;
+        cov_1qrssl00mz.s[207]++;
         $(activeElement).removeClass(ClassName.ACTIVE);
-        cov_5mipcj6ja.s[208]++;
+        cov_1qrssl00mz.s[208]++;
         $(nextElement).addClass(ClassName.ACTIVE);
-        cov_5mipcj6ja.s[209]++;
+        cov_1qrssl00mz.s[209]++;
         this._isSliding = false;
-        cov_5mipcj6ja.s[210]++;
+        cov_1qrssl00mz.s[210]++;
         $(this._element).trigger(slidEvent);
       }
 
-      cov_5mipcj6ja.s[211]++;
+      cov_1qrssl00mz.s[211]++;
 
       if (isCycling) {
-        cov_5mipcj6ja.b[58][0]++;
-        cov_5mipcj6ja.s[212]++;
+        cov_1qrssl00mz.b[58][0]++;
+        cov_1qrssl00mz.s[212]++;
         this.cycle();
       } else {
-        cov_5mipcj6ja.b[58][1]++;
+        cov_1qrssl00mz.b[58][1]++;
       }
     } // Static
     ;
 
     Carousel._jQueryInterface = function _jQueryInterface(config) {
-      cov_5mipcj6ja.f[36]++;
-      cov_5mipcj6ja.s[213]++;
+      cov_1qrssl00mz.f[36]++;
+      cov_1qrssl00mz.s[213]++;
       return this.each(function () {
-        cov_5mipcj6ja.f[37]++;
-        var data = (cov_5mipcj6ja.s[214]++, $(this).data(DATA_KEY));
+        cov_1qrssl00mz.f[37]++;
+        var data = (cov_1qrssl00mz.s[214]++, $(this).data(DATA_KEY));
 
-        var _config = (cov_5mipcj6ja.s[215]++, _objectSpread2({}, Default, {}, $(this).data()));
+        var _config = (cov_1qrssl00mz.s[215]++, _objectSpread2(_objectSpread2({}, Default), $(this).data()));
 
-        cov_5mipcj6ja.s[216]++;
+        cov_1qrssl00mz.s[216]++;
 
         if (typeof config === 'object') {
-          cov_5mipcj6ja.b[59][0]++;
-          cov_5mipcj6ja.s[217]++;
-          _config = _objectSpread2({}, _config, {}, config);
+          cov_1qrssl00mz.b[59][0]++;
+          cov_1qrssl00mz.s[217]++;
+          _config = _objectSpread2(_objectSpread2({}, _config), config);
         } else {
-          cov_5mipcj6ja.b[59][1]++;
+          cov_1qrssl00mz.b[59][1]++;
         }
 
-        var action = (cov_5mipcj6ja.s[218]++, typeof config === 'string' ? (cov_5mipcj6ja.b[60][0]++, config) : (cov_5mipcj6ja.b[60][1]++, _config.slide));
-        cov_5mipcj6ja.s[219]++;
+        var action = (cov_1qrssl00mz.s[218]++, typeof config === 'string' ? (cov_1qrssl00mz.b[60][0]++, config) : (cov_1qrssl00mz.b[60][1]++, _config.slide));
+        cov_1qrssl00mz.s[219]++;
 
         if (!data) {
-          cov_5mipcj6ja.b[61][0]++;
-          cov_5mipcj6ja.s[220]++;
+          cov_1qrssl00mz.b[61][0]++;
+          cov_1qrssl00mz.s[220]++;
           data = new Carousel(this, _config);
-          cov_5mipcj6ja.s[221]++;
+          cov_1qrssl00mz.s[221]++;
           $(this).data(DATA_KEY, data);
         } else {
-          cov_5mipcj6ja.b[61][1]++;
+          cov_1qrssl00mz.b[61][1]++;
         }
 
-        cov_5mipcj6ja.s[222]++;
+        cov_1qrssl00mz.s[222]++;
 
         if (typeof config === 'number') {
-          cov_5mipcj6ja.b[62][0]++;
-          cov_5mipcj6ja.s[223]++;
+          cov_1qrssl00mz.b[62][0]++;
+          cov_1qrssl00mz.s[223]++;
           data.to(config);
         } else {
-          cov_5mipcj6ja.b[62][1]++;
-          cov_5mipcj6ja.s[224]++;
+          cov_1qrssl00mz.b[62][1]++;
+          cov_1qrssl00mz.s[224]++;
 
           if (typeof action === 'string') {
-            cov_5mipcj6ja.b[63][0]++;
-            cov_5mipcj6ja.s[225]++;
+            cov_1qrssl00mz.b[63][0]++;
+            cov_1qrssl00mz.s[225]++;
 
             if (typeof data[action] === 'undefined') {
-              cov_5mipcj6ja.b[64][0]++;
-              cov_5mipcj6ja.s[226]++;
+              cov_1qrssl00mz.b[64][0]++;
+              cov_1qrssl00mz.s[226]++;
               throw new TypeError("No method named \"" + action + "\"");
             } else {
-              cov_5mipcj6ja.b[64][1]++;
+              cov_1qrssl00mz.b[64][1]++;
             }
 
-            cov_5mipcj6ja.s[227]++;
+            cov_1qrssl00mz.s[227]++;
             data[action]();
           } else {
-            cov_5mipcj6ja.b[63][1]++;
-            cov_5mipcj6ja.s[228]++;
+            cov_1qrssl00mz.b[63][1]++;
+            cov_1qrssl00mz.s[228]++;
 
-            if ((cov_5mipcj6ja.b[66][0]++, _config.interval) && (cov_5mipcj6ja.b[66][1]++, _config.ride)) {
-              cov_5mipcj6ja.b[65][0]++;
-              cov_5mipcj6ja.s[229]++;
+            if ((cov_1qrssl00mz.b[66][0]++, _config.interval) && (cov_1qrssl00mz.b[66][1]++, _config.ride)) {
+              cov_1qrssl00mz.b[65][0]++;
+              cov_1qrssl00mz.s[229]++;
               data.pause();
-              cov_5mipcj6ja.s[230]++;
+              cov_1qrssl00mz.s[230]++;
               data.cycle();
             } else {
-              cov_5mipcj6ja.b[65][1]++;
+              cov_1qrssl00mz.b[65][1]++;
             }
           }
         }
@@ -7371,71 +7369,71 @@
     };
 
     Carousel._dataApiClickHandler = function _dataApiClickHandler(event) {
-      cov_5mipcj6ja.f[38]++;
-      var selector = (cov_5mipcj6ja.s[231]++, Util.getSelectorFromElement(this));
-      cov_5mipcj6ja.s[232]++;
+      cov_1qrssl00mz.f[38]++;
+      var selector = (cov_1qrssl00mz.s[231]++, Util.getSelectorFromElement(this));
+      cov_1qrssl00mz.s[232]++;
 
       if (!selector) {
-        cov_5mipcj6ja.b[67][0]++;
-        cov_5mipcj6ja.s[233]++;
+        cov_1qrssl00mz.b[67][0]++;
+        cov_1qrssl00mz.s[233]++;
         return;
       } else {
-        cov_5mipcj6ja.b[67][1]++;
+        cov_1qrssl00mz.b[67][1]++;
       }
 
-      var target = (cov_5mipcj6ja.s[234]++, $(selector)[0]);
-      cov_5mipcj6ja.s[235]++;
+      var target = (cov_1qrssl00mz.s[234]++, $(selector)[0]);
+      cov_1qrssl00mz.s[235]++;
 
-      if ((cov_5mipcj6ja.b[69][0]++, !target) || (cov_5mipcj6ja.b[69][1]++, !$(target).hasClass(ClassName.CAROUSEL))) {
-        cov_5mipcj6ja.b[68][0]++;
-        cov_5mipcj6ja.s[236]++;
+      if ((cov_1qrssl00mz.b[69][0]++, !target) || (cov_1qrssl00mz.b[69][1]++, !$(target).hasClass(ClassName.CAROUSEL))) {
+        cov_1qrssl00mz.b[68][0]++;
+        cov_1qrssl00mz.s[236]++;
         return;
       } else {
-        cov_5mipcj6ja.b[68][1]++;
+        cov_1qrssl00mz.b[68][1]++;
       }
 
-      var config = (cov_5mipcj6ja.s[237]++, _objectSpread2({}, $(target).data(), {}, $(this).data()));
-      var slideIndex = (cov_5mipcj6ja.s[238]++, this.getAttribute('data-slide-to'));
-      cov_5mipcj6ja.s[239]++;
+      var config = (cov_1qrssl00mz.s[237]++, _objectSpread2(_objectSpread2({}, $(target).data()), $(this).data()));
+      var slideIndex = (cov_1qrssl00mz.s[238]++, this.getAttribute('data-slide-to'));
+      cov_1qrssl00mz.s[239]++;
 
       if (slideIndex) {
-        cov_5mipcj6ja.b[70][0]++;
-        cov_5mipcj6ja.s[240]++;
+        cov_1qrssl00mz.b[70][0]++;
+        cov_1qrssl00mz.s[240]++;
         config.interval = false;
       } else {
-        cov_5mipcj6ja.b[70][1]++;
+        cov_1qrssl00mz.b[70][1]++;
       }
 
-      cov_5mipcj6ja.s[241]++;
+      cov_1qrssl00mz.s[241]++;
 
       Carousel._jQueryInterface.call($(target), config);
 
-      cov_5mipcj6ja.s[242]++;
+      cov_1qrssl00mz.s[242]++;
 
       if (slideIndex) {
-        cov_5mipcj6ja.b[71][0]++;
-        cov_5mipcj6ja.s[243]++;
+        cov_1qrssl00mz.b[71][0]++;
+        cov_1qrssl00mz.s[243]++;
         $(target).data(DATA_KEY).to(slideIndex);
       } else {
-        cov_5mipcj6ja.b[71][1]++;
+        cov_1qrssl00mz.b[71][1]++;
       }
 
-      cov_5mipcj6ja.s[244]++;
+      cov_1qrssl00mz.s[244]++;
       event.preventDefault();
     };
 
     _createClass(Carousel, null, [{
       key: "VERSION",
       get: function get() {
-        cov_5mipcj6ja.f[1]++;
-        cov_5mipcj6ja.s[31]++;
+        cov_1qrssl00mz.f[1]++;
+        cov_1qrssl00mz.s[31]++;
         return VERSION;
       }
     }, {
       key: "Default",
       get: function get() {
-        cov_5mipcj6ja.f[2]++;
-        cov_5mipcj6ja.s[32]++;
+        cov_1qrssl00mz.f[2]++;
+        cov_1qrssl00mz.s[32]++;
         return Default;
       }
     }]);
@@ -7449,17 +7447,17 @@
    */
 
 
-  cov_5mipcj6ja.s[245]++;
+  cov_1qrssl00mz.s[245]++;
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_SLIDE, Carousel._dataApiClickHandler);
-  cov_5mipcj6ja.s[246]++;
+  cov_1qrssl00mz.s[246]++;
   $(window).on(Event.LOAD_DATA_API, function () {
-    cov_5mipcj6ja.f[39]++;
-    var carousels = (cov_5mipcj6ja.s[247]++, [].slice.call(document.querySelectorAll(Selector.DATA_RIDE)));
-    cov_5mipcj6ja.s[248]++;
+    cov_1qrssl00mz.f[39]++;
+    var carousels = (cov_1qrssl00mz.s[247]++, [].slice.call(document.querySelectorAll(Selector.DATA_RIDE)));
+    cov_1qrssl00mz.s[248]++;
 
-    for (var i = (cov_5mipcj6ja.s[249]++, 0), len = (cov_5mipcj6ja.s[250]++, carousels.length); i < len; i++) {
-      var $carousel = (cov_5mipcj6ja.s[251]++, $(carousels[i]));
-      cov_5mipcj6ja.s[252]++;
+    for (var i = (cov_1qrssl00mz.s[249]++, 0), len = (cov_1qrssl00mz.s[250]++, carousels.length); i < len; i++) {
+      var $carousel = (cov_1qrssl00mz.s[251]++, $(carousels[i]));
+      cov_1qrssl00mz.s[252]++;
 
       Carousel._jQueryInterface.call($carousel, $carousel.data());
     }
@@ -7470,17 +7468,17 @@
    * ------------------------------------------------------------------------
    */
 
-  cov_5mipcj6ja.s[253]++;
+  cov_1qrssl00mz.s[253]++;
   $.fn[NAME] = Carousel._jQueryInterface;
-  cov_5mipcj6ja.s[254]++;
+  cov_1qrssl00mz.s[254]++;
   $.fn[NAME].Constructor = Carousel;
-  cov_5mipcj6ja.s[255]++;
+  cov_1qrssl00mz.s[255]++;
 
   $.fn[NAME].noConflict = function () {
-    cov_5mipcj6ja.f[40]++;
-    cov_5mipcj6ja.s[256]++;
+    cov_1qrssl00mz.f[40]++;
+    cov_1qrssl00mz.s[256]++;
     $.fn[NAME] = JQUERY_NO_CONFLICT;
-    cov_5mipcj6ja.s[257]++;
+    cov_1qrssl00mz.s[257]++;
     return Carousel._jQueryInterface;
   };
 
