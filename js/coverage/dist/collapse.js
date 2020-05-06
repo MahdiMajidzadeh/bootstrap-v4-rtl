@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap collapse.js v4.4.1-0 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2019 Mahdi Majidzadeh
+  * Bootstrap collapse.js v4.4.1-1 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2020 Mahdi Majidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
@@ -77,13 +77,13 @@
     return target;
   }
 
-  var cov_2itwqk888x = function () {
-    var path = "/Library/WebServer/Documents/bootstrap-v4-rtl/js/src/collapse.js";
-    var hash = "a861ca5e635d79fb8532deffe8280f6ecaec00e4";
+  var cov_29osusp4j0 = function () {
+    var path = "/home/h3isenbug/code/bootstrap-v4-rtl/js/src/collapse.js";
+    var hash = "66b16e959b26a8ad15fd875ccb5f217f7b9492bd";
     var global = new Function("return this")();
     var gcv = "__coverage__";
     var coverageData = {
-      path: "/Library/WebServer/Documents/bootstrap-v4-rtl/js/src/collapse.js",
+      path: "/home/h3isenbug/code/bootstrap-v4-rtl/js/src/collapse.js",
       statementMap: {
         "0": {
           start: {
@@ -3711,7 +3711,7 @@
         "37": [0, 0]
       },
       _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-      hash: "a861ca5e635d79fb8532deffe8280f6ecaec00e4"
+      hash: "66b16e959b26a8ad15fd875ccb5f217f7b9492bd"
     };
     var coverage = global[gcv] || (global[gcv] = {});
 
@@ -3727,38 +3727,38 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME = (cov_2itwqk888x.s[0]++, 'collapse');
-  var VERSION = (cov_2itwqk888x.s[1]++, '4.4.1');
-  var DATA_KEY = (cov_2itwqk888x.s[2]++, 'bs.collapse');
-  var EVENT_KEY = (cov_2itwqk888x.s[3]++, "." + DATA_KEY);
-  var DATA_API_KEY = (cov_2itwqk888x.s[4]++, '.data-api');
-  var JQUERY_NO_CONFLICT = (cov_2itwqk888x.s[5]++, $.fn[NAME]);
-  var Default = (cov_2itwqk888x.s[6]++, {
+  var NAME = (cov_29osusp4j0.s[0]++, 'collapse');
+  var VERSION = (cov_29osusp4j0.s[1]++, '4.4.1');
+  var DATA_KEY = (cov_29osusp4j0.s[2]++, 'bs.collapse');
+  var EVENT_KEY = (cov_29osusp4j0.s[3]++, "." + DATA_KEY);
+  var DATA_API_KEY = (cov_29osusp4j0.s[4]++, '.data-api');
+  var JQUERY_NO_CONFLICT = (cov_29osusp4j0.s[5]++, $.fn[NAME]);
+  var Default = (cov_29osusp4j0.s[6]++, {
     toggle: true,
     parent: ''
   });
-  var DefaultType = (cov_2itwqk888x.s[7]++, {
+  var DefaultType = (cov_29osusp4j0.s[7]++, {
     toggle: 'boolean',
     parent: '(string|element)'
   });
-  var Event = (cov_2itwqk888x.s[8]++, {
+  var Event = (cov_29osusp4j0.s[8]++, {
     SHOW: "show" + EVENT_KEY,
     SHOWN: "shown" + EVENT_KEY,
     HIDE: "hide" + EVENT_KEY,
     HIDDEN: "hidden" + EVENT_KEY,
     CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
   });
-  var ClassName = (cov_2itwqk888x.s[9]++, {
+  var ClassName = (cov_29osusp4j0.s[9]++, {
     SHOW: 'show',
     COLLAPSE: 'collapse',
     COLLAPSING: 'collapsing',
     COLLAPSED: 'collapsed'
   });
-  var Dimension = (cov_2itwqk888x.s[10]++, {
+  var Dimension = (cov_29osusp4j0.s[10]++, {
     WIDTH: 'width',
     HEIGHT: 'height'
   });
-  var Selector = (cov_2itwqk888x.s[11]++, {
+  var Selector = (cov_29osusp4j0.s[11]++, {
     ACTIVES: '.show, .collapsing',
     DATA_TOGGLE: '[data-toggle="collapse"]'
   });
@@ -3772,61 +3772,61 @@
   /*#__PURE__*/
   function () {
     function Collapse(element, config) {
-      cov_2itwqk888x.f[0]++;
-      cov_2itwqk888x.s[12]++;
+      cov_29osusp4j0.f[0]++;
+      cov_29osusp4j0.s[12]++;
       this._isTransitioning = false;
-      cov_2itwqk888x.s[13]++;
+      cov_29osusp4j0.s[13]++;
       this._element = element;
-      cov_2itwqk888x.s[14]++;
+      cov_29osusp4j0.s[14]++;
       this._config = this._getConfig(config);
-      cov_2itwqk888x.s[15]++;
+      cov_29osusp4j0.s[15]++;
       this._triggerArray = [].slice.call(document.querySelectorAll("[data-toggle=\"collapse\"][href=\"#" + element.id + "\"]," + ("[data-toggle=\"collapse\"][data-target=\"#" + element.id + "\"]")));
-      var toggleList = (cov_2itwqk888x.s[16]++, [].slice.call(document.querySelectorAll(Selector.DATA_TOGGLE)));
-      cov_2itwqk888x.s[17]++;
+      var toggleList = (cov_29osusp4j0.s[16]++, [].slice.call(document.querySelectorAll(Selector.DATA_TOGGLE)));
+      cov_29osusp4j0.s[17]++;
 
-      for (var i = (cov_2itwqk888x.s[18]++, 0), len = (cov_2itwqk888x.s[19]++, toggleList.length); i < len; i++) {
-        var elem = (cov_2itwqk888x.s[20]++, toggleList[i]);
-        var selector = (cov_2itwqk888x.s[21]++, Util.getSelectorFromElement(elem));
-        var filterElement = (cov_2itwqk888x.s[22]++, [].slice.call(document.querySelectorAll(selector)).filter(function (foundElem) {
-          cov_2itwqk888x.f[1]++;
-          cov_2itwqk888x.s[23]++;
+      for (var i = (cov_29osusp4j0.s[18]++, 0), len = (cov_29osusp4j0.s[19]++, toggleList.length); i < len; i++) {
+        var elem = (cov_29osusp4j0.s[20]++, toggleList[i]);
+        var selector = (cov_29osusp4j0.s[21]++, Util.getSelectorFromElement(elem));
+        var filterElement = (cov_29osusp4j0.s[22]++, [].slice.call(document.querySelectorAll(selector)).filter(function (foundElem) {
+          cov_29osusp4j0.f[1]++;
+          cov_29osusp4j0.s[23]++;
           return foundElem === element;
         }));
-        cov_2itwqk888x.s[24]++;
+        cov_29osusp4j0.s[24]++;
 
-        if ((cov_2itwqk888x.b[1][0]++, selector !== null) && (cov_2itwqk888x.b[1][1]++, filterElement.length > 0)) {
-          cov_2itwqk888x.b[0][0]++;
-          cov_2itwqk888x.s[25]++;
+        if ((cov_29osusp4j0.b[1][0]++, selector !== null) && (cov_29osusp4j0.b[1][1]++, filterElement.length > 0)) {
+          cov_29osusp4j0.b[0][0]++;
+          cov_29osusp4j0.s[25]++;
           this._selector = selector;
-          cov_2itwqk888x.s[26]++;
+          cov_29osusp4j0.s[26]++;
 
           this._triggerArray.push(elem);
         } else {
-          cov_2itwqk888x.b[0][1]++;
+          cov_29osusp4j0.b[0][1]++;
         }
       }
 
-      cov_2itwqk888x.s[27]++;
-      this._parent = this._config.parent ? (cov_2itwqk888x.b[2][0]++, this._getParent()) : (cov_2itwqk888x.b[2][1]++, null);
-      cov_2itwqk888x.s[28]++;
+      cov_29osusp4j0.s[27]++;
+      this._parent = this._config.parent ? (cov_29osusp4j0.b[2][0]++, this._getParent()) : (cov_29osusp4j0.b[2][1]++, null);
+      cov_29osusp4j0.s[28]++;
 
       if (!this._config.parent) {
-        cov_2itwqk888x.b[3][0]++;
-        cov_2itwqk888x.s[29]++;
+        cov_29osusp4j0.b[3][0]++;
+        cov_29osusp4j0.s[29]++;
 
         this._addAriaAndCollapsedClass(this._element, this._triggerArray);
       } else {
-        cov_2itwqk888x.b[3][1]++;
+        cov_29osusp4j0.b[3][1]++;
       }
 
-      cov_2itwqk888x.s[30]++;
+      cov_29osusp4j0.s[30]++;
 
       if (this._config.toggle) {
-        cov_2itwqk888x.b[4][0]++;
-        cov_2itwqk888x.s[31]++;
+        cov_29osusp4j0.b[4][0]++;
+        cov_29osusp4j0.s[31]++;
         this.toggle();
       } else {
-        cov_2itwqk888x.b[4][1]++;
+        cov_29osusp4j0.b[4][1]++;
       }
     } // Getters
 
@@ -3835,16 +3835,16 @@
 
     // Public
     _proto.toggle = function toggle() {
-      cov_2itwqk888x.f[4]++;
-      cov_2itwqk888x.s[34]++;
+      cov_29osusp4j0.f[4]++;
+      cov_29osusp4j0.s[34]++;
 
       if ($(this._element).hasClass(ClassName.SHOW)) {
-        cov_2itwqk888x.b[5][0]++;
-        cov_2itwqk888x.s[35]++;
+        cov_29osusp4j0.b[5][0]++;
+        cov_29osusp4j0.s[35]++;
         this.hide();
       } else {
-        cov_2itwqk888x.b[5][1]++;
-        cov_2itwqk888x.s[36]++;
+        cov_29osusp4j0.b[5][1]++;
+        cov_29osusp4j0.s[36]++;
         this.show();
       }
     };
@@ -3852,389 +3852,389 @@
     _proto.show = function show() {
       var _this = this;
 
-      cov_2itwqk888x.f[5]++;
-      cov_2itwqk888x.s[37]++;
+      cov_29osusp4j0.f[5]++;
+      cov_29osusp4j0.s[37]++;
 
-      if ((cov_2itwqk888x.b[7][0]++, this._isTransitioning) || (cov_2itwqk888x.b[7][1]++, $(this._element).hasClass(ClassName.SHOW))) {
-        cov_2itwqk888x.b[6][0]++;
-        cov_2itwqk888x.s[38]++;
+      if ((cov_29osusp4j0.b[7][0]++, this._isTransitioning) || (cov_29osusp4j0.b[7][1]++, $(this._element).hasClass(ClassName.SHOW))) {
+        cov_29osusp4j0.b[6][0]++;
+        cov_29osusp4j0.s[38]++;
         return;
       } else {
-        cov_2itwqk888x.b[6][1]++;
+        cov_29osusp4j0.b[6][1]++;
       }
 
       var actives;
       var activesData;
-      cov_2itwqk888x.s[39]++;
+      cov_29osusp4j0.s[39]++;
 
       if (this._parent) {
-        cov_2itwqk888x.b[8][0]++;
-        cov_2itwqk888x.s[40]++;
+        cov_29osusp4j0.b[8][0]++;
+        cov_29osusp4j0.s[40]++;
         actives = [].slice.call(this._parent.querySelectorAll(Selector.ACTIVES)).filter(function (elem) {
-          cov_2itwqk888x.f[6]++;
-          cov_2itwqk888x.s[41]++;
+          cov_29osusp4j0.f[6]++;
+          cov_29osusp4j0.s[41]++;
 
           if (typeof _this._config.parent === 'string') {
-            cov_2itwqk888x.b[9][0]++;
-            cov_2itwqk888x.s[42]++;
+            cov_29osusp4j0.b[9][0]++;
+            cov_29osusp4j0.s[42]++;
             return elem.getAttribute('data-parent') === _this._config.parent;
           } else {
-            cov_2itwqk888x.b[9][1]++;
+            cov_29osusp4j0.b[9][1]++;
           }
 
-          cov_2itwqk888x.s[43]++;
+          cov_29osusp4j0.s[43]++;
           return elem.classList.contains(ClassName.COLLAPSE);
         });
-        cov_2itwqk888x.s[44]++;
+        cov_29osusp4j0.s[44]++;
 
         if (actives.length === 0) {
-          cov_2itwqk888x.b[10][0]++;
-          cov_2itwqk888x.s[45]++;
+          cov_29osusp4j0.b[10][0]++;
+          cov_29osusp4j0.s[45]++;
           actives = null;
         } else {
-          cov_2itwqk888x.b[10][1]++;
+          cov_29osusp4j0.b[10][1]++;
         }
       } else {
-        cov_2itwqk888x.b[8][1]++;
+        cov_29osusp4j0.b[8][1]++;
       }
 
-      cov_2itwqk888x.s[46]++;
+      cov_29osusp4j0.s[46]++;
 
       if (actives) {
-        cov_2itwqk888x.b[11][0]++;
-        cov_2itwqk888x.s[47]++;
+        cov_29osusp4j0.b[11][0]++;
+        cov_29osusp4j0.s[47]++;
         activesData = $(actives).not(this._selector).data(DATA_KEY);
-        cov_2itwqk888x.s[48]++;
+        cov_29osusp4j0.s[48]++;
 
-        if ((cov_2itwqk888x.b[13][0]++, activesData) && (cov_2itwqk888x.b[13][1]++, activesData._isTransitioning)) {
-          cov_2itwqk888x.b[12][0]++;
-          cov_2itwqk888x.s[49]++;
+        if ((cov_29osusp4j0.b[13][0]++, activesData) && (cov_29osusp4j0.b[13][1]++, activesData._isTransitioning)) {
+          cov_29osusp4j0.b[12][0]++;
+          cov_29osusp4j0.s[49]++;
           return;
         } else {
-          cov_2itwqk888x.b[12][1]++;
+          cov_29osusp4j0.b[12][1]++;
         }
       } else {
-        cov_2itwqk888x.b[11][1]++;
+        cov_29osusp4j0.b[11][1]++;
       }
 
-      var startEvent = (cov_2itwqk888x.s[50]++, $.Event(Event.SHOW));
-      cov_2itwqk888x.s[51]++;
+      var startEvent = (cov_29osusp4j0.s[50]++, $.Event(Event.SHOW));
+      cov_29osusp4j0.s[51]++;
       $(this._element).trigger(startEvent);
-      cov_2itwqk888x.s[52]++;
+      cov_29osusp4j0.s[52]++;
 
       if (startEvent.isDefaultPrevented()) {
-        cov_2itwqk888x.b[14][0]++;
-        cov_2itwqk888x.s[53]++;
+        cov_29osusp4j0.b[14][0]++;
+        cov_29osusp4j0.s[53]++;
         return;
       } else {
-        cov_2itwqk888x.b[14][1]++;
+        cov_29osusp4j0.b[14][1]++;
       }
 
-      cov_2itwqk888x.s[54]++;
+      cov_29osusp4j0.s[54]++;
 
       if (actives) {
-        cov_2itwqk888x.b[15][0]++;
-        cov_2itwqk888x.s[55]++;
+        cov_29osusp4j0.b[15][0]++;
+        cov_29osusp4j0.s[55]++;
 
         Collapse._jQueryInterface.call($(actives).not(this._selector), 'hide');
 
-        cov_2itwqk888x.s[56]++;
+        cov_29osusp4j0.s[56]++;
 
         if (!activesData) {
-          cov_2itwqk888x.b[16][0]++;
-          cov_2itwqk888x.s[57]++;
+          cov_29osusp4j0.b[16][0]++;
+          cov_29osusp4j0.s[57]++;
           $(actives).data(DATA_KEY, null);
         } else {
-          cov_2itwqk888x.b[16][1]++;
+          cov_29osusp4j0.b[16][1]++;
         }
       } else {
-        cov_2itwqk888x.b[15][1]++;
+        cov_29osusp4j0.b[15][1]++;
       }
 
-      var dimension = (cov_2itwqk888x.s[58]++, this._getDimension());
-      cov_2itwqk888x.s[59]++;
+      var dimension = (cov_29osusp4j0.s[58]++, this._getDimension());
+      cov_29osusp4j0.s[59]++;
       $(this._element).removeClass(ClassName.COLLAPSE).addClass(ClassName.COLLAPSING);
-      cov_2itwqk888x.s[60]++;
+      cov_29osusp4j0.s[60]++;
       this._element.style[dimension] = 0;
-      cov_2itwqk888x.s[61]++;
+      cov_29osusp4j0.s[61]++;
 
       if (this._triggerArray.length) {
-        cov_2itwqk888x.b[17][0]++;
-        cov_2itwqk888x.s[62]++;
+        cov_29osusp4j0.b[17][0]++;
+        cov_29osusp4j0.s[62]++;
         $(this._triggerArray).removeClass(ClassName.COLLAPSED).attr('aria-expanded', true);
       } else {
-        cov_2itwqk888x.b[17][1]++;
+        cov_29osusp4j0.b[17][1]++;
       }
 
-      cov_2itwqk888x.s[63]++;
+      cov_29osusp4j0.s[63]++;
       this.setTransitioning(true);
-      cov_2itwqk888x.s[64]++;
+      cov_29osusp4j0.s[64]++;
 
       var complete = function complete() {
-        cov_2itwqk888x.f[7]++;
-        cov_2itwqk888x.s[65]++;
+        cov_29osusp4j0.f[7]++;
+        cov_29osusp4j0.s[65]++;
         $(_this._element).removeClass(ClassName.COLLAPSING).addClass(ClassName.COLLAPSE).addClass(ClassName.SHOW);
-        cov_2itwqk888x.s[66]++;
+        cov_29osusp4j0.s[66]++;
         _this._element.style[dimension] = '';
-        cov_2itwqk888x.s[67]++;
+        cov_29osusp4j0.s[67]++;
 
         _this.setTransitioning(false);
 
-        cov_2itwqk888x.s[68]++;
+        cov_29osusp4j0.s[68]++;
         $(_this._element).trigger(Event.SHOWN);
       };
 
-      var capitalizedDimension = (cov_2itwqk888x.s[69]++, dimension[0].toUpperCase() + dimension.slice(1));
-      var scrollSize = (cov_2itwqk888x.s[70]++, "scroll" + capitalizedDimension);
-      var transitionDuration = (cov_2itwqk888x.s[71]++, Util.getTransitionDurationFromElement(this._element));
-      cov_2itwqk888x.s[72]++;
+      var capitalizedDimension = (cov_29osusp4j0.s[69]++, dimension[0].toUpperCase() + dimension.slice(1));
+      var scrollSize = (cov_29osusp4j0.s[70]++, "scroll" + capitalizedDimension);
+      var transitionDuration = (cov_29osusp4j0.s[71]++, Util.getTransitionDurationFromElement(this._element));
+      cov_29osusp4j0.s[72]++;
       $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-      cov_2itwqk888x.s[73]++;
+      cov_29osusp4j0.s[73]++;
       this._element.style[dimension] = this._element[scrollSize] + "px";
     };
 
     _proto.hide = function hide() {
       var _this2 = this;
 
-      cov_2itwqk888x.f[8]++;
-      cov_2itwqk888x.s[74]++;
+      cov_29osusp4j0.f[8]++;
+      cov_29osusp4j0.s[74]++;
 
-      if ((cov_2itwqk888x.b[19][0]++, this._isTransitioning) || (cov_2itwqk888x.b[19][1]++, !$(this._element).hasClass(ClassName.SHOW))) {
-        cov_2itwqk888x.b[18][0]++;
-        cov_2itwqk888x.s[75]++;
+      if ((cov_29osusp4j0.b[19][0]++, this._isTransitioning) || (cov_29osusp4j0.b[19][1]++, !$(this._element).hasClass(ClassName.SHOW))) {
+        cov_29osusp4j0.b[18][0]++;
+        cov_29osusp4j0.s[75]++;
         return;
       } else {
-        cov_2itwqk888x.b[18][1]++;
+        cov_29osusp4j0.b[18][1]++;
       }
 
-      var startEvent = (cov_2itwqk888x.s[76]++, $.Event(Event.HIDE));
-      cov_2itwqk888x.s[77]++;
+      var startEvent = (cov_29osusp4j0.s[76]++, $.Event(Event.HIDE));
+      cov_29osusp4j0.s[77]++;
       $(this._element).trigger(startEvent);
-      cov_2itwqk888x.s[78]++;
+      cov_29osusp4j0.s[78]++;
 
       if (startEvent.isDefaultPrevented()) {
-        cov_2itwqk888x.b[20][0]++;
-        cov_2itwqk888x.s[79]++;
+        cov_29osusp4j0.b[20][0]++;
+        cov_29osusp4j0.s[79]++;
         return;
       } else {
-        cov_2itwqk888x.b[20][1]++;
+        cov_29osusp4j0.b[20][1]++;
       }
 
-      var dimension = (cov_2itwqk888x.s[80]++, this._getDimension());
-      cov_2itwqk888x.s[81]++;
+      var dimension = (cov_29osusp4j0.s[80]++, this._getDimension());
+      cov_29osusp4j0.s[81]++;
       this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
-      cov_2itwqk888x.s[82]++;
+      cov_29osusp4j0.s[82]++;
       Util.reflow(this._element);
-      cov_2itwqk888x.s[83]++;
+      cov_29osusp4j0.s[83]++;
       $(this._element).addClass(ClassName.COLLAPSING).removeClass(ClassName.COLLAPSE).removeClass(ClassName.SHOW);
-      var triggerArrayLength = (cov_2itwqk888x.s[84]++, this._triggerArray.length);
-      cov_2itwqk888x.s[85]++;
+      var triggerArrayLength = (cov_29osusp4j0.s[84]++, this._triggerArray.length);
+      cov_29osusp4j0.s[85]++;
 
       if (triggerArrayLength > 0) {
-        cov_2itwqk888x.b[21][0]++;
-        cov_2itwqk888x.s[86]++;
+        cov_29osusp4j0.b[21][0]++;
+        cov_29osusp4j0.s[86]++;
 
-        for (var i = (cov_2itwqk888x.s[87]++, 0); i < triggerArrayLength; i++) {
-          var trigger = (cov_2itwqk888x.s[88]++, this._triggerArray[i]);
-          var selector = (cov_2itwqk888x.s[89]++, Util.getSelectorFromElement(trigger));
-          cov_2itwqk888x.s[90]++;
+        for (var i = (cov_29osusp4j0.s[87]++, 0); i < triggerArrayLength; i++) {
+          var trigger = (cov_29osusp4j0.s[88]++, this._triggerArray[i]);
+          var selector = (cov_29osusp4j0.s[89]++, Util.getSelectorFromElement(trigger));
+          cov_29osusp4j0.s[90]++;
 
           if (selector !== null) {
-            cov_2itwqk888x.b[22][0]++;
-            var $elem = (cov_2itwqk888x.s[91]++, $([].slice.call(document.querySelectorAll(selector))));
-            cov_2itwqk888x.s[92]++;
+            cov_29osusp4j0.b[22][0]++;
+            var $elem = (cov_29osusp4j0.s[91]++, $([].slice.call(document.querySelectorAll(selector))));
+            cov_29osusp4j0.s[92]++;
 
             if (!$elem.hasClass(ClassName.SHOW)) {
-              cov_2itwqk888x.b[23][0]++;
-              cov_2itwqk888x.s[93]++;
+              cov_29osusp4j0.b[23][0]++;
+              cov_29osusp4j0.s[93]++;
               $(trigger).addClass(ClassName.COLLAPSED).attr('aria-expanded', false);
             } else {
-              cov_2itwqk888x.b[23][1]++;
+              cov_29osusp4j0.b[23][1]++;
             }
           } else {
-            cov_2itwqk888x.b[22][1]++;
+            cov_29osusp4j0.b[22][1]++;
           }
         }
       } else {
-        cov_2itwqk888x.b[21][1]++;
+        cov_29osusp4j0.b[21][1]++;
       }
 
-      cov_2itwqk888x.s[94]++;
+      cov_29osusp4j0.s[94]++;
       this.setTransitioning(true);
-      cov_2itwqk888x.s[95]++;
+      cov_29osusp4j0.s[95]++;
 
       var complete = function complete() {
-        cov_2itwqk888x.f[9]++;
-        cov_2itwqk888x.s[96]++;
+        cov_29osusp4j0.f[9]++;
+        cov_29osusp4j0.s[96]++;
 
         _this2.setTransitioning(false);
 
-        cov_2itwqk888x.s[97]++;
+        cov_29osusp4j0.s[97]++;
         $(_this2._element).removeClass(ClassName.COLLAPSING).addClass(ClassName.COLLAPSE).trigger(Event.HIDDEN);
       };
 
-      cov_2itwqk888x.s[98]++;
+      cov_29osusp4j0.s[98]++;
       this._element.style[dimension] = '';
-      var transitionDuration = (cov_2itwqk888x.s[99]++, Util.getTransitionDurationFromElement(this._element));
-      cov_2itwqk888x.s[100]++;
+      var transitionDuration = (cov_29osusp4j0.s[99]++, Util.getTransitionDurationFromElement(this._element));
+      cov_29osusp4j0.s[100]++;
       $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
     };
 
     _proto.setTransitioning = function setTransitioning(isTransitioning) {
-      cov_2itwqk888x.f[10]++;
-      cov_2itwqk888x.s[101]++;
+      cov_29osusp4j0.f[10]++;
+      cov_29osusp4j0.s[101]++;
       this._isTransitioning = isTransitioning;
     };
 
     _proto.dispose = function dispose() {
-      cov_2itwqk888x.f[11]++;
-      cov_2itwqk888x.s[102]++;
+      cov_29osusp4j0.f[11]++;
+      cov_29osusp4j0.s[102]++;
       $.removeData(this._element, DATA_KEY);
-      cov_2itwqk888x.s[103]++;
+      cov_29osusp4j0.s[103]++;
       this._config = null;
-      cov_2itwqk888x.s[104]++;
+      cov_29osusp4j0.s[104]++;
       this._parent = null;
-      cov_2itwqk888x.s[105]++;
+      cov_29osusp4j0.s[105]++;
       this._element = null;
-      cov_2itwqk888x.s[106]++;
+      cov_29osusp4j0.s[106]++;
       this._triggerArray = null;
-      cov_2itwqk888x.s[107]++;
+      cov_29osusp4j0.s[107]++;
       this._isTransitioning = null;
     } // Private
     ;
 
     _proto._getConfig = function _getConfig(config) {
-      cov_2itwqk888x.f[12]++;
-      cov_2itwqk888x.s[108]++;
+      cov_29osusp4j0.f[12]++;
+      cov_29osusp4j0.s[108]++;
       config = _objectSpread2({}, Default, {}, config);
-      cov_2itwqk888x.s[109]++;
+      cov_29osusp4j0.s[109]++;
       config.toggle = Boolean(config.toggle); // Coerce string values
 
-      cov_2itwqk888x.s[110]++;
+      cov_29osusp4j0.s[110]++;
       Util.typeCheckConfig(NAME, config, DefaultType);
-      cov_2itwqk888x.s[111]++;
+      cov_29osusp4j0.s[111]++;
       return config;
     };
 
     _proto._getDimension = function _getDimension() {
-      cov_2itwqk888x.f[13]++;
-      var hasWidth = (cov_2itwqk888x.s[112]++, $(this._element).hasClass(Dimension.WIDTH));
-      cov_2itwqk888x.s[113]++;
-      return hasWidth ? (cov_2itwqk888x.b[24][0]++, Dimension.WIDTH) : (cov_2itwqk888x.b[24][1]++, Dimension.HEIGHT);
+      cov_29osusp4j0.f[13]++;
+      var hasWidth = (cov_29osusp4j0.s[112]++, $(this._element).hasClass(Dimension.WIDTH));
+      cov_29osusp4j0.s[113]++;
+      return hasWidth ? (cov_29osusp4j0.b[24][0]++, Dimension.WIDTH) : (cov_29osusp4j0.b[24][1]++, Dimension.HEIGHT);
     };
 
     _proto._getParent = function _getParent() {
       var _this3 = this;
 
-      cov_2itwqk888x.f[14]++;
+      cov_29osusp4j0.f[14]++;
       var parent;
-      cov_2itwqk888x.s[114]++;
+      cov_29osusp4j0.s[114]++;
 
       if (Util.isElement(this._config.parent)) {
-        cov_2itwqk888x.b[25][0]++;
-        cov_2itwqk888x.s[115]++;
+        cov_29osusp4j0.b[25][0]++;
+        cov_29osusp4j0.s[115]++;
         parent = this._config.parent; // It's a jQuery object
 
-        cov_2itwqk888x.s[116]++;
+        cov_29osusp4j0.s[116]++;
 
         if (typeof this._config.parent.jquery !== 'undefined') {
-          cov_2itwqk888x.b[26][0]++;
-          cov_2itwqk888x.s[117]++;
+          cov_29osusp4j0.b[26][0]++;
+          cov_29osusp4j0.s[117]++;
           parent = this._config.parent[0];
         } else {
-          cov_2itwqk888x.b[26][1]++;
+          cov_29osusp4j0.b[26][1]++;
         }
       } else {
-        cov_2itwqk888x.b[25][1]++;
-        cov_2itwqk888x.s[118]++;
+        cov_29osusp4j0.b[25][1]++;
+        cov_29osusp4j0.s[118]++;
         parent = document.querySelector(this._config.parent);
       }
 
-      var selector = (cov_2itwqk888x.s[119]++, "[data-toggle=\"collapse\"][data-parent=\"" + this._config.parent + "\"]");
-      var children = (cov_2itwqk888x.s[120]++, [].slice.call(parent.querySelectorAll(selector)));
-      cov_2itwqk888x.s[121]++;
+      var selector = (cov_29osusp4j0.s[119]++, "[data-toggle=\"collapse\"][data-parent=\"" + this._config.parent + "\"]");
+      var children = (cov_29osusp4j0.s[120]++, [].slice.call(parent.querySelectorAll(selector)));
+      cov_29osusp4j0.s[121]++;
       $(children).each(function (i, element) {
-        cov_2itwqk888x.f[15]++;
-        cov_2itwqk888x.s[122]++;
+        cov_29osusp4j0.f[15]++;
+        cov_29osusp4j0.s[122]++;
 
         _this3._addAriaAndCollapsedClass(Collapse._getTargetFromElement(element), [element]);
       });
-      cov_2itwqk888x.s[123]++;
+      cov_29osusp4j0.s[123]++;
       return parent;
     };
 
     _proto._addAriaAndCollapsedClass = function _addAriaAndCollapsedClass(element, triggerArray) {
-      cov_2itwqk888x.f[16]++;
-      var isOpen = (cov_2itwqk888x.s[124]++, $(element).hasClass(ClassName.SHOW));
-      cov_2itwqk888x.s[125]++;
+      cov_29osusp4j0.f[16]++;
+      var isOpen = (cov_29osusp4j0.s[124]++, $(element).hasClass(ClassName.SHOW));
+      cov_29osusp4j0.s[125]++;
 
       if (triggerArray.length) {
-        cov_2itwqk888x.b[27][0]++;
-        cov_2itwqk888x.s[126]++;
+        cov_29osusp4j0.b[27][0]++;
+        cov_29osusp4j0.s[126]++;
         $(triggerArray).toggleClass(ClassName.COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
       } else {
-        cov_2itwqk888x.b[27][1]++;
+        cov_29osusp4j0.b[27][1]++;
       }
     } // Static
     ;
 
     Collapse._getTargetFromElement = function _getTargetFromElement(element) {
-      cov_2itwqk888x.f[17]++;
-      var selector = (cov_2itwqk888x.s[127]++, Util.getSelectorFromElement(element));
-      cov_2itwqk888x.s[128]++;
-      return selector ? (cov_2itwqk888x.b[28][0]++, document.querySelector(selector)) : (cov_2itwqk888x.b[28][1]++, null);
+      cov_29osusp4j0.f[17]++;
+      var selector = (cov_29osusp4j0.s[127]++, Util.getSelectorFromElement(element));
+      cov_29osusp4j0.s[128]++;
+      return selector ? (cov_29osusp4j0.b[28][0]++, document.querySelector(selector)) : (cov_29osusp4j0.b[28][1]++, null);
     };
 
     Collapse._jQueryInterface = function _jQueryInterface(config) {
-      cov_2itwqk888x.f[18]++;
-      cov_2itwqk888x.s[129]++;
+      cov_29osusp4j0.f[18]++;
+      cov_29osusp4j0.s[129]++;
       return this.each(function () {
-        cov_2itwqk888x.f[19]++;
-        var $this = (cov_2itwqk888x.s[130]++, $(this));
-        var data = (cov_2itwqk888x.s[131]++, $this.data(DATA_KEY));
+        cov_29osusp4j0.f[19]++;
+        var $this = (cov_29osusp4j0.s[130]++, $(this));
+        var data = (cov_29osusp4j0.s[131]++, $this.data(DATA_KEY));
 
-        var _config = (cov_2itwqk888x.s[132]++, _objectSpread2({}, Default, {}, $this.data(), {}, (cov_2itwqk888x.b[30][0]++, typeof config === 'object') && (cov_2itwqk888x.b[30][1]++, config) ? (cov_2itwqk888x.b[29][0]++, config) : (cov_2itwqk888x.b[29][1]++, {})));
+        var _config = (cov_29osusp4j0.s[132]++, _objectSpread2({}, Default, {}, $this.data(), {}, (cov_29osusp4j0.b[30][0]++, typeof config === 'object') && (cov_29osusp4j0.b[30][1]++, config) ? (cov_29osusp4j0.b[29][0]++, config) : (cov_29osusp4j0.b[29][1]++, {})));
 
-        cov_2itwqk888x.s[133]++;
+        cov_29osusp4j0.s[133]++;
 
-        if ((cov_2itwqk888x.b[32][0]++, !data) && (cov_2itwqk888x.b[32][1]++, _config.toggle) && (cov_2itwqk888x.b[32][2]++, /show|hide/.test(config))) {
-          cov_2itwqk888x.b[31][0]++;
-          cov_2itwqk888x.s[134]++;
+        if ((cov_29osusp4j0.b[32][0]++, !data) && (cov_29osusp4j0.b[32][1]++, _config.toggle) && (cov_29osusp4j0.b[32][2]++, /show|hide/.test(config))) {
+          cov_29osusp4j0.b[31][0]++;
+          cov_29osusp4j0.s[134]++;
           _config.toggle = false;
         } else {
-          cov_2itwqk888x.b[31][1]++;
+          cov_29osusp4j0.b[31][1]++;
         }
 
-        cov_2itwqk888x.s[135]++;
+        cov_29osusp4j0.s[135]++;
 
         if (!data) {
-          cov_2itwqk888x.b[33][0]++;
-          cov_2itwqk888x.s[136]++;
+          cov_29osusp4j0.b[33][0]++;
+          cov_29osusp4j0.s[136]++;
           data = new Collapse(this, _config);
-          cov_2itwqk888x.s[137]++;
+          cov_29osusp4j0.s[137]++;
           $this.data(DATA_KEY, data);
         } else {
-          cov_2itwqk888x.b[33][1]++;
+          cov_29osusp4j0.b[33][1]++;
         }
 
-        cov_2itwqk888x.s[138]++;
+        cov_29osusp4j0.s[138]++;
 
         if (typeof config === 'string') {
-          cov_2itwqk888x.b[34][0]++;
-          cov_2itwqk888x.s[139]++;
+          cov_29osusp4j0.b[34][0]++;
+          cov_29osusp4j0.s[139]++;
 
           if (typeof data[config] === 'undefined') {
-            cov_2itwqk888x.b[35][0]++;
-            cov_2itwqk888x.s[140]++;
+            cov_29osusp4j0.b[35][0]++;
+            cov_29osusp4j0.s[140]++;
             throw new TypeError("No method named \"" + config + "\"");
           } else {
-            cov_2itwqk888x.b[35][1]++;
+            cov_29osusp4j0.b[35][1]++;
           }
 
-          cov_2itwqk888x.s[141]++;
+          cov_29osusp4j0.s[141]++;
           data[config]();
         } else {
-          cov_2itwqk888x.b[34][1]++;
+          cov_29osusp4j0.b[34][1]++;
         }
       });
     };
@@ -4242,15 +4242,15 @@
     _createClass(Collapse, null, [{
       key: "VERSION",
       get: function get() {
-        cov_2itwqk888x.f[2]++;
-        cov_2itwqk888x.s[32]++;
+        cov_29osusp4j0.f[2]++;
+        cov_29osusp4j0.s[32]++;
         return VERSION;
       }
     }, {
       key: "Default",
       get: function get() {
-        cov_2itwqk888x.f[3]++;
-        cov_2itwqk888x.s[33]++;
+        cov_29osusp4j0.f[3]++;
+        cov_29osusp4j0.s[33]++;
         return Default;
       }
     }]);
@@ -4264,30 +4264,30 @@
    */
 
 
-  cov_2itwqk888x.s[142]++;
+  cov_29osusp4j0.s[142]++;
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
-    cov_2itwqk888x.f[20]++;
-    cov_2itwqk888x.s[143]++;
+    cov_29osusp4j0.f[20]++;
+    cov_29osusp4j0.s[143]++;
 
     // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
     if (event.currentTarget.tagName === 'A') {
-      cov_2itwqk888x.b[36][0]++;
-      cov_2itwqk888x.s[144]++;
+      cov_29osusp4j0.b[36][0]++;
+      cov_29osusp4j0.s[144]++;
       event.preventDefault();
     } else {
-      cov_2itwqk888x.b[36][1]++;
+      cov_29osusp4j0.b[36][1]++;
     }
 
-    var $trigger = (cov_2itwqk888x.s[145]++, $(this));
-    var selector = (cov_2itwqk888x.s[146]++, Util.getSelectorFromElement(this));
-    var selectors = (cov_2itwqk888x.s[147]++, [].slice.call(document.querySelectorAll(selector)));
-    cov_2itwqk888x.s[148]++;
+    var $trigger = (cov_29osusp4j0.s[145]++, $(this));
+    var selector = (cov_29osusp4j0.s[146]++, Util.getSelectorFromElement(this));
+    var selectors = (cov_29osusp4j0.s[147]++, [].slice.call(document.querySelectorAll(selector)));
+    cov_29osusp4j0.s[148]++;
     $(selectors).each(function () {
-      cov_2itwqk888x.f[21]++;
-      var $target = (cov_2itwqk888x.s[149]++, $(this));
-      var data = (cov_2itwqk888x.s[150]++, $target.data(DATA_KEY));
-      var config = (cov_2itwqk888x.s[151]++, data ? (cov_2itwqk888x.b[37][0]++, 'toggle') : (cov_2itwqk888x.b[37][1]++, $trigger.data()));
-      cov_2itwqk888x.s[152]++;
+      cov_29osusp4j0.f[21]++;
+      var $target = (cov_29osusp4j0.s[149]++, $(this));
+      var data = (cov_29osusp4j0.s[150]++, $target.data(DATA_KEY));
+      var config = (cov_29osusp4j0.s[151]++, data ? (cov_29osusp4j0.b[37][0]++, 'toggle') : (cov_29osusp4j0.b[37][1]++, $trigger.data()));
+      cov_29osusp4j0.s[152]++;
 
       Collapse._jQueryInterface.call($target, config);
     });
@@ -4298,17 +4298,17 @@
    * ------------------------------------------------------------------------
    */
 
-  cov_2itwqk888x.s[153]++;
+  cov_29osusp4j0.s[153]++;
   $.fn[NAME] = Collapse._jQueryInterface;
-  cov_2itwqk888x.s[154]++;
+  cov_29osusp4j0.s[154]++;
   $.fn[NAME].Constructor = Collapse;
-  cov_2itwqk888x.s[155]++;
+  cov_29osusp4j0.s[155]++;
 
   $.fn[NAME].noConflict = function () {
-    cov_2itwqk888x.f[22]++;
-    cov_2itwqk888x.s[156]++;
+    cov_29osusp4j0.f[22]++;
+    cov_29osusp4j0.s[156]++;
     $.fn[NAME] = JQUERY_NO_CONFLICT;
-    cov_2itwqk888x.s[157]++;
+    cov_29osusp4j0.s[157]++;
     return Collapse._jQueryInterface;
   };
 

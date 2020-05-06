@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap util.js v4.4.1-0 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2019 Mahdi Majidzadeh
+  * Bootstrap util.js v4.4.1-1 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2020 Mahdi Majidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
