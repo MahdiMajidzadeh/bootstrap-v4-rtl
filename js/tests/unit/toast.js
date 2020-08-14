@@ -208,7 +208,6 @@ $(function () {
       .bootstrapToast('show')
   })
 
-
   QUnit.test('should close toast when close element with data-dismiss attribute is set', function (assert) {
     assert.expect(2)
     var done = assert.async()
@@ -289,6 +288,37 @@ $(function () {
         shownCalled = true
       })
       .bootstrapToast('show')
+  })
+
+  QUnit.test('should clear timeout if toast is shown again before it is hidden', function (assert) {
+    assert.expect(2)
+    var done = assert.async()
+
+    var toastHtml =
+      '<div class="toast">' +
+        '<div class="toast-body">' +
+          'a simple toast' +
+        '</div>' +
+      '</div>'
+
+    var $toast = $(toastHtml)
+      .bootstrapToast()
+      .appendTo($('#qunit-fixture'))
+
+    var toast = $toast.data('bs.toast')
+    var spyClearTimeout = sinon.spy(toast, '_clearTimeout')
+
+    setTimeout(function () {
+      toast._config.autohide = false
+      $toast.on('shown.bs.toast', function () {
+        assert.ok(spyClearTimeout.called)
+        assert.ok(toast._timeout === null)
+        done()
+      })
+      $toast.bootstrapToast('show')
+    }, toast._config.delay / 2)
+
+    $toast.bootstrapToast('show')
   })
 
   QUnit.test('should not trigger hidden if hide is prevented', function (assert) {

@@ -68,7 +68,7 @@ $(function () {
 
     $('<div id="modal-test"/>')
       .on('shown.bs.modal', function () {
-        assert.notEqual($('#modal-test').length, 0, 'modal inserted into dom')
+        assert.notStrictEqual($('#modal-test').length, 0, 'modal inserted into dom')
         done()
       })
       .bootstrapModal('show')
@@ -109,7 +109,7 @@ $(function () {
     $('<div id="modal-test"/>')
       .on('shown.bs.modal', function () {
         assert.ok($('#modal-test').is(':visible'), 'modal visible')
-        assert.notEqual($('#modal-test').length, 0, 'modal inserted into dom')
+        assert.notStrictEqual($('#modal-test').length, 0, 'modal inserted into dom')
         $(this).bootstrapModal('hide')
       })
       .on('hidden.bs.modal', function () {
@@ -126,7 +126,7 @@ $(function () {
     $('<div id="modal-test"/>')
       .on('shown.bs.modal', function () {
         assert.ok($('#modal-test').is(':visible'), 'modal visible')
-        assert.notEqual($('#modal-test').length, 0, 'modal inserted into dom')
+        assert.notStrictEqual($('#modal-test').length, 0, 'modal inserted into dom')
         $(this).bootstrapModal('toggle')
       })
       .on('hidden.bs.modal', function () {
@@ -143,7 +143,7 @@ $(function () {
     $('<div id="modal-test"><span class="close" data-dismiss="modal"/></div>')
       .on('shown.bs.modal', function () {
         assert.ok($('#modal-test').is(':visible'), 'modal visible')
-        assert.notEqual($('#modal-test').length, 0, 'modal inserted into dom')
+        assert.notStrictEqual($('#modal-test').length, 0, 'modal inserted into dom')
         $(this).find('.close').trigger('click')
       })
       .on('hidden.bs.modal', function () {
@@ -175,7 +175,7 @@ $(function () {
 
     $('<div id="modal-test"><div class="contents"/></div>')
       .on('shown.bs.modal', function () {
-        assert.notEqual($('#modal-test').length, 0, 'modal inserted into dom')
+        assert.notStrictEqual($('#modal-test').length, 0, 'modal inserted into dom')
         $('.contents').trigger('click')
         assert.ok($('#modal-test').is(':visible'), 'modal visible')
         $('#modal-test').trigger('click')
@@ -292,6 +292,23 @@ $(function () {
       })
       .on('hidden.bs.modal', function () {
         assert.notOk($('#modal-test').is('[aria-modal]'), 'aria-modal attribute removed')
+        done()
+      })
+      .bootstrapModal('show')
+  })
+
+  QUnit.test('should add role="dialog" attribute when shown, remove it again when hidden', function (assert) {
+    assert.expect(3)
+    var done = assert.async()
+
+    $('<div id="modal-test"/>')
+      .on('shown.bs.modal', function () {
+        assert.ok($('#modal-test').is('[role]'), 'role attribute added')
+        assert.strictEqual($('#modal-test').attr('role'), 'dialog', 'correct role="dialog" added')
+        $(this).bootstrapModal('hide')
+      })
+      .on('hidden.bs.modal', function () {
+        assert.notOk($('#modal-test').is('[role]'), 'role attribute removed')
         done()
       })
       .bootstrapModal('show')
@@ -745,6 +762,45 @@ $(function () {
     }).bootstrapModal('show')
   })
 
+  QUnit.test('should not adjust the inline body padding when it does not overflow, even on a scaled display', function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    var $modal = $([
+      '<div id="modal-test">',
+      '  <div class="modal-dialog">',
+      '    <div class="modal-content">',
+      '      <div class="modal-body" />',
+      '    </div>',
+      '  </div>',
+      '</div>'
+    ].join('')).appendTo('#qunit-fixture')
+
+    var originalPadding = window.getComputedStyle(document.body).paddingRight
+
+    // Remove body margins as would be done by Bootstrap css
+    document.body.style.margin = '0'
+
+    // Hide scrollbars to prevent the body overflowing
+    document.body.style.overflow = 'hidden'
+
+    // Simulate a discrepancy between exact, i.e. floating point body width, and rounded body width
+    // as it can occur when zooming or scaling the display to something else than 100%
+    document.documentElement.style.paddingRight = '.48px'
+
+    $modal.on('shown.bs.modal', function () {
+      var currentPadding = window.getComputedStyle(document.body).paddingRight
+
+      assert.strictEqual(currentPadding, originalPadding, 'body padding should not be adjusted')
+
+      // Restore overridden css
+      document.body.style.removeProperty('margin')
+      document.body.style.removeProperty('overflow')
+      document.documentElement.style.paddingRight = '16px'
+      done()
+    }).bootstrapModal('show')
+  })
+
   QUnit.test('should enforce focus', function (assert) {
     assert.expect(4)
     var done = assert.async()
@@ -826,7 +882,6 @@ $(function () {
       '</div>'
     ].join('')).appendTo('#qunit-fixture')
 
-
     $modal.on('shown.bs.modal', function () {
       assert.strictEqual($modal.scrollTop(), 0)
       done()
@@ -851,6 +906,72 @@ $(function () {
       .on('hidden.bs.modal', function () {
         assert.strictEqual(true, false, 'should not hide the modal')
       })
+      .bootstrapModal({
+        backdrop: 'static'
+      })
+  })
+
+  QUnit.test('should close modal when escape key is pressed with keyboard = true and backdrop is static', function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+    var $modal = $('<div class="modal" data-backdrop="static" data-keyboard="true"><div class="modal-dialog" /></div>').appendTo('#qunit-fixture')
+
+    $modal.on('shown.bs.modal', function () {
+      $modal.trigger($.Event('keydown', {
+        which: 27
+      }))
+
+      setTimeout(function () {
+        var modal = $modal.data('bs.modal')
+
+        assert.strictEqual(modal._isShown, false)
+        done()
+      }, 10)
+    })
+      .bootstrapModal({
+        backdrop: 'static',
+        keyboard: true
+      })
+  })
+
+  QUnit.test('should not close modal when escape key is pressed with keyboard = false and backdrop = static', function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+    var $modal = $('<div class="modal" data-backdrop="static" data-keyboard="false"><div class="modal-dialog" /></div>').appendTo('#qunit-fixture')
+
+    $modal.on('shown.bs.modal', function () {
+      $modal.trigger($.Event('keydown', {
+        which: 27
+      }))
+
+      setTimeout(function () {
+        var modal = $modal.data('bs.modal')
+
+        assert.strictEqual(modal._isShown, true)
+        done()
+      }, 10)
+    })
+      .on('hidden.bs.modal', function () {
+        assert.strictEqual(false, true, 'should not hide the modal')
+      })
+      .bootstrapModal({
+        backdrop: 'static',
+        keyboard: false
+      })
+  })
+
+  QUnit.test('should not overflow when clicking outside of modal-content if backdrop = static', function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+    var $modal = $('<div class="modal" data-backdrop="static"><div class="modal-dialog" style="transition-duration: 20ms;"/></div>').appendTo('#qunit-fixture')
+
+    $modal.on('shown.bs.modal', function () {
+      $modal.trigger('click')
+      setTimeout(function () {
+        assert.strictEqual($modal[0].clientHeight, $modal[0].scrollHeight)
+        done()
+      }, 20)
+    })
       .bootstrapModal({
         backdrop: 'static'
       })

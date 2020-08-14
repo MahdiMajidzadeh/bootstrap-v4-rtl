@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.4.1): util.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Bootstrap (v4.5.2): util.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 
@@ -19,6 +19,10 @@ const MILLISECONDS_MULTIPLIER = 1000
 
 // Shoutout AngusCroll (https://goo.gl/pxwQGp)
 function toType(obj) {
+  if (obj === null || typeof obj === 'undefined') {
+    return `${obj}`
+  }
+
   return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase()
 }
 
@@ -30,7 +34,7 @@ function getSpecialTransitionEndEvent() {
       if ($(event.target).is(this)) {
         return event.handleObj.handler.apply(this, arguments) // eslint-disable-line prefer-rest-params
       }
-      return undefined // eslint-disable-line no-undefined
+      return undefined
     }
   }
 }
@@ -63,7 +67,6 @@ function setTransitionEndSupport() {
  */
 
 const Util = {
-
   TRANSITION_END: 'bsTransitionEnd',
 
   getUID(prefix) {

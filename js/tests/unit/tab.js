@@ -143,8 +143,8 @@ $(function () {
   QUnit.test('should not fire shown when tab is already active', function (assert) {
     assert.expect(0)
     var tabsHTML = '<ul class="nav nav-tabs" role="tablist">' +
-      '<li class="nav-item"><a href="#home" class="nav-link active" role="tab">Home</a></li>' +
-      '<li class="nav-item"><a href="#profile" class="nav-link" role="tab">Profile</a></li>' +
+      '<li class="nav-item" role="presentation"><a href="#home" class="nav-link active" role="tab">Home</a></li>' +
+      '<li class="nav-item" role="presentation"><a href="#profile" class="nav-link" role="tab">Profile</a></li>' +
       '</ul>' +
       '<div class="tab-content">' +
       '<div class="tab-pane active" id="home" role="tabpanel"></div>' +
@@ -350,15 +350,15 @@ $(function () {
     var done = assert.async()
     var tabsHTML =
         '<nav class="nav nav-tabs" role="tablist">' +
-        '  <a id="tab1" href="#x-tab1" class="nav-item nav-link" data-toggle="tab" role="tab" aria-controls="x-tab1">Tab 1</a>' +
-        '  <a href="#x-tab2" class="nav-item nav-link active" data-toggle="tab" role="tab" aria-controls="x-tab2" aria-selected="true">Tab 2</a>' +
-        '  <a href="#x-tab3" class="nav-item nav-link" data-toggle="tab" role="tab" aria-controls="x-tab3">Tab 3</a>' +
+        '  <a id="tab1" href="#x-tab1" class="nav-link" data-toggle="tab" role="tab" aria-controls="x-tab1">Tab 1</a>' +
+        '  <a href="#x-tab2" class="nav-link active" data-toggle="tab" role="tab" aria-controls="x-tab2" aria-selected="true">Tab 2</a>' +
+        '  <a href="#x-tab3" class="nav-link" data-toggle="tab" role="tab" aria-controls="x-tab3">Tab 3</a>' +
         '</nav>' +
         '<div class="tab-content">' +
         '  <div class="tab-pane" id="x-tab1" role="tabpanel">' +
         '    <nav class="nav nav-tabs" role="tablist">' +
-        '      <a href="#nested-tab1" class="nav-item nav-link active" data-toggle="tab" role="tab" aria-controls="x-tab1" aria-selected="true">Nested Tab 1</a>' +
-        '      <a id="tabNested2" href="#nested-tab2" class="nav-item nav-link" data-toggle="tab" role="tab" aria-controls="x-profile">Nested Tab2</a>' +
+        '      <a href="#nested-tab1" class="nav-link active" data-toggle="tab" role="tab" aria-controls="x-tab1" aria-selected="true">Nested Tab 1</a>' +
+        '      <a id="tabNested2" href="#nested-tab2" class="nav-link" data-toggle="tab" role="tab" aria-controls="x-profile">Nested Tab2</a>' +
         '    </nav>' +
         '    <div class="tab-content">' +
         '      <div class="tab-pane active" id="nested-tab1" role="tabpanel">Nested Tab1 Content</div>' +
@@ -387,8 +387,8 @@ $(function () {
     assert.expect(6)
     var done = assert.async()
     var tabsHTML = '<ul class="nav nav-tabs" role="tablist">' +
-      '<li class="nav-item"><a id="tab-home" href="#home" class="nav-link" data-toggle="tab" role="tab">Home</a></li>' +
-      '<li class="nav-item"><a id="tab-profile" href="#profile" class="nav-link" data-toggle="tab" role="tab">Profile</a></li>' +
+      '<li class="nav-item" role="presentation"><a id="tab-home" href="#home" class="nav-link" data-toggle="tab" role="tab">Home</a></li>' +
+      '<li class="nav-item" role="presentation"><a id="tab-profile" href="#profile" class="nav-link" data-toggle="tab" role="tab">Profile</a></li>' +
       '</ul>' +
       '<div class="tab-content">' +
       '<div class="tab-pane fade" id="home" role="tabpanel"></div>' +
@@ -421,17 +421,17 @@ $(function () {
 
     var html = [
       '<ul class="nav nav-tabs" role="tablist">',
-      '  <li class="nav-item">',
+      '  <li class="nav-item" role="presentation">',
       '    <a class="nav-link nav-tab" href="#profile" role="tab" data-toggle="tab">',
       '      <button class="close"><span aria-hidden="true">&times;</span></button>',
       '    </a>',
       '  </li>',
-      '  <li class="nav-item">',
+      '  <li class="nav-item" role="presentation">',
       '    <a id="secondNav" class="nav-link nav-tab" href="#buzz" role="tab" data-toggle="tab">',
       '      <button class="close"><span aria-hidden="true">&times;</span></button>',
       '    </a>',
       '  </li>',
-      '  <li class="nav-item">',
+      '  <li class="nav-item" role="presentation">',
       '    <a class="nav-link nav-tab" href="#references" role="tab" data-toggle="tab">',
       '      <button id="btnClose" class="close"><span aria-hidden="true">&times;</span></button>',
       '    </a>',
@@ -466,14 +466,14 @@ $(function () {
 
     var html = [
       '<ul class="nav nav-tabs" role="tablist">',
-      '  <li class="nav-item">',
+      '  <li class="nav-item" role="presentation">',
       '    <a class="nav-link nav-tab" href="#home" role="tab" data-toggle="tab">Home</a>',
       '  </li>',
-      '  <li class="nav-item">',
+      '  <li class="nav-item" role="presentation">',
       '    <a id="secondNav" class="nav-link nav-tab" href="#profile" role="tab" data-toggle="tab">Profile</a>',
       '  </li>',
       '</ul>',
-      '<div class="tab-content">',
+      '<div class="tab-content" role="presentation">',
       '  <div role="tabpanel" class="tab-pane" id="home">test 1</div>',
       '  <div role="tabpanel" class="tab-pane" id="profile">test 2</div>',
       '</div>'
@@ -494,10 +494,10 @@ $(function () {
 
     var html = [
       '<ul class="nav nav-tabs" role="tablist">',
-      '  <li class="nav-item">',
+      '  <li class="nav-item" role="presentation">',
       '    <a class="nav-link nav-tab" href="#home" role="tab" data-toggle="tab">Home</a>',
       '  </li>',
-      '  <li class="nav-item">',
+      '  <li class="nav-item" role="presentation">',
       '    <a id="secondNav" class="nav-link nav-tab" href="#profile" role="tab" data-toggle="tab">Profile</a>',
       '  </li>',
       '</ul>',
