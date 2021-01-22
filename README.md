@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://getbootstrap.com">
-    <img src="http://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width=72 height=72>
+    ![](logo.png | width=100)
   </a>
 
   <h3 align="center">Bootstrap RTL</h3>
