@@ -9965,6 +9965,7 @@ a.text-dark:hover, a.text-dark:focus {
 [dir="rtl"] .breadcrumb-item + .breadcrumb-item::before {
   padding-right: 0;
   padding-left: 0.5rem;
+  float: right;
 }
 
 .rtl .list-group,
