@@ -155,6 +155,7 @@
       &::before {
         padding-right: 0;
         padding-left: $breadcrumb-item-padding;
+        float: right;
       }
 
       color: $breadcrumb-divider-color;
