@@ -9802,6 +9802,18 @@ a.text-dark:hover, a.text-dark:focus {
   text-align: right;
 }
 
+.rtl .dropdown-menu-left,
+[dir="rtl"] .dropdown-menu-left {
+  right: 0;
+  left: auto;
+}
+
+.rtl .dropdown-menu-right,
+[dir="rtl"] .dropdown-menu-right {
+  right: auto;
+  left: 0;
+}
+
 .rtl .checkbox label,
 [dir="rtl"] .checkbox label {
   padding-right: 1.25rem;
