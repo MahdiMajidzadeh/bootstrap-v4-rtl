@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .rtl,
 [dir="rtl"] {
   text-align: right;
@@ -240,7 +242,7 @@
   }
 
   @mixin make-col-offset($size, $columns: $grid-columns) {
-    $num: $size / $columns;
+    $num: math.div($size, $columns);
     margin-right: if($num == 0, 0, percentage($num));
     margin-left: 0;
   }
