@@ -24,7 +24,7 @@
     "css-compile": "npm-run-all --parallel css-compile-*",
     "css-compile-main": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/ -o dist/css/",
     "css-lint": "npm-run-all --continue-on-error --parallel css-lint-*",
-    "css-lint-main": "stylelint \"scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
+    "css-lint-main": "stylelint \"scss/**/*.sc‌ss\" --cache --cache-location .cache/.stylelintcache",
     "css-lint-vars": "fusv scss/",
     "css-minify": "npm-run-all --parallel css-minify-*",
     "css-minify-main": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap.min.css dist/css/bootstrap.css && cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-grid.min.css dist/css/bootstrap-grid.css && cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-reboot.min.css dist/css/bootstrap-reboot.css && cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/css/bootstrap-rtl.min.css dist/css/bootstrap-rtl.css",
