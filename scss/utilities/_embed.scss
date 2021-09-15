@@ -1,7 +1,5 @@
 // Credit: Nicolas Gallagher and SUIT CSS.
 
-@use "sass:math";
-
 .embed-responsive {
   position: relative;
   display: block;
@@ -35,7 +33,7 @@
 
   .embed-responsive-#{$embed-responsive-aspect-ratio-x}by#{$embed-responsive-aspect-ratio-y} {
     &::before {
-      padding-top: percentage(math.div($embed-responsive-aspect-ratio-y, $embed-responsive-aspect-ratio-x));
+      padding-top: percentage($embed-responsive-aspect-ratio-y / $embed-responsive-aspect-ratio-x);
     }
   }
 }
