@@ -81,7 +81,7 @@
 
   .custom-select {
     padding: $custom-select-padding-y $custom-select-padding-x $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding);
-    background: $custom-select-bg $custom-select-indicator no-repeat left $custom-select-padding-x center;
+    background: $custom-select-bg escape-svg($custom-select-indicator) no-repeat left $custom-select-padding-x center;
     background-size: $custom-select-bg-size;
   }
 
