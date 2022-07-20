@@ -127,7 +127,7 @@
     "sinon": "^7.5.0",
     "stylelint": "^13.8.0",
     "stylelint-config-twbs-bootstrap": "^2.1.0",
-    "terser": "5.1.0",
+    "terser": "5.14.2",
     "vnu-jar": "20.6.30"
   },
   "files": [
