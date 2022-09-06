@@ -50,5 +50,7 @@ We provide compiled CSS and JS (`bootstrap.*`), as well as compiled and minified
 ## Contributors
 
 Mahdi Majidzadeh [twitter](https://twitter.com/mahdimajidzadeh) - [github](https://github.com/mahdimajidzadeh)
+
 Dmitry Polyanovsky [github](https://github.com/danikp)
-Morteza Karimi[github](https://github.com/mortezakarimi)
+
+Morteza Karimi [github](https://github.com/mortezakarimi)
