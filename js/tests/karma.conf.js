@@ -9,7 +9,9 @@ const { browsers, browsersKeys } = require('./browsers')
 const USE_OLD_JQUERY = Boolean(process.env.USE_OLD_JQUERY)
 const BUNDLE = Boolean(process.env.BUNDLE)
 const BROWSERSTACK = Boolean(process.env.BROWSERSTACK)
-const JQUERY_FILE = USE_OLD_JQUERY ? 'https://code.jquery.com/jquery-1.9.1.min.js' : 'node_modules/jquery/dist/jquery.slim.min.js'
+const JQUERY_FILE = USE_OLD_JQUERY ?
+  'https://cdn.jsdelivr.net/npm/jquery@1.9.1/jquery.min.js' :
+  'node_modules/jquery/dist/jquery.slim.min.js'
 
 const frameworks = [
   'qunit',
@@ -26,7 +28,12 @@ const reporters = ['dots']
 const detectBrowsers = {
   usePhantomJS: false,
   postDetection(availableBrowser) {
-    if (process.env.CI === true || availableBrowser.includes('Chrome')) {
+    // On CI just use Chrome
+    if (process.env.CI === true) {
+      return ['ChromeHeadless']
+    }
+
+    if (availableBrowser.includes('Chrome')) {
       return ['ChromeHeadless']
     }
 
@@ -39,13 +46,6 @@ const detectBrowsers = {
     }
 
     throw new Error('Please install Chrome, Chromium or Firefox')
-  }
-}
-
-const customLaunchers = {
-  FirefoxHeadless: {
-    base: 'Firefox',
-    flags: ['-headless']
   }
 }
 
@@ -75,12 +75,10 @@ if (BUNDLE) {
     'karma-firefox-launcher',
     'karma-detect-browsers'
   )
-  conf.customLaunchers = customLaunchers
   conf.detectBrowsers = detectBrowsers
-  files = files.concat([
+  files = [...files,
     JQUERY_FILE,
-    'dist/js/bootstrap.js'
-  ])
+    'dist/js/bootstrap.js']
 } else if (BROWSERSTACK) {
   conf.hostname = ip.address()
   conf.browserStack = {
@@ -94,13 +92,12 @@ if (BUNDLE) {
   conf.customLaunchers = browsers
   conf.browsers = browsersKeys
   reporters.push('BrowserStack')
-  files = files.concat([
+  files = [...files,
     'node_modules/jquery/dist/jquery.slim.min.js',
     'js/dist/util.js',
     'js/dist/tooltip.js',
     // include all of our js/dist files except util.js, index.js and tooltip.js
-    'js/dist/!(util|index|tooltip).js'
-  ])
+    'js/dist/!(util|index|tooltip).js']
 } else {
   frameworks.push('detectBrowsers')
   plugins.push(
@@ -108,14 +105,12 @@ if (BUNDLE) {
     'karma-firefox-launcher',
     'karma-detect-browsers'
   )
-  files = files.concat([
+  files = [...files,
     JQUERY_FILE,
     'js/coverage/dist/util.js',
     'js/coverage/dist/tooltip.js',
     // include all of our js/dist files except util.js, index.js and tooltip.js
-    'js/coverage/dist/!(util|index|tooltip).js'
-  ])
-  conf.customLaunchers = customLaunchers
+    'js/coverage/dist/!(util|index|tooltip).js']
   conf.detectBrowsers = detectBrowsers
   if (!USE_OLD_JQUERY) {
     plugins.push('karma-coverage-istanbul-reporter')

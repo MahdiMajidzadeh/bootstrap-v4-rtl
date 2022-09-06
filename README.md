@@ -5,7 +5,7 @@
 
   <h3 align="center">Bootstrap RTL</h3>
   <p align="center">
-  based on version 4.6.0
+  based on version 4.6.2
   </p>
   <p align="center">
     Sleek, intuitive, and powerful front-end framework for faster and easier web development.
@@ -50,3 +50,5 @@ We provide compiled CSS and JS (`bootstrap.*`), as well as compiled and minified
 ## Contributors
 
 Mahdi Majidzadeh [twitter](https://twitter.com/mahdimajidzadeh) - [github](https://github.com/mahdimajidzadeh)
+Dmitry Polyanovsky [github](https://github.com/danikp)
+Morteza Karimi[github](https://github.com/mortezakarimi)

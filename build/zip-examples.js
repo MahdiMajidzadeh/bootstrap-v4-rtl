@@ -3,7 +3,7 @@
 /*!
  * Script to create the built examples zip archive;
  * requires the `zip` command to be present!
- * Copyright 2020-2021 The Bootstrap Authors
+ * Copyright 2020-2022 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
@@ -16,7 +16,7 @@ const pkg = require('../package.json')
 
 const versionShort = pkg.config.version_short
 const distFolder = `bootstrap-${pkg.version}-examples`
-const rootDocsDir = '_gh_pages'
+const rootDocsDir = '_site'
 const docsDir = `${rootDocsDir}/docs/${versionShort}/`
 
 // these are the files we need in the examples
