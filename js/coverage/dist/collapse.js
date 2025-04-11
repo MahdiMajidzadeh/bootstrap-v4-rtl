@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap collapse.js v4.6.2-1 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2022 https://github.com/MahdiMajidzadeh
+  * Bootstrap collapse.js v4.6.2-2 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2025 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -14,49 +14,48 @@
   var $__default = /*#__PURE__*/_interopDefaultLegacy($);
   var Util__default = /*#__PURE__*/_interopDefaultLegacy(Util);
 
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
+  function _defineProperties(e, r) {
+    for (var t = 0; t < r.length; t++) {
+      var o = r[t];
+      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o);
     }
   }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    Object.defineProperty(Constructor, "prototype", {
-      writable: false
-    });
-    return Constructor;
+  function _createClass(e, r, t) {
+    return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+      writable: !1
+    }), e;
   }
-
   function _extends() {
-    _extends = Object.assign ? Object.assign.bind() : function (target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
+    return _extends = Object.assign ? Object.assign.bind() : function (n) {
+      for (var e = 1; e < arguments.length; e++) {
+        var t = arguments[e];
+        for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
       }
-
-      return target;
-    };
-    return _extends.apply(this, arguments);
+      return n;
+    }, _extends.apply(null, arguments);
+  }
+  function _toPrimitive(t, r) {
+    if ("object" != typeof t || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+      var i = e.call(t, r || "default");
+      if ("object" != typeof i) return i;
+      throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return ("string" === r ? String : Number)(t);
+  }
+  function _toPropertyKey(t) {
+    var i = _toPrimitive(t, "string");
+    return "symbol" == typeof i ? i : i + "";
   }
 
-  function cov_7kuqp04tg() {
-    var path = "C:\\Users\\mmajidzade\\Documents\\GitHub\\bootstrap-v4-rtl\\js\\src\\collapse.js";
-    var hash = "bfbb5ecd5f5312aafc868936e2a94d24dfd6ad19";
+  function cov_c61spwi8m() {
+    var path = "/Users/mahdi/Documents/app/bootstrap-v4-rtl/js/src/collapse.js";
+    var hash = "d03f7a36e2b2e7468593e204cb411d8a682ab442";
     var global = new Function("return this")();
     var gcv = "__coverage__";
     var coverageData = {
-      path: "C:\\Users\\mmajidzade\\Documents\\GitHub\\bootstrap-v4-rtl\\js\\src\\collapse.js",
+      path: "/Users/mahdi/Documents/app/bootstrap-v4-rtl/js/src/collapse.js",
       statementMap: {
         "0": {
           start: {
@@ -3792,595 +3791,515 @@
         "37": [0, 0]
       },
       _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-      hash: "bfbb5ecd5f5312aafc868936e2a94d24dfd6ad19"
+      hash: "d03f7a36e2b2e7468593e204cb411d8a682ab442"
     };
     var coverage = global[gcv] || (global[gcv] = {});
-
     if (!coverage[path] || coverage[path].hash !== hash) {
       coverage[path] = coverageData;
     }
-
     var actualCoverage = coverage[path];
     {
       // @ts-ignore
-      cov_7kuqp04tg = function () {
+      cov_c61spwi8m = function () {
         return actualCoverage;
       };
     }
     return actualCoverage;
   }
+  cov_c61spwi8m();
 
-  cov_7kuqp04tg();
   /**
    * Constants
    */
 
-  var NAME = (cov_7kuqp04tg().s[0]++, 'collapse');
-  var VERSION = (cov_7kuqp04tg().s[1]++, '4.6.2');
-  var DATA_KEY = (cov_7kuqp04tg().s[2]++, 'bs.collapse');
-  var EVENT_KEY = (cov_7kuqp04tg().s[3]++, "." + DATA_KEY);
-  var DATA_API_KEY = (cov_7kuqp04tg().s[4]++, '.data-api');
-  var JQUERY_NO_CONFLICT = (cov_7kuqp04tg().s[5]++, $__default["default"].fn[NAME]);
-  var CLASS_NAME_SHOW = (cov_7kuqp04tg().s[6]++, 'show');
-  var CLASS_NAME_COLLAPSE = (cov_7kuqp04tg().s[7]++, 'collapse');
-  var CLASS_NAME_COLLAPSING = (cov_7kuqp04tg().s[8]++, 'collapsing');
-  var CLASS_NAME_COLLAPSED = (cov_7kuqp04tg().s[9]++, 'collapsed');
-  var DIMENSION_WIDTH = (cov_7kuqp04tg().s[10]++, 'width');
-  var DIMENSION_HEIGHT = (cov_7kuqp04tg().s[11]++, 'height');
-  var EVENT_SHOW = (cov_7kuqp04tg().s[12]++, "show" + EVENT_KEY);
-  var EVENT_SHOWN = (cov_7kuqp04tg().s[13]++, "shown" + EVENT_KEY);
-  var EVENT_HIDE = (cov_7kuqp04tg().s[14]++, "hide" + EVENT_KEY);
-  var EVENT_HIDDEN = (cov_7kuqp04tg().s[15]++, "hidden" + EVENT_KEY);
-  var EVENT_CLICK_DATA_API = (cov_7kuqp04tg().s[16]++, "click" + EVENT_KEY + DATA_API_KEY);
-  var SELECTOR_ACTIVES = (cov_7kuqp04tg().s[17]++, '.show, .collapsing');
-  var SELECTOR_DATA_TOGGLE = (cov_7kuqp04tg().s[18]++, '[data-toggle="collapse"]');
-  var Default = (cov_7kuqp04tg().s[19]++, {
+  var NAME = (cov_c61spwi8m().s[0]++, 'collapse');
+  var VERSION = (cov_c61spwi8m().s[1]++, '4.6.2');
+  var DATA_KEY = (cov_c61spwi8m().s[2]++, 'bs.collapse');
+  var EVENT_KEY = (cov_c61spwi8m().s[3]++, "." + DATA_KEY);
+  var DATA_API_KEY = (cov_c61spwi8m().s[4]++, '.data-api');
+  var JQUERY_NO_CONFLICT = (cov_c61spwi8m().s[5]++, $__default["default"].fn[NAME]);
+  var CLASS_NAME_SHOW = (cov_c61spwi8m().s[6]++, 'show');
+  var CLASS_NAME_COLLAPSE = (cov_c61spwi8m().s[7]++, 'collapse');
+  var CLASS_NAME_COLLAPSING = (cov_c61spwi8m().s[8]++, 'collapsing');
+  var CLASS_NAME_COLLAPSED = (cov_c61spwi8m().s[9]++, 'collapsed');
+  var DIMENSION_WIDTH = (cov_c61spwi8m().s[10]++, 'width');
+  var DIMENSION_HEIGHT = (cov_c61spwi8m().s[11]++, 'height');
+  var EVENT_SHOW = (cov_c61spwi8m().s[12]++, "show" + EVENT_KEY);
+  var EVENT_SHOWN = (cov_c61spwi8m().s[13]++, "shown" + EVENT_KEY);
+  var EVENT_HIDE = (cov_c61spwi8m().s[14]++, "hide" + EVENT_KEY);
+  var EVENT_HIDDEN = (cov_c61spwi8m().s[15]++, "hidden" + EVENT_KEY);
+  var EVENT_CLICK_DATA_API = (cov_c61spwi8m().s[16]++, "click" + EVENT_KEY + DATA_API_KEY);
+  var SELECTOR_ACTIVES = (cov_c61spwi8m().s[17]++, '.show, .collapsing');
+  var SELECTOR_DATA_TOGGLE = (cov_c61spwi8m().s[18]++, '[data-toggle="collapse"]');
+  var Default = (cov_c61spwi8m().s[19]++, {
     toggle: true,
     parent: ''
   });
-  var DefaultType = (cov_7kuqp04tg().s[20]++, {
+  var DefaultType = (cov_c61spwi8m().s[20]++, {
     toggle: 'boolean',
     parent: '(string|element)'
   });
+
   /**
    * Class definition
    */
-
   var Collapse = /*#__PURE__*/function () {
     function Collapse(element, config) {
-      cov_7kuqp04tg().f[0]++;
-      cov_7kuqp04tg().s[21]++;
+      cov_c61spwi8m().f[0]++;
+      cov_c61spwi8m().s[21]++;
       this._isTransitioning = false;
-      cov_7kuqp04tg().s[22]++;
+      cov_c61spwi8m().s[22]++;
       this._element = element;
-      cov_7kuqp04tg().s[23]++;
+      cov_c61spwi8m().s[23]++;
       this._config = this._getConfig(config);
-      cov_7kuqp04tg().s[24]++;
+      cov_c61spwi8m().s[24]++;
       this._triggerArray = [].slice.call(document.querySelectorAll("[data-toggle=\"collapse\"][href=\"#" + element.id + "\"]," + ("[data-toggle=\"collapse\"][data-target=\"#" + element.id + "\"]")));
-      var toggleList = (cov_7kuqp04tg().s[25]++, [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE)));
-      cov_7kuqp04tg().s[26]++;
-
-      for (var i = (cov_7kuqp04tg().s[27]++, 0), len = (cov_7kuqp04tg().s[28]++, toggleList.length); i < len; i++) {
-        var elem = (cov_7kuqp04tg().s[29]++, toggleList[i]);
-        var selector = (cov_7kuqp04tg().s[30]++, Util__default["default"].getSelectorFromElement(elem));
-        var filterElement = (cov_7kuqp04tg().s[31]++, [].slice.call(document.querySelectorAll(selector)).filter(function (foundElem) {
-          cov_7kuqp04tg().f[1]++;
-          cov_7kuqp04tg().s[32]++;
+      var toggleList = (cov_c61spwi8m().s[25]++, [].slice.call(document.querySelectorAll(SELECTOR_DATA_TOGGLE)));
+      cov_c61spwi8m().s[26]++;
+      for (var i = (cov_c61spwi8m().s[27]++, 0), len = (cov_c61spwi8m().s[28]++, toggleList.length); i < len; i++) {
+        var elem = (cov_c61spwi8m().s[29]++, toggleList[i]);
+        var selector = (cov_c61spwi8m().s[30]++, Util__default["default"].getSelectorFromElement(elem));
+        var filterElement = (cov_c61spwi8m().s[31]++, [].slice.call(document.querySelectorAll(selector)).filter(function (foundElem) {
+          cov_c61spwi8m().f[1]++;
+          cov_c61spwi8m().s[32]++;
           return foundElem === element;
         }));
-        cov_7kuqp04tg().s[33]++;
-
-        if ((cov_7kuqp04tg().b[1][0]++, selector !== null) && (cov_7kuqp04tg().b[1][1]++, filterElement.length > 0)) {
-          cov_7kuqp04tg().b[0][0]++;
-          cov_7kuqp04tg().s[34]++;
+        cov_c61spwi8m().s[33]++;
+        if ((cov_c61spwi8m().b[1][0]++, selector !== null) && (cov_c61spwi8m().b[1][1]++, filterElement.length > 0)) {
+          cov_c61spwi8m().b[0][0]++;
+          cov_c61spwi8m().s[34]++;
           this._selector = selector;
-          cov_7kuqp04tg().s[35]++;
-
+          cov_c61spwi8m().s[35]++;
           this._triggerArray.push(elem);
         } else {
-          cov_7kuqp04tg().b[0][1]++;
+          cov_c61spwi8m().b[0][1]++;
         }
       }
-
-      cov_7kuqp04tg().s[36]++;
-      this._parent = this._config.parent ? (cov_7kuqp04tg().b[2][0]++, this._getParent()) : (cov_7kuqp04tg().b[2][1]++, null);
-      cov_7kuqp04tg().s[37]++;
-
+      cov_c61spwi8m().s[36]++;
+      this._parent = this._config.parent ? (cov_c61spwi8m().b[2][0]++, this._getParent()) : (cov_c61spwi8m().b[2][1]++, null);
+      cov_c61spwi8m().s[37]++;
       if (!this._config.parent) {
-        cov_7kuqp04tg().b[3][0]++;
-        cov_7kuqp04tg().s[38]++;
-
+        cov_c61spwi8m().b[3][0]++;
+        cov_c61spwi8m().s[38]++;
         this._addAriaAndCollapsedClass(this._element, this._triggerArray);
       } else {
-        cov_7kuqp04tg().b[3][1]++;
+        cov_c61spwi8m().b[3][1]++;
       }
-
-      cov_7kuqp04tg().s[39]++;
-
+      cov_c61spwi8m().s[39]++;
       if (this._config.toggle) {
-        cov_7kuqp04tg().b[4][0]++;
-        cov_7kuqp04tg().s[40]++;
+        cov_c61spwi8m().b[4][0]++;
+        cov_c61spwi8m().s[40]++;
         this.toggle();
       } else {
-        cov_7kuqp04tg().b[4][1]++;
+        cov_c61spwi8m().b[4][1]++;
       }
-    } // Getters
+    }
 
-
+    // Getters
     var _proto = Collapse.prototype;
-
     // Public
     _proto.toggle = function toggle() {
-      cov_7kuqp04tg().f[4]++;
-      cov_7kuqp04tg().s[43]++;
-
+      cov_c61spwi8m().f[4]++;
+      cov_c61spwi8m().s[43]++;
       if ($__default["default"](this._element).hasClass(CLASS_NAME_SHOW)) {
-        cov_7kuqp04tg().b[5][0]++;
-        cov_7kuqp04tg().s[44]++;
+        cov_c61spwi8m().b[5][0]++;
+        cov_c61spwi8m().s[44]++;
         this.hide();
       } else {
-        cov_7kuqp04tg().b[5][1]++;
-        cov_7kuqp04tg().s[45]++;
+        cov_c61spwi8m().b[5][1]++;
+        cov_c61spwi8m().s[45]++;
         this.show();
       }
     };
-
     _proto.show = function show() {
       var _this = this;
-
-      cov_7kuqp04tg().f[5]++;
-      cov_7kuqp04tg().s[46]++;
-
-      if ((cov_7kuqp04tg().b[7][0]++, this._isTransitioning) || (cov_7kuqp04tg().b[7][1]++, $__default["default"](this._element).hasClass(CLASS_NAME_SHOW))) {
-        cov_7kuqp04tg().b[6][0]++;
-        cov_7kuqp04tg().s[47]++;
+      cov_c61spwi8m().f[5]++;
+      cov_c61spwi8m().s[46]++;
+      if ((cov_c61spwi8m().b[7][0]++, this._isTransitioning) || (cov_c61spwi8m().b[7][1]++, $__default["default"](this._element).hasClass(CLASS_NAME_SHOW))) {
+        cov_c61spwi8m().b[6][0]++;
+        cov_c61spwi8m().s[47]++;
         return;
       } else {
-        cov_7kuqp04tg().b[6][1]++;
+        cov_c61spwi8m().b[6][1]++;
       }
-
       var actives;
       var activesData;
-      cov_7kuqp04tg().s[48]++;
-
+      cov_c61spwi8m().s[48]++;
       if (this._parent) {
-        cov_7kuqp04tg().b[8][0]++;
-        cov_7kuqp04tg().s[49]++;
+        cov_c61spwi8m().b[8][0]++;
+        cov_c61spwi8m().s[49]++;
         actives = [].slice.call(this._parent.querySelectorAll(SELECTOR_ACTIVES)).filter(function (elem) {
-          cov_7kuqp04tg().f[6]++;
-          cov_7kuqp04tg().s[50]++;
-
+          cov_c61spwi8m().f[6]++;
+          cov_c61spwi8m().s[50]++;
           if (typeof _this._config.parent === 'string') {
-            cov_7kuqp04tg().b[9][0]++;
-            cov_7kuqp04tg().s[51]++;
+            cov_c61spwi8m().b[9][0]++;
+            cov_c61spwi8m().s[51]++;
             return elem.getAttribute('data-parent') === _this._config.parent;
           } else {
-            cov_7kuqp04tg().b[9][1]++;
+            cov_c61spwi8m().b[9][1]++;
           }
-
-          cov_7kuqp04tg().s[52]++;
+          cov_c61spwi8m().s[52]++;
           return elem.classList.contains(CLASS_NAME_COLLAPSE);
         });
-        cov_7kuqp04tg().s[53]++;
-
+        cov_c61spwi8m().s[53]++;
         if (actives.length === 0) {
-          cov_7kuqp04tg().b[10][0]++;
-          cov_7kuqp04tg().s[54]++;
+          cov_c61spwi8m().b[10][0]++;
+          cov_c61spwi8m().s[54]++;
           actives = null;
         } else {
-          cov_7kuqp04tg().b[10][1]++;
+          cov_c61spwi8m().b[10][1]++;
         }
       } else {
-        cov_7kuqp04tg().b[8][1]++;
+        cov_c61spwi8m().b[8][1]++;
       }
-
-      cov_7kuqp04tg().s[55]++;
-
+      cov_c61spwi8m().s[55]++;
       if (actives) {
-        cov_7kuqp04tg().b[11][0]++;
-        cov_7kuqp04tg().s[56]++;
+        cov_c61spwi8m().b[11][0]++;
+        cov_c61spwi8m().s[56]++;
         activesData = $__default["default"](actives).not(this._selector).data(DATA_KEY);
-        cov_7kuqp04tg().s[57]++;
-
-        if ((cov_7kuqp04tg().b[13][0]++, activesData) && (cov_7kuqp04tg().b[13][1]++, activesData._isTransitioning)) {
-          cov_7kuqp04tg().b[12][0]++;
-          cov_7kuqp04tg().s[58]++;
+        cov_c61spwi8m().s[57]++;
+        if ((cov_c61spwi8m().b[13][0]++, activesData) && (cov_c61spwi8m().b[13][1]++, activesData._isTransitioning)) {
+          cov_c61spwi8m().b[12][0]++;
+          cov_c61spwi8m().s[58]++;
           return;
         } else {
-          cov_7kuqp04tg().b[12][1]++;
+          cov_c61spwi8m().b[12][1]++;
         }
       } else {
-        cov_7kuqp04tg().b[11][1]++;
+        cov_c61spwi8m().b[11][1]++;
       }
-
-      var startEvent = (cov_7kuqp04tg().s[59]++, $__default["default"].Event(EVENT_SHOW));
-      cov_7kuqp04tg().s[60]++;
+      var startEvent = (cov_c61spwi8m().s[59]++, $__default["default"].Event(EVENT_SHOW));
+      cov_c61spwi8m().s[60]++;
       $__default["default"](this._element).trigger(startEvent);
-      cov_7kuqp04tg().s[61]++;
-
+      cov_c61spwi8m().s[61]++;
       if (startEvent.isDefaultPrevented()) {
-        cov_7kuqp04tg().b[14][0]++;
-        cov_7kuqp04tg().s[62]++;
+        cov_c61spwi8m().b[14][0]++;
+        cov_c61spwi8m().s[62]++;
         return;
       } else {
-        cov_7kuqp04tg().b[14][1]++;
+        cov_c61spwi8m().b[14][1]++;
       }
-
-      cov_7kuqp04tg().s[63]++;
-
+      cov_c61spwi8m().s[63]++;
       if (actives) {
-        cov_7kuqp04tg().b[15][0]++;
-        cov_7kuqp04tg().s[64]++;
-
+        cov_c61spwi8m().b[15][0]++;
+        cov_c61spwi8m().s[64]++;
         Collapse._jQueryInterface.call($__default["default"](actives).not(this._selector), 'hide');
-
-        cov_7kuqp04tg().s[65]++;
-
+        cov_c61spwi8m().s[65]++;
         if (!activesData) {
-          cov_7kuqp04tg().b[16][0]++;
-          cov_7kuqp04tg().s[66]++;
+          cov_c61spwi8m().b[16][0]++;
+          cov_c61spwi8m().s[66]++;
           $__default["default"](actives).data(DATA_KEY, null);
         } else {
-          cov_7kuqp04tg().b[16][1]++;
+          cov_c61spwi8m().b[16][1]++;
         }
       } else {
-        cov_7kuqp04tg().b[15][1]++;
+        cov_c61spwi8m().b[15][1]++;
       }
-
-      var dimension = (cov_7kuqp04tg().s[67]++, this._getDimension());
-      cov_7kuqp04tg().s[68]++;
+      var dimension = (cov_c61spwi8m().s[67]++, this._getDimension());
+      cov_c61spwi8m().s[68]++;
       $__default["default"](this._element).removeClass(CLASS_NAME_COLLAPSE).addClass(CLASS_NAME_COLLAPSING);
-      cov_7kuqp04tg().s[69]++;
+      cov_c61spwi8m().s[69]++;
       this._element.style[dimension] = 0;
-      cov_7kuqp04tg().s[70]++;
-
+      cov_c61spwi8m().s[70]++;
       if (this._triggerArray.length) {
-        cov_7kuqp04tg().b[17][0]++;
-        cov_7kuqp04tg().s[71]++;
+        cov_c61spwi8m().b[17][0]++;
+        cov_c61spwi8m().s[71]++;
         $__default["default"](this._triggerArray).removeClass(CLASS_NAME_COLLAPSED).attr('aria-expanded', true);
       } else {
-        cov_7kuqp04tg().b[17][1]++;
+        cov_c61spwi8m().b[17][1]++;
       }
-
-      cov_7kuqp04tg().s[72]++;
+      cov_c61spwi8m().s[72]++;
       this.setTransitioning(true);
-      cov_7kuqp04tg().s[73]++;
-
+      cov_c61spwi8m().s[73]++;
       var complete = function complete() {
-        cov_7kuqp04tg().f[7]++;
-        cov_7kuqp04tg().s[74]++;
+        cov_c61spwi8m().f[7]++;
+        cov_c61spwi8m().s[74]++;
         $__default["default"](_this._element).removeClass(CLASS_NAME_COLLAPSING).addClass(CLASS_NAME_COLLAPSE + " " + CLASS_NAME_SHOW);
-        cov_7kuqp04tg().s[75]++;
+        cov_c61spwi8m().s[75]++;
         _this._element.style[dimension] = '';
-        cov_7kuqp04tg().s[76]++;
-
+        cov_c61spwi8m().s[76]++;
         _this.setTransitioning(false);
-
-        cov_7kuqp04tg().s[77]++;
+        cov_c61spwi8m().s[77]++;
         $__default["default"](_this._element).trigger(EVENT_SHOWN);
       };
-
-      var capitalizedDimension = (cov_7kuqp04tg().s[78]++, dimension[0].toUpperCase() + dimension.slice(1));
-      var scrollSize = (cov_7kuqp04tg().s[79]++, "scroll" + capitalizedDimension);
-      var transitionDuration = (cov_7kuqp04tg().s[80]++, Util__default["default"].getTransitionDurationFromElement(this._element));
-      cov_7kuqp04tg().s[81]++;
+      var capitalizedDimension = (cov_c61spwi8m().s[78]++, dimension[0].toUpperCase() + dimension.slice(1));
+      var scrollSize = (cov_c61spwi8m().s[79]++, "scroll" + capitalizedDimension);
+      var transitionDuration = (cov_c61spwi8m().s[80]++, Util__default["default"].getTransitionDurationFromElement(this._element));
+      cov_c61spwi8m().s[81]++;
       $__default["default"](this._element).one(Util__default["default"].TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-      cov_7kuqp04tg().s[82]++;
+      cov_c61spwi8m().s[82]++;
       this._element.style[dimension] = this._element[scrollSize] + "px";
     };
-
     _proto.hide = function hide() {
       var _this2 = this;
-
-      cov_7kuqp04tg().f[8]++;
-      cov_7kuqp04tg().s[83]++;
-
-      if ((cov_7kuqp04tg().b[19][0]++, this._isTransitioning) || (cov_7kuqp04tg().b[19][1]++, !$__default["default"](this._element).hasClass(CLASS_NAME_SHOW))) {
-        cov_7kuqp04tg().b[18][0]++;
-        cov_7kuqp04tg().s[84]++;
+      cov_c61spwi8m().f[8]++;
+      cov_c61spwi8m().s[83]++;
+      if ((cov_c61spwi8m().b[19][0]++, this._isTransitioning) || (cov_c61spwi8m().b[19][1]++, !$__default["default"](this._element).hasClass(CLASS_NAME_SHOW))) {
+        cov_c61spwi8m().b[18][0]++;
+        cov_c61spwi8m().s[84]++;
         return;
       } else {
-        cov_7kuqp04tg().b[18][1]++;
+        cov_c61spwi8m().b[18][1]++;
       }
-
-      var startEvent = (cov_7kuqp04tg().s[85]++, $__default["default"].Event(EVENT_HIDE));
-      cov_7kuqp04tg().s[86]++;
+      var startEvent = (cov_c61spwi8m().s[85]++, $__default["default"].Event(EVENT_HIDE));
+      cov_c61spwi8m().s[86]++;
       $__default["default"](this._element).trigger(startEvent);
-      cov_7kuqp04tg().s[87]++;
-
+      cov_c61spwi8m().s[87]++;
       if (startEvent.isDefaultPrevented()) {
-        cov_7kuqp04tg().b[20][0]++;
-        cov_7kuqp04tg().s[88]++;
+        cov_c61spwi8m().b[20][0]++;
+        cov_c61spwi8m().s[88]++;
         return;
       } else {
-        cov_7kuqp04tg().b[20][1]++;
+        cov_c61spwi8m().b[20][1]++;
       }
-
-      var dimension = (cov_7kuqp04tg().s[89]++, this._getDimension());
-      cov_7kuqp04tg().s[90]++;
+      var dimension = (cov_c61spwi8m().s[89]++, this._getDimension());
+      cov_c61spwi8m().s[90]++;
       this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
-      cov_7kuqp04tg().s[91]++;
+      cov_c61spwi8m().s[91]++;
       Util__default["default"].reflow(this._element);
-      cov_7kuqp04tg().s[92]++;
+      cov_c61spwi8m().s[92]++;
       $__default["default"](this._element).addClass(CLASS_NAME_COLLAPSING).removeClass(CLASS_NAME_COLLAPSE + " " + CLASS_NAME_SHOW);
-      var triggerArrayLength = (cov_7kuqp04tg().s[93]++, this._triggerArray.length);
-      cov_7kuqp04tg().s[94]++;
-
+      var triggerArrayLength = (cov_c61spwi8m().s[93]++, this._triggerArray.length);
+      cov_c61spwi8m().s[94]++;
       if (triggerArrayLength > 0) {
-        cov_7kuqp04tg().b[21][0]++;
-        cov_7kuqp04tg().s[95]++;
-
-        for (var i = (cov_7kuqp04tg().s[96]++, 0); i < triggerArrayLength; i++) {
-          var trigger = (cov_7kuqp04tg().s[97]++, this._triggerArray[i]);
-          var selector = (cov_7kuqp04tg().s[98]++, Util__default["default"].getSelectorFromElement(trigger));
-          cov_7kuqp04tg().s[99]++;
-
+        cov_c61spwi8m().b[21][0]++;
+        cov_c61spwi8m().s[95]++;
+        for (var i = (cov_c61spwi8m().s[96]++, 0); i < triggerArrayLength; i++) {
+          var trigger = (cov_c61spwi8m().s[97]++, this._triggerArray[i]);
+          var selector = (cov_c61spwi8m().s[98]++, Util__default["default"].getSelectorFromElement(trigger));
+          cov_c61spwi8m().s[99]++;
           if (selector !== null) {
-            cov_7kuqp04tg().b[22][0]++;
-            var $elem = (cov_7kuqp04tg().s[100]++, $__default["default"]([].slice.call(document.querySelectorAll(selector))));
-            cov_7kuqp04tg().s[101]++;
-
+            cov_c61spwi8m().b[22][0]++;
+            var $elem = (cov_c61spwi8m().s[100]++, $__default["default"]([].slice.call(document.querySelectorAll(selector))));
+            cov_c61spwi8m().s[101]++;
             if (!$elem.hasClass(CLASS_NAME_SHOW)) {
-              cov_7kuqp04tg().b[23][0]++;
-              cov_7kuqp04tg().s[102]++;
+              cov_c61spwi8m().b[23][0]++;
+              cov_c61spwi8m().s[102]++;
               $__default["default"](trigger).addClass(CLASS_NAME_COLLAPSED).attr('aria-expanded', false);
             } else {
-              cov_7kuqp04tg().b[23][1]++;
+              cov_c61spwi8m().b[23][1]++;
             }
           } else {
-            cov_7kuqp04tg().b[22][1]++;
+            cov_c61spwi8m().b[22][1]++;
           }
         }
       } else {
-        cov_7kuqp04tg().b[21][1]++;
+        cov_c61spwi8m().b[21][1]++;
       }
-
-      cov_7kuqp04tg().s[103]++;
+      cov_c61spwi8m().s[103]++;
       this.setTransitioning(true);
-      cov_7kuqp04tg().s[104]++;
-
+      cov_c61spwi8m().s[104]++;
       var complete = function complete() {
-        cov_7kuqp04tg().f[9]++;
-        cov_7kuqp04tg().s[105]++;
-
+        cov_c61spwi8m().f[9]++;
+        cov_c61spwi8m().s[105]++;
         _this2.setTransitioning(false);
-
-        cov_7kuqp04tg().s[106]++;
+        cov_c61spwi8m().s[106]++;
         $__default["default"](_this2._element).removeClass(CLASS_NAME_COLLAPSING).addClass(CLASS_NAME_COLLAPSE).trigger(EVENT_HIDDEN);
       };
-
-      cov_7kuqp04tg().s[107]++;
+      cov_c61spwi8m().s[107]++;
       this._element.style[dimension] = '';
-      var transitionDuration = (cov_7kuqp04tg().s[108]++, Util__default["default"].getTransitionDurationFromElement(this._element));
-      cov_7kuqp04tg().s[109]++;
+      var transitionDuration = (cov_c61spwi8m().s[108]++, Util__default["default"].getTransitionDurationFromElement(this._element));
+      cov_c61spwi8m().s[109]++;
       $__default["default"](this._element).one(Util__default["default"].TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
     };
-
     _proto.setTransitioning = function setTransitioning(isTransitioning) {
-      cov_7kuqp04tg().f[10]++;
-      cov_7kuqp04tg().s[110]++;
+      cov_c61spwi8m().f[10]++;
+      cov_c61spwi8m().s[110]++;
       this._isTransitioning = isTransitioning;
     };
-
     _proto.dispose = function dispose() {
-      cov_7kuqp04tg().f[11]++;
-      cov_7kuqp04tg().s[111]++;
+      cov_c61spwi8m().f[11]++;
+      cov_c61spwi8m().s[111]++;
       $__default["default"].removeData(this._element, DATA_KEY);
-      cov_7kuqp04tg().s[112]++;
+      cov_c61spwi8m().s[112]++;
       this._config = null;
-      cov_7kuqp04tg().s[113]++;
+      cov_c61spwi8m().s[113]++;
       this._parent = null;
-      cov_7kuqp04tg().s[114]++;
+      cov_c61spwi8m().s[114]++;
       this._element = null;
-      cov_7kuqp04tg().s[115]++;
+      cov_c61spwi8m().s[115]++;
       this._triggerArray = null;
-      cov_7kuqp04tg().s[116]++;
+      cov_c61spwi8m().s[116]++;
       this._isTransitioning = null;
-    } // Private
+    }
+
+    // Private
     ;
-
     _proto._getConfig = function _getConfig(config) {
-      cov_7kuqp04tg().f[12]++;
-      cov_7kuqp04tg().s[117]++;
+      cov_c61spwi8m().f[12]++;
+      cov_c61spwi8m().s[117]++;
       config = _extends({}, Default, config);
-      cov_7kuqp04tg().s[118]++;
+      cov_c61spwi8m().s[118]++;
       config.toggle = Boolean(config.toggle); // Coerce string values
-
-      cov_7kuqp04tg().s[119]++;
+      cov_c61spwi8m().s[119]++;
       Util__default["default"].typeCheckConfig(NAME, config, DefaultType);
-      cov_7kuqp04tg().s[120]++;
+      cov_c61spwi8m().s[120]++;
       return config;
     };
-
     _proto._getDimension = function _getDimension() {
-      cov_7kuqp04tg().f[13]++;
-      var hasWidth = (cov_7kuqp04tg().s[121]++, $__default["default"](this._element).hasClass(DIMENSION_WIDTH));
-      cov_7kuqp04tg().s[122]++;
-      return hasWidth ? (cov_7kuqp04tg().b[24][0]++, DIMENSION_WIDTH) : (cov_7kuqp04tg().b[24][1]++, DIMENSION_HEIGHT);
+      cov_c61spwi8m().f[13]++;
+      var hasWidth = (cov_c61spwi8m().s[121]++, $__default["default"](this._element).hasClass(DIMENSION_WIDTH));
+      cov_c61spwi8m().s[122]++;
+      return hasWidth ? (cov_c61spwi8m().b[24][0]++, DIMENSION_WIDTH) : (cov_c61spwi8m().b[24][1]++, DIMENSION_HEIGHT);
     };
-
     _proto._getParent = function _getParent() {
       var _this3 = this;
-
-      cov_7kuqp04tg().f[14]++;
+      cov_c61spwi8m().f[14]++;
       var parent;
-      cov_7kuqp04tg().s[123]++;
-
+      cov_c61spwi8m().s[123]++;
       if (Util__default["default"].isElement(this._config.parent)) {
-        cov_7kuqp04tg().b[25][0]++;
-        cov_7kuqp04tg().s[124]++;
-        parent = this._config.parent; // It's a jQuery object
+        cov_c61spwi8m().b[25][0]++;
+        cov_c61spwi8m().s[124]++;
+        parent = this._config.parent;
 
-        cov_7kuqp04tg().s[125]++;
-
+        // It's a jQuery object
+        cov_c61spwi8m().s[125]++;
         if (typeof this._config.parent.jquery !== 'undefined') {
-          cov_7kuqp04tg().b[26][0]++;
-          cov_7kuqp04tg().s[126]++;
+          cov_c61spwi8m().b[26][0]++;
+          cov_c61spwi8m().s[126]++;
           parent = this._config.parent[0];
         } else {
-          cov_7kuqp04tg().b[26][1]++;
+          cov_c61spwi8m().b[26][1]++;
         }
       } else {
-        cov_7kuqp04tg().b[25][1]++;
-        cov_7kuqp04tg().s[127]++;
+        cov_c61spwi8m().b[25][1]++;
+        cov_c61spwi8m().s[127]++;
         parent = document.querySelector(this._config.parent);
       }
-
-      var selector = (cov_7kuqp04tg().s[128]++, "[data-toggle=\"collapse\"][data-parent=\"" + this._config.parent + "\"]");
-      var children = (cov_7kuqp04tg().s[129]++, [].slice.call(parent.querySelectorAll(selector)));
-      cov_7kuqp04tg().s[130]++;
+      var selector = (cov_c61spwi8m().s[128]++, "[data-toggle=\"collapse\"][data-parent=\"" + this._config.parent + "\"]");
+      var children = (cov_c61spwi8m().s[129]++, [].slice.call(parent.querySelectorAll(selector)));
+      cov_c61spwi8m().s[130]++;
       $__default["default"](children).each(function (i, element) {
-        cov_7kuqp04tg().f[15]++;
-        cov_7kuqp04tg().s[131]++;
-
+        cov_c61spwi8m().f[15]++;
+        cov_c61spwi8m().s[131]++;
         _this3._addAriaAndCollapsedClass(Collapse._getTargetFromElement(element), [element]);
       });
-      cov_7kuqp04tg().s[132]++;
+      cov_c61spwi8m().s[132]++;
       return parent;
     };
-
     _proto._addAriaAndCollapsedClass = function _addAriaAndCollapsedClass(element, triggerArray) {
-      cov_7kuqp04tg().f[16]++;
-      var isOpen = (cov_7kuqp04tg().s[133]++, $__default["default"](element).hasClass(CLASS_NAME_SHOW));
-      cov_7kuqp04tg().s[134]++;
-
+      cov_c61spwi8m().f[16]++;
+      var isOpen = (cov_c61spwi8m().s[133]++, $__default["default"](element).hasClass(CLASS_NAME_SHOW));
+      cov_c61spwi8m().s[134]++;
       if (triggerArray.length) {
-        cov_7kuqp04tg().b[27][0]++;
-        cov_7kuqp04tg().s[135]++;
+        cov_c61spwi8m().b[27][0]++;
+        cov_c61spwi8m().s[135]++;
         $__default["default"](triggerArray).toggleClass(CLASS_NAME_COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
       } else {
-        cov_7kuqp04tg().b[27][1]++;
+        cov_c61spwi8m().b[27][1]++;
       }
-    } // Static
+    }
+
+    // Static
     ;
-
     Collapse._getTargetFromElement = function _getTargetFromElement(element) {
-      cov_7kuqp04tg().f[17]++;
-      var selector = (cov_7kuqp04tg().s[136]++, Util__default["default"].getSelectorFromElement(element));
-      cov_7kuqp04tg().s[137]++;
-      return selector ? (cov_7kuqp04tg().b[28][0]++, document.querySelector(selector)) : (cov_7kuqp04tg().b[28][1]++, null);
+      cov_c61spwi8m().f[17]++;
+      var selector = (cov_c61spwi8m().s[136]++, Util__default["default"].getSelectorFromElement(element));
+      cov_c61spwi8m().s[137]++;
+      return selector ? (cov_c61spwi8m().b[28][0]++, document.querySelector(selector)) : (cov_c61spwi8m().b[28][1]++, null);
     };
-
     Collapse._jQueryInterface = function _jQueryInterface(config) {
-      cov_7kuqp04tg().f[18]++;
-      cov_7kuqp04tg().s[138]++;
+      cov_c61spwi8m().f[18]++;
+      cov_c61spwi8m().s[138]++;
       return this.each(function () {
-        cov_7kuqp04tg().f[19]++;
-        var $element = (cov_7kuqp04tg().s[139]++, $__default["default"](this));
-        var data = (cov_7kuqp04tg().s[140]++, $element.data(DATA_KEY));
-
-        var _config = (cov_7kuqp04tg().s[141]++, _extends({}, Default, $element.data(), (cov_7kuqp04tg().b[30][0]++, typeof config === 'object') && (cov_7kuqp04tg().b[30][1]++, config) ? (cov_7kuqp04tg().b[29][0]++, config) : (cov_7kuqp04tg().b[29][1]++, {})));
-
-        cov_7kuqp04tg().s[142]++;
-
-        if ((cov_7kuqp04tg().b[32][0]++, !data) && (cov_7kuqp04tg().b[32][1]++, _config.toggle) && (cov_7kuqp04tg().b[32][2]++, typeof config === 'string') && (cov_7kuqp04tg().b[32][3]++, /show|hide/.test(config))) {
-          cov_7kuqp04tg().b[31][0]++;
-          cov_7kuqp04tg().s[143]++;
+        cov_c61spwi8m().f[19]++;
+        var $element = (cov_c61spwi8m().s[139]++, $__default["default"](this));
+        var data = (cov_c61spwi8m().s[140]++, $element.data(DATA_KEY));
+        var _config = (cov_c61spwi8m().s[141]++, _extends({}, Default, $element.data(), (cov_c61spwi8m().b[30][0]++, typeof config === 'object') && (cov_c61spwi8m().b[30][1]++, config) ? (cov_c61spwi8m().b[29][0]++, config) : (cov_c61spwi8m().b[29][1]++, {})));
+        cov_c61spwi8m().s[142]++;
+        if ((cov_c61spwi8m().b[32][0]++, !data) && (cov_c61spwi8m().b[32][1]++, _config.toggle) && (cov_c61spwi8m().b[32][2]++, typeof config === 'string') && (cov_c61spwi8m().b[32][3]++, /show|hide/.test(config))) {
+          cov_c61spwi8m().b[31][0]++;
+          cov_c61spwi8m().s[143]++;
           _config.toggle = false;
         } else {
-          cov_7kuqp04tg().b[31][1]++;
+          cov_c61spwi8m().b[31][1]++;
         }
-
-        cov_7kuqp04tg().s[144]++;
-
+        cov_c61spwi8m().s[144]++;
         if (!data) {
-          cov_7kuqp04tg().b[33][0]++;
-          cov_7kuqp04tg().s[145]++;
+          cov_c61spwi8m().b[33][0]++;
+          cov_c61spwi8m().s[145]++;
           data = new Collapse(this, _config);
-          cov_7kuqp04tg().s[146]++;
+          cov_c61spwi8m().s[146]++;
           $element.data(DATA_KEY, data);
         } else {
-          cov_7kuqp04tg().b[33][1]++;
+          cov_c61spwi8m().b[33][1]++;
         }
-
-        cov_7kuqp04tg().s[147]++;
-
+        cov_c61spwi8m().s[147]++;
         if (typeof config === 'string') {
-          cov_7kuqp04tg().b[34][0]++;
-          cov_7kuqp04tg().s[148]++;
-
+          cov_c61spwi8m().b[34][0]++;
+          cov_c61spwi8m().s[148]++;
           if (typeof data[config] === 'undefined') {
-            cov_7kuqp04tg().b[35][0]++;
-            cov_7kuqp04tg().s[149]++;
+            cov_c61spwi8m().b[35][0]++;
+            cov_c61spwi8m().s[149]++;
             throw new TypeError("No method named \"" + config + "\"");
           } else {
-            cov_7kuqp04tg().b[35][1]++;
+            cov_c61spwi8m().b[35][1]++;
           }
-
-          cov_7kuqp04tg().s[150]++;
+          cov_c61spwi8m().s[150]++;
           data[config]();
         } else {
-          cov_7kuqp04tg().b[34][1]++;
+          cov_c61spwi8m().b[34][1]++;
         }
       });
     };
-
-    _createClass(Collapse, null, [{
+    return _createClass(Collapse, null, [{
       key: "VERSION",
       get: function get() {
-        cov_7kuqp04tg().f[2]++;
-        cov_7kuqp04tg().s[41]++;
+        cov_c61spwi8m().f[2]++;
+        cov_c61spwi8m().s[41]++;
         return VERSION;
       }
     }, {
       key: "Default",
       get: function get() {
-        cov_7kuqp04tg().f[3]++;
-        cov_7kuqp04tg().s[42]++;
+        cov_c61spwi8m().f[3]++;
+        cov_c61spwi8m().s[42]++;
         return Default;
       }
     }]);
-
-    return Collapse;
   }();
   /**
    * Data API implementation
    */
-
-
-  cov_7kuqp04tg().s[151]++;
+  cov_c61spwi8m().s[151]++;
   $__default["default"](document).on(EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
-    cov_7kuqp04tg().f[20]++;
-    cov_7kuqp04tg().s[152]++;
-
+    cov_c61spwi8m().f[20]++;
+    cov_c61spwi8m().s[152]++;
     // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
     if (event.currentTarget.tagName === 'A') {
-      cov_7kuqp04tg().b[36][0]++;
-      cov_7kuqp04tg().s[153]++;
+      cov_c61spwi8m().b[36][0]++;
+      cov_c61spwi8m().s[153]++;
       event.preventDefault();
     } else {
-      cov_7kuqp04tg().b[36][1]++;
+      cov_c61spwi8m().b[36][1]++;
     }
-
-    var $trigger = (cov_7kuqp04tg().s[154]++, $__default["default"](this));
-    var selector = (cov_7kuqp04tg().s[155]++, Util__default["default"].getSelectorFromElement(this));
-    var selectors = (cov_7kuqp04tg().s[156]++, [].slice.call(document.querySelectorAll(selector)));
-    cov_7kuqp04tg().s[157]++;
+    var $trigger = (cov_c61spwi8m().s[154]++, $__default["default"](this));
+    var selector = (cov_c61spwi8m().s[155]++, Util__default["default"].getSelectorFromElement(this));
+    var selectors = (cov_c61spwi8m().s[156]++, [].slice.call(document.querySelectorAll(selector)));
+    cov_c61spwi8m().s[157]++;
     $__default["default"](selectors).each(function () {
-      cov_7kuqp04tg().f[21]++;
-      var $target = (cov_7kuqp04tg().s[158]++, $__default["default"](this));
-      var data = (cov_7kuqp04tg().s[159]++, $target.data(DATA_KEY));
-      var config = (cov_7kuqp04tg().s[160]++, data ? (cov_7kuqp04tg().b[37][0]++, 'toggle') : (cov_7kuqp04tg().b[37][1]++, $trigger.data()));
-      cov_7kuqp04tg().s[161]++;
-
+      cov_c61spwi8m().f[21]++;
+      var $target = (cov_c61spwi8m().s[158]++, $__default["default"](this));
+      var data = (cov_c61spwi8m().s[159]++, $target.data(DATA_KEY));
+      var config = (cov_c61spwi8m().s[160]++, data ? (cov_c61spwi8m().b[37][0]++, 'toggle') : (cov_c61spwi8m().b[37][1]++, $trigger.data()));
+      cov_c61spwi8m().s[161]++;
       Collapse._jQueryInterface.call($target, config);
     });
   });
+
   /**
    * jQuery
    */
-
-  cov_7kuqp04tg().s[162]++;
+  cov_c61spwi8m().s[162]++;
   $__default["default"].fn[NAME] = Collapse._jQueryInterface;
-  cov_7kuqp04tg().s[163]++;
+  cov_c61spwi8m().s[163]++;
   $__default["default"].fn[NAME].Constructor = Collapse;
-  cov_7kuqp04tg().s[164]++;
-
+  cov_c61spwi8m().s[164]++;
   $__default["default"].fn[NAME].noConflict = function () {
-    cov_7kuqp04tg().f[22]++;
-    cov_7kuqp04tg().s[165]++;
+    cov_c61spwi8m().f[22]++;
+    cov_c61spwi8m().s[165]++;
     $__default["default"].fn[NAME] = JQUERY_NO_CONFLICT;
-    cov_7kuqp04tg().s[166]++;
+    cov_c61spwi8m().s[166]++;
     return Collapse._jQueryInterface;
   };
 

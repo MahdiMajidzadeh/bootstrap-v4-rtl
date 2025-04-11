@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap toast.js v4.6.2-1 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2022 https://github.com/MahdiMajidzadeh
+  * Bootstrap toast.js v4.6.2-2 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2025 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -14,49 +14,48 @@
   var $__default = /*#__PURE__*/_interopDefaultLegacy($);
   var Util__default = /*#__PURE__*/_interopDefaultLegacy(Util);
 
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
+  function _defineProperties(e, r) {
+    for (var t = 0; t < r.length; t++) {
+      var o = r[t];
+      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o);
     }
   }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    Object.defineProperty(Constructor, "prototype", {
-      writable: false
-    });
-    return Constructor;
+  function _createClass(e, r, t) {
+    return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+      writable: !1
+    }), e;
   }
-
   function _extends() {
-    _extends = Object.assign ? Object.assign.bind() : function (target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
+    return _extends = Object.assign ? Object.assign.bind() : function (n) {
+      for (var e = 1; e < arguments.length; e++) {
+        var t = arguments[e];
+        for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
       }
-
-      return target;
-    };
-    return _extends.apply(this, arguments);
+      return n;
+    }, _extends.apply(null, arguments);
+  }
+  function _toPrimitive(t, r) {
+    if ("object" != typeof t || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+      var i = e.call(t, r || "default");
+      if ("object" != typeof i) return i;
+      throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return ("string" === r ? String : Number)(t);
+  }
+  function _toPropertyKey(t) {
+    var i = _toPrimitive(t, "string");
+    return "symbol" == typeof i ? i : i + "";
   }
 
-  function cov_ywkgwczqo() {
-    var path = "C:\\Users\\mmajidzade\\Documents\\GitHub\\bootstrap-v4-rtl\\js\\src\\toast.js";
-    var hash = "e857bb95d8d3ca4a3199ca87bdd353883ef92937";
+  function cov_15y0x12a77() {
+    var path = "/Users/mahdi/Documents/app/bootstrap-v4-rtl/js/src/toast.js";
+    var hash = "79e4aa153f0e810b8957ec232c6f87464aab3c61";
     var global = new Function("return this")();
     var gcv = "__coverage__";
     var coverageData = {
-      path: "C:\\Users\\mmajidzade\\Documents\\GitHub\\bootstrap-v4-rtl\\js\\src\\toast.js",
+      path: "/Users/mahdi/Documents/app/bootstrap-v4-rtl/js/src/toast.js",
       statementMap: {
         "0": {
           start: {
@@ -1986,370 +1985,310 @@
         "13": [0, 0]
       },
       _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-      hash: "e857bb95d8d3ca4a3199ca87bdd353883ef92937"
+      hash: "79e4aa153f0e810b8957ec232c6f87464aab3c61"
     };
     var coverage = global[gcv] || (global[gcv] = {});
-
     if (!coverage[path] || coverage[path].hash !== hash) {
       coverage[path] = coverageData;
     }
-
     var actualCoverage = coverage[path];
     {
       // @ts-ignore
-      cov_ywkgwczqo = function () {
+      cov_15y0x12a77 = function () {
         return actualCoverage;
       };
     }
     return actualCoverage;
   }
+  cov_15y0x12a77();
 
-  cov_ywkgwczqo();
   /**
    * Constants
    */
 
-  var NAME = (cov_ywkgwczqo().s[0]++, 'toast');
-  var VERSION = (cov_ywkgwczqo().s[1]++, '4.6.2');
-  var DATA_KEY = (cov_ywkgwczqo().s[2]++, 'bs.toast');
-  var EVENT_KEY = (cov_ywkgwczqo().s[3]++, "." + DATA_KEY);
-  var JQUERY_NO_CONFLICT = (cov_ywkgwczqo().s[4]++, $__default["default"].fn[NAME]);
-  var CLASS_NAME_FADE = (cov_ywkgwczqo().s[5]++, 'fade');
-  var CLASS_NAME_HIDE = (cov_ywkgwczqo().s[6]++, 'hide');
-  var CLASS_NAME_SHOW = (cov_ywkgwczqo().s[7]++, 'show');
-  var CLASS_NAME_SHOWING = (cov_ywkgwczqo().s[8]++, 'showing');
-  var EVENT_CLICK_DISMISS = (cov_ywkgwczqo().s[9]++, "click.dismiss" + EVENT_KEY);
-  var EVENT_HIDE = (cov_ywkgwczqo().s[10]++, "hide" + EVENT_KEY);
-  var EVENT_HIDDEN = (cov_ywkgwczqo().s[11]++, "hidden" + EVENT_KEY);
-  var EVENT_SHOW = (cov_ywkgwczqo().s[12]++, "show" + EVENT_KEY);
-  var EVENT_SHOWN = (cov_ywkgwczqo().s[13]++, "shown" + EVENT_KEY);
-  var SELECTOR_DATA_DISMISS = (cov_ywkgwczqo().s[14]++, '[data-dismiss="toast"]');
-  var Default = (cov_ywkgwczqo().s[15]++, {
+  var NAME = (cov_15y0x12a77().s[0]++, 'toast');
+  var VERSION = (cov_15y0x12a77().s[1]++, '4.6.2');
+  var DATA_KEY = (cov_15y0x12a77().s[2]++, 'bs.toast');
+  var EVENT_KEY = (cov_15y0x12a77().s[3]++, "." + DATA_KEY);
+  var JQUERY_NO_CONFLICT = (cov_15y0x12a77().s[4]++, $__default["default"].fn[NAME]);
+  var CLASS_NAME_FADE = (cov_15y0x12a77().s[5]++, 'fade');
+  var CLASS_NAME_HIDE = (cov_15y0x12a77().s[6]++, 'hide');
+  var CLASS_NAME_SHOW = (cov_15y0x12a77().s[7]++, 'show');
+  var CLASS_NAME_SHOWING = (cov_15y0x12a77().s[8]++, 'showing');
+  var EVENT_CLICK_DISMISS = (cov_15y0x12a77().s[9]++, "click.dismiss" + EVENT_KEY);
+  var EVENT_HIDE = (cov_15y0x12a77().s[10]++, "hide" + EVENT_KEY);
+  var EVENT_HIDDEN = (cov_15y0x12a77().s[11]++, "hidden" + EVENT_KEY);
+  var EVENT_SHOW = (cov_15y0x12a77().s[12]++, "show" + EVENT_KEY);
+  var EVENT_SHOWN = (cov_15y0x12a77().s[13]++, "shown" + EVENT_KEY);
+  var SELECTOR_DATA_DISMISS = (cov_15y0x12a77().s[14]++, '[data-dismiss="toast"]');
+  var Default = (cov_15y0x12a77().s[15]++, {
     animation: true,
     autohide: true,
     delay: 500
   });
-  var DefaultType = (cov_ywkgwczqo().s[16]++, {
+  var DefaultType = (cov_15y0x12a77().s[16]++, {
     animation: 'boolean',
     autohide: 'boolean',
     delay: 'number'
   });
+
   /**
    * Class definition
    */
-
   var Toast = /*#__PURE__*/function () {
     function Toast(element, config) {
-      cov_ywkgwczqo().f[0]++;
-      cov_ywkgwczqo().s[17]++;
+      cov_15y0x12a77().f[0]++;
+      cov_15y0x12a77().s[17]++;
       this._element = element;
-      cov_ywkgwczqo().s[18]++;
+      cov_15y0x12a77().s[18]++;
       this._config = this._getConfig(config);
-      cov_ywkgwczqo().s[19]++;
+      cov_15y0x12a77().s[19]++;
       this._timeout = null;
-      cov_ywkgwczqo().s[20]++;
-
+      cov_15y0x12a77().s[20]++;
       this._setListeners();
-    } // Getters
+    }
 
-
+    // Getters
     var _proto = Toast.prototype;
-
     // Public
     _proto.show = function show() {
       var _this = this;
-
-      cov_ywkgwczqo().f[4]++;
-      var showEvent = (cov_ywkgwczqo().s[24]++, $__default["default"].Event(EVENT_SHOW));
-      cov_ywkgwczqo().s[25]++;
+      cov_15y0x12a77().f[4]++;
+      var showEvent = (cov_15y0x12a77().s[24]++, $__default["default"].Event(EVENT_SHOW));
+      cov_15y0x12a77().s[25]++;
       $__default["default"](this._element).trigger(showEvent);
-      cov_ywkgwczqo().s[26]++;
-
+      cov_15y0x12a77().s[26]++;
       if (showEvent.isDefaultPrevented()) {
-        cov_ywkgwczqo().b[0][0]++;
-        cov_ywkgwczqo().s[27]++;
+        cov_15y0x12a77().b[0][0]++;
+        cov_15y0x12a77().s[27]++;
         return;
       } else {
-        cov_ywkgwczqo().b[0][1]++;
+        cov_15y0x12a77().b[0][1]++;
       }
-
-      cov_ywkgwczqo().s[28]++;
-
+      cov_15y0x12a77().s[28]++;
       this._clearTimeout();
-
-      cov_ywkgwczqo().s[29]++;
-
+      cov_15y0x12a77().s[29]++;
       if (this._config.animation) {
-        cov_ywkgwczqo().b[1][0]++;
-        cov_ywkgwczqo().s[30]++;
-
+        cov_15y0x12a77().b[1][0]++;
+        cov_15y0x12a77().s[30]++;
         this._element.classList.add(CLASS_NAME_FADE);
       } else {
-        cov_ywkgwczqo().b[1][1]++;
+        cov_15y0x12a77().b[1][1]++;
       }
-
-      cov_ywkgwczqo().s[31]++;
-
+      cov_15y0x12a77().s[31]++;
       var complete = function complete() {
-        cov_ywkgwczqo().f[5]++;
-        cov_ywkgwczqo().s[32]++;
-
+        cov_15y0x12a77().f[5]++;
+        cov_15y0x12a77().s[32]++;
         _this._element.classList.remove(CLASS_NAME_SHOWING);
-
-        cov_ywkgwczqo().s[33]++;
-
+        cov_15y0x12a77().s[33]++;
         _this._element.classList.add(CLASS_NAME_SHOW);
-
-        cov_ywkgwczqo().s[34]++;
+        cov_15y0x12a77().s[34]++;
         $__default["default"](_this._element).trigger(EVENT_SHOWN);
-        cov_ywkgwczqo().s[35]++;
-
+        cov_15y0x12a77().s[35]++;
         if (_this._config.autohide) {
-          cov_ywkgwczqo().b[2][0]++;
-          cov_ywkgwczqo().s[36]++;
+          cov_15y0x12a77().b[2][0]++;
+          cov_15y0x12a77().s[36]++;
           _this._timeout = setTimeout(function () {
-            cov_ywkgwczqo().f[6]++;
-            cov_ywkgwczqo().s[37]++;
-
+            cov_15y0x12a77().f[6]++;
+            cov_15y0x12a77().s[37]++;
             _this.hide();
           }, _this._config.delay);
         } else {
-          cov_ywkgwczqo().b[2][1]++;
+          cov_15y0x12a77().b[2][1]++;
         }
       };
-
-      cov_ywkgwczqo().s[38]++;
-
+      cov_15y0x12a77().s[38]++;
       this._element.classList.remove(CLASS_NAME_HIDE);
-
-      cov_ywkgwczqo().s[39]++;
+      cov_15y0x12a77().s[39]++;
       Util__default["default"].reflow(this._element);
-      cov_ywkgwczqo().s[40]++;
-
+      cov_15y0x12a77().s[40]++;
       this._element.classList.add(CLASS_NAME_SHOWING);
-
-      cov_ywkgwczqo().s[41]++;
-
+      cov_15y0x12a77().s[41]++;
       if (this._config.animation) {
-        cov_ywkgwczqo().b[3][0]++;
-        var transitionDuration = (cov_ywkgwczqo().s[42]++, Util__default["default"].getTransitionDurationFromElement(this._element));
-        cov_ywkgwczqo().s[43]++;
+        cov_15y0x12a77().b[3][0]++;
+        var transitionDuration = (cov_15y0x12a77().s[42]++, Util__default["default"].getTransitionDurationFromElement(this._element));
+        cov_15y0x12a77().s[43]++;
         $__default["default"](this._element).one(Util__default["default"].TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
-        cov_ywkgwczqo().b[3][1]++;
-        cov_ywkgwczqo().s[44]++;
+        cov_15y0x12a77().b[3][1]++;
+        cov_15y0x12a77().s[44]++;
         complete();
       }
     };
-
     _proto.hide = function hide() {
-      cov_ywkgwczqo().f[7]++;
-      cov_ywkgwczqo().s[45]++;
-
+      cov_15y0x12a77().f[7]++;
+      cov_15y0x12a77().s[45]++;
       if (!this._element.classList.contains(CLASS_NAME_SHOW)) {
-        cov_ywkgwczqo().b[4][0]++;
-        cov_ywkgwczqo().s[46]++;
+        cov_15y0x12a77().b[4][0]++;
+        cov_15y0x12a77().s[46]++;
         return;
       } else {
-        cov_ywkgwczqo().b[4][1]++;
+        cov_15y0x12a77().b[4][1]++;
       }
-
-      var hideEvent = (cov_ywkgwczqo().s[47]++, $__default["default"].Event(EVENT_HIDE));
-      cov_ywkgwczqo().s[48]++;
+      var hideEvent = (cov_15y0x12a77().s[47]++, $__default["default"].Event(EVENT_HIDE));
+      cov_15y0x12a77().s[48]++;
       $__default["default"](this._element).trigger(hideEvent);
-      cov_ywkgwczqo().s[49]++;
-
+      cov_15y0x12a77().s[49]++;
       if (hideEvent.isDefaultPrevented()) {
-        cov_ywkgwczqo().b[5][0]++;
-        cov_ywkgwczqo().s[50]++;
+        cov_15y0x12a77().b[5][0]++;
+        cov_15y0x12a77().s[50]++;
         return;
       } else {
-        cov_ywkgwczqo().b[5][1]++;
+        cov_15y0x12a77().b[5][1]++;
       }
-
-      cov_ywkgwczqo().s[51]++;
-
+      cov_15y0x12a77().s[51]++;
       this._close();
     };
-
     _proto.dispose = function dispose() {
-      cov_ywkgwczqo().f[8]++;
-      cov_ywkgwczqo().s[52]++;
-
+      cov_15y0x12a77().f[8]++;
+      cov_15y0x12a77().s[52]++;
       this._clearTimeout();
-
-      cov_ywkgwczqo().s[53]++;
-
+      cov_15y0x12a77().s[53]++;
       if (this._element.classList.contains(CLASS_NAME_SHOW)) {
-        cov_ywkgwczqo().b[6][0]++;
-        cov_ywkgwczqo().s[54]++;
-
+        cov_15y0x12a77().b[6][0]++;
+        cov_15y0x12a77().s[54]++;
         this._element.classList.remove(CLASS_NAME_SHOW);
       } else {
-        cov_ywkgwczqo().b[6][1]++;
+        cov_15y0x12a77().b[6][1]++;
       }
-
-      cov_ywkgwczqo().s[55]++;
+      cov_15y0x12a77().s[55]++;
       $__default["default"](this._element).off(EVENT_CLICK_DISMISS);
-      cov_ywkgwczqo().s[56]++;
+      cov_15y0x12a77().s[56]++;
       $__default["default"].removeData(this._element, DATA_KEY);
-      cov_ywkgwczqo().s[57]++;
+      cov_15y0x12a77().s[57]++;
       this._element = null;
-      cov_ywkgwczqo().s[58]++;
+      cov_15y0x12a77().s[58]++;
       this._config = null;
-    } // Private
-    ;
+    }
 
+    // Private
+    ;
     _proto._getConfig = function _getConfig(config) {
-      cov_ywkgwczqo().f[9]++;
-      cov_ywkgwczqo().s[59]++;
-      config = _extends({}, Default, $__default["default"](this._element).data(), (cov_ywkgwczqo().b[8][0]++, typeof config === 'object') && (cov_ywkgwczqo().b[8][1]++, config) ? (cov_ywkgwczqo().b[7][0]++, config) : (cov_ywkgwczqo().b[7][1]++, {}));
-      cov_ywkgwczqo().s[60]++;
+      cov_15y0x12a77().f[9]++;
+      cov_15y0x12a77().s[59]++;
+      config = _extends({}, Default, $__default["default"](this._element).data(), (cov_15y0x12a77().b[8][0]++, typeof config === 'object') && (cov_15y0x12a77().b[8][1]++, config) ? (cov_15y0x12a77().b[7][0]++, config) : (cov_15y0x12a77().b[7][1]++, {}));
+      cov_15y0x12a77().s[60]++;
       Util__default["default"].typeCheckConfig(NAME, config, this.constructor.DefaultType);
-      cov_ywkgwczqo().s[61]++;
+      cov_15y0x12a77().s[61]++;
       return config;
     };
-
     _proto._setListeners = function _setListeners() {
       var _this2 = this;
-
-      cov_ywkgwczqo().f[10]++;
-      cov_ywkgwczqo().s[62]++;
+      cov_15y0x12a77().f[10]++;
+      cov_15y0x12a77().s[62]++;
       $__default["default"](this._element).on(EVENT_CLICK_DISMISS, SELECTOR_DATA_DISMISS, function () {
-        cov_ywkgwczqo().f[11]++;
-        cov_ywkgwczqo().s[63]++;
+        cov_15y0x12a77().f[11]++;
+        cov_15y0x12a77().s[63]++;
         return _this2.hide();
       });
     };
-
     _proto._close = function _close() {
       var _this3 = this;
-
-      cov_ywkgwczqo().f[12]++;
-      cov_ywkgwczqo().s[64]++;
-
+      cov_15y0x12a77().f[12]++;
+      cov_15y0x12a77().s[64]++;
       var complete = function complete() {
-        cov_ywkgwczqo().f[13]++;
-        cov_ywkgwczqo().s[65]++;
-
+        cov_15y0x12a77().f[13]++;
+        cov_15y0x12a77().s[65]++;
         _this3._element.classList.add(CLASS_NAME_HIDE);
-
-        cov_ywkgwczqo().s[66]++;
+        cov_15y0x12a77().s[66]++;
         $__default["default"](_this3._element).trigger(EVENT_HIDDEN);
       };
-
-      cov_ywkgwczqo().s[67]++;
-
+      cov_15y0x12a77().s[67]++;
       this._element.classList.remove(CLASS_NAME_SHOW);
-
-      cov_ywkgwczqo().s[68]++;
-
+      cov_15y0x12a77().s[68]++;
       if (this._config.animation) {
-        cov_ywkgwczqo().b[9][0]++;
-        var transitionDuration = (cov_ywkgwczqo().s[69]++, Util__default["default"].getTransitionDurationFromElement(this._element));
-        cov_ywkgwczqo().s[70]++;
+        cov_15y0x12a77().b[9][0]++;
+        var transitionDuration = (cov_15y0x12a77().s[69]++, Util__default["default"].getTransitionDurationFromElement(this._element));
+        cov_15y0x12a77().s[70]++;
         $__default["default"](this._element).one(Util__default["default"].TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
-        cov_ywkgwczqo().b[9][1]++;
-        cov_ywkgwczqo().s[71]++;
+        cov_15y0x12a77().b[9][1]++;
+        cov_15y0x12a77().s[71]++;
         complete();
       }
     };
-
     _proto._clearTimeout = function _clearTimeout() {
-      cov_ywkgwczqo().f[14]++;
-      cov_ywkgwczqo().s[72]++;
+      cov_15y0x12a77().f[14]++;
+      cov_15y0x12a77().s[72]++;
       clearTimeout(this._timeout);
-      cov_ywkgwczqo().s[73]++;
+      cov_15y0x12a77().s[73]++;
       this._timeout = null;
-    } // Static
+    }
+
+    // Static
     ;
-
     Toast._jQueryInterface = function _jQueryInterface(config) {
-      cov_ywkgwczqo().f[15]++;
-      cov_ywkgwczqo().s[74]++;
+      cov_15y0x12a77().f[15]++;
+      cov_15y0x12a77().s[74]++;
       return this.each(function () {
-        cov_ywkgwczqo().f[16]++;
-        var $element = (cov_ywkgwczqo().s[75]++, $__default["default"](this));
-        var data = (cov_ywkgwczqo().s[76]++, $element.data(DATA_KEY));
-
-        var _config = (cov_ywkgwczqo().s[77]++, (cov_ywkgwczqo().b[10][0]++, typeof config === 'object') && (cov_ywkgwczqo().b[10][1]++, config));
-
-        cov_ywkgwczqo().s[78]++;
-
+        cov_15y0x12a77().f[16]++;
+        var $element = (cov_15y0x12a77().s[75]++, $__default["default"](this));
+        var data = (cov_15y0x12a77().s[76]++, $element.data(DATA_KEY));
+        var _config = (cov_15y0x12a77().s[77]++, (cov_15y0x12a77().b[10][0]++, typeof config === 'object') && (cov_15y0x12a77().b[10][1]++, config));
+        cov_15y0x12a77().s[78]++;
         if (!data) {
-          cov_ywkgwczqo().b[11][0]++;
-          cov_ywkgwczqo().s[79]++;
+          cov_15y0x12a77().b[11][0]++;
+          cov_15y0x12a77().s[79]++;
           data = new Toast(this, _config);
-          cov_ywkgwczqo().s[80]++;
+          cov_15y0x12a77().s[80]++;
           $element.data(DATA_KEY, data);
         } else {
-          cov_ywkgwczqo().b[11][1]++;
+          cov_15y0x12a77().b[11][1]++;
         }
-
-        cov_ywkgwczqo().s[81]++;
-
+        cov_15y0x12a77().s[81]++;
         if (typeof config === 'string') {
-          cov_ywkgwczqo().b[12][0]++;
-          cov_ywkgwczqo().s[82]++;
-
+          cov_15y0x12a77().b[12][0]++;
+          cov_15y0x12a77().s[82]++;
           if (typeof data[config] === 'undefined') {
-            cov_ywkgwczqo().b[13][0]++;
-            cov_ywkgwczqo().s[83]++;
+            cov_15y0x12a77().b[13][0]++;
+            cov_15y0x12a77().s[83]++;
             throw new TypeError("No method named \"" + config + "\"");
           } else {
-            cov_ywkgwczqo().b[13][1]++;
+            cov_15y0x12a77().b[13][1]++;
           }
-
-          cov_ywkgwczqo().s[84]++;
+          cov_15y0x12a77().s[84]++;
           data[config](this);
         } else {
-          cov_ywkgwczqo().b[12][1]++;
+          cov_15y0x12a77().b[12][1]++;
         }
       });
     };
-
-    _createClass(Toast, null, [{
+    return _createClass(Toast, null, [{
       key: "VERSION",
       get: function get() {
-        cov_ywkgwczqo().f[1]++;
-        cov_ywkgwczqo().s[21]++;
+        cov_15y0x12a77().f[1]++;
+        cov_15y0x12a77().s[21]++;
         return VERSION;
       }
     }, {
       key: "DefaultType",
       get: function get() {
-        cov_ywkgwczqo().f[2]++;
-        cov_ywkgwczqo().s[22]++;
+        cov_15y0x12a77().f[2]++;
+        cov_15y0x12a77().s[22]++;
         return DefaultType;
       }
     }, {
       key: "Default",
       get: function get() {
-        cov_ywkgwczqo().f[3]++;
-        cov_ywkgwczqo().s[23]++;
+        cov_15y0x12a77().f[3]++;
+        cov_15y0x12a77().s[23]++;
         return Default;
       }
     }]);
-
-    return Toast;
   }();
   /**
    * jQuery
    */
-
-
-  cov_ywkgwczqo().s[85]++;
+  cov_15y0x12a77().s[85]++;
   $__default["default"].fn[NAME] = Toast._jQueryInterface;
-  cov_ywkgwczqo().s[86]++;
+  cov_15y0x12a77().s[86]++;
   $__default["default"].fn[NAME].Constructor = Toast;
-  cov_ywkgwczqo().s[87]++;
-
+  cov_15y0x12a77().s[87]++;
   $__default["default"].fn[NAME].noConflict = function () {
-    cov_ywkgwczqo().f[17]++;
-    cov_ywkgwczqo().s[88]++;
+    cov_15y0x12a77().f[17]++;
+    cov_15y0x12a77().s[88]++;
     $__default["default"].fn[NAME] = JQUERY_NO_CONFLICT;
-    cov_ywkgwczqo().s[89]++;
+    cov_15y0x12a77().s[89]++;
     return Toast._jQueryInterface;
   };
 

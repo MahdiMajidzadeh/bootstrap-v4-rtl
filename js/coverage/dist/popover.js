@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap popover.js v4.6.2-1 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2022 https://github.com/MahdiMajidzadeh
+  * Bootstrap popover.js v4.6.2-2 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2025 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -14,64 +14,56 @@
   var $__default = /*#__PURE__*/_interopDefaultLegacy($);
   var Tooltip__default = /*#__PURE__*/_interopDefaultLegacy(Tooltip);
 
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
+  function _defineProperties(e, r) {
+    for (var t = 0; t < r.length; t++) {
+      var o = r[t];
+      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o);
     }
   }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    Object.defineProperty(Constructor, "prototype", {
-      writable: false
-    });
-    return Constructor;
+  function _createClass(e, r, t) {
+    return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+      writable: !1
+    }), e;
   }
-
   function _extends() {
-    _extends = Object.assign ? Object.assign.bind() : function (target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
+    return _extends = Object.assign ? Object.assign.bind() : function (n) {
+      for (var e = 1; e < arguments.length; e++) {
+        var t = arguments[e];
+        for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
       }
-
-      return target;
-    };
-    return _extends.apply(this, arguments);
+      return n;
+    }, _extends.apply(null, arguments);
+  }
+  function _inheritsLoose(t, o) {
+    t.prototype = Object.create(o.prototype), t.prototype.constructor = t, _setPrototypeOf(t, o);
+  }
+  function _setPrototypeOf(t, e) {
+    return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) {
+      return t.__proto__ = e, t;
+    }, _setPrototypeOf(t, e);
+  }
+  function _toPrimitive(t, r) {
+    if ("object" != typeof t || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+      var i = e.call(t, r || "default");
+      if ("object" != typeof i) return i;
+      throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return ("string" === r ? String : Number)(t);
+  }
+  function _toPropertyKey(t) {
+    var i = _toPrimitive(t, "string");
+    return "symbol" == typeof i ? i : i + "";
   }
 
-  function _inheritsLoose(subClass, superClass) {
-    subClass.prototype = Object.create(superClass.prototype);
-    subClass.prototype.constructor = subClass;
-
-    _setPrototypeOf(subClass, superClass);
-  }
-
-  function _setPrototypeOf(o, p) {
-    _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
-      o.__proto__ = p;
-      return o;
-    };
-    return _setPrototypeOf(o, p);
-  }
-
-  function cov_16o7x08n9g() {
-    var path = "C:\\Users\\mmajidzade\\Documents\\GitHub\\bootstrap-v4-rtl\\js\\src\\popover.js";
-    var hash = "0b5e91870527ae772901c21f20d1474a12602042";
+  function cov_aam7eijdr() {
+    var path = "/Users/mahdi/Documents/app/bootstrap-v4-rtl/js/src/popover.js";
+    var hash = "4516ebc26ef69be707bf9a5d67af0f91e2e1597e";
     var global = new Function("return this")();
     var gcv = "__coverage__";
     var coverageData = {
-      path: "C:\\Users\\mmajidzade\\Documents\\GitHub\\bootstrap-v4-rtl\\js\\src\\popover.js",
+      path: "/Users/mahdi/Documents/app/bootstrap-v4-rtl/js/src/popover.js",
       statementMap: {
         "0": {
           start: {
@@ -1487,50 +1479,48 @@
         "11": [0, 0]
       },
       _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-      hash: "0b5e91870527ae772901c21f20d1474a12602042"
+      hash: "4516ebc26ef69be707bf9a5d67af0f91e2e1597e"
     };
     var coverage = global[gcv] || (global[gcv] = {});
-
     if (!coverage[path] || coverage[path].hash !== hash) {
       coverage[path] = coverageData;
     }
-
     var actualCoverage = coverage[path];
     {
       // @ts-ignore
-      cov_16o7x08n9g = function () {
+      cov_aam7eijdr = function () {
         return actualCoverage;
       };
     }
     return actualCoverage;
   }
+  cov_aam7eijdr();
 
-  cov_16o7x08n9g();
   /**
    * Constants
    */
 
-  var NAME = (cov_16o7x08n9g().s[0]++, 'popover');
-  var VERSION = (cov_16o7x08n9g().s[1]++, '4.6.2');
-  var DATA_KEY = (cov_16o7x08n9g().s[2]++, 'bs.popover');
-  var EVENT_KEY = (cov_16o7x08n9g().s[3]++, "." + DATA_KEY);
-  var JQUERY_NO_CONFLICT = (cov_16o7x08n9g().s[4]++, $__default["default"].fn[NAME]);
-  var CLASS_PREFIX = (cov_16o7x08n9g().s[5]++, 'bs-popover');
-  var BSCLS_PREFIX_REGEX = (cov_16o7x08n9g().s[6]++, new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g'));
-  var CLASS_NAME_FADE = (cov_16o7x08n9g().s[7]++, 'fade');
-  var CLASS_NAME_SHOW = (cov_16o7x08n9g().s[8]++, 'show');
-  var SELECTOR_TITLE = (cov_16o7x08n9g().s[9]++, '.popover-header');
-  var SELECTOR_CONTENT = (cov_16o7x08n9g().s[10]++, '.popover-body');
-  var Default = (cov_16o7x08n9g().s[11]++, _extends({}, Tooltip__default["default"].Default, {
+  var NAME = (cov_aam7eijdr().s[0]++, 'popover');
+  var VERSION = (cov_aam7eijdr().s[1]++, '4.6.2');
+  var DATA_KEY = (cov_aam7eijdr().s[2]++, 'bs.popover');
+  var EVENT_KEY = (cov_aam7eijdr().s[3]++, "." + DATA_KEY);
+  var JQUERY_NO_CONFLICT = (cov_aam7eijdr().s[4]++, $__default["default"].fn[NAME]);
+  var CLASS_PREFIX = (cov_aam7eijdr().s[5]++, 'bs-popover');
+  var BSCLS_PREFIX_REGEX = (cov_aam7eijdr().s[6]++, new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g'));
+  var CLASS_NAME_FADE = (cov_aam7eijdr().s[7]++, 'fade');
+  var CLASS_NAME_SHOW = (cov_aam7eijdr().s[8]++, 'show');
+  var SELECTOR_TITLE = (cov_aam7eijdr().s[9]++, '.popover-header');
+  var SELECTOR_CONTENT = (cov_aam7eijdr().s[10]++, '.popover-body');
+  var Default = (cov_aam7eijdr().s[11]++, _extends({}, Tooltip__default["default"].Default, {
     placement: 'right',
     trigger: 'click',
     content: '',
     template: '<div class="popover" role="tooltip">' + '<div class="arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div></div>'
   }));
-  var DefaultType = (cov_16o7x08n9g().s[12]++, _extends({}, Tooltip__default["default"].DefaultType, {
+  var DefaultType = (cov_aam7eijdr().s[12]++, _extends({}, Tooltip__default["default"].DefaultType, {
     content: '(string|element|function)'
   }));
-  var Event = (cov_16o7x08n9g().s[13]++, {
+  var Event = (cov_aam7eijdr().s[13]++, {
     HIDE: "hide" + EVENT_KEY,
     HIDDEN: "hidden" + EVENT_KEY,
     SHOW: "show" + EVENT_KEY,
@@ -1542,209 +1532,188 @@
     MOUSEENTER: "mouseenter" + EVENT_KEY,
     MOUSELEAVE: "mouseleave" + EVENT_KEY
   });
+
   /**
    * Class definition
    */
-
   var Popover = /*#__PURE__*/function (_Tooltip) {
-    _inheritsLoose(Popover, _Tooltip);
-
     function Popover() {
       return _Tooltip.apply(this, arguments) || this;
     }
-
+    _inheritsLoose(Popover, _Tooltip);
     var _proto = Popover.prototype;
-
     // Overrides
     _proto.isWithContent = function isWithContent() {
-      cov_16o7x08n9g().f[7]++;
-      cov_16o7x08n9g().s[21]++;
-      return (cov_16o7x08n9g().b[0][0]++, this.getTitle()) || (cov_16o7x08n9g().b[0][1]++, this._getContent());
+      cov_aam7eijdr().f[7]++;
+      cov_aam7eijdr().s[21]++;
+      return (cov_aam7eijdr().b[0][0]++, this.getTitle()) || (cov_aam7eijdr().b[0][1]++, this._getContent());
     };
-
     _proto.addAttachmentClass = function addAttachmentClass(attachment) {
-      cov_16o7x08n9g().f[8]++;
-      cov_16o7x08n9g().s[22]++;
+      cov_aam7eijdr().f[8]++;
+      cov_aam7eijdr().s[22]++;
       $__default["default"](this.getTipElement()).addClass(CLASS_PREFIX + "-" + attachment);
     };
-
     _proto.getTipElement = function getTipElement() {
-      cov_16o7x08n9g().f[9]++;
-      cov_16o7x08n9g().s[23]++;
-      this.tip = (cov_16o7x08n9g().b[1][0]++, this.tip) || (cov_16o7x08n9g().b[1][1]++, $__default["default"](this.config.template)[0]);
-      cov_16o7x08n9g().s[24]++;
+      cov_aam7eijdr().f[9]++;
+      cov_aam7eijdr().s[23]++;
+      this.tip = (cov_aam7eijdr().b[1][0]++, this.tip) || (cov_aam7eijdr().b[1][1]++, $__default["default"](this.config.template)[0]);
+      cov_aam7eijdr().s[24]++;
       return this.tip;
     };
-
     _proto.setContent = function setContent() {
-      cov_16o7x08n9g().f[10]++;
-      var $tip = (cov_16o7x08n9g().s[25]++, $__default["default"](this.getTipElement())); // We use append for html objects to maintain js events
+      cov_aam7eijdr().f[10]++;
+      var $tip = (cov_aam7eijdr().s[25]++, $__default["default"](this.getTipElement()));
 
-      cov_16o7x08n9g().s[26]++;
+      // We use append for html objects to maintain js events
+      cov_aam7eijdr().s[26]++;
       this.setElementContent($tip.find(SELECTOR_TITLE), this.getTitle());
-      var content = (cov_16o7x08n9g().s[27]++, this._getContent());
-      cov_16o7x08n9g().s[28]++;
-
+      var content = (cov_aam7eijdr().s[27]++, this._getContent());
+      cov_aam7eijdr().s[28]++;
       if (typeof content === 'function') {
-        cov_16o7x08n9g().b[2][0]++;
-        cov_16o7x08n9g().s[29]++;
+        cov_aam7eijdr().b[2][0]++;
+        cov_aam7eijdr().s[29]++;
         content = content.call(this.element);
       } else {
-        cov_16o7x08n9g().b[2][1]++;
+        cov_aam7eijdr().b[2][1]++;
       }
-
-      cov_16o7x08n9g().s[30]++;
+      cov_aam7eijdr().s[30]++;
       this.setElementContent($tip.find(SELECTOR_CONTENT), content);
-      cov_16o7x08n9g().s[31]++;
+      cov_aam7eijdr().s[31]++;
       $tip.removeClass(CLASS_NAME_FADE + " " + CLASS_NAME_SHOW);
-    } // Private
+    }
+
+    // Private
     ;
-
     _proto._getContent = function _getContent() {
-      cov_16o7x08n9g().f[11]++;
-      cov_16o7x08n9g().s[32]++;
-      return (cov_16o7x08n9g().b[3][0]++, this.element.getAttribute('data-content')) || (cov_16o7x08n9g().b[3][1]++, this.config.content);
+      cov_aam7eijdr().f[11]++;
+      cov_aam7eijdr().s[32]++;
+      return (cov_aam7eijdr().b[3][0]++, this.element.getAttribute('data-content')) || (cov_aam7eijdr().b[3][1]++, this.config.content);
     };
-
     _proto._cleanTipClass = function _cleanTipClass() {
-      cov_16o7x08n9g().f[12]++;
-      var $tip = (cov_16o7x08n9g().s[33]++, $__default["default"](this.getTipElement()));
-      var tabClass = (cov_16o7x08n9g().s[34]++, $tip.attr('class').match(BSCLS_PREFIX_REGEX));
-      cov_16o7x08n9g().s[35]++;
-
-      if ((cov_16o7x08n9g().b[5][0]++, tabClass !== null) && (cov_16o7x08n9g().b[5][1]++, tabClass.length > 0)) {
-        cov_16o7x08n9g().b[4][0]++;
-        cov_16o7x08n9g().s[36]++;
+      cov_aam7eijdr().f[12]++;
+      var $tip = (cov_aam7eijdr().s[33]++, $__default["default"](this.getTipElement()));
+      var tabClass = (cov_aam7eijdr().s[34]++, $tip.attr('class').match(BSCLS_PREFIX_REGEX));
+      cov_aam7eijdr().s[35]++;
+      if ((cov_aam7eijdr().b[5][0]++, tabClass !== null) && (cov_aam7eijdr().b[5][1]++, tabClass.length > 0)) {
+        cov_aam7eijdr().b[4][0]++;
+        cov_aam7eijdr().s[36]++;
         $tip.removeClass(tabClass.join(''));
       } else {
-        cov_16o7x08n9g().b[4][1]++;
+        cov_aam7eijdr().b[4][1]++;
       }
-    } // Static
+    }
+
+    // Static
     ;
-
     Popover._jQueryInterface = function _jQueryInterface(config) {
-      cov_16o7x08n9g().f[13]++;
-      cov_16o7x08n9g().s[37]++;
+      cov_aam7eijdr().f[13]++;
+      cov_aam7eijdr().s[37]++;
       return this.each(function () {
-        cov_16o7x08n9g().f[14]++;
-        var data = (cov_16o7x08n9g().s[38]++, $__default["default"](this).data(DATA_KEY));
-
-        var _config = (cov_16o7x08n9g().s[39]++, typeof config === 'object' ? (cov_16o7x08n9g().b[6][0]++, config) : (cov_16o7x08n9g().b[6][1]++, null));
-
-        cov_16o7x08n9g().s[40]++;
-
-        if ((cov_16o7x08n9g().b[8][0]++, !data) && (cov_16o7x08n9g().b[8][1]++, /dispose|hide/.test(config))) {
-          cov_16o7x08n9g().b[7][0]++;
-          cov_16o7x08n9g().s[41]++;
+        cov_aam7eijdr().f[14]++;
+        var data = (cov_aam7eijdr().s[38]++, $__default["default"](this).data(DATA_KEY));
+        var _config = (cov_aam7eijdr().s[39]++, typeof config === 'object' ? (cov_aam7eijdr().b[6][0]++, config) : (cov_aam7eijdr().b[6][1]++, null));
+        cov_aam7eijdr().s[40]++;
+        if ((cov_aam7eijdr().b[8][0]++, !data) && (cov_aam7eijdr().b[8][1]++, /dispose|hide/.test(config))) {
+          cov_aam7eijdr().b[7][0]++;
+          cov_aam7eijdr().s[41]++;
           return;
         } else {
-          cov_16o7x08n9g().b[7][1]++;
+          cov_aam7eijdr().b[7][1]++;
         }
-
-        cov_16o7x08n9g().s[42]++;
-
+        cov_aam7eijdr().s[42]++;
         if (!data) {
-          cov_16o7x08n9g().b[9][0]++;
-          cov_16o7x08n9g().s[43]++;
+          cov_aam7eijdr().b[9][0]++;
+          cov_aam7eijdr().s[43]++;
           data = new Popover(this, _config);
-          cov_16o7x08n9g().s[44]++;
+          cov_aam7eijdr().s[44]++;
           $__default["default"](this).data(DATA_KEY, data);
         } else {
-          cov_16o7x08n9g().b[9][1]++;
+          cov_aam7eijdr().b[9][1]++;
         }
-
-        cov_16o7x08n9g().s[45]++;
-
+        cov_aam7eijdr().s[45]++;
         if (typeof config === 'string') {
-          cov_16o7x08n9g().b[10][0]++;
-          cov_16o7x08n9g().s[46]++;
-
+          cov_aam7eijdr().b[10][0]++;
+          cov_aam7eijdr().s[46]++;
           if (typeof data[config] === 'undefined') {
-            cov_16o7x08n9g().b[11][0]++;
-            cov_16o7x08n9g().s[47]++;
+            cov_aam7eijdr().b[11][0]++;
+            cov_aam7eijdr().s[47]++;
             throw new TypeError("No method named \"" + config + "\"");
           } else {
-            cov_16o7x08n9g().b[11][1]++;
+            cov_aam7eijdr().b[11][1]++;
           }
-
-          cov_16o7x08n9g().s[48]++;
+          cov_aam7eijdr().s[48]++;
           data[config]();
         } else {
-          cov_16o7x08n9g().b[10][1]++;
+          cov_aam7eijdr().b[10][1]++;
         }
       });
     };
-
-    _createClass(Popover, null, [{
+    return _createClass(Popover, null, [{
       key: "VERSION",
-      get: // Getters
+      get:
+      // Getters
       function get() {
-        cov_16o7x08n9g().f[0]++;
-        cov_16o7x08n9g().s[14]++;
+        cov_aam7eijdr().f[0]++;
+        cov_aam7eijdr().s[14]++;
         return VERSION;
       }
     }, {
       key: "Default",
       get: function get() {
-        cov_16o7x08n9g().f[1]++;
-        cov_16o7x08n9g().s[15]++;
+        cov_aam7eijdr().f[1]++;
+        cov_aam7eijdr().s[15]++;
         return Default;
       }
     }, {
       key: "NAME",
       get: function get() {
-        cov_16o7x08n9g().f[2]++;
-        cov_16o7x08n9g().s[16]++;
+        cov_aam7eijdr().f[2]++;
+        cov_aam7eijdr().s[16]++;
         return NAME;
       }
     }, {
       key: "DATA_KEY",
       get: function get() {
-        cov_16o7x08n9g().f[3]++;
-        cov_16o7x08n9g().s[17]++;
+        cov_aam7eijdr().f[3]++;
+        cov_aam7eijdr().s[17]++;
         return DATA_KEY;
       }
     }, {
       key: "Event",
       get: function get() {
-        cov_16o7x08n9g().f[4]++;
-        cov_16o7x08n9g().s[18]++;
+        cov_aam7eijdr().f[4]++;
+        cov_aam7eijdr().s[18]++;
         return Event;
       }
     }, {
       key: "EVENT_KEY",
       get: function get() {
-        cov_16o7x08n9g().f[5]++;
-        cov_16o7x08n9g().s[19]++;
+        cov_aam7eijdr().f[5]++;
+        cov_aam7eijdr().s[19]++;
         return EVENT_KEY;
       }
     }, {
       key: "DefaultType",
       get: function get() {
-        cov_16o7x08n9g().f[6]++;
-        cov_16o7x08n9g().s[20]++;
+        cov_aam7eijdr().f[6]++;
+        cov_aam7eijdr().s[20]++;
         return DefaultType;
       }
     }]);
-
-    return Popover;
   }(Tooltip__default["default"]);
   /**
    * jQuery
    */
-
-
-  cov_16o7x08n9g().s[49]++;
+  cov_aam7eijdr().s[49]++;
   $__default["default"].fn[NAME] = Popover._jQueryInterface;
-  cov_16o7x08n9g().s[50]++;
+  cov_aam7eijdr().s[50]++;
   $__default["default"].fn[NAME].Constructor = Popover;
-  cov_16o7x08n9g().s[51]++;
-
+  cov_aam7eijdr().s[51]++;
   $__default["default"].fn[NAME].noConflict = function () {
-    cov_16o7x08n9g().f[15]++;
-    cov_16o7x08n9g().s[52]++;
+    cov_aam7eijdr().f[15]++;
+    cov_aam7eijdr().s[52]++;
     $__default["default"].fn[NAME] = JQUERY_NO_CONFLICT;
-    cov_16o7x08n9g().s[53]++;
+    cov_aam7eijdr().s[53]++;
     return Popover._jQueryInterface;
   };
 

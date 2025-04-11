@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap modal.js v4.6.2-1 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2022 https://github.com/MahdiMajidzadeh
+  * Bootstrap modal.js v4.6.2-2 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2025 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -14,49 +14,48 @@
   var $__default = /*#__PURE__*/_interopDefaultLegacy($);
   var Util__default = /*#__PURE__*/_interopDefaultLegacy(Util);
 
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
+  function _defineProperties(e, r) {
+    for (var t = 0; t < r.length; t++) {
+      var o = r[t];
+      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o);
     }
   }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    Object.defineProperty(Constructor, "prototype", {
-      writable: false
-    });
-    return Constructor;
+  function _createClass(e, r, t) {
+    return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+      writable: !1
+    }), e;
   }
-
   function _extends() {
-    _extends = Object.assign ? Object.assign.bind() : function (target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
+    return _extends = Object.assign ? Object.assign.bind() : function (n) {
+      for (var e = 1; e < arguments.length; e++) {
+        var t = arguments[e];
+        for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
       }
-
-      return target;
-    };
-    return _extends.apply(this, arguments);
+      return n;
+    }, _extends.apply(null, arguments);
+  }
+  function _toPrimitive(t, r) {
+    if ("object" != typeof t || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+      var i = e.call(t, r || "default");
+      if ("object" != typeof i) return i;
+      throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return ("string" === r ? String : Number)(t);
+  }
+  function _toPropertyKey(t) {
+    var i = _toPrimitive(t, "string");
+    return "symbol" == typeof i ? i : i + "";
   }
 
-  function cov_1bxzoyh6ou() {
-    var path = "C:\\Users\\mmajidzade\\Documents\\GitHub\\bootstrap-v4-rtl\\js\\src\\modal.js";
-    var hash = "8bdaa03a147e9576a44592c8d2ec8dc28568a24c";
+  function cov_15idckumoh() {
+    var path = "/Users/mahdi/Documents/app/bootstrap-v4-rtl/js/src/modal.js";
+    var hash = "ebd4b7ba251f1fc6ec245deabf3d6b937aa31706";
     var global = new Function("return this")();
     var gcv = "__coverage__";
     var coverageData = {
-      path: "C:\\Users\\mmajidzade\\Documents\\GitHub\\bootstrap-v4-rtl\\js\\src\\modal.js",
+      path: "/Users/mahdi/Documents/app/bootstrap-v4-rtl/js/src/modal.js",
       statementMap: {
         "0": {
           start: {
@@ -6871,1103 +6870,939 @@
         "69": [0, 0]
       },
       _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-      hash: "8bdaa03a147e9576a44592c8d2ec8dc28568a24c"
+      hash: "ebd4b7ba251f1fc6ec245deabf3d6b937aa31706"
     };
     var coverage = global[gcv] || (global[gcv] = {});
-
     if (!coverage[path] || coverage[path].hash !== hash) {
       coverage[path] = coverageData;
     }
-
     var actualCoverage = coverage[path];
     {
       // @ts-ignore
-      cov_1bxzoyh6ou = function () {
+      cov_15idckumoh = function () {
         return actualCoverage;
       };
     }
     return actualCoverage;
   }
+  cov_15idckumoh();
 
-  cov_1bxzoyh6ou();
   /**
    * Constants
    */
 
-  var NAME = (cov_1bxzoyh6ou().s[0]++, 'modal');
-  var VERSION = (cov_1bxzoyh6ou().s[1]++, '4.6.2');
-  var DATA_KEY = (cov_1bxzoyh6ou().s[2]++, 'bs.modal');
-  var EVENT_KEY = (cov_1bxzoyh6ou().s[3]++, "." + DATA_KEY);
-  var DATA_API_KEY = (cov_1bxzoyh6ou().s[4]++, '.data-api');
-  var JQUERY_NO_CONFLICT = (cov_1bxzoyh6ou().s[5]++, $__default["default"].fn[NAME]);
-  var ESCAPE_KEYCODE = (cov_1bxzoyh6ou().s[6]++, 27); // KeyboardEvent.which value for Escape (Esc) key
+  var NAME = (cov_15idckumoh().s[0]++, 'modal');
+  var VERSION = (cov_15idckumoh().s[1]++, '4.6.2');
+  var DATA_KEY = (cov_15idckumoh().s[2]++, 'bs.modal');
+  var EVENT_KEY = (cov_15idckumoh().s[3]++, "." + DATA_KEY);
+  var DATA_API_KEY = (cov_15idckumoh().s[4]++, '.data-api');
+  var JQUERY_NO_CONFLICT = (cov_15idckumoh().s[5]++, $__default["default"].fn[NAME]);
+  var ESCAPE_KEYCODE = (cov_15idckumoh().s[6]++, 27); // KeyboardEvent.which value for Escape (Esc) key
 
-  var CLASS_NAME_SCROLLABLE = (cov_1bxzoyh6ou().s[7]++, 'modal-dialog-scrollable');
-  var CLASS_NAME_SCROLLBAR_MEASURER = (cov_1bxzoyh6ou().s[8]++, 'modal-scrollbar-measure');
-  var CLASS_NAME_BACKDROP = (cov_1bxzoyh6ou().s[9]++, 'modal-backdrop');
-  var CLASS_NAME_OPEN = (cov_1bxzoyh6ou().s[10]++, 'modal-open');
-  var CLASS_NAME_FADE = (cov_1bxzoyh6ou().s[11]++, 'fade');
-  var CLASS_NAME_SHOW = (cov_1bxzoyh6ou().s[12]++, 'show');
-  var CLASS_NAME_STATIC = (cov_1bxzoyh6ou().s[13]++, 'modal-static');
-  var EVENT_HIDE = (cov_1bxzoyh6ou().s[14]++, "hide" + EVENT_KEY);
-  var EVENT_HIDE_PREVENTED = (cov_1bxzoyh6ou().s[15]++, "hidePrevented" + EVENT_KEY);
-  var EVENT_HIDDEN = (cov_1bxzoyh6ou().s[16]++, "hidden" + EVENT_KEY);
-  var EVENT_SHOW = (cov_1bxzoyh6ou().s[17]++, "show" + EVENT_KEY);
-  var EVENT_SHOWN = (cov_1bxzoyh6ou().s[18]++, "shown" + EVENT_KEY);
-  var EVENT_FOCUSIN = (cov_1bxzoyh6ou().s[19]++, "focusin" + EVENT_KEY);
-  var EVENT_RESIZE = (cov_1bxzoyh6ou().s[20]++, "resize" + EVENT_KEY);
-  var EVENT_CLICK_DISMISS = (cov_1bxzoyh6ou().s[21]++, "click.dismiss" + EVENT_KEY);
-  var EVENT_KEYDOWN_DISMISS = (cov_1bxzoyh6ou().s[22]++, "keydown.dismiss" + EVENT_KEY);
-  var EVENT_MOUSEUP_DISMISS = (cov_1bxzoyh6ou().s[23]++, "mouseup.dismiss" + EVENT_KEY);
-  var EVENT_MOUSEDOWN_DISMISS = (cov_1bxzoyh6ou().s[24]++, "mousedown.dismiss" + EVENT_KEY);
-  var EVENT_CLICK_DATA_API = (cov_1bxzoyh6ou().s[25]++, "click" + EVENT_KEY + DATA_API_KEY);
-  var SELECTOR_DIALOG = (cov_1bxzoyh6ou().s[26]++, '.modal-dialog');
-  var SELECTOR_MODAL_BODY = (cov_1bxzoyh6ou().s[27]++, '.modal-body');
-  var SELECTOR_DATA_TOGGLE = (cov_1bxzoyh6ou().s[28]++, '[data-toggle="modal"]');
-  var SELECTOR_DATA_DISMISS = (cov_1bxzoyh6ou().s[29]++, '[data-dismiss="modal"]');
-  var SELECTOR_FIXED_CONTENT = (cov_1bxzoyh6ou().s[30]++, '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top');
-  var SELECTOR_STICKY_CONTENT = (cov_1bxzoyh6ou().s[31]++, '.sticky-top');
-  var Default = (cov_1bxzoyh6ou().s[32]++, {
+  var CLASS_NAME_SCROLLABLE = (cov_15idckumoh().s[7]++, 'modal-dialog-scrollable');
+  var CLASS_NAME_SCROLLBAR_MEASURER = (cov_15idckumoh().s[8]++, 'modal-scrollbar-measure');
+  var CLASS_NAME_BACKDROP = (cov_15idckumoh().s[9]++, 'modal-backdrop');
+  var CLASS_NAME_OPEN = (cov_15idckumoh().s[10]++, 'modal-open');
+  var CLASS_NAME_FADE = (cov_15idckumoh().s[11]++, 'fade');
+  var CLASS_NAME_SHOW = (cov_15idckumoh().s[12]++, 'show');
+  var CLASS_NAME_STATIC = (cov_15idckumoh().s[13]++, 'modal-static');
+  var EVENT_HIDE = (cov_15idckumoh().s[14]++, "hide" + EVENT_KEY);
+  var EVENT_HIDE_PREVENTED = (cov_15idckumoh().s[15]++, "hidePrevented" + EVENT_KEY);
+  var EVENT_HIDDEN = (cov_15idckumoh().s[16]++, "hidden" + EVENT_KEY);
+  var EVENT_SHOW = (cov_15idckumoh().s[17]++, "show" + EVENT_KEY);
+  var EVENT_SHOWN = (cov_15idckumoh().s[18]++, "shown" + EVENT_KEY);
+  var EVENT_FOCUSIN = (cov_15idckumoh().s[19]++, "focusin" + EVENT_KEY);
+  var EVENT_RESIZE = (cov_15idckumoh().s[20]++, "resize" + EVENT_KEY);
+  var EVENT_CLICK_DISMISS = (cov_15idckumoh().s[21]++, "click.dismiss" + EVENT_KEY);
+  var EVENT_KEYDOWN_DISMISS = (cov_15idckumoh().s[22]++, "keydown.dismiss" + EVENT_KEY);
+  var EVENT_MOUSEUP_DISMISS = (cov_15idckumoh().s[23]++, "mouseup.dismiss" + EVENT_KEY);
+  var EVENT_MOUSEDOWN_DISMISS = (cov_15idckumoh().s[24]++, "mousedown.dismiss" + EVENT_KEY);
+  var EVENT_CLICK_DATA_API = (cov_15idckumoh().s[25]++, "click" + EVENT_KEY + DATA_API_KEY);
+  var SELECTOR_DIALOG = (cov_15idckumoh().s[26]++, '.modal-dialog');
+  var SELECTOR_MODAL_BODY = (cov_15idckumoh().s[27]++, '.modal-body');
+  var SELECTOR_DATA_TOGGLE = (cov_15idckumoh().s[28]++, '[data-toggle="modal"]');
+  var SELECTOR_DATA_DISMISS = (cov_15idckumoh().s[29]++, '[data-dismiss="modal"]');
+  var SELECTOR_FIXED_CONTENT = (cov_15idckumoh().s[30]++, '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top');
+  var SELECTOR_STICKY_CONTENT = (cov_15idckumoh().s[31]++, '.sticky-top');
+  var Default = (cov_15idckumoh().s[32]++, {
     backdrop: true,
     keyboard: true,
     focus: true,
     show: true
   });
-  var DefaultType = (cov_1bxzoyh6ou().s[33]++, {
+  var DefaultType = (cov_15idckumoh().s[33]++, {
     backdrop: '(boolean|string)',
     keyboard: 'boolean',
     focus: 'boolean',
     show: 'boolean'
   });
+
   /**
    * Class definition
    */
-
   var Modal = /*#__PURE__*/function () {
     function Modal(element, config) {
-      cov_1bxzoyh6ou().f[0]++;
-      cov_1bxzoyh6ou().s[34]++;
+      cov_15idckumoh().f[0]++;
+      cov_15idckumoh().s[34]++;
       this._config = this._getConfig(config);
-      cov_1bxzoyh6ou().s[35]++;
+      cov_15idckumoh().s[35]++;
       this._element = element;
-      cov_1bxzoyh6ou().s[36]++;
+      cov_15idckumoh().s[36]++;
       this._dialog = element.querySelector(SELECTOR_DIALOG);
-      cov_1bxzoyh6ou().s[37]++;
+      cov_15idckumoh().s[37]++;
       this._backdrop = null;
-      cov_1bxzoyh6ou().s[38]++;
+      cov_15idckumoh().s[38]++;
       this._isShown = false;
-      cov_1bxzoyh6ou().s[39]++;
+      cov_15idckumoh().s[39]++;
       this._isBodyOverflowing = false;
-      cov_1bxzoyh6ou().s[40]++;
+      cov_15idckumoh().s[40]++;
       this._ignoreBackdropClick = false;
-      cov_1bxzoyh6ou().s[41]++;
+      cov_15idckumoh().s[41]++;
       this._isTransitioning = false;
-      cov_1bxzoyh6ou().s[42]++;
+      cov_15idckumoh().s[42]++;
       this._scrollbarWidth = 0;
-    } // Getters
+    }
 
-
+    // Getters
     var _proto = Modal.prototype;
-
     // Public
     _proto.toggle = function toggle(relatedTarget) {
-      cov_1bxzoyh6ou().f[3]++;
-      cov_1bxzoyh6ou().s[45]++;
-      return this._isShown ? (cov_1bxzoyh6ou().b[0][0]++, this.hide()) : (cov_1bxzoyh6ou().b[0][1]++, this.show(relatedTarget));
+      cov_15idckumoh().f[3]++;
+      cov_15idckumoh().s[45]++;
+      return this._isShown ? (cov_15idckumoh().b[0][0]++, this.hide()) : (cov_15idckumoh().b[0][1]++, this.show(relatedTarget));
     };
-
     _proto.show = function show(relatedTarget) {
       var _this = this;
-
-      cov_1bxzoyh6ou().f[4]++;
-      cov_1bxzoyh6ou().s[46]++;
-
-      if ((cov_1bxzoyh6ou().b[2][0]++, this._isShown) || (cov_1bxzoyh6ou().b[2][1]++, this._isTransitioning)) {
-        cov_1bxzoyh6ou().b[1][0]++;
-        cov_1bxzoyh6ou().s[47]++;
+      cov_15idckumoh().f[4]++;
+      cov_15idckumoh().s[46]++;
+      if ((cov_15idckumoh().b[2][0]++, this._isShown) || (cov_15idckumoh().b[2][1]++, this._isTransitioning)) {
+        cov_15idckumoh().b[1][0]++;
+        cov_15idckumoh().s[47]++;
         return;
       } else {
-        cov_1bxzoyh6ou().b[1][1]++;
+        cov_15idckumoh().b[1][1]++;
       }
-
-      var showEvent = (cov_1bxzoyh6ou().s[48]++, $__default["default"].Event(EVENT_SHOW, {
+      var showEvent = (cov_15idckumoh().s[48]++, $__default["default"].Event(EVENT_SHOW, {
         relatedTarget: relatedTarget
       }));
-      cov_1bxzoyh6ou().s[49]++;
+      cov_15idckumoh().s[49]++;
       $__default["default"](this._element).trigger(showEvent);
-      cov_1bxzoyh6ou().s[50]++;
-
+      cov_15idckumoh().s[50]++;
       if (showEvent.isDefaultPrevented()) {
-        cov_1bxzoyh6ou().b[3][0]++;
-        cov_1bxzoyh6ou().s[51]++;
+        cov_15idckumoh().b[3][0]++;
+        cov_15idckumoh().s[51]++;
         return;
       } else {
-        cov_1bxzoyh6ou().b[3][1]++;
+        cov_15idckumoh().b[3][1]++;
       }
-
-      cov_1bxzoyh6ou().s[52]++;
+      cov_15idckumoh().s[52]++;
       this._isShown = true;
-      cov_1bxzoyh6ou().s[53]++;
-
+      cov_15idckumoh().s[53]++;
       if ($__default["default"](this._element).hasClass(CLASS_NAME_FADE)) {
-        cov_1bxzoyh6ou().b[4][0]++;
-        cov_1bxzoyh6ou().s[54]++;
+        cov_15idckumoh().b[4][0]++;
+        cov_15idckumoh().s[54]++;
         this._isTransitioning = true;
       } else {
-        cov_1bxzoyh6ou().b[4][1]++;
+        cov_15idckumoh().b[4][1]++;
       }
-
-      cov_1bxzoyh6ou().s[55]++;
-
+      cov_15idckumoh().s[55]++;
       this._checkScrollbar();
-
-      cov_1bxzoyh6ou().s[56]++;
-
+      cov_15idckumoh().s[56]++;
       this._setScrollbar();
-
-      cov_1bxzoyh6ou().s[57]++;
-
+      cov_15idckumoh().s[57]++;
       this._adjustDialog();
-
-      cov_1bxzoyh6ou().s[58]++;
-
+      cov_15idckumoh().s[58]++;
       this._setEscapeEvent();
-
-      cov_1bxzoyh6ou().s[59]++;
-
+      cov_15idckumoh().s[59]++;
       this._setResizeEvent();
-
-      cov_1bxzoyh6ou().s[60]++;
+      cov_15idckumoh().s[60]++;
       $__default["default"](this._element).on(EVENT_CLICK_DISMISS, SELECTOR_DATA_DISMISS, function (event) {
-        cov_1bxzoyh6ou().f[5]++;
-        cov_1bxzoyh6ou().s[61]++;
+        cov_15idckumoh().f[5]++;
+        cov_15idckumoh().s[61]++;
         return _this.hide(event);
       });
-      cov_1bxzoyh6ou().s[62]++;
+      cov_15idckumoh().s[62]++;
       $__default["default"](this._dialog).on(EVENT_MOUSEDOWN_DISMISS, function () {
-        cov_1bxzoyh6ou().f[6]++;
-        cov_1bxzoyh6ou().s[63]++;
+        cov_15idckumoh().f[6]++;
+        cov_15idckumoh().s[63]++;
         $__default["default"](_this._element).one(EVENT_MOUSEUP_DISMISS, function (event) {
-          cov_1bxzoyh6ou().f[7]++;
-          cov_1bxzoyh6ou().s[64]++;
-
+          cov_15idckumoh().f[7]++;
+          cov_15idckumoh().s[64]++;
           if ($__default["default"](event.target).is(_this._element)) {
-            cov_1bxzoyh6ou().b[5][0]++;
-            cov_1bxzoyh6ou().s[65]++;
+            cov_15idckumoh().b[5][0]++;
+            cov_15idckumoh().s[65]++;
             _this._ignoreBackdropClick = true;
           } else {
-            cov_1bxzoyh6ou().b[5][1]++;
+            cov_15idckumoh().b[5][1]++;
           }
         });
       });
-      cov_1bxzoyh6ou().s[66]++;
-
+      cov_15idckumoh().s[66]++;
       this._showBackdrop(function () {
-        cov_1bxzoyh6ou().f[8]++;
-        cov_1bxzoyh6ou().s[67]++;
+        cov_15idckumoh().f[8]++;
+        cov_15idckumoh().s[67]++;
         return _this._showElement(relatedTarget);
       });
     };
-
     _proto.hide = function hide(event) {
       var _this2 = this;
-
-      cov_1bxzoyh6ou().f[9]++;
-      cov_1bxzoyh6ou().s[68]++;
-
+      cov_15idckumoh().f[9]++;
+      cov_15idckumoh().s[68]++;
       if (event) {
-        cov_1bxzoyh6ou().b[6][0]++;
-        cov_1bxzoyh6ou().s[69]++;
+        cov_15idckumoh().b[6][0]++;
+        cov_15idckumoh().s[69]++;
         event.preventDefault();
       } else {
-        cov_1bxzoyh6ou().b[6][1]++;
+        cov_15idckumoh().b[6][1]++;
       }
-
-      cov_1bxzoyh6ou().s[70]++;
-
-      if ((cov_1bxzoyh6ou().b[8][0]++, !this._isShown) || (cov_1bxzoyh6ou().b[8][1]++, this._isTransitioning)) {
-        cov_1bxzoyh6ou().b[7][0]++;
-        cov_1bxzoyh6ou().s[71]++;
+      cov_15idckumoh().s[70]++;
+      if ((cov_15idckumoh().b[8][0]++, !this._isShown) || (cov_15idckumoh().b[8][1]++, this._isTransitioning)) {
+        cov_15idckumoh().b[7][0]++;
+        cov_15idckumoh().s[71]++;
         return;
       } else {
-        cov_1bxzoyh6ou().b[7][1]++;
+        cov_15idckumoh().b[7][1]++;
       }
-
-      var hideEvent = (cov_1bxzoyh6ou().s[72]++, $__default["default"].Event(EVENT_HIDE));
-      cov_1bxzoyh6ou().s[73]++;
+      var hideEvent = (cov_15idckumoh().s[72]++, $__default["default"].Event(EVENT_HIDE));
+      cov_15idckumoh().s[73]++;
       $__default["default"](this._element).trigger(hideEvent);
-      cov_1bxzoyh6ou().s[74]++;
-
-      if ((cov_1bxzoyh6ou().b[10][0]++, !this._isShown) || (cov_1bxzoyh6ou().b[10][1]++, hideEvent.isDefaultPrevented())) {
-        cov_1bxzoyh6ou().b[9][0]++;
-        cov_1bxzoyh6ou().s[75]++;
+      cov_15idckumoh().s[74]++;
+      if ((cov_15idckumoh().b[10][0]++, !this._isShown) || (cov_15idckumoh().b[10][1]++, hideEvent.isDefaultPrevented())) {
+        cov_15idckumoh().b[9][0]++;
+        cov_15idckumoh().s[75]++;
         return;
       } else {
-        cov_1bxzoyh6ou().b[9][1]++;
+        cov_15idckumoh().b[9][1]++;
       }
-
-      cov_1bxzoyh6ou().s[76]++;
+      cov_15idckumoh().s[76]++;
       this._isShown = false;
-      var transition = (cov_1bxzoyh6ou().s[77]++, $__default["default"](this._element).hasClass(CLASS_NAME_FADE));
-      cov_1bxzoyh6ou().s[78]++;
-
+      var transition = (cov_15idckumoh().s[77]++, $__default["default"](this._element).hasClass(CLASS_NAME_FADE));
+      cov_15idckumoh().s[78]++;
       if (transition) {
-        cov_1bxzoyh6ou().b[11][0]++;
-        cov_1bxzoyh6ou().s[79]++;
+        cov_15idckumoh().b[11][0]++;
+        cov_15idckumoh().s[79]++;
         this._isTransitioning = true;
       } else {
-        cov_1bxzoyh6ou().b[11][1]++;
+        cov_15idckumoh().b[11][1]++;
       }
-
-      cov_1bxzoyh6ou().s[80]++;
-
+      cov_15idckumoh().s[80]++;
       this._setEscapeEvent();
-
-      cov_1bxzoyh6ou().s[81]++;
-
+      cov_15idckumoh().s[81]++;
       this._setResizeEvent();
-
-      cov_1bxzoyh6ou().s[82]++;
+      cov_15idckumoh().s[82]++;
       $__default["default"](document).off(EVENT_FOCUSIN);
-      cov_1bxzoyh6ou().s[83]++;
+      cov_15idckumoh().s[83]++;
       $__default["default"](this._element).removeClass(CLASS_NAME_SHOW);
-      cov_1bxzoyh6ou().s[84]++;
+      cov_15idckumoh().s[84]++;
       $__default["default"](this._element).off(EVENT_CLICK_DISMISS);
-      cov_1bxzoyh6ou().s[85]++;
+      cov_15idckumoh().s[85]++;
       $__default["default"](this._dialog).off(EVENT_MOUSEDOWN_DISMISS);
-      cov_1bxzoyh6ou().s[86]++;
-
+      cov_15idckumoh().s[86]++;
       if (transition) {
-        cov_1bxzoyh6ou().b[12][0]++;
-        var transitionDuration = (cov_1bxzoyh6ou().s[87]++, Util__default["default"].getTransitionDurationFromElement(this._element));
-        cov_1bxzoyh6ou().s[88]++;
+        cov_15idckumoh().b[12][0]++;
+        var transitionDuration = (cov_15idckumoh().s[87]++, Util__default["default"].getTransitionDurationFromElement(this._element));
+        cov_15idckumoh().s[88]++;
         $__default["default"](this._element).one(Util__default["default"].TRANSITION_END, function (event) {
-          cov_1bxzoyh6ou().f[10]++;
-          cov_1bxzoyh6ou().s[89]++;
+          cov_15idckumoh().f[10]++;
+          cov_15idckumoh().s[89]++;
           return _this2._hideModal(event);
         }).emulateTransitionEnd(transitionDuration);
       } else {
-        cov_1bxzoyh6ou().b[12][1]++;
-        cov_1bxzoyh6ou().s[90]++;
-
+        cov_15idckumoh().b[12][1]++;
+        cov_15idckumoh().s[90]++;
         this._hideModal();
       }
     };
-
     _proto.dispose = function dispose() {
-      cov_1bxzoyh6ou().f[11]++;
-      cov_1bxzoyh6ou().s[91]++;
+      cov_15idckumoh().f[11]++;
+      cov_15idckumoh().s[91]++;
       [window, this._element, this._dialog].forEach(function (htmlElement) {
-        cov_1bxzoyh6ou().f[12]++;
-        cov_1bxzoyh6ou().s[92]++;
+        cov_15idckumoh().f[12]++;
+        cov_15idckumoh().s[92]++;
         return $__default["default"](htmlElement).off(EVENT_KEY);
       });
+
       /**
        * `document` has 2 events `EVENT_FOCUSIN` and `EVENT_CLICK_DATA_API`
        * Do not move `document` in `htmlElements` array
        * It will remove `EVENT_CLICK_DATA_API` event that should remain
        */
-
-      cov_1bxzoyh6ou().s[93]++;
+      cov_15idckumoh().s[93]++;
       $__default["default"](document).off(EVENT_FOCUSIN);
-      cov_1bxzoyh6ou().s[94]++;
+      cov_15idckumoh().s[94]++;
       $__default["default"].removeData(this._element, DATA_KEY);
-      cov_1bxzoyh6ou().s[95]++;
+      cov_15idckumoh().s[95]++;
       this._config = null;
-      cov_1bxzoyh6ou().s[96]++;
+      cov_15idckumoh().s[96]++;
       this._element = null;
-      cov_1bxzoyh6ou().s[97]++;
+      cov_15idckumoh().s[97]++;
       this._dialog = null;
-      cov_1bxzoyh6ou().s[98]++;
+      cov_15idckumoh().s[98]++;
       this._backdrop = null;
-      cov_1bxzoyh6ou().s[99]++;
+      cov_15idckumoh().s[99]++;
       this._isShown = null;
-      cov_1bxzoyh6ou().s[100]++;
+      cov_15idckumoh().s[100]++;
       this._isBodyOverflowing = null;
-      cov_1bxzoyh6ou().s[101]++;
+      cov_15idckumoh().s[101]++;
       this._ignoreBackdropClick = null;
-      cov_1bxzoyh6ou().s[102]++;
+      cov_15idckumoh().s[102]++;
       this._isTransitioning = null;
-      cov_1bxzoyh6ou().s[103]++;
+      cov_15idckumoh().s[103]++;
       this._scrollbarWidth = null;
     };
-
     _proto.handleUpdate = function handleUpdate() {
-      cov_1bxzoyh6ou().f[13]++;
-      cov_1bxzoyh6ou().s[104]++;
-
+      cov_15idckumoh().f[13]++;
+      cov_15idckumoh().s[104]++;
       this._adjustDialog();
-    } // Private
-    ;
+    }
 
+    // Private
+    ;
     _proto._getConfig = function _getConfig(config) {
-      cov_1bxzoyh6ou().f[14]++;
-      cov_1bxzoyh6ou().s[105]++;
+      cov_15idckumoh().f[14]++;
+      cov_15idckumoh().s[105]++;
       config = _extends({}, Default, config);
-      cov_1bxzoyh6ou().s[106]++;
+      cov_15idckumoh().s[106]++;
       Util__default["default"].typeCheckConfig(NAME, config, DefaultType);
-      cov_1bxzoyh6ou().s[107]++;
+      cov_15idckumoh().s[107]++;
       return config;
     };
-
     _proto._triggerBackdropTransition = function _triggerBackdropTransition() {
       var _this3 = this;
-
-      cov_1bxzoyh6ou().f[15]++;
-      var hideEventPrevented = (cov_1bxzoyh6ou().s[108]++, $__default["default"].Event(EVENT_HIDE_PREVENTED));
-      cov_1bxzoyh6ou().s[109]++;
+      cov_15idckumoh().f[15]++;
+      var hideEventPrevented = (cov_15idckumoh().s[108]++, $__default["default"].Event(EVENT_HIDE_PREVENTED));
+      cov_15idckumoh().s[109]++;
       $__default["default"](this._element).trigger(hideEventPrevented);
-      cov_1bxzoyh6ou().s[110]++;
-
+      cov_15idckumoh().s[110]++;
       if (hideEventPrevented.isDefaultPrevented()) {
-        cov_1bxzoyh6ou().b[13][0]++;
-        cov_1bxzoyh6ou().s[111]++;
+        cov_15idckumoh().b[13][0]++;
+        cov_15idckumoh().s[111]++;
         return;
       } else {
-        cov_1bxzoyh6ou().b[13][1]++;
+        cov_15idckumoh().b[13][1]++;
       }
-
-      var isModalOverflowing = (cov_1bxzoyh6ou().s[112]++, this._element.scrollHeight > document.documentElement.clientHeight);
-      cov_1bxzoyh6ou().s[113]++;
-
+      var isModalOverflowing = (cov_15idckumoh().s[112]++, this._element.scrollHeight > document.documentElement.clientHeight);
+      cov_15idckumoh().s[113]++;
       if (!isModalOverflowing) {
-        cov_1bxzoyh6ou().b[14][0]++;
-        cov_1bxzoyh6ou().s[114]++;
+        cov_15idckumoh().b[14][0]++;
+        cov_15idckumoh().s[114]++;
         this._element.style.overflowY = 'hidden';
       } else {
-        cov_1bxzoyh6ou().b[14][1]++;
+        cov_15idckumoh().b[14][1]++;
       }
-
-      cov_1bxzoyh6ou().s[115]++;
-
+      cov_15idckumoh().s[115]++;
       this._element.classList.add(CLASS_NAME_STATIC);
-
-      var modalTransitionDuration = (cov_1bxzoyh6ou().s[116]++, Util__default["default"].getTransitionDurationFromElement(this._dialog));
-      cov_1bxzoyh6ou().s[117]++;
+      var modalTransitionDuration = (cov_15idckumoh().s[116]++, Util__default["default"].getTransitionDurationFromElement(this._dialog));
+      cov_15idckumoh().s[117]++;
       $__default["default"](this._element).off(Util__default["default"].TRANSITION_END);
-      cov_1bxzoyh6ou().s[118]++;
+      cov_15idckumoh().s[118]++;
       $__default["default"](this._element).one(Util__default["default"].TRANSITION_END, function () {
-        cov_1bxzoyh6ou().f[16]++;
-        cov_1bxzoyh6ou().s[119]++;
-
+        cov_15idckumoh().f[16]++;
+        cov_15idckumoh().s[119]++;
         _this3._element.classList.remove(CLASS_NAME_STATIC);
-
-        cov_1bxzoyh6ou().s[120]++;
-
+        cov_15idckumoh().s[120]++;
         if (!isModalOverflowing) {
-          cov_1bxzoyh6ou().b[15][0]++;
-          cov_1bxzoyh6ou().s[121]++;
+          cov_15idckumoh().b[15][0]++;
+          cov_15idckumoh().s[121]++;
           $__default["default"](_this3._element).one(Util__default["default"].TRANSITION_END, function () {
-            cov_1bxzoyh6ou().f[17]++;
-            cov_1bxzoyh6ou().s[122]++;
+            cov_15idckumoh().f[17]++;
+            cov_15idckumoh().s[122]++;
             _this3._element.style.overflowY = '';
           }).emulateTransitionEnd(_this3._element, modalTransitionDuration);
         } else {
-          cov_1bxzoyh6ou().b[15][1]++;
+          cov_15idckumoh().b[15][1]++;
         }
       }).emulateTransitionEnd(modalTransitionDuration);
-      cov_1bxzoyh6ou().s[123]++;
-
+      cov_15idckumoh().s[123]++;
       this._element.focus();
     };
-
     _proto._showElement = function _showElement(relatedTarget) {
       var _this4 = this;
-
-      cov_1bxzoyh6ou().f[18]++;
-      var transition = (cov_1bxzoyh6ou().s[124]++, $__default["default"](this._element).hasClass(CLASS_NAME_FADE));
-      var modalBody = (cov_1bxzoyh6ou().s[125]++, this._dialog ? (cov_1bxzoyh6ou().b[16][0]++, this._dialog.querySelector(SELECTOR_MODAL_BODY)) : (cov_1bxzoyh6ou().b[16][1]++, null));
-      cov_1bxzoyh6ou().s[126]++;
-
-      if ((cov_1bxzoyh6ou().b[18][0]++, !this._element.parentNode) || (cov_1bxzoyh6ou().b[18][1]++, this._element.parentNode.nodeType !== Node.ELEMENT_NODE)) {
-        cov_1bxzoyh6ou().b[17][0]++;
-        cov_1bxzoyh6ou().s[127]++;
+      cov_15idckumoh().f[18]++;
+      var transition = (cov_15idckumoh().s[124]++, $__default["default"](this._element).hasClass(CLASS_NAME_FADE));
+      var modalBody = (cov_15idckumoh().s[125]++, this._dialog ? (cov_15idckumoh().b[16][0]++, this._dialog.querySelector(SELECTOR_MODAL_BODY)) : (cov_15idckumoh().b[16][1]++, null));
+      cov_15idckumoh().s[126]++;
+      if ((cov_15idckumoh().b[18][0]++, !this._element.parentNode) || (cov_15idckumoh().b[18][1]++, this._element.parentNode.nodeType !== Node.ELEMENT_NODE)) {
+        cov_15idckumoh().b[17][0]++;
+        cov_15idckumoh().s[127]++;
         // Don't move modal's DOM position
         document.body.appendChild(this._element);
       } else {
-        cov_1bxzoyh6ou().b[17][1]++;
+        cov_15idckumoh().b[17][1]++;
       }
-
-      cov_1bxzoyh6ou().s[128]++;
+      cov_15idckumoh().s[128]++;
       this._element.style.display = 'block';
-      cov_1bxzoyh6ou().s[129]++;
-
+      cov_15idckumoh().s[129]++;
       this._element.removeAttribute('aria-hidden');
-
-      cov_1bxzoyh6ou().s[130]++;
-
+      cov_15idckumoh().s[130]++;
       this._element.setAttribute('aria-modal', true);
-
-      cov_1bxzoyh6ou().s[131]++;
-
+      cov_15idckumoh().s[131]++;
       this._element.setAttribute('role', 'dialog');
-
-      cov_1bxzoyh6ou().s[132]++;
-
-      if ((cov_1bxzoyh6ou().b[20][0]++, $__default["default"](this._dialog).hasClass(CLASS_NAME_SCROLLABLE)) && (cov_1bxzoyh6ou().b[20][1]++, modalBody)) {
-        cov_1bxzoyh6ou().b[19][0]++;
-        cov_1bxzoyh6ou().s[133]++;
+      cov_15idckumoh().s[132]++;
+      if ((cov_15idckumoh().b[20][0]++, $__default["default"](this._dialog).hasClass(CLASS_NAME_SCROLLABLE)) && (cov_15idckumoh().b[20][1]++, modalBody)) {
+        cov_15idckumoh().b[19][0]++;
+        cov_15idckumoh().s[133]++;
         modalBody.scrollTop = 0;
       } else {
-        cov_1bxzoyh6ou().b[19][1]++;
-        cov_1bxzoyh6ou().s[134]++;
+        cov_15idckumoh().b[19][1]++;
+        cov_15idckumoh().s[134]++;
         this._element.scrollTop = 0;
       }
-
-      cov_1bxzoyh6ou().s[135]++;
-
+      cov_15idckumoh().s[135]++;
       if (transition) {
-        cov_1bxzoyh6ou().b[21][0]++;
-        cov_1bxzoyh6ou().s[136]++;
+        cov_15idckumoh().b[21][0]++;
+        cov_15idckumoh().s[136]++;
         Util__default["default"].reflow(this._element);
       } else {
-        cov_1bxzoyh6ou().b[21][1]++;
+        cov_15idckumoh().b[21][1]++;
       }
-
-      cov_1bxzoyh6ou().s[137]++;
+      cov_15idckumoh().s[137]++;
       $__default["default"](this._element).addClass(CLASS_NAME_SHOW);
-      cov_1bxzoyh6ou().s[138]++;
-
+      cov_15idckumoh().s[138]++;
       if (this._config.focus) {
-        cov_1bxzoyh6ou().b[22][0]++;
-        cov_1bxzoyh6ou().s[139]++;
-
+        cov_15idckumoh().b[22][0]++;
+        cov_15idckumoh().s[139]++;
         this._enforceFocus();
       } else {
-        cov_1bxzoyh6ou().b[22][1]++;
+        cov_15idckumoh().b[22][1]++;
       }
-
-      var shownEvent = (cov_1bxzoyh6ou().s[140]++, $__default["default"].Event(EVENT_SHOWN, {
+      var shownEvent = (cov_15idckumoh().s[140]++, $__default["default"].Event(EVENT_SHOWN, {
         relatedTarget: relatedTarget
       }));
-      cov_1bxzoyh6ou().s[141]++;
-
+      cov_15idckumoh().s[141]++;
       var transitionComplete = function transitionComplete() {
-        cov_1bxzoyh6ou().f[19]++;
-        cov_1bxzoyh6ou().s[142]++;
-
+        cov_15idckumoh().f[19]++;
+        cov_15idckumoh().s[142]++;
         if (_this4._config.focus) {
-          cov_1bxzoyh6ou().b[23][0]++;
-          cov_1bxzoyh6ou().s[143]++;
-
+          cov_15idckumoh().b[23][0]++;
+          cov_15idckumoh().s[143]++;
           _this4._element.focus();
         } else {
-          cov_1bxzoyh6ou().b[23][1]++;
+          cov_15idckumoh().b[23][1]++;
         }
-
-        cov_1bxzoyh6ou().s[144]++;
+        cov_15idckumoh().s[144]++;
         _this4._isTransitioning = false;
-        cov_1bxzoyh6ou().s[145]++;
+        cov_15idckumoh().s[145]++;
         $__default["default"](_this4._element).trigger(shownEvent);
       };
-
-      cov_1bxzoyh6ou().s[146]++;
-
+      cov_15idckumoh().s[146]++;
       if (transition) {
-        cov_1bxzoyh6ou().b[24][0]++;
-        var transitionDuration = (cov_1bxzoyh6ou().s[147]++, Util__default["default"].getTransitionDurationFromElement(this._dialog));
-        cov_1bxzoyh6ou().s[148]++;
+        cov_15idckumoh().b[24][0]++;
+        var transitionDuration = (cov_15idckumoh().s[147]++, Util__default["default"].getTransitionDurationFromElement(this._dialog));
+        cov_15idckumoh().s[148]++;
         $__default["default"](this._dialog).one(Util__default["default"].TRANSITION_END, transitionComplete).emulateTransitionEnd(transitionDuration);
       } else {
-        cov_1bxzoyh6ou().b[24][1]++;
-        cov_1bxzoyh6ou().s[149]++;
+        cov_15idckumoh().b[24][1]++;
+        cov_15idckumoh().s[149]++;
         transitionComplete();
       }
     };
-
     _proto._enforceFocus = function _enforceFocus() {
       var _this5 = this;
-
-      cov_1bxzoyh6ou().f[20]++;
-      cov_1bxzoyh6ou().s[150]++;
+      cov_15idckumoh().f[20]++;
+      cov_15idckumoh().s[150]++;
       $__default["default"](document).off(EVENT_FOCUSIN) // Guard against infinite focus loop
       .on(EVENT_FOCUSIN, function (event) {
-        cov_1bxzoyh6ou().f[21]++;
-        cov_1bxzoyh6ou().s[151]++;
-
-        if ((cov_1bxzoyh6ou().b[26][0]++, document !== event.target) && (cov_1bxzoyh6ou().b[26][1]++, _this5._element !== event.target) && (cov_1bxzoyh6ou().b[26][2]++, $__default["default"](_this5._element).has(event.target).length === 0)) {
-          cov_1bxzoyh6ou().b[25][0]++;
-          cov_1bxzoyh6ou().s[152]++;
-
+        cov_15idckumoh().f[21]++;
+        cov_15idckumoh().s[151]++;
+        if ((cov_15idckumoh().b[26][0]++, document !== event.target) && (cov_15idckumoh().b[26][1]++, _this5._element !== event.target) && (cov_15idckumoh().b[26][2]++, $__default["default"](_this5._element).has(event.target).length === 0)) {
+          cov_15idckumoh().b[25][0]++;
+          cov_15idckumoh().s[152]++;
           _this5._element.focus();
         } else {
-          cov_1bxzoyh6ou().b[25][1]++;
+          cov_15idckumoh().b[25][1]++;
         }
       });
     };
-
     _proto._setEscapeEvent = function _setEscapeEvent() {
       var _this6 = this;
-
-      cov_1bxzoyh6ou().f[22]++;
-      cov_1bxzoyh6ou().s[153]++;
-
+      cov_15idckumoh().f[22]++;
+      cov_15idckumoh().s[153]++;
       if (this._isShown) {
-        cov_1bxzoyh6ou().b[27][0]++;
-        cov_1bxzoyh6ou().s[154]++;
+        cov_15idckumoh().b[27][0]++;
+        cov_15idckumoh().s[154]++;
         $__default["default"](this._element).on(EVENT_KEYDOWN_DISMISS, function (event) {
-          cov_1bxzoyh6ou().f[23]++;
-          cov_1bxzoyh6ou().s[155]++;
-
-          if ((cov_1bxzoyh6ou().b[29][0]++, _this6._config.keyboard) && (cov_1bxzoyh6ou().b[29][1]++, event.which === ESCAPE_KEYCODE)) {
-            cov_1bxzoyh6ou().b[28][0]++;
-            cov_1bxzoyh6ou().s[156]++;
+          cov_15idckumoh().f[23]++;
+          cov_15idckumoh().s[155]++;
+          if ((cov_15idckumoh().b[29][0]++, _this6._config.keyboard) && (cov_15idckumoh().b[29][1]++, event.which === ESCAPE_KEYCODE)) {
+            cov_15idckumoh().b[28][0]++;
+            cov_15idckumoh().s[156]++;
             event.preventDefault();
-            cov_1bxzoyh6ou().s[157]++;
-
+            cov_15idckumoh().s[157]++;
             _this6.hide();
           } else {
-            cov_1bxzoyh6ou().b[28][1]++;
-            cov_1bxzoyh6ou().s[158]++;
-
-            if ((cov_1bxzoyh6ou().b[31][0]++, !_this6._config.keyboard) && (cov_1bxzoyh6ou().b[31][1]++, event.which === ESCAPE_KEYCODE)) {
-              cov_1bxzoyh6ou().b[30][0]++;
-              cov_1bxzoyh6ou().s[159]++;
-
+            cov_15idckumoh().b[28][1]++;
+            cov_15idckumoh().s[158]++;
+            if ((cov_15idckumoh().b[31][0]++, !_this6._config.keyboard) && (cov_15idckumoh().b[31][1]++, event.which === ESCAPE_KEYCODE)) {
+              cov_15idckumoh().b[30][0]++;
+              cov_15idckumoh().s[159]++;
               _this6._triggerBackdropTransition();
             } else {
-              cov_1bxzoyh6ou().b[30][1]++;
+              cov_15idckumoh().b[30][1]++;
             }
           }
         });
       } else {
-        cov_1bxzoyh6ou().b[27][1]++;
-        cov_1bxzoyh6ou().s[160]++;
-
+        cov_15idckumoh().b[27][1]++;
+        cov_15idckumoh().s[160]++;
         if (!this._isShown) {
-          cov_1bxzoyh6ou().b[32][0]++;
-          cov_1bxzoyh6ou().s[161]++;
+          cov_15idckumoh().b[32][0]++;
+          cov_15idckumoh().s[161]++;
           $__default["default"](this._element).off(EVENT_KEYDOWN_DISMISS);
         } else {
-          cov_1bxzoyh6ou().b[32][1]++;
+          cov_15idckumoh().b[32][1]++;
         }
       }
     };
-
     _proto._setResizeEvent = function _setResizeEvent() {
       var _this7 = this;
-
-      cov_1bxzoyh6ou().f[24]++;
-      cov_1bxzoyh6ou().s[162]++;
-
+      cov_15idckumoh().f[24]++;
+      cov_15idckumoh().s[162]++;
       if (this._isShown) {
-        cov_1bxzoyh6ou().b[33][0]++;
-        cov_1bxzoyh6ou().s[163]++;
+        cov_15idckumoh().b[33][0]++;
+        cov_15idckumoh().s[163]++;
         $__default["default"](window).on(EVENT_RESIZE, function (event) {
-          cov_1bxzoyh6ou().f[25]++;
-          cov_1bxzoyh6ou().s[164]++;
+          cov_15idckumoh().f[25]++;
+          cov_15idckumoh().s[164]++;
           return _this7.handleUpdate(event);
         });
       } else {
-        cov_1bxzoyh6ou().b[33][1]++;
-        cov_1bxzoyh6ou().s[165]++;
+        cov_15idckumoh().b[33][1]++;
+        cov_15idckumoh().s[165]++;
         $__default["default"](window).off(EVENT_RESIZE);
       }
     };
-
     _proto._hideModal = function _hideModal() {
       var _this8 = this;
-
-      cov_1bxzoyh6ou().f[26]++;
-      cov_1bxzoyh6ou().s[166]++;
+      cov_15idckumoh().f[26]++;
+      cov_15idckumoh().s[166]++;
       this._element.style.display = 'none';
-      cov_1bxzoyh6ou().s[167]++;
-
+      cov_15idckumoh().s[167]++;
       this._element.setAttribute('aria-hidden', true);
-
-      cov_1bxzoyh6ou().s[168]++;
-
+      cov_15idckumoh().s[168]++;
       this._element.removeAttribute('aria-modal');
-
-      cov_1bxzoyh6ou().s[169]++;
-
+      cov_15idckumoh().s[169]++;
       this._element.removeAttribute('role');
-
-      cov_1bxzoyh6ou().s[170]++;
+      cov_15idckumoh().s[170]++;
       this._isTransitioning = false;
-      cov_1bxzoyh6ou().s[171]++;
-
+      cov_15idckumoh().s[171]++;
       this._showBackdrop(function () {
-        cov_1bxzoyh6ou().f[27]++;
-        cov_1bxzoyh6ou().s[172]++;
+        cov_15idckumoh().f[27]++;
+        cov_15idckumoh().s[172]++;
         $__default["default"](document.body).removeClass(CLASS_NAME_OPEN);
-        cov_1bxzoyh6ou().s[173]++;
-
+        cov_15idckumoh().s[173]++;
         _this8._resetAdjustments();
-
-        cov_1bxzoyh6ou().s[174]++;
-
+        cov_15idckumoh().s[174]++;
         _this8._resetScrollbar();
-
-        cov_1bxzoyh6ou().s[175]++;
+        cov_15idckumoh().s[175]++;
         $__default["default"](_this8._element).trigger(EVENT_HIDDEN);
       });
     };
-
     _proto._removeBackdrop = function _removeBackdrop() {
-      cov_1bxzoyh6ou().f[28]++;
-      cov_1bxzoyh6ou().s[176]++;
-
+      cov_15idckumoh().f[28]++;
+      cov_15idckumoh().s[176]++;
       if (this._backdrop) {
-        cov_1bxzoyh6ou().b[34][0]++;
-        cov_1bxzoyh6ou().s[177]++;
+        cov_15idckumoh().b[34][0]++;
+        cov_15idckumoh().s[177]++;
         $__default["default"](this._backdrop).remove();
-        cov_1bxzoyh6ou().s[178]++;
+        cov_15idckumoh().s[178]++;
         this._backdrop = null;
       } else {
-        cov_1bxzoyh6ou().b[34][1]++;
+        cov_15idckumoh().b[34][1]++;
       }
     };
-
     _proto._showBackdrop = function _showBackdrop(callback) {
       var _this9 = this;
-
-      cov_1bxzoyh6ou().f[29]++;
-      var animate = (cov_1bxzoyh6ou().s[179]++, $__default["default"](this._element).hasClass(CLASS_NAME_FADE) ? (cov_1bxzoyh6ou().b[35][0]++, CLASS_NAME_FADE) : (cov_1bxzoyh6ou().b[35][1]++, ''));
-      cov_1bxzoyh6ou().s[180]++;
-
-      if ((cov_1bxzoyh6ou().b[37][0]++, this._isShown) && (cov_1bxzoyh6ou().b[37][1]++, this._config.backdrop)) {
-        cov_1bxzoyh6ou().b[36][0]++;
-        cov_1bxzoyh6ou().s[181]++;
+      cov_15idckumoh().f[29]++;
+      var animate = (cov_15idckumoh().s[179]++, $__default["default"](this._element).hasClass(CLASS_NAME_FADE) ? (cov_15idckumoh().b[35][0]++, CLASS_NAME_FADE) : (cov_15idckumoh().b[35][1]++, ''));
+      cov_15idckumoh().s[180]++;
+      if ((cov_15idckumoh().b[37][0]++, this._isShown) && (cov_15idckumoh().b[37][1]++, this._config.backdrop)) {
+        cov_15idckumoh().b[36][0]++;
+        cov_15idckumoh().s[181]++;
         this._backdrop = document.createElement('div');
-        cov_1bxzoyh6ou().s[182]++;
+        cov_15idckumoh().s[182]++;
         this._backdrop.className = CLASS_NAME_BACKDROP;
-        cov_1bxzoyh6ou().s[183]++;
-
+        cov_15idckumoh().s[183]++;
         if (animate) {
-          cov_1bxzoyh6ou().b[38][0]++;
-          cov_1bxzoyh6ou().s[184]++;
-
+          cov_15idckumoh().b[38][0]++;
+          cov_15idckumoh().s[184]++;
           this._backdrop.classList.add(animate);
         } else {
-          cov_1bxzoyh6ou().b[38][1]++;
+          cov_15idckumoh().b[38][1]++;
         }
-
-        cov_1bxzoyh6ou().s[185]++;
+        cov_15idckumoh().s[185]++;
         $__default["default"](this._backdrop).appendTo(document.body);
-        cov_1bxzoyh6ou().s[186]++;
+        cov_15idckumoh().s[186]++;
         $__default["default"](this._element).on(EVENT_CLICK_DISMISS, function (event) {
-          cov_1bxzoyh6ou().f[30]++;
-          cov_1bxzoyh6ou().s[187]++;
-
+          cov_15idckumoh().f[30]++;
+          cov_15idckumoh().s[187]++;
           if (_this9._ignoreBackdropClick) {
-            cov_1bxzoyh6ou().b[39][0]++;
-            cov_1bxzoyh6ou().s[188]++;
+            cov_15idckumoh().b[39][0]++;
+            cov_15idckumoh().s[188]++;
             _this9._ignoreBackdropClick = false;
-            cov_1bxzoyh6ou().s[189]++;
+            cov_15idckumoh().s[189]++;
             return;
           } else {
-            cov_1bxzoyh6ou().b[39][1]++;
+            cov_15idckumoh().b[39][1]++;
           }
-
-          cov_1bxzoyh6ou().s[190]++;
-
+          cov_15idckumoh().s[190]++;
           if (event.target !== event.currentTarget) {
-            cov_1bxzoyh6ou().b[40][0]++;
-            cov_1bxzoyh6ou().s[191]++;
+            cov_15idckumoh().b[40][0]++;
+            cov_15idckumoh().s[191]++;
             return;
           } else {
-            cov_1bxzoyh6ou().b[40][1]++;
+            cov_15idckumoh().b[40][1]++;
           }
-
-          cov_1bxzoyh6ou().s[192]++;
-
+          cov_15idckumoh().s[192]++;
           if (_this9._config.backdrop === 'static') {
-            cov_1bxzoyh6ou().b[41][0]++;
-            cov_1bxzoyh6ou().s[193]++;
-
+            cov_15idckumoh().b[41][0]++;
+            cov_15idckumoh().s[193]++;
             _this9._triggerBackdropTransition();
           } else {
-            cov_1bxzoyh6ou().b[41][1]++;
-            cov_1bxzoyh6ou().s[194]++;
-
+            cov_15idckumoh().b[41][1]++;
+            cov_15idckumoh().s[194]++;
             _this9.hide();
           }
         });
-        cov_1bxzoyh6ou().s[195]++;
-
+        cov_15idckumoh().s[195]++;
         if (animate) {
-          cov_1bxzoyh6ou().b[42][0]++;
-          cov_1bxzoyh6ou().s[196]++;
+          cov_15idckumoh().b[42][0]++;
+          cov_15idckumoh().s[196]++;
           Util__default["default"].reflow(this._backdrop);
         } else {
-          cov_1bxzoyh6ou().b[42][1]++;
+          cov_15idckumoh().b[42][1]++;
         }
-
-        cov_1bxzoyh6ou().s[197]++;
+        cov_15idckumoh().s[197]++;
         $__default["default"](this._backdrop).addClass(CLASS_NAME_SHOW);
-        cov_1bxzoyh6ou().s[198]++;
-
+        cov_15idckumoh().s[198]++;
         if (!callback) {
-          cov_1bxzoyh6ou().b[43][0]++;
-          cov_1bxzoyh6ou().s[199]++;
+          cov_15idckumoh().b[43][0]++;
+          cov_15idckumoh().s[199]++;
           return;
         } else {
-          cov_1bxzoyh6ou().b[43][1]++;
+          cov_15idckumoh().b[43][1]++;
         }
-
-        cov_1bxzoyh6ou().s[200]++;
-
+        cov_15idckumoh().s[200]++;
         if (!animate) {
-          cov_1bxzoyh6ou().b[44][0]++;
-          cov_1bxzoyh6ou().s[201]++;
+          cov_15idckumoh().b[44][0]++;
+          cov_15idckumoh().s[201]++;
           callback();
-          cov_1bxzoyh6ou().s[202]++;
+          cov_15idckumoh().s[202]++;
           return;
         } else {
-          cov_1bxzoyh6ou().b[44][1]++;
+          cov_15idckumoh().b[44][1]++;
         }
-
-        var backdropTransitionDuration = (cov_1bxzoyh6ou().s[203]++, Util__default["default"].getTransitionDurationFromElement(this._backdrop));
-        cov_1bxzoyh6ou().s[204]++;
+        var backdropTransitionDuration = (cov_15idckumoh().s[203]++, Util__default["default"].getTransitionDurationFromElement(this._backdrop));
+        cov_15idckumoh().s[204]++;
         $__default["default"](this._backdrop).one(Util__default["default"].TRANSITION_END, callback).emulateTransitionEnd(backdropTransitionDuration);
       } else {
-        cov_1bxzoyh6ou().b[36][1]++;
-        cov_1bxzoyh6ou().s[205]++;
-
-        if ((cov_1bxzoyh6ou().b[46][0]++, !this._isShown) && (cov_1bxzoyh6ou().b[46][1]++, this._backdrop)) {
-          cov_1bxzoyh6ou().b[45][0]++;
-          cov_1bxzoyh6ou().s[206]++;
+        cov_15idckumoh().b[36][1]++;
+        cov_15idckumoh().s[205]++;
+        if ((cov_15idckumoh().b[46][0]++, !this._isShown) && (cov_15idckumoh().b[46][1]++, this._backdrop)) {
+          cov_15idckumoh().b[45][0]++;
+          cov_15idckumoh().s[206]++;
           $__default["default"](this._backdrop).removeClass(CLASS_NAME_SHOW);
-          cov_1bxzoyh6ou().s[207]++;
-
+          cov_15idckumoh().s[207]++;
           var callbackRemove = function callbackRemove() {
-            cov_1bxzoyh6ou().f[31]++;
-            cov_1bxzoyh6ou().s[208]++;
-
+            cov_15idckumoh().f[31]++;
+            cov_15idckumoh().s[208]++;
             _this9._removeBackdrop();
-
-            cov_1bxzoyh6ou().s[209]++;
-
+            cov_15idckumoh().s[209]++;
             if (callback) {
-              cov_1bxzoyh6ou().b[47][0]++;
-              cov_1bxzoyh6ou().s[210]++;
+              cov_15idckumoh().b[47][0]++;
+              cov_15idckumoh().s[210]++;
               callback();
             } else {
-              cov_1bxzoyh6ou().b[47][1]++;
+              cov_15idckumoh().b[47][1]++;
             }
           };
-
-          cov_1bxzoyh6ou().s[211]++;
-
+          cov_15idckumoh().s[211]++;
           if ($__default["default"](this._element).hasClass(CLASS_NAME_FADE)) {
-            cov_1bxzoyh6ou().b[48][0]++;
-
-            var _backdropTransitionDuration = (cov_1bxzoyh6ou().s[212]++, Util__default["default"].getTransitionDurationFromElement(this._backdrop));
-
-            cov_1bxzoyh6ou().s[213]++;
+            cov_15idckumoh().b[48][0]++;
+            var _backdropTransitionDuration = (cov_15idckumoh().s[212]++, Util__default["default"].getTransitionDurationFromElement(this._backdrop));
+            cov_15idckumoh().s[213]++;
             $__default["default"](this._backdrop).one(Util__default["default"].TRANSITION_END, callbackRemove).emulateTransitionEnd(_backdropTransitionDuration);
           } else {
-            cov_1bxzoyh6ou().b[48][1]++;
-            cov_1bxzoyh6ou().s[214]++;
+            cov_15idckumoh().b[48][1]++;
+            cov_15idckumoh().s[214]++;
             callbackRemove();
           }
         } else {
-          cov_1bxzoyh6ou().b[45][1]++;
-          cov_1bxzoyh6ou().s[215]++;
-
+          cov_15idckumoh().b[45][1]++;
+          cov_15idckumoh().s[215]++;
           if (callback) {
-            cov_1bxzoyh6ou().b[49][0]++;
-            cov_1bxzoyh6ou().s[216]++;
+            cov_15idckumoh().b[49][0]++;
+            cov_15idckumoh().s[216]++;
             callback();
           } else {
-            cov_1bxzoyh6ou().b[49][1]++;
+            cov_15idckumoh().b[49][1]++;
           }
         }
       }
-    } // ----------------------------------------------------------------------
+    }
+
+    // ----------------------------------------------------------------------
     // the following methods are used to handle overflowing modals
     // todo (fat): these should probably be refactored out of modal.js
     // ----------------------------------------------------------------------
     ;
-
     _proto._adjustDialog = function _adjustDialog() {
-      cov_1bxzoyh6ou().f[32]++;
-      var isModalOverflowing = (cov_1bxzoyh6ou().s[217]++, this._element.scrollHeight > document.documentElement.clientHeight);
-      cov_1bxzoyh6ou().s[218]++;
-
-      if ((cov_1bxzoyh6ou().b[51][0]++, !this._isBodyOverflowing) && (cov_1bxzoyh6ou().b[51][1]++, isModalOverflowing)) {
-        cov_1bxzoyh6ou().b[50][0]++;
-        cov_1bxzoyh6ou().s[219]++;
+      cov_15idckumoh().f[32]++;
+      var isModalOverflowing = (cov_15idckumoh().s[217]++, this._element.scrollHeight > document.documentElement.clientHeight);
+      cov_15idckumoh().s[218]++;
+      if ((cov_15idckumoh().b[51][0]++, !this._isBodyOverflowing) && (cov_15idckumoh().b[51][1]++, isModalOverflowing)) {
+        cov_15idckumoh().b[50][0]++;
+        cov_15idckumoh().s[219]++;
         this._element.style.paddingLeft = this._scrollbarWidth + "px";
       } else {
-        cov_1bxzoyh6ou().b[50][1]++;
+        cov_15idckumoh().b[50][1]++;
       }
-
-      cov_1bxzoyh6ou().s[220]++;
-
-      if ((cov_1bxzoyh6ou().b[53][0]++, this._isBodyOverflowing) && (cov_1bxzoyh6ou().b[53][1]++, !isModalOverflowing)) {
-        cov_1bxzoyh6ou().b[52][0]++;
-        cov_1bxzoyh6ou().s[221]++;
+      cov_15idckumoh().s[220]++;
+      if ((cov_15idckumoh().b[53][0]++, this._isBodyOverflowing) && (cov_15idckumoh().b[53][1]++, !isModalOverflowing)) {
+        cov_15idckumoh().b[52][0]++;
+        cov_15idckumoh().s[221]++;
         this._element.style.paddingRight = this._scrollbarWidth + "px";
       } else {
-        cov_1bxzoyh6ou().b[52][1]++;
+        cov_15idckumoh().b[52][1]++;
       }
     };
-
     _proto._resetAdjustments = function _resetAdjustments() {
-      cov_1bxzoyh6ou().f[33]++;
-      cov_1bxzoyh6ou().s[222]++;
+      cov_15idckumoh().f[33]++;
+      cov_15idckumoh().s[222]++;
       this._element.style.paddingLeft = '';
-      cov_1bxzoyh6ou().s[223]++;
+      cov_15idckumoh().s[223]++;
       this._element.style.paddingRight = '';
     };
-
     _proto._checkScrollbar = function _checkScrollbar() {
-      cov_1bxzoyh6ou().f[34]++;
-      var rect = (cov_1bxzoyh6ou().s[224]++, document.body.getBoundingClientRect());
-      cov_1bxzoyh6ou().s[225]++;
+      cov_15idckumoh().f[34]++;
+      var rect = (cov_15idckumoh().s[224]++, document.body.getBoundingClientRect());
+      cov_15idckumoh().s[225]++;
       this._isBodyOverflowing = Math.round(rect.left + rect.right) < window.innerWidth;
-      cov_1bxzoyh6ou().s[226]++;
+      cov_15idckumoh().s[226]++;
       this._scrollbarWidth = this._getScrollbarWidth();
     };
-
     _proto._setScrollbar = function _setScrollbar() {
       var _this10 = this;
-
-      cov_1bxzoyh6ou().f[35]++;
-      cov_1bxzoyh6ou().s[227]++;
-
+      cov_15idckumoh().f[35]++;
+      cov_15idckumoh().s[227]++;
       if (this._isBodyOverflowing) {
-        cov_1bxzoyh6ou().b[54][0]++;
+        cov_15idckumoh().b[54][0]++;
         // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
         //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
-        var fixedContent = (cov_1bxzoyh6ou().s[228]++, [].slice.call(document.querySelectorAll(SELECTOR_FIXED_CONTENT)));
-        var stickyContent = (cov_1bxzoyh6ou().s[229]++, [].slice.call(document.querySelectorAll(SELECTOR_STICKY_CONTENT))); // Adjust fixed content padding
+        var fixedContent = (cov_15idckumoh().s[228]++, [].slice.call(document.querySelectorAll(SELECTOR_FIXED_CONTENT)));
+        var stickyContent = (cov_15idckumoh().s[229]++, [].slice.call(document.querySelectorAll(SELECTOR_STICKY_CONTENT)));
 
-        cov_1bxzoyh6ou().s[230]++;
+        // Adjust fixed content padding
+        cov_15idckumoh().s[230]++;
         $__default["default"](fixedContent).each(function (index, element) {
-          cov_1bxzoyh6ou().f[36]++;
-          var actualPadding = (cov_1bxzoyh6ou().s[231]++, element.style.paddingRight);
-          var calculatedPadding = (cov_1bxzoyh6ou().s[232]++, $__default["default"](element).css('padding-right'));
-          cov_1bxzoyh6ou().s[233]++;
+          cov_15idckumoh().f[36]++;
+          var actualPadding = (cov_15idckumoh().s[231]++, element.style.paddingRight);
+          var calculatedPadding = (cov_15idckumoh().s[232]++, $__default["default"](element).css('padding-right'));
+          cov_15idckumoh().s[233]++;
           $__default["default"](element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this10._scrollbarWidth + "px");
-        }); // Adjust sticky content margin
+        });
 
-        cov_1bxzoyh6ou().s[234]++;
+        // Adjust sticky content margin
+        cov_15idckumoh().s[234]++;
         $__default["default"](stickyContent).each(function (index, element) {
-          cov_1bxzoyh6ou().f[37]++;
-          var actualMargin = (cov_1bxzoyh6ou().s[235]++, element.style.marginRight);
-          var calculatedMargin = (cov_1bxzoyh6ou().s[236]++, $__default["default"](element).css('margin-right'));
-          cov_1bxzoyh6ou().s[237]++;
+          cov_15idckumoh().f[37]++;
+          var actualMargin = (cov_15idckumoh().s[235]++, element.style.marginRight);
+          var calculatedMargin = (cov_15idckumoh().s[236]++, $__default["default"](element).css('margin-right'));
+          cov_15idckumoh().s[237]++;
           $__default["default"](element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this10._scrollbarWidth + "px");
-        }); // Adjust body padding
+        });
 
-        var actualPadding = (cov_1bxzoyh6ou().s[238]++, document.body.style.paddingRight);
-        var calculatedPadding = (cov_1bxzoyh6ou().s[239]++, $__default["default"](document.body).css('padding-right'));
-        cov_1bxzoyh6ou().s[240]++;
+        // Adjust body padding
+        var actualPadding = (cov_15idckumoh().s[238]++, document.body.style.paddingRight);
+        var calculatedPadding = (cov_15idckumoh().s[239]++, $__default["default"](document.body).css('padding-right'));
+        cov_15idckumoh().s[240]++;
         $__default["default"](document.body).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + "px");
       } else {
-        cov_1bxzoyh6ou().b[54][1]++;
+        cov_15idckumoh().b[54][1]++;
       }
-
-      cov_1bxzoyh6ou().s[241]++;
+      cov_15idckumoh().s[241]++;
       $__default["default"](document.body).addClass(CLASS_NAME_OPEN);
     };
-
     _proto._resetScrollbar = function _resetScrollbar() {
-      cov_1bxzoyh6ou().f[38]++;
+      cov_15idckumoh().f[38]++;
       // Restore fixed content padding
-      var fixedContent = (cov_1bxzoyh6ou().s[242]++, [].slice.call(document.querySelectorAll(SELECTOR_FIXED_CONTENT)));
-      cov_1bxzoyh6ou().s[243]++;
+      var fixedContent = (cov_15idckumoh().s[242]++, [].slice.call(document.querySelectorAll(SELECTOR_FIXED_CONTENT)));
+      cov_15idckumoh().s[243]++;
       $__default["default"](fixedContent).each(function (index, element) {
-        cov_1bxzoyh6ou().f[39]++;
-        var padding = (cov_1bxzoyh6ou().s[244]++, $__default["default"](element).data('padding-right'));
-        cov_1bxzoyh6ou().s[245]++;
+        cov_15idckumoh().f[39]++;
+        var padding = (cov_15idckumoh().s[244]++, $__default["default"](element).data('padding-right'));
+        cov_15idckumoh().s[245]++;
         $__default["default"](element).removeData('padding-right');
-        cov_1bxzoyh6ou().s[246]++;
-        element.style.paddingRight = padding ? (cov_1bxzoyh6ou().b[55][0]++, padding) : (cov_1bxzoyh6ou().b[55][1]++, '');
-      }); // Restore sticky content
+        cov_15idckumoh().s[246]++;
+        element.style.paddingRight = padding ? (cov_15idckumoh().b[55][0]++, padding) : (cov_15idckumoh().b[55][1]++, '');
+      });
 
-      var elements = (cov_1bxzoyh6ou().s[247]++, [].slice.call(document.querySelectorAll("" + SELECTOR_STICKY_CONTENT)));
-      cov_1bxzoyh6ou().s[248]++;
+      // Restore sticky content
+      var elements = (cov_15idckumoh().s[247]++, [].slice.call(document.querySelectorAll("" + SELECTOR_STICKY_CONTENT)));
+      cov_15idckumoh().s[248]++;
       $__default["default"](elements).each(function (index, element) {
-        cov_1bxzoyh6ou().f[40]++;
-        var margin = (cov_1bxzoyh6ou().s[249]++, $__default["default"](element).data('margin-right'));
-        cov_1bxzoyh6ou().s[250]++;
-
+        cov_15idckumoh().f[40]++;
+        var margin = (cov_15idckumoh().s[249]++, $__default["default"](element).data('margin-right'));
+        cov_15idckumoh().s[250]++;
         if (typeof margin !== 'undefined') {
-          cov_1bxzoyh6ou().b[56][0]++;
-          cov_1bxzoyh6ou().s[251]++;
+          cov_15idckumoh().b[56][0]++;
+          cov_15idckumoh().s[251]++;
           $__default["default"](element).css('margin-right', margin).removeData('margin-right');
         } else {
-          cov_1bxzoyh6ou().b[56][1]++;
+          cov_15idckumoh().b[56][1]++;
         }
-      }); // Restore body padding
+      });
 
-      var padding = (cov_1bxzoyh6ou().s[252]++, $__default["default"](document.body).data('padding-right'));
-      cov_1bxzoyh6ou().s[253]++;
+      // Restore body padding
+      var padding = (cov_15idckumoh().s[252]++, $__default["default"](document.body).data('padding-right'));
+      cov_15idckumoh().s[253]++;
       $__default["default"](document.body).removeData('padding-right');
-      cov_1bxzoyh6ou().s[254]++;
-      document.body.style.paddingRight = padding ? (cov_1bxzoyh6ou().b[57][0]++, padding) : (cov_1bxzoyh6ou().b[57][1]++, '');
+      cov_15idckumoh().s[254]++;
+      document.body.style.paddingRight = padding ? (cov_15idckumoh().b[57][0]++, padding) : (cov_15idckumoh().b[57][1]++, '');
     };
-
     _proto._getScrollbarWidth = function _getScrollbarWidth() {
-      cov_1bxzoyh6ou().f[41]++;
+      cov_15idckumoh().f[41]++;
       // thx d.walsh
-      var scrollDiv = (cov_1bxzoyh6ou().s[255]++, document.createElement('div'));
-      cov_1bxzoyh6ou().s[256]++;
+      var scrollDiv = (cov_15idckumoh().s[255]++, document.createElement('div'));
+      cov_15idckumoh().s[256]++;
       scrollDiv.className = CLASS_NAME_SCROLLBAR_MEASURER;
-      cov_1bxzoyh6ou().s[257]++;
+      cov_15idckumoh().s[257]++;
       document.body.appendChild(scrollDiv);
-      var scrollbarWidth = (cov_1bxzoyh6ou().s[258]++, scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth);
-      cov_1bxzoyh6ou().s[259]++;
+      var scrollbarWidth = (cov_15idckumoh().s[258]++, scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth);
+      cov_15idckumoh().s[259]++;
       document.body.removeChild(scrollDiv);
-      cov_1bxzoyh6ou().s[260]++;
+      cov_15idckumoh().s[260]++;
       return scrollbarWidth;
-    } // Static
+    }
+
+    // Static
     ;
-
     Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
-      cov_1bxzoyh6ou().f[42]++;
-      cov_1bxzoyh6ou().s[261]++;
+      cov_15idckumoh().f[42]++;
+      cov_15idckumoh().s[261]++;
       return this.each(function () {
-        cov_1bxzoyh6ou().f[43]++;
-        var data = (cov_1bxzoyh6ou().s[262]++, $__default["default"](this).data(DATA_KEY));
-
-        var _config = (cov_1bxzoyh6ou().s[263]++, _extends({}, Default, $__default["default"](this).data(), (cov_1bxzoyh6ou().b[59][0]++, typeof config === 'object') && (cov_1bxzoyh6ou().b[59][1]++, config) ? (cov_1bxzoyh6ou().b[58][0]++, config) : (cov_1bxzoyh6ou().b[58][1]++, {})));
-
-        cov_1bxzoyh6ou().s[264]++;
-
+        cov_15idckumoh().f[43]++;
+        var data = (cov_15idckumoh().s[262]++, $__default["default"](this).data(DATA_KEY));
+        var _config = (cov_15idckumoh().s[263]++, _extends({}, Default, $__default["default"](this).data(), (cov_15idckumoh().b[59][0]++, typeof config === 'object') && (cov_15idckumoh().b[59][1]++, config) ? (cov_15idckumoh().b[58][0]++, config) : (cov_15idckumoh().b[58][1]++, {})));
+        cov_15idckumoh().s[264]++;
         if (!data) {
-          cov_1bxzoyh6ou().b[60][0]++;
-          cov_1bxzoyh6ou().s[265]++;
+          cov_15idckumoh().b[60][0]++;
+          cov_15idckumoh().s[265]++;
           data = new Modal(this, _config);
-          cov_1bxzoyh6ou().s[266]++;
+          cov_15idckumoh().s[266]++;
           $__default["default"](this).data(DATA_KEY, data);
         } else {
-          cov_1bxzoyh6ou().b[60][1]++;
+          cov_15idckumoh().b[60][1]++;
         }
-
-        cov_1bxzoyh6ou().s[267]++;
-
+        cov_15idckumoh().s[267]++;
         if (typeof config === 'string') {
-          cov_1bxzoyh6ou().b[61][0]++;
-          cov_1bxzoyh6ou().s[268]++;
-
+          cov_15idckumoh().b[61][0]++;
+          cov_15idckumoh().s[268]++;
           if (typeof data[config] === 'undefined') {
-            cov_1bxzoyh6ou().b[62][0]++;
-            cov_1bxzoyh6ou().s[269]++;
+            cov_15idckumoh().b[62][0]++;
+            cov_15idckumoh().s[269]++;
             throw new TypeError("No method named \"" + config + "\"");
           } else {
-            cov_1bxzoyh6ou().b[62][1]++;
+            cov_15idckumoh().b[62][1]++;
           }
-
-          cov_1bxzoyh6ou().s[270]++;
+          cov_15idckumoh().s[270]++;
           data[config](relatedTarget);
         } else {
-          cov_1bxzoyh6ou().b[61][1]++;
-          cov_1bxzoyh6ou().s[271]++;
-
+          cov_15idckumoh().b[61][1]++;
+          cov_15idckumoh().s[271]++;
           if (_config.show) {
-            cov_1bxzoyh6ou().b[63][0]++;
-            cov_1bxzoyh6ou().s[272]++;
+            cov_15idckumoh().b[63][0]++;
+            cov_15idckumoh().s[272]++;
             data.show(relatedTarget);
           } else {
-            cov_1bxzoyh6ou().b[63][1]++;
+            cov_15idckumoh().b[63][1]++;
           }
         }
       });
     };
-
-    _createClass(Modal, null, [{
+    return _createClass(Modal, null, [{
       key: "VERSION",
       get: function get() {
-        cov_1bxzoyh6ou().f[1]++;
-        cov_1bxzoyh6ou().s[43]++;
+        cov_15idckumoh().f[1]++;
+        cov_15idckumoh().s[43]++;
         return VERSION;
       }
     }, {
       key: "Default",
       get: function get() {
-        cov_1bxzoyh6ou().f[2]++;
-        cov_1bxzoyh6ou().s[44]++;
+        cov_15idckumoh().f[2]++;
+        cov_15idckumoh().s[44]++;
         return Default;
       }
     }]);
-
-    return Modal;
   }();
   /**
    * Data API implementation
    */
-
-
-  cov_1bxzoyh6ou().s[273]++;
+  cov_15idckumoh().s[273]++;
   $__default["default"](document).on(EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
     var _this11 = this;
-
-    cov_1bxzoyh6ou().f[44]++;
+    cov_15idckumoh().f[44]++;
     var target;
-    var selector = (cov_1bxzoyh6ou().s[274]++, Util__default["default"].getSelectorFromElement(this));
-    cov_1bxzoyh6ou().s[275]++;
-
+    var selector = (cov_15idckumoh().s[274]++, Util__default["default"].getSelectorFromElement(this));
+    cov_15idckumoh().s[275]++;
     if (selector) {
-      cov_1bxzoyh6ou().b[64][0]++;
-      cov_1bxzoyh6ou().s[276]++;
+      cov_15idckumoh().b[64][0]++;
+      cov_15idckumoh().s[276]++;
       target = document.querySelector(selector);
     } else {
-      cov_1bxzoyh6ou().b[64][1]++;
+      cov_15idckumoh().b[64][1]++;
     }
-
-    var config = (cov_1bxzoyh6ou().s[277]++, $__default["default"](target).data(DATA_KEY) ? (cov_1bxzoyh6ou().b[65][0]++, 'toggle') : (cov_1bxzoyh6ou().b[65][1]++, _extends({}, $__default["default"](target).data(), $__default["default"](this).data())));
-    cov_1bxzoyh6ou().s[278]++;
-
-    if ((cov_1bxzoyh6ou().b[67][0]++, this.tagName === 'A') || (cov_1bxzoyh6ou().b[67][1]++, this.tagName === 'AREA')) {
-      cov_1bxzoyh6ou().b[66][0]++;
-      cov_1bxzoyh6ou().s[279]++;
+    var config = (cov_15idckumoh().s[277]++, $__default["default"](target).data(DATA_KEY) ? (cov_15idckumoh().b[65][0]++, 'toggle') : (cov_15idckumoh().b[65][1]++, _extends({}, $__default["default"](target).data(), $__default["default"](this).data())));
+    cov_15idckumoh().s[278]++;
+    if ((cov_15idckumoh().b[67][0]++, this.tagName === 'A') || (cov_15idckumoh().b[67][1]++, this.tagName === 'AREA')) {
+      cov_15idckumoh().b[66][0]++;
+      cov_15idckumoh().s[279]++;
       event.preventDefault();
     } else {
-      cov_1bxzoyh6ou().b[66][1]++;
+      cov_15idckumoh().b[66][1]++;
     }
-
-    var $target = (cov_1bxzoyh6ou().s[280]++, $__default["default"](target).one(EVENT_SHOW, function (showEvent) {
-      cov_1bxzoyh6ou().f[45]++;
-      cov_1bxzoyh6ou().s[281]++;
-
+    var $target = (cov_15idckumoh().s[280]++, $__default["default"](target).one(EVENT_SHOW, function (showEvent) {
+      cov_15idckumoh().f[45]++;
+      cov_15idckumoh().s[281]++;
       if (showEvent.isDefaultPrevented()) {
-        cov_1bxzoyh6ou().b[68][0]++;
-        cov_1bxzoyh6ou().s[282]++;
+        cov_15idckumoh().b[68][0]++;
+        cov_15idckumoh().s[282]++;
         // Only register focus restorer if modal will actually get shown
         return;
       } else {
-        cov_1bxzoyh6ou().b[68][1]++;
+        cov_15idckumoh().b[68][1]++;
       }
-
-      cov_1bxzoyh6ou().s[283]++;
+      cov_15idckumoh().s[283]++;
       $target.one(EVENT_HIDDEN, function () {
-        cov_1bxzoyh6ou().f[46]++;
-        cov_1bxzoyh6ou().s[284]++;
-
+        cov_15idckumoh().f[46]++;
+        cov_15idckumoh().s[284]++;
         if ($__default["default"](_this11).is(':visible')) {
-          cov_1bxzoyh6ou().b[69][0]++;
-          cov_1bxzoyh6ou().s[285]++;
-
+          cov_15idckumoh().b[69][0]++;
+          cov_15idckumoh().s[285]++;
           _this11.focus();
         } else {
-          cov_1bxzoyh6ou().b[69][1]++;
+          cov_15idckumoh().b[69][1]++;
         }
       });
     }));
-    cov_1bxzoyh6ou().s[286]++;
-
+    cov_15idckumoh().s[286]++;
     Modal._jQueryInterface.call($__default["default"](target), config, this);
   });
+
   /**
    * jQuery
    */
-
-  cov_1bxzoyh6ou().s[287]++;
+  cov_15idckumoh().s[287]++;
   $__default["default"].fn[NAME] = Modal._jQueryInterface;
-  cov_1bxzoyh6ou().s[288]++;
+  cov_15idckumoh().s[288]++;
   $__default["default"].fn[NAME].Constructor = Modal;
-  cov_1bxzoyh6ou().s[289]++;
-
+  cov_15idckumoh().s[289]++;
   $__default["default"].fn[NAME].noConflict = function () {
-    cov_1bxzoyh6ou().f[47]++;
-    cov_1bxzoyh6ou().s[290]++;
+    cov_15idckumoh().f[47]++;
+    cov_15idckumoh().s[290]++;
     $__default["default"].fn[NAME] = JQUERY_NO_CONFLICT;
-    cov_1bxzoyh6ou().s[291]++;
+    cov_15idckumoh().s[291]++;
     return Modal._jQueryInterface;
   };
 

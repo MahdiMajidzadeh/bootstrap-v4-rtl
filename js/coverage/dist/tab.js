@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap tab.js v4.6.2-1 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2022 https://github.com/MahdiMajidzadeh
+  * Bootstrap tab.js v4.6.2-2 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2025 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -14,32 +14,39 @@
   var $__default = /*#__PURE__*/_interopDefaultLegacy($);
   var Util__default = /*#__PURE__*/_interopDefaultLegacy(Util);
 
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
+  function _defineProperties(e, r) {
+    for (var t = 0; t < r.length; t++) {
+      var o = r[t];
+      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o);
     }
   }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    Object.defineProperty(Constructor, "prototype", {
-      writable: false
-    });
-    return Constructor;
+  function _createClass(e, r, t) {
+    return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+      writable: !1
+    }), e;
+  }
+  function _toPrimitive(t, r) {
+    if ("object" != typeof t || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+      var i = e.call(t, r || "default");
+      if ("object" != typeof i) return i;
+      throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return ("string" === r ? String : Number)(t);
+  }
+  function _toPropertyKey(t) {
+    var i = _toPrimitive(t, "string");
+    return "symbol" == typeof i ? i : i + "";
   }
 
-  function cov_1p6jraxhcd() {
-    var path = "C:\\Users\\mmajidzade\\Documents\\GitHub\\bootstrap-v4-rtl\\js\\src\\tab.js";
-    var hash = "2261fb9511539bc503068624fc25f5a3b4d3b839";
+  function cov_xw4uq3pbn() {
+    var path = "/Users/mahdi/Documents/app/bootstrap-v4-rtl/js/src/tab.js";
+    var hash = "aa5aca7413f3bb855b9c796697091ffd5a3d5906";
     var global = new Function("return this")();
     var gcv = "__coverage__";
     var coverageData = {
-      path: "C:\\Users\\mmajidzade\\Documents\\GitHub\\bootstrap-v4-rtl\\js\\src\\tab.js",
+      path: "/Users/mahdi/Documents/app/bootstrap-v4-rtl/js/src/tab.js",
       statementMap: {
         "0": {
           start: {
@@ -2528,390 +2535,338 @@
         "28": [0, 0]
       },
       _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-      hash: "2261fb9511539bc503068624fc25f5a3b4d3b839"
+      hash: "aa5aca7413f3bb855b9c796697091ffd5a3d5906"
     };
     var coverage = global[gcv] || (global[gcv] = {});
-
     if (!coverage[path] || coverage[path].hash !== hash) {
       coverage[path] = coverageData;
     }
-
     var actualCoverage = coverage[path];
     {
       // @ts-ignore
-      cov_1p6jraxhcd = function () {
+      cov_xw4uq3pbn = function () {
         return actualCoverage;
       };
     }
     return actualCoverage;
   }
+  cov_xw4uq3pbn();
 
-  cov_1p6jraxhcd();
   /**
    * Constants
    */
 
-  var NAME = (cov_1p6jraxhcd().s[0]++, 'tab');
-  var VERSION = (cov_1p6jraxhcd().s[1]++, '4.6.2');
-  var DATA_KEY = (cov_1p6jraxhcd().s[2]++, 'bs.tab');
-  var EVENT_KEY = (cov_1p6jraxhcd().s[3]++, "." + DATA_KEY);
-  var DATA_API_KEY = (cov_1p6jraxhcd().s[4]++, '.data-api');
-  var JQUERY_NO_CONFLICT = (cov_1p6jraxhcd().s[5]++, $__default["default"].fn[NAME]);
-  var CLASS_NAME_DROPDOWN_MENU = (cov_1p6jraxhcd().s[6]++, 'dropdown-menu');
-  var CLASS_NAME_ACTIVE = (cov_1p6jraxhcd().s[7]++, 'active');
-  var CLASS_NAME_DISABLED = (cov_1p6jraxhcd().s[8]++, 'disabled');
-  var CLASS_NAME_FADE = (cov_1p6jraxhcd().s[9]++, 'fade');
-  var CLASS_NAME_SHOW = (cov_1p6jraxhcd().s[10]++, 'show');
-  var EVENT_HIDE = (cov_1p6jraxhcd().s[11]++, "hide" + EVENT_KEY);
-  var EVENT_HIDDEN = (cov_1p6jraxhcd().s[12]++, "hidden" + EVENT_KEY);
-  var EVENT_SHOW = (cov_1p6jraxhcd().s[13]++, "show" + EVENT_KEY);
-  var EVENT_SHOWN = (cov_1p6jraxhcd().s[14]++, "shown" + EVENT_KEY);
-  var EVENT_CLICK_DATA_API = (cov_1p6jraxhcd().s[15]++, "click" + EVENT_KEY + DATA_API_KEY);
-  var SELECTOR_DROPDOWN = (cov_1p6jraxhcd().s[16]++, '.dropdown');
-  var SELECTOR_NAV_LIST_GROUP = (cov_1p6jraxhcd().s[17]++, '.nav, .list-group');
-  var SELECTOR_ACTIVE = (cov_1p6jraxhcd().s[18]++, '.active');
-  var SELECTOR_ACTIVE_UL = (cov_1p6jraxhcd().s[19]++, '> li > .active');
-  var SELECTOR_DATA_TOGGLE = (cov_1p6jraxhcd().s[20]++, '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]');
-  var SELECTOR_DROPDOWN_TOGGLE = (cov_1p6jraxhcd().s[21]++, '.dropdown-toggle');
-  var SELECTOR_DROPDOWN_ACTIVE_CHILD = (cov_1p6jraxhcd().s[22]++, '> .dropdown-menu .active');
+  var NAME = (cov_xw4uq3pbn().s[0]++, 'tab');
+  var VERSION = (cov_xw4uq3pbn().s[1]++, '4.6.2');
+  var DATA_KEY = (cov_xw4uq3pbn().s[2]++, 'bs.tab');
+  var EVENT_KEY = (cov_xw4uq3pbn().s[3]++, "." + DATA_KEY);
+  var DATA_API_KEY = (cov_xw4uq3pbn().s[4]++, '.data-api');
+  var JQUERY_NO_CONFLICT = (cov_xw4uq3pbn().s[5]++, $__default["default"].fn[NAME]);
+  var CLASS_NAME_DROPDOWN_MENU = (cov_xw4uq3pbn().s[6]++, 'dropdown-menu');
+  var CLASS_NAME_ACTIVE = (cov_xw4uq3pbn().s[7]++, 'active');
+  var CLASS_NAME_DISABLED = (cov_xw4uq3pbn().s[8]++, 'disabled');
+  var CLASS_NAME_FADE = (cov_xw4uq3pbn().s[9]++, 'fade');
+  var CLASS_NAME_SHOW = (cov_xw4uq3pbn().s[10]++, 'show');
+  var EVENT_HIDE = (cov_xw4uq3pbn().s[11]++, "hide" + EVENT_KEY);
+  var EVENT_HIDDEN = (cov_xw4uq3pbn().s[12]++, "hidden" + EVENT_KEY);
+  var EVENT_SHOW = (cov_xw4uq3pbn().s[13]++, "show" + EVENT_KEY);
+  var EVENT_SHOWN = (cov_xw4uq3pbn().s[14]++, "shown" + EVENT_KEY);
+  var EVENT_CLICK_DATA_API = (cov_xw4uq3pbn().s[15]++, "click" + EVENT_KEY + DATA_API_KEY);
+  var SELECTOR_DROPDOWN = (cov_xw4uq3pbn().s[16]++, '.dropdown');
+  var SELECTOR_NAV_LIST_GROUP = (cov_xw4uq3pbn().s[17]++, '.nav, .list-group');
+  var SELECTOR_ACTIVE = (cov_xw4uq3pbn().s[18]++, '.active');
+  var SELECTOR_ACTIVE_UL = (cov_xw4uq3pbn().s[19]++, '> li > .active');
+  var SELECTOR_DATA_TOGGLE = (cov_xw4uq3pbn().s[20]++, '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]');
+  var SELECTOR_DROPDOWN_TOGGLE = (cov_xw4uq3pbn().s[21]++, '.dropdown-toggle');
+  var SELECTOR_DROPDOWN_ACTIVE_CHILD = (cov_xw4uq3pbn().s[22]++, '> .dropdown-menu .active');
+
   /**
    * Class definition
    */
-
   var Tab = /*#__PURE__*/function () {
     function Tab(element) {
-      cov_1p6jraxhcd().f[0]++;
-      cov_1p6jraxhcd().s[23]++;
+      cov_xw4uq3pbn().f[0]++;
+      cov_xw4uq3pbn().s[23]++;
       this._element = element;
-    } // Getters
+    }
 
-
+    // Getters
     var _proto = Tab.prototype;
-
     // Public
     _proto.show = function show() {
       var _this = this;
-
-      cov_1p6jraxhcd().f[2]++;
-      cov_1p6jraxhcd().s[25]++;
-
-      if ((cov_1p6jraxhcd().b[1][0]++, this._element.parentNode) && (cov_1p6jraxhcd().b[1][1]++, this._element.parentNode.nodeType === Node.ELEMENT_NODE) && (cov_1p6jraxhcd().b[1][2]++, $__default["default"](this._element).hasClass(CLASS_NAME_ACTIVE)) || (cov_1p6jraxhcd().b[1][3]++, $__default["default"](this._element).hasClass(CLASS_NAME_DISABLED)) || (cov_1p6jraxhcd().b[1][4]++, this._element.hasAttribute('disabled'))) {
-        cov_1p6jraxhcd().b[0][0]++;
-        cov_1p6jraxhcd().s[26]++;
+      cov_xw4uq3pbn().f[2]++;
+      cov_xw4uq3pbn().s[25]++;
+      if ((cov_xw4uq3pbn().b[1][0]++, this._element.parentNode) && (cov_xw4uq3pbn().b[1][1]++, this._element.parentNode.nodeType === Node.ELEMENT_NODE) && (cov_xw4uq3pbn().b[1][2]++, $__default["default"](this._element).hasClass(CLASS_NAME_ACTIVE)) || (cov_xw4uq3pbn().b[1][3]++, $__default["default"](this._element).hasClass(CLASS_NAME_DISABLED)) || (cov_xw4uq3pbn().b[1][4]++, this._element.hasAttribute('disabled'))) {
+        cov_xw4uq3pbn().b[0][0]++;
+        cov_xw4uq3pbn().s[26]++;
         return;
       } else {
-        cov_1p6jraxhcd().b[0][1]++;
+        cov_xw4uq3pbn().b[0][1]++;
       }
-
       var target;
       var previous;
-      var listElement = (cov_1p6jraxhcd().s[27]++, $__default["default"](this._element).closest(SELECTOR_NAV_LIST_GROUP)[0]);
-      var selector = (cov_1p6jraxhcd().s[28]++, Util__default["default"].getSelectorFromElement(this._element));
-      cov_1p6jraxhcd().s[29]++;
-
+      var listElement = (cov_xw4uq3pbn().s[27]++, $__default["default"](this._element).closest(SELECTOR_NAV_LIST_GROUP)[0]);
+      var selector = (cov_xw4uq3pbn().s[28]++, Util__default["default"].getSelectorFromElement(this._element));
+      cov_xw4uq3pbn().s[29]++;
       if (listElement) {
-        cov_1p6jraxhcd().b[2][0]++;
-        var itemSelector = (cov_1p6jraxhcd().s[30]++, (cov_1p6jraxhcd().b[4][0]++, listElement.nodeName === 'UL') || (cov_1p6jraxhcd().b[4][1]++, listElement.nodeName === 'OL') ? (cov_1p6jraxhcd().b[3][0]++, SELECTOR_ACTIVE_UL) : (cov_1p6jraxhcd().b[3][1]++, SELECTOR_ACTIVE));
-        cov_1p6jraxhcd().s[31]++;
+        cov_xw4uq3pbn().b[2][0]++;
+        var itemSelector = (cov_xw4uq3pbn().s[30]++, (cov_xw4uq3pbn().b[4][0]++, listElement.nodeName === 'UL') || (cov_xw4uq3pbn().b[4][1]++, listElement.nodeName === 'OL') ? (cov_xw4uq3pbn().b[3][0]++, SELECTOR_ACTIVE_UL) : (cov_xw4uq3pbn().b[3][1]++, SELECTOR_ACTIVE));
+        cov_xw4uq3pbn().s[31]++;
         previous = $__default["default"].makeArray($__default["default"](listElement).find(itemSelector));
-        cov_1p6jraxhcd().s[32]++;
+        cov_xw4uq3pbn().s[32]++;
         previous = previous[previous.length - 1];
       } else {
-        cov_1p6jraxhcd().b[2][1]++;
+        cov_xw4uq3pbn().b[2][1]++;
       }
-
-      var hideEvent = (cov_1p6jraxhcd().s[33]++, $__default["default"].Event(EVENT_HIDE, {
+      var hideEvent = (cov_xw4uq3pbn().s[33]++, $__default["default"].Event(EVENT_HIDE, {
         relatedTarget: this._element
       }));
-      var showEvent = (cov_1p6jraxhcd().s[34]++, $__default["default"].Event(EVENT_SHOW, {
+      var showEvent = (cov_xw4uq3pbn().s[34]++, $__default["default"].Event(EVENT_SHOW, {
         relatedTarget: previous
       }));
-      cov_1p6jraxhcd().s[35]++;
-
+      cov_xw4uq3pbn().s[35]++;
       if (previous) {
-        cov_1p6jraxhcd().b[5][0]++;
-        cov_1p6jraxhcd().s[36]++;
+        cov_xw4uq3pbn().b[5][0]++;
+        cov_xw4uq3pbn().s[36]++;
         $__default["default"](previous).trigger(hideEvent);
       } else {
-        cov_1p6jraxhcd().b[5][1]++;
+        cov_xw4uq3pbn().b[5][1]++;
       }
-
-      cov_1p6jraxhcd().s[37]++;
+      cov_xw4uq3pbn().s[37]++;
       $__default["default"](this._element).trigger(showEvent);
-      cov_1p6jraxhcd().s[38]++;
-
-      if ((cov_1p6jraxhcd().b[7][0]++, showEvent.isDefaultPrevented()) || (cov_1p6jraxhcd().b[7][1]++, hideEvent.isDefaultPrevented())) {
-        cov_1p6jraxhcd().b[6][0]++;
-        cov_1p6jraxhcd().s[39]++;
+      cov_xw4uq3pbn().s[38]++;
+      if ((cov_xw4uq3pbn().b[7][0]++, showEvent.isDefaultPrevented()) || (cov_xw4uq3pbn().b[7][1]++, hideEvent.isDefaultPrevented())) {
+        cov_xw4uq3pbn().b[6][0]++;
+        cov_xw4uq3pbn().s[39]++;
         return;
       } else {
-        cov_1p6jraxhcd().b[6][1]++;
+        cov_xw4uq3pbn().b[6][1]++;
       }
-
-      cov_1p6jraxhcd().s[40]++;
-
+      cov_xw4uq3pbn().s[40]++;
       if (selector) {
-        cov_1p6jraxhcd().b[8][0]++;
-        cov_1p6jraxhcd().s[41]++;
+        cov_xw4uq3pbn().b[8][0]++;
+        cov_xw4uq3pbn().s[41]++;
         target = document.querySelector(selector);
       } else {
-        cov_1p6jraxhcd().b[8][1]++;
+        cov_xw4uq3pbn().b[8][1]++;
       }
-
-      cov_1p6jraxhcd().s[42]++;
-
+      cov_xw4uq3pbn().s[42]++;
       this._activate(this._element, listElement);
-
-      cov_1p6jraxhcd().s[43]++;
-
+      cov_xw4uq3pbn().s[43]++;
       var complete = function complete() {
-        cov_1p6jraxhcd().f[3]++;
-        var hiddenEvent = (cov_1p6jraxhcd().s[44]++, $__default["default"].Event(EVENT_HIDDEN, {
+        cov_xw4uq3pbn().f[3]++;
+        var hiddenEvent = (cov_xw4uq3pbn().s[44]++, $__default["default"].Event(EVENT_HIDDEN, {
           relatedTarget: _this._element
         }));
-        var shownEvent = (cov_1p6jraxhcd().s[45]++, $__default["default"].Event(EVENT_SHOWN, {
+        var shownEvent = (cov_xw4uq3pbn().s[45]++, $__default["default"].Event(EVENT_SHOWN, {
           relatedTarget: previous
         }));
-        cov_1p6jraxhcd().s[46]++;
+        cov_xw4uq3pbn().s[46]++;
         $__default["default"](previous).trigger(hiddenEvent);
-        cov_1p6jraxhcd().s[47]++;
+        cov_xw4uq3pbn().s[47]++;
         $__default["default"](_this._element).trigger(shownEvent);
       };
-
-      cov_1p6jraxhcd().s[48]++;
-
+      cov_xw4uq3pbn().s[48]++;
       if (target) {
-        cov_1p6jraxhcd().b[9][0]++;
-        cov_1p6jraxhcd().s[49]++;
-
+        cov_xw4uq3pbn().b[9][0]++;
+        cov_xw4uq3pbn().s[49]++;
         this._activate(target, target.parentNode, complete);
       } else {
-        cov_1p6jraxhcd().b[9][1]++;
-        cov_1p6jraxhcd().s[50]++;
+        cov_xw4uq3pbn().b[9][1]++;
+        cov_xw4uq3pbn().s[50]++;
         complete();
       }
     };
-
     _proto.dispose = function dispose() {
-      cov_1p6jraxhcd().f[4]++;
-      cov_1p6jraxhcd().s[51]++;
+      cov_xw4uq3pbn().f[4]++;
+      cov_xw4uq3pbn().s[51]++;
       $__default["default"].removeData(this._element, DATA_KEY);
-      cov_1p6jraxhcd().s[52]++;
+      cov_xw4uq3pbn().s[52]++;
       this._element = null;
-    } // Private
-    ;
+    }
 
+    // Private
+    ;
     _proto._activate = function _activate(element, container, callback) {
       var _this2 = this;
-
-      cov_1p6jraxhcd().f[5]++;
-      var activeElements = (cov_1p6jraxhcd().s[53]++, (cov_1p6jraxhcd().b[11][0]++, container) && ((cov_1p6jraxhcd().b[11][1]++, container.nodeName === 'UL') || (cov_1p6jraxhcd().b[11][2]++, container.nodeName === 'OL')) ? (cov_1p6jraxhcd().b[10][0]++, $__default["default"](container).find(SELECTOR_ACTIVE_UL)) : (cov_1p6jraxhcd().b[10][1]++, $__default["default"](container).children(SELECTOR_ACTIVE)));
-      var active = (cov_1p6jraxhcd().s[54]++, activeElements[0]);
-      var isTransitioning = (cov_1p6jraxhcd().s[55]++, (cov_1p6jraxhcd().b[12][0]++, callback) && (cov_1p6jraxhcd().b[12][1]++, active) && (cov_1p6jraxhcd().b[12][2]++, $__default["default"](active).hasClass(CLASS_NAME_FADE)));
-      cov_1p6jraxhcd().s[56]++;
-
+      cov_xw4uq3pbn().f[5]++;
+      var activeElements = (cov_xw4uq3pbn().s[53]++, (cov_xw4uq3pbn().b[11][0]++, container) && ((cov_xw4uq3pbn().b[11][1]++, container.nodeName === 'UL') || (cov_xw4uq3pbn().b[11][2]++, container.nodeName === 'OL')) ? (cov_xw4uq3pbn().b[10][0]++, $__default["default"](container).find(SELECTOR_ACTIVE_UL)) : (cov_xw4uq3pbn().b[10][1]++, $__default["default"](container).children(SELECTOR_ACTIVE)));
+      var active = (cov_xw4uq3pbn().s[54]++, activeElements[0]);
+      var isTransitioning = (cov_xw4uq3pbn().s[55]++, (cov_xw4uq3pbn().b[12][0]++, callback) && (cov_xw4uq3pbn().b[12][1]++, active) && (cov_xw4uq3pbn().b[12][2]++, $__default["default"](active).hasClass(CLASS_NAME_FADE)));
+      cov_xw4uq3pbn().s[56]++;
       var complete = function complete() {
-        cov_1p6jraxhcd().f[6]++;
-        cov_1p6jraxhcd().s[57]++;
+        cov_xw4uq3pbn().f[6]++;
+        cov_xw4uq3pbn().s[57]++;
         return _this2._transitionComplete(element, active, callback);
       };
-
-      cov_1p6jraxhcd().s[58]++;
-
-      if ((cov_1p6jraxhcd().b[14][0]++, active) && (cov_1p6jraxhcd().b[14][1]++, isTransitioning)) {
-        cov_1p6jraxhcd().b[13][0]++;
-        var transitionDuration = (cov_1p6jraxhcd().s[59]++, Util__default["default"].getTransitionDurationFromElement(active));
-        cov_1p6jraxhcd().s[60]++;
+      cov_xw4uq3pbn().s[58]++;
+      if ((cov_xw4uq3pbn().b[14][0]++, active) && (cov_xw4uq3pbn().b[14][1]++, isTransitioning)) {
+        cov_xw4uq3pbn().b[13][0]++;
+        var transitionDuration = (cov_xw4uq3pbn().s[59]++, Util__default["default"].getTransitionDurationFromElement(active));
+        cov_xw4uq3pbn().s[60]++;
         $__default["default"](active).removeClass(CLASS_NAME_SHOW).one(Util__default["default"].TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
-        cov_1p6jraxhcd().b[13][1]++;
-        cov_1p6jraxhcd().s[61]++;
+        cov_xw4uq3pbn().b[13][1]++;
+        cov_xw4uq3pbn().s[61]++;
         complete();
       }
     };
-
     _proto._transitionComplete = function _transitionComplete(element, active, callback) {
-      cov_1p6jraxhcd().f[7]++;
-      cov_1p6jraxhcd().s[62]++;
-
+      cov_xw4uq3pbn().f[7]++;
+      cov_xw4uq3pbn().s[62]++;
       if (active) {
-        cov_1p6jraxhcd().b[15][0]++;
-        cov_1p6jraxhcd().s[63]++;
+        cov_xw4uq3pbn().b[15][0]++;
+        cov_xw4uq3pbn().s[63]++;
         $__default["default"](active).removeClass(CLASS_NAME_ACTIVE);
-        var dropdownChild = (cov_1p6jraxhcd().s[64]++, $__default["default"](active.parentNode).find(SELECTOR_DROPDOWN_ACTIVE_CHILD)[0]);
-        cov_1p6jraxhcd().s[65]++;
-
+        var dropdownChild = (cov_xw4uq3pbn().s[64]++, $__default["default"](active.parentNode).find(SELECTOR_DROPDOWN_ACTIVE_CHILD)[0]);
+        cov_xw4uq3pbn().s[65]++;
         if (dropdownChild) {
-          cov_1p6jraxhcd().b[16][0]++;
-          cov_1p6jraxhcd().s[66]++;
+          cov_xw4uq3pbn().b[16][0]++;
+          cov_xw4uq3pbn().s[66]++;
           $__default["default"](dropdownChild).removeClass(CLASS_NAME_ACTIVE);
         } else {
-          cov_1p6jraxhcd().b[16][1]++;
+          cov_xw4uq3pbn().b[16][1]++;
         }
-
-        cov_1p6jraxhcd().s[67]++;
-
+        cov_xw4uq3pbn().s[67]++;
         if (active.getAttribute('role') === 'tab') {
-          cov_1p6jraxhcd().b[17][0]++;
-          cov_1p6jraxhcd().s[68]++;
+          cov_xw4uq3pbn().b[17][0]++;
+          cov_xw4uq3pbn().s[68]++;
           active.setAttribute('aria-selected', false);
         } else {
-          cov_1p6jraxhcd().b[17][1]++;
+          cov_xw4uq3pbn().b[17][1]++;
         }
       } else {
-        cov_1p6jraxhcd().b[15][1]++;
+        cov_xw4uq3pbn().b[15][1]++;
       }
-
-      cov_1p6jraxhcd().s[69]++;
+      cov_xw4uq3pbn().s[69]++;
       $__default["default"](element).addClass(CLASS_NAME_ACTIVE);
-      cov_1p6jraxhcd().s[70]++;
-
+      cov_xw4uq3pbn().s[70]++;
       if (element.getAttribute('role') === 'tab') {
-        cov_1p6jraxhcd().b[18][0]++;
-        cov_1p6jraxhcd().s[71]++;
+        cov_xw4uq3pbn().b[18][0]++;
+        cov_xw4uq3pbn().s[71]++;
         element.setAttribute('aria-selected', true);
       } else {
-        cov_1p6jraxhcd().b[18][1]++;
+        cov_xw4uq3pbn().b[18][1]++;
       }
-
-      cov_1p6jraxhcd().s[72]++;
+      cov_xw4uq3pbn().s[72]++;
       Util__default["default"].reflow(element);
-      cov_1p6jraxhcd().s[73]++;
-
+      cov_xw4uq3pbn().s[73]++;
       if (element.classList.contains(CLASS_NAME_FADE)) {
-        cov_1p6jraxhcd().b[19][0]++;
-        cov_1p6jraxhcd().s[74]++;
+        cov_xw4uq3pbn().b[19][0]++;
+        cov_xw4uq3pbn().s[74]++;
         element.classList.add(CLASS_NAME_SHOW);
       } else {
-        cov_1p6jraxhcd().b[19][1]++;
+        cov_xw4uq3pbn().b[19][1]++;
       }
-
-      var parent = (cov_1p6jraxhcd().s[75]++, element.parentNode);
-      cov_1p6jraxhcd().s[76]++;
-
-      if ((cov_1p6jraxhcd().b[21][0]++, parent) && (cov_1p6jraxhcd().b[21][1]++, parent.nodeName === 'LI')) {
-        cov_1p6jraxhcd().b[20][0]++;
-        cov_1p6jraxhcd().s[77]++;
+      var parent = (cov_xw4uq3pbn().s[75]++, element.parentNode);
+      cov_xw4uq3pbn().s[76]++;
+      if ((cov_xw4uq3pbn().b[21][0]++, parent) && (cov_xw4uq3pbn().b[21][1]++, parent.nodeName === 'LI')) {
+        cov_xw4uq3pbn().b[20][0]++;
+        cov_xw4uq3pbn().s[77]++;
         parent = parent.parentNode;
       } else {
-        cov_1p6jraxhcd().b[20][1]++;
+        cov_xw4uq3pbn().b[20][1]++;
       }
-
-      cov_1p6jraxhcd().s[78]++;
-
-      if ((cov_1p6jraxhcd().b[23][0]++, parent) && (cov_1p6jraxhcd().b[23][1]++, $__default["default"](parent).hasClass(CLASS_NAME_DROPDOWN_MENU))) {
-        cov_1p6jraxhcd().b[22][0]++;
-        var dropdownElement = (cov_1p6jraxhcd().s[79]++, $__default["default"](element).closest(SELECTOR_DROPDOWN)[0]);
-        cov_1p6jraxhcd().s[80]++;
-
+      cov_xw4uq3pbn().s[78]++;
+      if ((cov_xw4uq3pbn().b[23][0]++, parent) && (cov_xw4uq3pbn().b[23][1]++, $__default["default"](parent).hasClass(CLASS_NAME_DROPDOWN_MENU))) {
+        cov_xw4uq3pbn().b[22][0]++;
+        var dropdownElement = (cov_xw4uq3pbn().s[79]++, $__default["default"](element).closest(SELECTOR_DROPDOWN)[0]);
+        cov_xw4uq3pbn().s[80]++;
         if (dropdownElement) {
-          cov_1p6jraxhcd().b[24][0]++;
-          var dropdownToggleList = (cov_1p6jraxhcd().s[81]++, [].slice.call(dropdownElement.querySelectorAll(SELECTOR_DROPDOWN_TOGGLE)));
-          cov_1p6jraxhcd().s[82]++;
+          cov_xw4uq3pbn().b[24][0]++;
+          var dropdownToggleList = (cov_xw4uq3pbn().s[81]++, [].slice.call(dropdownElement.querySelectorAll(SELECTOR_DROPDOWN_TOGGLE)));
+          cov_xw4uq3pbn().s[82]++;
           $__default["default"](dropdownToggleList).addClass(CLASS_NAME_ACTIVE);
         } else {
-          cov_1p6jraxhcd().b[24][1]++;
+          cov_xw4uq3pbn().b[24][1]++;
         }
-
-        cov_1p6jraxhcd().s[83]++;
+        cov_xw4uq3pbn().s[83]++;
         element.setAttribute('aria-expanded', true);
       } else {
-        cov_1p6jraxhcd().b[22][1]++;
+        cov_xw4uq3pbn().b[22][1]++;
       }
-
-      cov_1p6jraxhcd().s[84]++;
-
+      cov_xw4uq3pbn().s[84]++;
       if (callback) {
-        cov_1p6jraxhcd().b[25][0]++;
-        cov_1p6jraxhcd().s[85]++;
+        cov_xw4uq3pbn().b[25][0]++;
+        cov_xw4uq3pbn().s[85]++;
         callback();
       } else {
-        cov_1p6jraxhcd().b[25][1]++;
+        cov_xw4uq3pbn().b[25][1]++;
       }
-    } // Static
+    }
+
+    // Static
     ;
-
     Tab._jQueryInterface = function _jQueryInterface(config) {
-      cov_1p6jraxhcd().f[8]++;
-      cov_1p6jraxhcd().s[86]++;
+      cov_xw4uq3pbn().f[8]++;
+      cov_xw4uq3pbn().s[86]++;
       return this.each(function () {
-        cov_1p6jraxhcd().f[9]++;
-        var $this = (cov_1p6jraxhcd().s[87]++, $__default["default"](this));
-        var data = (cov_1p6jraxhcd().s[88]++, $this.data(DATA_KEY));
-        cov_1p6jraxhcd().s[89]++;
-
+        cov_xw4uq3pbn().f[9]++;
+        var $this = (cov_xw4uq3pbn().s[87]++, $__default["default"](this));
+        var data = (cov_xw4uq3pbn().s[88]++, $this.data(DATA_KEY));
+        cov_xw4uq3pbn().s[89]++;
         if (!data) {
-          cov_1p6jraxhcd().b[26][0]++;
-          cov_1p6jraxhcd().s[90]++;
+          cov_xw4uq3pbn().b[26][0]++;
+          cov_xw4uq3pbn().s[90]++;
           data = new Tab(this);
-          cov_1p6jraxhcd().s[91]++;
+          cov_xw4uq3pbn().s[91]++;
           $this.data(DATA_KEY, data);
         } else {
-          cov_1p6jraxhcd().b[26][1]++;
+          cov_xw4uq3pbn().b[26][1]++;
         }
-
-        cov_1p6jraxhcd().s[92]++;
-
+        cov_xw4uq3pbn().s[92]++;
         if (typeof config === 'string') {
-          cov_1p6jraxhcd().b[27][0]++;
-          cov_1p6jraxhcd().s[93]++;
-
+          cov_xw4uq3pbn().b[27][0]++;
+          cov_xw4uq3pbn().s[93]++;
           if (typeof data[config] === 'undefined') {
-            cov_1p6jraxhcd().b[28][0]++;
-            cov_1p6jraxhcd().s[94]++;
+            cov_xw4uq3pbn().b[28][0]++;
+            cov_xw4uq3pbn().s[94]++;
             throw new TypeError("No method named \"" + config + "\"");
           } else {
-            cov_1p6jraxhcd().b[28][1]++;
+            cov_xw4uq3pbn().b[28][1]++;
           }
-
-          cov_1p6jraxhcd().s[95]++;
+          cov_xw4uq3pbn().s[95]++;
           data[config]();
         } else {
-          cov_1p6jraxhcd().b[27][1]++;
+          cov_xw4uq3pbn().b[27][1]++;
         }
       });
     };
-
-    _createClass(Tab, null, [{
+    return _createClass(Tab, null, [{
       key: "VERSION",
       get: function get() {
-        cov_1p6jraxhcd().f[1]++;
-        cov_1p6jraxhcd().s[24]++;
+        cov_xw4uq3pbn().f[1]++;
+        cov_xw4uq3pbn().s[24]++;
         return VERSION;
       }
     }]);
-
-    return Tab;
   }();
   /**
    * Data API implementation
    */
-
-
-  cov_1p6jraxhcd().s[96]++;
+  cov_xw4uq3pbn().s[96]++;
   $__default["default"](document).on(EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
-    cov_1p6jraxhcd().f[10]++;
-    cov_1p6jraxhcd().s[97]++;
+    cov_xw4uq3pbn().f[10]++;
+    cov_xw4uq3pbn().s[97]++;
     event.preventDefault();
-    cov_1p6jraxhcd().s[98]++;
-
+    cov_xw4uq3pbn().s[98]++;
     Tab._jQueryInterface.call($__default["default"](this), 'show');
   });
+
   /**
    * jQuery
    */
-
-  cov_1p6jraxhcd().s[99]++;
+  cov_xw4uq3pbn().s[99]++;
   $__default["default"].fn[NAME] = Tab._jQueryInterface;
-  cov_1p6jraxhcd().s[100]++;
+  cov_xw4uq3pbn().s[100]++;
   $__default["default"].fn[NAME].Constructor = Tab;
-  cov_1p6jraxhcd().s[101]++;
-
+  cov_xw4uq3pbn().s[101]++;
   $__default["default"].fn[NAME].noConflict = function () {
-    cov_1p6jraxhcd().f[11]++;
-    cov_1p6jraxhcd().s[102]++;
+    cov_xw4uq3pbn().f[11]++;
+    cov_xw4uq3pbn().s[102]++;
     $__default["default"].fn[NAME] = JQUERY_NO_CONFLICT;
-    cov_1p6jraxhcd().s[103]++;
+    cov_xw4uq3pbn().s[103]++;
     return Tab._jQueryInterface;
   };
 

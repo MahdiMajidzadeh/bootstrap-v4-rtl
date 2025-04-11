@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap util.js v4.6.2-1 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2022 https://github.com/MahdiMajidzadeh
+  * Bootstrap util.js v4.6.2-2 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2025 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -13,13 +13,13 @@
 
   var $__default = /*#__PURE__*/_interopDefaultLegacy($);
 
-  function cov_qs9qenxqr() {
-    var path = "C:\\Users\\mmajidzade\\Documents\\GitHub\\bootstrap-v4-rtl\\js\\src\\util.js";
-    var hash = "0434a8f81900c13c26a87c640143d7a6b583feec";
+  function cov_1b7i9t3gn5() {
+    var path = "/Users/mahdi/Documents/app/bootstrap-v4-rtl/js/src/util.js";
+    var hash = "a2b4d7c6508acb99f937fe8a40af0ce33283609b";
     var global = new Function("return this")();
     var gcv = "__coverage__";
     var coverageData = {
-      path: "C:\\Users\\mmajidzade\\Documents\\GitHub\\bootstrap-v4-rtl\\js\\src\\util.js",
+      path: "/Users/mahdi/Documents/app/bootstrap-v4-rtl/js/src/util.js",
       statementMap: {
         "0": {
           start: {
@@ -2158,314 +2158,286 @@
         "24": [0, 0, 0, 0, 0, 0]
       },
       _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-      hash: "0434a8f81900c13c26a87c640143d7a6b583feec"
+      hash: "a2b4d7c6508acb99f937fe8a40af0ce33283609b"
     };
     var coverage = global[gcv] || (global[gcv] = {});
-
     if (!coverage[path] || coverage[path].hash !== hash) {
       coverage[path] = coverageData;
     }
-
     var actualCoverage = coverage[path];
     {
       // @ts-ignore
-      cov_qs9qenxqr = function () {
+      cov_1b7i9t3gn5 = function () {
         return actualCoverage;
       };
     }
     return actualCoverage;
   }
+  cov_1b7i9t3gn5();
 
-  cov_qs9qenxqr();
   /**
    * Private TransitionEnd Helpers
    */
 
-  var TRANSITION_END = (cov_qs9qenxqr().s[0]++, 'transitionend');
-  var MAX_UID = (cov_qs9qenxqr().s[1]++, 1000000);
-  var MILLISECONDS_MULTIPLIER = (cov_qs9qenxqr().s[2]++, 1000); // Shoutout AngusCroll (https://goo.gl/pxwQGp)
+  var TRANSITION_END = (cov_1b7i9t3gn5().s[0]++, 'transitionend');
+  var MAX_UID = (cov_1b7i9t3gn5().s[1]++, 1000000);
+  var MILLISECONDS_MULTIPLIER = (cov_1b7i9t3gn5().s[2]++, 1000);
 
+  // Shoutout AngusCroll (https://goo.gl/pxwQGp)
   function toType(obj) {
-    cov_qs9qenxqr().f[0]++;
-    cov_qs9qenxqr().s[3]++;
-
-    if ((cov_qs9qenxqr().b[1][0]++, obj === null) || (cov_qs9qenxqr().b[1][1]++, typeof obj === 'undefined')) {
-      cov_qs9qenxqr().b[0][0]++;
-      cov_qs9qenxqr().s[4]++;
+    cov_1b7i9t3gn5().f[0]++;
+    cov_1b7i9t3gn5().s[3]++;
+    if ((cov_1b7i9t3gn5().b[1][0]++, obj === null) || (cov_1b7i9t3gn5().b[1][1]++, typeof obj === 'undefined')) {
+      cov_1b7i9t3gn5().b[0][0]++;
+      cov_1b7i9t3gn5().s[4]++;
       return "" + obj;
     } else {
-      cov_qs9qenxqr().b[0][1]++;
+      cov_1b7i9t3gn5().b[0][1]++;
     }
-
-    cov_qs9qenxqr().s[5]++;
+    cov_1b7i9t3gn5().s[5]++;
     return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
   }
-
   function getSpecialTransitionEndEvent() {
-    cov_qs9qenxqr().f[1]++;
-    cov_qs9qenxqr().s[6]++;
+    cov_1b7i9t3gn5().f[1]++;
+    cov_1b7i9t3gn5().s[6]++;
     return {
       bindType: TRANSITION_END,
       delegateType: TRANSITION_END,
       handle: function handle(event) {
-        cov_qs9qenxqr().f[2]++;
-        cov_qs9qenxqr().s[7]++;
-
+        cov_1b7i9t3gn5().f[2]++;
+        cov_1b7i9t3gn5().s[7]++;
         if ($__default["default"](event.target).is(this)) {
-          cov_qs9qenxqr().b[2][0]++;
-          cov_qs9qenxqr().s[8]++;
+          cov_1b7i9t3gn5().b[2][0]++;
+          cov_1b7i9t3gn5().s[8]++;
           return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
         } else {
-          cov_qs9qenxqr().b[2][1]++;
+          cov_1b7i9t3gn5().b[2][1]++;
         }
-
-        cov_qs9qenxqr().s[9]++;
+        cov_1b7i9t3gn5().s[9]++;
         return undefined;
       }
     };
   }
-
   function transitionEndEmulator(duration) {
     var _this = this;
-
-    cov_qs9qenxqr().f[3]++;
-    var called = (cov_qs9qenxqr().s[10]++, false);
-    cov_qs9qenxqr().s[11]++;
+    cov_1b7i9t3gn5().f[3]++;
+    var called = (cov_1b7i9t3gn5().s[10]++, false);
+    cov_1b7i9t3gn5().s[11]++;
     $__default["default"](this).one(Util.TRANSITION_END, function () {
-      cov_qs9qenxqr().f[4]++;
-      cov_qs9qenxqr().s[12]++;
+      cov_1b7i9t3gn5().f[4]++;
+      cov_1b7i9t3gn5().s[12]++;
       called = true;
     });
-    cov_qs9qenxqr().s[13]++;
+    cov_1b7i9t3gn5().s[13]++;
     setTimeout(function () {
-      cov_qs9qenxqr().f[5]++;
-      cov_qs9qenxqr().s[14]++;
-
+      cov_1b7i9t3gn5().f[5]++;
+      cov_1b7i9t3gn5().s[14]++;
       if (!called) {
-        cov_qs9qenxqr().b[3][0]++;
-        cov_qs9qenxqr().s[15]++;
+        cov_1b7i9t3gn5().b[3][0]++;
+        cov_1b7i9t3gn5().s[15]++;
         Util.triggerTransitionEnd(_this);
       } else {
-        cov_qs9qenxqr().b[3][1]++;
+        cov_1b7i9t3gn5().b[3][1]++;
       }
     }, duration);
-    cov_qs9qenxqr().s[16]++;
+    cov_1b7i9t3gn5().s[16]++;
     return this;
   }
-
   function setTransitionEndSupport() {
-    cov_qs9qenxqr().f[6]++;
-    cov_qs9qenxqr().s[17]++;
+    cov_1b7i9t3gn5().f[6]++;
+    cov_1b7i9t3gn5().s[17]++;
     $__default["default"].fn.emulateTransitionEnd = transitionEndEmulator;
-    cov_qs9qenxqr().s[18]++;
+    cov_1b7i9t3gn5().s[18]++;
     $__default["default"].event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
   }
+
   /**
    * Public Util API
    */
 
-
-  var Util = (cov_qs9qenxqr().s[19]++, {
+  var Util = (cov_1b7i9t3gn5().s[19]++, {
     TRANSITION_END: 'bsTransitionEnd',
     getUID: function getUID(prefix) {
-      cov_qs9qenxqr().f[7]++;
-      cov_qs9qenxqr().s[20]++;
-
+      cov_1b7i9t3gn5().f[7]++;
+      cov_1b7i9t3gn5().s[20]++;
       do {
-        cov_qs9qenxqr().s[21]++;
+        cov_1b7i9t3gn5().s[21]++;
         // eslint-disable-next-line no-bitwise
         prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
       } while (document.getElementById(prefix));
-
-      cov_qs9qenxqr().s[22]++;
+      cov_1b7i9t3gn5().s[22]++;
       return prefix;
     },
     getSelectorFromElement: function getSelectorFromElement(element) {
-      cov_qs9qenxqr().f[8]++;
-      var selector = (cov_qs9qenxqr().s[23]++, element.getAttribute('data-target'));
-      cov_qs9qenxqr().s[24]++;
-
-      if ((cov_qs9qenxqr().b[5][0]++, !selector) || (cov_qs9qenxqr().b[5][1]++, selector === '#')) {
-        cov_qs9qenxqr().b[4][0]++;
-        var hrefAttr = (cov_qs9qenxqr().s[25]++, element.getAttribute('href'));
-        cov_qs9qenxqr().s[26]++;
-        selector = (cov_qs9qenxqr().b[7][0]++, hrefAttr) && (cov_qs9qenxqr().b[7][1]++, hrefAttr !== '#') ? (cov_qs9qenxqr().b[6][0]++, hrefAttr.trim()) : (cov_qs9qenxqr().b[6][1]++, '');
+      cov_1b7i9t3gn5().f[8]++;
+      var selector = (cov_1b7i9t3gn5().s[23]++, element.getAttribute('data-target'));
+      cov_1b7i9t3gn5().s[24]++;
+      if ((cov_1b7i9t3gn5().b[5][0]++, !selector) || (cov_1b7i9t3gn5().b[5][1]++, selector === '#')) {
+        cov_1b7i9t3gn5().b[4][0]++;
+        var hrefAttr = (cov_1b7i9t3gn5().s[25]++, element.getAttribute('href'));
+        cov_1b7i9t3gn5().s[26]++;
+        selector = (cov_1b7i9t3gn5().b[7][0]++, hrefAttr) && (cov_1b7i9t3gn5().b[7][1]++, hrefAttr !== '#') ? (cov_1b7i9t3gn5().b[6][0]++, hrefAttr.trim()) : (cov_1b7i9t3gn5().b[6][1]++, '');
       } else {
-        cov_qs9qenxqr().b[4][1]++;
+        cov_1b7i9t3gn5().b[4][1]++;
       }
-
-      cov_qs9qenxqr().s[27]++;
-
+      cov_1b7i9t3gn5().s[27]++;
       try {
-        cov_qs9qenxqr().s[28]++;
-        return document.querySelector(selector) ? (cov_qs9qenxqr().b[8][0]++, selector) : (cov_qs9qenxqr().b[8][1]++, null);
+        cov_1b7i9t3gn5().s[28]++;
+        return document.querySelector(selector) ? (cov_1b7i9t3gn5().b[8][0]++, selector) : (cov_1b7i9t3gn5().b[8][1]++, null);
       } catch (_) {
-        cov_qs9qenxqr().s[29]++;
+        cov_1b7i9t3gn5().s[29]++;
         return null;
       }
     },
     getTransitionDurationFromElement: function getTransitionDurationFromElement(element) {
-      cov_qs9qenxqr().f[9]++;
-      cov_qs9qenxqr().s[30]++;
-
+      cov_1b7i9t3gn5().f[9]++;
+      cov_1b7i9t3gn5().s[30]++;
       if (!element) {
-        cov_qs9qenxqr().b[9][0]++;
-        cov_qs9qenxqr().s[31]++;
+        cov_1b7i9t3gn5().b[9][0]++;
+        cov_1b7i9t3gn5().s[31]++;
         return 0;
       } else {
-        cov_qs9qenxqr().b[9][1]++;
-      } // Get transition-duration of the element
+        cov_1b7i9t3gn5().b[9][1]++;
+      }
 
+      // Get transition-duration of the element
+      var transitionDuration = (cov_1b7i9t3gn5().s[32]++, $__default["default"](element).css('transition-duration'));
+      var transitionDelay = (cov_1b7i9t3gn5().s[33]++, $__default["default"](element).css('transition-delay'));
+      var floatTransitionDuration = (cov_1b7i9t3gn5().s[34]++, parseFloat(transitionDuration));
+      var floatTransitionDelay = (cov_1b7i9t3gn5().s[35]++, parseFloat(transitionDelay));
 
-      var transitionDuration = (cov_qs9qenxqr().s[32]++, $__default["default"](element).css('transition-duration'));
-      var transitionDelay = (cov_qs9qenxqr().s[33]++, $__default["default"](element).css('transition-delay'));
-      var floatTransitionDuration = (cov_qs9qenxqr().s[34]++, parseFloat(transitionDuration));
-      var floatTransitionDelay = (cov_qs9qenxqr().s[35]++, parseFloat(transitionDelay)); // Return 0 if element or transition duration is not found
-
-      cov_qs9qenxqr().s[36]++;
-
-      if ((cov_qs9qenxqr().b[11][0]++, !floatTransitionDuration) && (cov_qs9qenxqr().b[11][1]++, !floatTransitionDelay)) {
-        cov_qs9qenxqr().b[10][0]++;
-        cov_qs9qenxqr().s[37]++;
+      // Return 0 if element or transition duration is not found
+      cov_1b7i9t3gn5().s[36]++;
+      if ((cov_1b7i9t3gn5().b[11][0]++, !floatTransitionDuration) && (cov_1b7i9t3gn5().b[11][1]++, !floatTransitionDelay)) {
+        cov_1b7i9t3gn5().b[10][0]++;
+        cov_1b7i9t3gn5().s[37]++;
         return 0;
       } else {
-        cov_qs9qenxqr().b[10][1]++;
-      } // If multiple durations are defined, take the first
+        cov_1b7i9t3gn5().b[10][1]++;
+      }
 
-
-      cov_qs9qenxqr().s[38]++;
+      // If multiple durations are defined, take the first
+      cov_1b7i9t3gn5().s[38]++;
       transitionDuration = transitionDuration.split(',')[0];
-      cov_qs9qenxqr().s[39]++;
+      cov_1b7i9t3gn5().s[39]++;
       transitionDelay = transitionDelay.split(',')[0];
-      cov_qs9qenxqr().s[40]++;
+      cov_1b7i9t3gn5().s[40]++;
       return (parseFloat(transitionDuration) + parseFloat(transitionDelay)) * MILLISECONDS_MULTIPLIER;
     },
     reflow: function reflow(element) {
-      cov_qs9qenxqr().f[10]++;
-      cov_qs9qenxqr().s[41]++;
+      cov_1b7i9t3gn5().f[10]++;
+      cov_1b7i9t3gn5().s[41]++;
       return element.offsetHeight;
     },
     triggerTransitionEnd: function triggerTransitionEnd(element) {
-      cov_qs9qenxqr().f[11]++;
-      cov_qs9qenxqr().s[42]++;
+      cov_1b7i9t3gn5().f[11]++;
+      cov_1b7i9t3gn5().s[42]++;
       $__default["default"](element).trigger(TRANSITION_END);
     },
     supportsTransitionEnd: function supportsTransitionEnd() {
-      cov_qs9qenxqr().f[12]++;
-      cov_qs9qenxqr().s[43]++;
+      cov_1b7i9t3gn5().f[12]++;
+      cov_1b7i9t3gn5().s[43]++;
       return Boolean(TRANSITION_END);
     },
     isElement: function isElement(obj) {
-      cov_qs9qenxqr().f[13]++;
-      cov_qs9qenxqr().s[44]++;
-      return ((cov_qs9qenxqr().b[12][0]++, obj[0]) || (cov_qs9qenxqr().b[12][1]++, obj)).nodeType;
+      cov_1b7i9t3gn5().f[13]++;
+      cov_1b7i9t3gn5().s[44]++;
+      return ((cov_1b7i9t3gn5().b[12][0]++, obj[0]) || (cov_1b7i9t3gn5().b[12][1]++, obj)).nodeType;
     },
     typeCheckConfig: function typeCheckConfig(componentName, config, configTypes) {
-      cov_qs9qenxqr().f[14]++;
-      cov_qs9qenxqr().s[45]++;
-
+      cov_1b7i9t3gn5().f[14]++;
+      cov_1b7i9t3gn5().s[45]++;
       for (var property in configTypes) {
-        cov_qs9qenxqr().s[46]++;
-
+        cov_1b7i9t3gn5().s[46]++;
         if (Object.prototype.hasOwnProperty.call(configTypes, property)) {
-          cov_qs9qenxqr().b[13][0]++;
-          var expectedTypes = (cov_qs9qenxqr().s[47]++, configTypes[property]);
-          var value = (cov_qs9qenxqr().s[48]++, config[property]);
-          var valueType = (cov_qs9qenxqr().s[49]++, (cov_qs9qenxqr().b[15][0]++, value) && (cov_qs9qenxqr().b[15][1]++, Util.isElement(value)) ? (cov_qs9qenxqr().b[14][0]++, 'element') : (cov_qs9qenxqr().b[14][1]++, toType(value)));
-          cov_qs9qenxqr().s[50]++;
-
+          cov_1b7i9t3gn5().b[13][0]++;
+          var expectedTypes = (cov_1b7i9t3gn5().s[47]++, configTypes[property]);
+          var value = (cov_1b7i9t3gn5().s[48]++, config[property]);
+          var valueType = (cov_1b7i9t3gn5().s[49]++, (cov_1b7i9t3gn5().b[15][0]++, value) && (cov_1b7i9t3gn5().b[15][1]++, Util.isElement(value)) ? (cov_1b7i9t3gn5().b[14][0]++, 'element') : (cov_1b7i9t3gn5().b[14][1]++, toType(value)));
+          cov_1b7i9t3gn5().s[50]++;
           if (!new RegExp(expectedTypes).test(valueType)) {
-            cov_qs9qenxqr().b[16][0]++;
-            cov_qs9qenxqr().s[51]++;
+            cov_1b7i9t3gn5().b[16][0]++;
+            cov_1b7i9t3gn5().s[51]++;
             throw new Error(componentName.toUpperCase() + ": " + ("Option \"" + property + "\" provided type \"" + valueType + "\" ") + ("but expected type \"" + expectedTypes + "\"."));
           } else {
-            cov_qs9qenxqr().b[16][1]++;
+            cov_1b7i9t3gn5().b[16][1]++;
           }
         } else {
-          cov_qs9qenxqr().b[13][1]++;
+          cov_1b7i9t3gn5().b[13][1]++;
         }
       }
     },
     findShadowRoot: function findShadowRoot(element) {
-      cov_qs9qenxqr().f[15]++;
-      cov_qs9qenxqr().s[52]++;
-
+      cov_1b7i9t3gn5().f[15]++;
+      cov_1b7i9t3gn5().s[52]++;
       if (!document.documentElement.attachShadow) {
-        cov_qs9qenxqr().b[17][0]++;
-        cov_qs9qenxqr().s[53]++;
+        cov_1b7i9t3gn5().b[17][0]++;
+        cov_1b7i9t3gn5().s[53]++;
         return null;
       } else {
-        cov_qs9qenxqr().b[17][1]++;
-      } // Can find the shadow root otherwise it'll return the document
-
-
-      cov_qs9qenxqr().s[54]++;
-
-      if (typeof element.getRootNode === 'function') {
-        cov_qs9qenxqr().b[18][0]++;
-        var root = (cov_qs9qenxqr().s[55]++, element.getRootNode());
-        cov_qs9qenxqr().s[56]++;
-        return root instanceof ShadowRoot ? (cov_qs9qenxqr().b[19][0]++, root) : (cov_qs9qenxqr().b[19][1]++, null);
-      } else {
-        cov_qs9qenxqr().b[18][1]++;
+        cov_1b7i9t3gn5().b[17][1]++;
       }
 
-      cov_qs9qenxqr().s[57]++;
-
+      // Can find the shadow root otherwise it'll return the document
+      cov_1b7i9t3gn5().s[54]++;
+      if (typeof element.getRootNode === 'function') {
+        cov_1b7i9t3gn5().b[18][0]++;
+        var root = (cov_1b7i9t3gn5().s[55]++, element.getRootNode());
+        cov_1b7i9t3gn5().s[56]++;
+        return root instanceof ShadowRoot ? (cov_1b7i9t3gn5().b[19][0]++, root) : (cov_1b7i9t3gn5().b[19][1]++, null);
+      } else {
+        cov_1b7i9t3gn5().b[18][1]++;
+      }
+      cov_1b7i9t3gn5().s[57]++;
       if (element instanceof ShadowRoot) {
-        cov_qs9qenxqr().b[20][0]++;
-        cov_qs9qenxqr().s[58]++;
+        cov_1b7i9t3gn5().b[20][0]++;
+        cov_1b7i9t3gn5().s[58]++;
         return element;
       } else {
-        cov_qs9qenxqr().b[20][1]++;
-      } // when we don't find a shadow root
-
-
-      cov_qs9qenxqr().s[59]++;
-
-      if (!element.parentNode) {
-        cov_qs9qenxqr().b[21][0]++;
-        cov_qs9qenxqr().s[60]++;
-        return null;
-      } else {
-        cov_qs9qenxqr().b[21][1]++;
+        cov_1b7i9t3gn5().b[20][1]++;
       }
 
-      cov_qs9qenxqr().s[61]++;
+      // when we don't find a shadow root
+      cov_1b7i9t3gn5().s[59]++;
+      if (!element.parentNode) {
+        cov_1b7i9t3gn5().b[21][0]++;
+        cov_1b7i9t3gn5().s[60]++;
+        return null;
+      } else {
+        cov_1b7i9t3gn5().b[21][1]++;
+      }
+      cov_1b7i9t3gn5().s[61]++;
       return Util.findShadowRoot(element.parentNode);
     },
     jQueryDetection: function jQueryDetection() {
-      cov_qs9qenxqr().f[16]++;
-      cov_qs9qenxqr().s[62]++;
-
+      cov_1b7i9t3gn5().f[16]++;
+      cov_1b7i9t3gn5().s[62]++;
       if (typeof $__default["default"] === 'undefined') {
-        cov_qs9qenxqr().b[22][0]++;
-        cov_qs9qenxqr().s[63]++;
+        cov_1b7i9t3gn5().b[22][0]++;
+        cov_1b7i9t3gn5().s[63]++;
         throw new TypeError('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
       } else {
-        cov_qs9qenxqr().b[22][1]++;
+        cov_1b7i9t3gn5().b[22][1]++;
       }
-
-      var version = (cov_qs9qenxqr().s[64]++, $__default["default"].fn.jquery.split(' ')[0].split('.'));
-      var minMajor = (cov_qs9qenxqr().s[65]++, 1);
-      var ltMajor = (cov_qs9qenxqr().s[66]++, 2);
-      var minMinor = (cov_qs9qenxqr().s[67]++, 9);
-      var minPatch = (cov_qs9qenxqr().s[68]++, 1);
-      var maxMajor = (cov_qs9qenxqr().s[69]++, 4);
-      cov_qs9qenxqr().s[70]++;
-
-      if ((cov_qs9qenxqr().b[24][0]++, version[0] < ltMajor) && (cov_qs9qenxqr().b[24][1]++, version[1] < minMinor) || (cov_qs9qenxqr().b[24][2]++, version[0] === minMajor) && (cov_qs9qenxqr().b[24][3]++, version[1] === minMinor) && (cov_qs9qenxqr().b[24][4]++, version[2] < minPatch) || (cov_qs9qenxqr().b[24][5]++, version[0] >= maxMajor)) {
-        cov_qs9qenxqr().b[23][0]++;
-        cov_qs9qenxqr().s[71]++;
+      var version = (cov_1b7i9t3gn5().s[64]++, $__default["default"].fn.jquery.split(' ')[0].split('.'));
+      var minMajor = (cov_1b7i9t3gn5().s[65]++, 1);
+      var ltMajor = (cov_1b7i9t3gn5().s[66]++, 2);
+      var minMinor = (cov_1b7i9t3gn5().s[67]++, 9);
+      var minPatch = (cov_1b7i9t3gn5().s[68]++, 1);
+      var maxMajor = (cov_1b7i9t3gn5().s[69]++, 4);
+      cov_1b7i9t3gn5().s[70]++;
+      if ((cov_1b7i9t3gn5().b[24][0]++, version[0] < ltMajor) && (cov_1b7i9t3gn5().b[24][1]++, version[1] < minMinor) || (cov_1b7i9t3gn5().b[24][2]++, version[0] === minMajor) && (cov_1b7i9t3gn5().b[24][3]++, version[1] === minMinor) && (cov_1b7i9t3gn5().b[24][4]++, version[2] < minPatch) || (cov_1b7i9t3gn5().b[24][5]++, version[0] >= maxMajor)) {
+        cov_1b7i9t3gn5().b[23][0]++;
+        cov_1b7i9t3gn5().s[71]++;
         throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');
       } else {
-        cov_qs9qenxqr().b[23][1]++;
+        cov_1b7i9t3gn5().b[23][1]++;
       }
     }
   });
-  cov_qs9qenxqr().s[72]++;
+  cov_1b7i9t3gn5().s[72]++;
   Util.jQueryDetection();
-  cov_qs9qenxqr().s[73]++;
+  cov_1b7i9t3gn5().s[73]++;
   setTransitionEndSupport();
 
   return Util;

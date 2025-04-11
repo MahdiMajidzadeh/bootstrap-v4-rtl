@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap tooltip.js v4.6.2-1 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2022 https://github.com/MahdiMajidzadeh
+  * Bootstrap tooltip.js v4.6.2-2 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2025 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -15,49 +15,48 @@
   var Popper__default = /*#__PURE__*/_interopDefaultLegacy(Popper);
   var Util__default = /*#__PURE__*/_interopDefaultLegacy(Util);
 
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
+  function _defineProperties(e, r) {
+    for (var t = 0; t < r.length; t++) {
+      var o = r[t];
+      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o);
     }
   }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    Object.defineProperty(Constructor, "prototype", {
-      writable: false
-    });
-    return Constructor;
+  function _createClass(e, r, t) {
+    return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+      writable: !1
+    }), e;
   }
-
   function _extends() {
-    _extends = Object.assign ? Object.assign.bind() : function (target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
+    return _extends = Object.assign ? Object.assign.bind() : function (n) {
+      for (var e = 1; e < arguments.length; e++) {
+        var t = arguments[e];
+        for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
       }
-
-      return target;
-    };
-    return _extends.apply(this, arguments);
+      return n;
+    }, _extends.apply(null, arguments);
+  }
+  function _toPrimitive(t, r) {
+    if ("object" != typeof t || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+      var i = e.call(t, r || "default");
+      if ("object" != typeof i) return i;
+      throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return ("string" === r ? String : Number)(t);
+  }
+  function _toPropertyKey(t) {
+    var i = _toPrimitive(t, "string");
+    return "symbol" == typeof i ? i : i + "";
   }
 
-  function cov_2pmed70e69() {
-    var path = "C:\\Users\\mmajidzade\\Documents\\GitHub\\bootstrap-v4-rtl\\js\\src\\tools\\sanitizer.js";
-    var hash = "5378e3421134128666cc82802149d29eee50b83f";
+  function cov_1u3sawliq8() {
+    var path = "/Users/mahdi/Documents/app/bootstrap-v4-rtl/js/src/tools/sanitizer.js";
+    var hash = "33e92a2532417c570985efeb648d9eb8cc89dff1";
     var global = new Function("return this")();
     var gcv = "__coverage__";
     var coverageData = {
-      path: "C:\\Users\\mmajidzade\\Documents\\GitHub\\bootstrap-v4-rtl\\js\\src\\tools\\sanitizer.js",
+      path: "/Users/mahdi/Documents/app/bootstrap-v4-rtl/js/src/tools/sanitizer.js",
       statementMap: {
         "0": {
           start: {
@@ -985,35 +984,32 @@
         "10": [0, 0]
       },
       _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-      hash: "5378e3421134128666cc82802149d29eee50b83f"
+      hash: "33e92a2532417c570985efeb648d9eb8cc89dff1"
     };
     var coverage = global[gcv] || (global[gcv] = {});
-
     if (!coverage[path] || coverage[path].hash !== hash) {
       coverage[path] = coverageData;
     }
-
     var actualCoverage = coverage[path];
     {
       // @ts-ignore
-      cov_2pmed70e69 = function () {
+      cov_1u3sawliq8 = function () {
         return actualCoverage;
       };
     }
     return actualCoverage;
   }
-
-  cov_2pmed70e69();
-
+  cov_1u3sawliq8();
   /**
    * --------------------------------------------------------------------------
    * Bootstrap (v4.6.2): tools/sanitizer.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
-  var uriAttrs = (cov_2pmed70e69().s[0]++, ['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href']);
-  var ARIA_ATTRIBUTE_PATTERN = (cov_2pmed70e69().s[1]++, /^aria-[\w-]*$/i);
-  var DefaultWhitelist = (cov_2pmed70e69().s[2]++, {
+
+  var uriAttrs = (cov_1u3sawliq8().s[0]++, ['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href']);
+  var ARIA_ATTRIBUTE_PATTERN = (cov_1u3sawliq8().s[1]++, /^aria-[\w-]*$/i);
+  var DefaultWhitelist = (cov_1u3sawliq8().s[2]++, {
     // Global attributes allowed on any supplied element below.
     '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
     a: ['target', 'href', 'title', 'rel'],
@@ -1046,146 +1042,126 @@
     u: [],
     ul: []
   });
+
   /**
    * A pattern that recognizes a commonly useful subset of URLs that are safe.
    *
    * Shoutout to Angular https://github.com/angular/angular/blob/12.2.x/packages/core/src/sanitization/url_sanitizer.ts
    */
+  var SAFE_URL_PATTERN = (cov_1u3sawliq8().s[3]++, /^(?:(?:https?|mailto|ftp|tel|file|sms):|[^#&/:?]*(?:[#/?]|$))/i);
 
-  var SAFE_URL_PATTERN = (cov_2pmed70e69().s[3]++, /^(?:(?:https?|mailto|ftp|tel|file|sms):|[^#&/:?]*(?:[#/?]|$))/i);
   /**
    * A pattern that matches safe data URLs. Only matches image, video and audio types.
    *
    * Shoutout to Angular https://github.com/angular/angular/blob/12.2.x/packages/core/src/sanitization/url_sanitizer.ts
    */
-
-  var DATA_URL_PATTERN = (cov_2pmed70e69().s[4]++, /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[\d+/a-z]+=*$/i);
-
+  var DATA_URL_PATTERN = (cov_1u3sawliq8().s[4]++, /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[\d+/a-z]+=*$/i);
   function allowedAttribute(attr, allowedAttributeList) {
-    cov_2pmed70e69().f[0]++;
-    var attrName = (cov_2pmed70e69().s[5]++, attr.nodeName.toLowerCase());
-    cov_2pmed70e69().s[6]++;
-
+    cov_1u3sawliq8().f[0]++;
+    var attrName = (cov_1u3sawliq8().s[5]++, attr.nodeName.toLowerCase());
+    cov_1u3sawliq8().s[6]++;
     if (allowedAttributeList.indexOf(attrName) !== -1) {
-      cov_2pmed70e69().b[0][0]++;
-      cov_2pmed70e69().s[7]++;
-
+      cov_1u3sawliq8().b[0][0]++;
+      cov_1u3sawliq8().s[7]++;
       if (uriAttrs.indexOf(attrName) !== -1) {
-        cov_2pmed70e69().b[1][0]++;
-        cov_2pmed70e69().s[8]++;
-        return Boolean((cov_2pmed70e69().b[2][0]++, SAFE_URL_PATTERN.test(attr.nodeValue)) || (cov_2pmed70e69().b[2][1]++, DATA_URL_PATTERN.test(attr.nodeValue)));
+        cov_1u3sawliq8().b[1][0]++;
+        cov_1u3sawliq8().s[8]++;
+        return Boolean((cov_1u3sawliq8().b[2][0]++, SAFE_URL_PATTERN.test(attr.nodeValue)) || (cov_1u3sawliq8().b[2][1]++, DATA_URL_PATTERN.test(attr.nodeValue)));
       } else {
-        cov_2pmed70e69().b[1][1]++;
+        cov_1u3sawliq8().b[1][1]++;
       }
-
-      cov_2pmed70e69().s[9]++;
+      cov_1u3sawliq8().s[9]++;
       return true;
     } else {
-      cov_2pmed70e69().b[0][1]++;
+      cov_1u3sawliq8().b[0][1]++;
     }
-
-    var regExp = (cov_2pmed70e69().s[10]++, allowedAttributeList.filter(function (attrRegex) {
-      cov_2pmed70e69().f[1]++;
-      cov_2pmed70e69().s[11]++;
+    var regExp = (cov_1u3sawliq8().s[10]++, allowedAttributeList.filter(function (attrRegex) {
+      cov_1u3sawliq8().f[1]++;
+      cov_1u3sawliq8().s[11]++;
       return attrRegex instanceof RegExp;
-    })); // Check if a regular expression validates the attribute.
+    }));
 
-    cov_2pmed70e69().s[12]++;
-
-    for (var i = (cov_2pmed70e69().s[13]++, 0), len = (cov_2pmed70e69().s[14]++, regExp.length); i < len; i++) {
-      cov_2pmed70e69().s[15]++;
-
+    // Check if a regular expression validates the attribute.
+    cov_1u3sawliq8().s[12]++;
+    for (var i = (cov_1u3sawliq8().s[13]++, 0), len = (cov_1u3sawliq8().s[14]++, regExp.length); i < len; i++) {
+      cov_1u3sawliq8().s[15]++;
       if (regExp[i].test(attrName)) {
-        cov_2pmed70e69().b[3][0]++;
-        cov_2pmed70e69().s[16]++;
+        cov_1u3sawliq8().b[3][0]++;
+        cov_1u3sawliq8().s[16]++;
         return true;
       } else {
-        cov_2pmed70e69().b[3][1]++;
+        cov_1u3sawliq8().b[3][1]++;
       }
     }
-
-    cov_2pmed70e69().s[17]++;
+    cov_1u3sawliq8().s[17]++;
     return false;
   }
-
   function sanitizeHtml(unsafeHtml, whiteList, sanitizeFn) {
-    cov_2pmed70e69().f[2]++;
-    cov_2pmed70e69().s[18]++;
-
+    cov_1u3sawliq8().f[2]++;
+    cov_1u3sawliq8().s[18]++;
     if (unsafeHtml.length === 0) {
-      cov_2pmed70e69().b[4][0]++;
-      cov_2pmed70e69().s[19]++;
+      cov_1u3sawliq8().b[4][0]++;
+      cov_1u3sawliq8().s[19]++;
       return unsafeHtml;
     } else {
-      cov_2pmed70e69().b[4][1]++;
+      cov_1u3sawliq8().b[4][1]++;
     }
-
-    cov_2pmed70e69().s[20]++;
-
-    if ((cov_2pmed70e69().b[6][0]++, sanitizeFn) && (cov_2pmed70e69().b[6][1]++, typeof sanitizeFn === 'function')) {
-      cov_2pmed70e69().b[5][0]++;
-      cov_2pmed70e69().s[21]++;
+    cov_1u3sawliq8().s[20]++;
+    if ((cov_1u3sawliq8().b[6][0]++, sanitizeFn) && (cov_1u3sawliq8().b[6][1]++, typeof sanitizeFn === 'function')) {
+      cov_1u3sawliq8().b[5][0]++;
+      cov_1u3sawliq8().s[21]++;
       return sanitizeFn(unsafeHtml);
     } else {
-      cov_2pmed70e69().b[5][1]++;
+      cov_1u3sawliq8().b[5][1]++;
     }
-
-    var domParser = (cov_2pmed70e69().s[22]++, new window.DOMParser());
-    var createdDocument = (cov_2pmed70e69().s[23]++, domParser.parseFromString(unsafeHtml, 'text/html'));
-    var whitelistKeys = (cov_2pmed70e69().s[24]++, Object.keys(whiteList));
-    var elements = (cov_2pmed70e69().s[25]++, [].slice.call(createdDocument.body.querySelectorAll('*')));
-    cov_2pmed70e69().s[26]++;
-
-    var _loop = function _loop(i, len) {
-      var el = (cov_2pmed70e69().s[29]++, elements[i]);
-      var elName = (cov_2pmed70e69().s[30]++, el.nodeName.toLowerCase());
-      cov_2pmed70e69().s[31]++;
-
+    var domParser = (cov_1u3sawliq8().s[22]++, new window.DOMParser());
+    var createdDocument = (cov_1u3sawliq8().s[23]++, domParser.parseFromString(unsafeHtml, 'text/html'));
+    var whitelistKeys = (cov_1u3sawliq8().s[24]++, Object.keys(whiteList));
+    var elements = (cov_1u3sawliq8().s[25]++, [].slice.call(createdDocument.body.querySelectorAll('*')));
+    cov_1u3sawliq8().s[26]++;
+    var _loop = function _loop() {
+      var el = (cov_1u3sawliq8().s[29]++, elements[i]);
+      var elName = (cov_1u3sawliq8().s[30]++, el.nodeName.toLowerCase());
+      cov_1u3sawliq8().s[31]++;
       if (whitelistKeys.indexOf(el.nodeName.toLowerCase()) === -1) {
-        cov_2pmed70e69().b[7][0]++;
-        cov_2pmed70e69().s[32]++;
+        cov_1u3sawliq8().b[7][0]++;
+        cov_1u3sawliq8().s[32]++;
         el.parentNode.removeChild(el);
-        cov_2pmed70e69().s[33]++;
-        return "continue";
+        cov_1u3sawliq8().s[33]++;
+        return 1; // continue
       } else {
-        cov_2pmed70e69().b[7][1]++;
+        cov_1u3sawliq8().b[7][1]++;
       }
-
-      var attributeList = (cov_2pmed70e69().s[34]++, [].slice.call(el.attributes)); // eslint-disable-next-line unicorn/prefer-spread
-
-      var whitelistedAttributes = (cov_2pmed70e69().s[35]++, [].concat((cov_2pmed70e69().b[8][0]++, whiteList['*']) || (cov_2pmed70e69().b[8][1]++, []), (cov_2pmed70e69().b[9][0]++, whiteList[elName]) || (cov_2pmed70e69().b[9][1]++, [])));
-      cov_2pmed70e69().s[36]++;
+      var attributeList = (cov_1u3sawliq8().s[34]++, [].slice.call(el.attributes));
+      // eslint-disable-next-line unicorn/prefer-spread
+      var whitelistedAttributes = (cov_1u3sawliq8().s[35]++, [].concat((cov_1u3sawliq8().b[8][0]++, whiteList['*']) || (cov_1u3sawliq8().b[8][1]++, []), (cov_1u3sawliq8().b[9][0]++, whiteList[elName]) || (cov_1u3sawliq8().b[9][1]++, [])));
+      cov_1u3sawliq8().s[36]++;
       attributeList.forEach(function (attr) {
-        cov_2pmed70e69().f[3]++;
-        cov_2pmed70e69().s[37]++;
-
+        cov_1u3sawliq8().f[3]++;
+        cov_1u3sawliq8().s[37]++;
         if (!allowedAttribute(attr, whitelistedAttributes)) {
-          cov_2pmed70e69().b[10][0]++;
-          cov_2pmed70e69().s[38]++;
+          cov_1u3sawliq8().b[10][0]++;
+          cov_1u3sawliq8().s[38]++;
           el.removeAttribute(attr.nodeName);
         } else {
-          cov_2pmed70e69().b[10][1]++;
+          cov_1u3sawliq8().b[10][1]++;
         }
       });
     };
-
-    for (var i = (cov_2pmed70e69().s[27]++, 0), len = (cov_2pmed70e69().s[28]++, elements.length); i < len; i++) {
-      var _ret = _loop(i);
-
-      if (_ret === "continue") continue;
+    for (var i = (cov_1u3sawliq8().s[27]++, 0), len = (cov_1u3sawliq8().s[28]++, elements.length); i < len; i++) {
+      if (_loop()) continue;
     }
-
-    cov_2pmed70e69().s[39]++;
+    cov_1u3sawliq8().s[39]++;
     return createdDocument.body.innerHTML;
   }
 
-  function cov_1sdqx207bd() {
-    var path = "C:\\Users\\mmajidzade\\Documents\\GitHub\\bootstrap-v4-rtl\\js\\src\\tooltip.js";
-    var hash = "d01875e3ae56cf638493f818a7c27c0d41e8a628";
+  function cov_18wxups0zb() {
+    var path = "/Users/mahdi/Documents/app/bootstrap-v4-rtl/js/src/tooltip.js";
+    var hash = "12d6ad0f79e4c18c4eb6a5a491e2bd141aa05800";
     var global = new Function("return this")();
     var gcv = "__coverage__";
     var coverageData = {
-      path: "C:\\Users\\mmajidzade\\Documents\\GitHub\\bootstrap-v4-rtl\\js\\src\\tooltip.js",
+      path: "/Users/mahdi/Documents/app/bootstrap-v4-rtl/js/src/tooltip.js",
       statementMap: {
         "0": {
           start: {
@@ -8766,55 +8742,53 @@
         "86": [0, 0]
       },
       _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-      hash: "d01875e3ae56cf638493f818a7c27c0d41e8a628"
+      hash: "12d6ad0f79e4c18c4eb6a5a491e2bd141aa05800"
     };
     var coverage = global[gcv] || (global[gcv] = {});
-
     if (!coverage[path] || coverage[path].hash !== hash) {
       coverage[path] = coverageData;
     }
-
     var actualCoverage = coverage[path];
     {
       // @ts-ignore
-      cov_1sdqx207bd = function () {
+      cov_18wxups0zb = function () {
         return actualCoverage;
       };
     }
     return actualCoverage;
   }
+  cov_18wxups0zb();
 
-  cov_1sdqx207bd();
   /**
    * Constants
    */
 
-  var NAME = (cov_1sdqx207bd().s[0]++, 'tooltip');
-  var VERSION = (cov_1sdqx207bd().s[1]++, '4.6.2');
-  var DATA_KEY = (cov_1sdqx207bd().s[2]++, 'bs.tooltip');
-  var EVENT_KEY = (cov_1sdqx207bd().s[3]++, "." + DATA_KEY);
-  var JQUERY_NO_CONFLICT = (cov_1sdqx207bd().s[4]++, $__default["default"].fn[NAME]);
-  var CLASS_PREFIX = (cov_1sdqx207bd().s[5]++, 'bs-tooltip');
-  var BSCLS_PREFIX_REGEX = (cov_1sdqx207bd().s[6]++, new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g'));
-  var DISALLOWED_ATTRIBUTES = (cov_1sdqx207bd().s[7]++, ['sanitize', 'whiteList', 'sanitizeFn']);
-  var CLASS_NAME_FADE = (cov_1sdqx207bd().s[8]++, 'fade');
-  var CLASS_NAME_SHOW = (cov_1sdqx207bd().s[9]++, 'show');
-  var HOVER_STATE_SHOW = (cov_1sdqx207bd().s[10]++, 'show');
-  var HOVER_STATE_OUT = (cov_1sdqx207bd().s[11]++, 'out');
-  var SELECTOR_TOOLTIP_INNER = (cov_1sdqx207bd().s[12]++, '.tooltip-inner');
-  var SELECTOR_ARROW = (cov_1sdqx207bd().s[13]++, '.arrow');
-  var TRIGGER_HOVER = (cov_1sdqx207bd().s[14]++, 'hover');
-  var TRIGGER_FOCUS = (cov_1sdqx207bd().s[15]++, 'focus');
-  var TRIGGER_CLICK = (cov_1sdqx207bd().s[16]++, 'click');
-  var TRIGGER_MANUAL = (cov_1sdqx207bd().s[17]++, 'manual');
-  var AttachmentMap = (cov_1sdqx207bd().s[18]++, {
+  var NAME = (cov_18wxups0zb().s[0]++, 'tooltip');
+  var VERSION = (cov_18wxups0zb().s[1]++, '4.6.2');
+  var DATA_KEY = (cov_18wxups0zb().s[2]++, 'bs.tooltip');
+  var EVENT_KEY = (cov_18wxups0zb().s[3]++, "." + DATA_KEY);
+  var JQUERY_NO_CONFLICT = (cov_18wxups0zb().s[4]++, $__default["default"].fn[NAME]);
+  var CLASS_PREFIX = (cov_18wxups0zb().s[5]++, 'bs-tooltip');
+  var BSCLS_PREFIX_REGEX = (cov_18wxups0zb().s[6]++, new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g'));
+  var DISALLOWED_ATTRIBUTES = (cov_18wxups0zb().s[7]++, ['sanitize', 'whiteList', 'sanitizeFn']);
+  var CLASS_NAME_FADE = (cov_18wxups0zb().s[8]++, 'fade');
+  var CLASS_NAME_SHOW = (cov_18wxups0zb().s[9]++, 'show');
+  var HOVER_STATE_SHOW = (cov_18wxups0zb().s[10]++, 'show');
+  var HOVER_STATE_OUT = (cov_18wxups0zb().s[11]++, 'out');
+  var SELECTOR_TOOLTIP_INNER = (cov_18wxups0zb().s[12]++, '.tooltip-inner');
+  var SELECTOR_ARROW = (cov_18wxups0zb().s[13]++, '.arrow');
+  var TRIGGER_HOVER = (cov_18wxups0zb().s[14]++, 'hover');
+  var TRIGGER_FOCUS = (cov_18wxups0zb().s[15]++, 'focus');
+  var TRIGGER_CLICK = (cov_18wxups0zb().s[16]++, 'click');
+  var TRIGGER_MANUAL = (cov_18wxups0zb().s[17]++, 'manual');
+  var AttachmentMap = (cov_18wxups0zb().s[18]++, {
     AUTO: 'auto',
     TOP: 'top',
     RIGHT: 'right',
     BOTTOM: 'bottom',
     LEFT: 'left'
   });
-  var Default = (cov_1sdqx207bd().s[19]++, {
+  var Default = (cov_18wxups0zb().s[19]++, {
     animation: true,
     template: '<div class="tooltip" role="tooltip">' + '<div class="arrow"></div>' + '<div class="tooltip-inner"></div></div>',
     trigger: 'hover focus',
@@ -8833,7 +8807,7 @@
     whiteList: DefaultWhitelist,
     popperConfig: null
   });
-  var DefaultType = (cov_1sdqx207bd().s[20]++, {
+  var DefaultType = (cov_18wxups0zb().s[20]++, {
     animation: 'boolean',
     template: 'string',
     title: '(string|element|function)',
@@ -8852,7 +8826,7 @@
     whiteList: 'object',
     popperConfig: '(null|object)'
   });
-  var Event = (cov_1sdqx207bd().s[21]++, {
+  var Event = (cov_18wxups0zb().s[21]++, {
     HIDE: "hide" + EVENT_KEY,
     HIDDEN: "hidden" + EVENT_KEY,
     SHOW: "show" + EVENT_KEY,
@@ -8864,546 +8838,466 @@
     MOUSEENTER: "mouseenter" + EVENT_KEY,
     MOUSELEAVE: "mouseleave" + EVENT_KEY
   });
+
   /**
    * Class definition
    */
-
   var Tooltip = /*#__PURE__*/function () {
     function Tooltip(element, config) {
-      cov_1sdqx207bd().f[0]++;
-      cov_1sdqx207bd().s[22]++;
-
+      cov_18wxups0zb().f[0]++;
+      cov_18wxups0zb().s[22]++;
       if (typeof Popper__default["default"] === 'undefined') {
-        cov_1sdqx207bd().b[0][0]++;
-        cov_1sdqx207bd().s[23]++;
+        cov_18wxups0zb().b[0][0]++;
+        cov_18wxups0zb().s[23]++;
         throw new TypeError('Bootstrap\'s tooltips require Popper (https://popper.js.org)');
       } else {
-        cov_1sdqx207bd().b[0][1]++;
-      } // Private
-
-
-      cov_1sdqx207bd().s[24]++;
-      this._isEnabled = true;
-      cov_1sdqx207bd().s[25]++;
-      this._timeout = 0;
-      cov_1sdqx207bd().s[26]++;
-      this._hoverState = '';
-      cov_1sdqx207bd().s[27]++;
-      this._activeTrigger = {};
-      cov_1sdqx207bd().s[28]++;
-      this._popper = null; // Protected
-
-      cov_1sdqx207bd().s[29]++;
-      this.element = element;
-      cov_1sdqx207bd().s[30]++;
-      this.config = this._getConfig(config);
-      cov_1sdqx207bd().s[31]++;
-      this.tip = null;
-      cov_1sdqx207bd().s[32]++;
-
-      this._setListeners();
-    } // Getters
-
-
-    var _proto = Tooltip.prototype;
-
-    // Public
-    _proto.enable = function enable() {
-      cov_1sdqx207bd().f[8]++;
-      cov_1sdqx207bd().s[40]++;
-      this._isEnabled = true;
-    };
-
-    _proto.disable = function disable() {
-      cov_1sdqx207bd().f[9]++;
-      cov_1sdqx207bd().s[41]++;
-      this._isEnabled = false;
-    };
-
-    _proto.toggleEnabled = function toggleEnabled() {
-      cov_1sdqx207bd().f[10]++;
-      cov_1sdqx207bd().s[42]++;
-      this._isEnabled = !this._isEnabled;
-    };
-
-    _proto.toggle = function toggle(event) {
-      cov_1sdqx207bd().f[11]++;
-      cov_1sdqx207bd().s[43]++;
-
-      if (!this._isEnabled) {
-        cov_1sdqx207bd().b[1][0]++;
-        cov_1sdqx207bd().s[44]++;
-        return;
-      } else {
-        cov_1sdqx207bd().b[1][1]++;
+        cov_18wxups0zb().b[0][1]++;
       }
 
-      cov_1sdqx207bd().s[45]++;
+      // Private
+      cov_18wxups0zb().s[24]++;
+      this._isEnabled = true;
+      cov_18wxups0zb().s[25]++;
+      this._timeout = 0;
+      cov_18wxups0zb().s[26]++;
+      this._hoverState = '';
+      cov_18wxups0zb().s[27]++;
+      this._activeTrigger = {};
+      cov_18wxups0zb().s[28]++;
+      this._popper = null;
 
+      // Protected
+      cov_18wxups0zb().s[29]++;
+      this.element = element;
+      cov_18wxups0zb().s[30]++;
+      this.config = this._getConfig(config);
+      cov_18wxups0zb().s[31]++;
+      this.tip = null;
+      cov_18wxups0zb().s[32]++;
+      this._setListeners();
+    }
+
+    // Getters
+    var _proto = Tooltip.prototype;
+    // Public
+    _proto.enable = function enable() {
+      cov_18wxups0zb().f[8]++;
+      cov_18wxups0zb().s[40]++;
+      this._isEnabled = true;
+    };
+    _proto.disable = function disable() {
+      cov_18wxups0zb().f[9]++;
+      cov_18wxups0zb().s[41]++;
+      this._isEnabled = false;
+    };
+    _proto.toggleEnabled = function toggleEnabled() {
+      cov_18wxups0zb().f[10]++;
+      cov_18wxups0zb().s[42]++;
+      this._isEnabled = !this._isEnabled;
+    };
+    _proto.toggle = function toggle(event) {
+      cov_18wxups0zb().f[11]++;
+      cov_18wxups0zb().s[43]++;
+      if (!this._isEnabled) {
+        cov_18wxups0zb().b[1][0]++;
+        cov_18wxups0zb().s[44]++;
+        return;
+      } else {
+        cov_18wxups0zb().b[1][1]++;
+      }
+      cov_18wxups0zb().s[45]++;
       if (event) {
-        cov_1sdqx207bd().b[2][0]++;
-        var dataKey = (cov_1sdqx207bd().s[46]++, this.constructor.DATA_KEY);
-        var context = (cov_1sdqx207bd().s[47]++, $__default["default"](event.currentTarget).data(dataKey));
-        cov_1sdqx207bd().s[48]++;
-
+        cov_18wxups0zb().b[2][0]++;
+        var dataKey = (cov_18wxups0zb().s[46]++, this.constructor.DATA_KEY);
+        var context = (cov_18wxups0zb().s[47]++, $__default["default"](event.currentTarget).data(dataKey));
+        cov_18wxups0zb().s[48]++;
         if (!context) {
-          cov_1sdqx207bd().b[3][0]++;
-          cov_1sdqx207bd().s[49]++;
+          cov_18wxups0zb().b[3][0]++;
+          cov_18wxups0zb().s[49]++;
           context = new this.constructor(event.currentTarget, this._getDelegateConfig());
-          cov_1sdqx207bd().s[50]++;
+          cov_18wxups0zb().s[50]++;
           $__default["default"](event.currentTarget).data(dataKey, context);
         } else {
-          cov_1sdqx207bd().b[3][1]++;
+          cov_18wxups0zb().b[3][1]++;
         }
-
-        cov_1sdqx207bd().s[51]++;
+        cov_18wxups0zb().s[51]++;
         context._activeTrigger.click = !context._activeTrigger.click;
-        cov_1sdqx207bd().s[52]++;
-
+        cov_18wxups0zb().s[52]++;
         if (context._isWithActiveTrigger()) {
-          cov_1sdqx207bd().b[4][0]++;
-          cov_1sdqx207bd().s[53]++;
-
+          cov_18wxups0zb().b[4][0]++;
+          cov_18wxups0zb().s[53]++;
           context._enter(null, context);
         } else {
-          cov_1sdqx207bd().b[4][1]++;
-          cov_1sdqx207bd().s[54]++;
-
+          cov_18wxups0zb().b[4][1]++;
+          cov_18wxups0zb().s[54]++;
           context._leave(null, context);
         }
       } else {
-        cov_1sdqx207bd().b[2][1]++;
-        cov_1sdqx207bd().s[55]++;
-
+        cov_18wxups0zb().b[2][1]++;
+        cov_18wxups0zb().s[55]++;
         if ($__default["default"](this.getTipElement()).hasClass(CLASS_NAME_SHOW)) {
-          cov_1sdqx207bd().b[5][0]++;
-          cov_1sdqx207bd().s[56]++;
-
+          cov_18wxups0zb().b[5][0]++;
+          cov_18wxups0zb().s[56]++;
           this._leave(null, this);
-
-          cov_1sdqx207bd().s[57]++;
+          cov_18wxups0zb().s[57]++;
           return;
         } else {
-          cov_1sdqx207bd().b[5][1]++;
+          cov_18wxups0zb().b[5][1]++;
         }
-
-        cov_1sdqx207bd().s[58]++;
-
+        cov_18wxups0zb().s[58]++;
         this._enter(null, this);
       }
     };
-
     _proto.dispose = function dispose() {
-      cov_1sdqx207bd().f[12]++;
-      cov_1sdqx207bd().s[59]++;
+      cov_18wxups0zb().f[12]++;
+      cov_18wxups0zb().s[59]++;
       clearTimeout(this._timeout);
-      cov_1sdqx207bd().s[60]++;
+      cov_18wxups0zb().s[60]++;
       $__default["default"].removeData(this.element, this.constructor.DATA_KEY);
-      cov_1sdqx207bd().s[61]++;
+      cov_18wxups0zb().s[61]++;
       $__default["default"](this.element).off(this.constructor.EVENT_KEY);
-      cov_1sdqx207bd().s[62]++;
+      cov_18wxups0zb().s[62]++;
       $__default["default"](this.element).closest('.modal').off('hide.bs.modal', this._hideModalHandler);
-      cov_1sdqx207bd().s[63]++;
-
+      cov_18wxups0zb().s[63]++;
       if (this.tip) {
-        cov_1sdqx207bd().b[6][0]++;
-        cov_1sdqx207bd().s[64]++;
+        cov_18wxups0zb().b[6][0]++;
+        cov_18wxups0zb().s[64]++;
         $__default["default"](this.tip).remove();
       } else {
-        cov_1sdqx207bd().b[6][1]++;
+        cov_18wxups0zb().b[6][1]++;
       }
-
-      cov_1sdqx207bd().s[65]++;
+      cov_18wxups0zb().s[65]++;
       this._isEnabled = null;
-      cov_1sdqx207bd().s[66]++;
+      cov_18wxups0zb().s[66]++;
       this._timeout = null;
-      cov_1sdqx207bd().s[67]++;
+      cov_18wxups0zb().s[67]++;
       this._hoverState = null;
-      cov_1sdqx207bd().s[68]++;
+      cov_18wxups0zb().s[68]++;
       this._activeTrigger = null;
-      cov_1sdqx207bd().s[69]++;
-
+      cov_18wxups0zb().s[69]++;
       if (this._popper) {
-        cov_1sdqx207bd().b[7][0]++;
-        cov_1sdqx207bd().s[70]++;
-
+        cov_18wxups0zb().b[7][0]++;
+        cov_18wxups0zb().s[70]++;
         this._popper.destroy();
       } else {
-        cov_1sdqx207bd().b[7][1]++;
+        cov_18wxups0zb().b[7][1]++;
       }
-
-      cov_1sdqx207bd().s[71]++;
+      cov_18wxups0zb().s[71]++;
       this._popper = null;
-      cov_1sdqx207bd().s[72]++;
+      cov_18wxups0zb().s[72]++;
       this.element = null;
-      cov_1sdqx207bd().s[73]++;
+      cov_18wxups0zb().s[73]++;
       this.config = null;
-      cov_1sdqx207bd().s[74]++;
+      cov_18wxups0zb().s[74]++;
       this.tip = null;
     };
-
     _proto.show = function show() {
       var _this = this;
-
-      cov_1sdqx207bd().f[13]++;
-      cov_1sdqx207bd().s[75]++;
-
+      cov_18wxups0zb().f[13]++;
+      cov_18wxups0zb().s[75]++;
       if ($__default["default"](this.element).css('display') === 'none') {
-        cov_1sdqx207bd().b[8][0]++;
-        cov_1sdqx207bd().s[76]++;
+        cov_18wxups0zb().b[8][0]++;
+        cov_18wxups0zb().s[76]++;
         throw new Error('Please use show on visible elements');
       } else {
-        cov_1sdqx207bd().b[8][1]++;
+        cov_18wxups0zb().b[8][1]++;
       }
-
-      var showEvent = (cov_1sdqx207bd().s[77]++, $__default["default"].Event(this.constructor.Event.SHOW));
-      cov_1sdqx207bd().s[78]++;
-
-      if ((cov_1sdqx207bd().b[10][0]++, this.isWithContent()) && (cov_1sdqx207bd().b[10][1]++, this._isEnabled)) {
-        cov_1sdqx207bd().b[9][0]++;
-        cov_1sdqx207bd().s[79]++;
+      var showEvent = (cov_18wxups0zb().s[77]++, $__default["default"].Event(this.constructor.Event.SHOW));
+      cov_18wxups0zb().s[78]++;
+      if ((cov_18wxups0zb().b[10][0]++, this.isWithContent()) && (cov_18wxups0zb().b[10][1]++, this._isEnabled)) {
+        cov_18wxups0zb().b[9][0]++;
+        cov_18wxups0zb().s[79]++;
         $__default["default"](this.element).trigger(showEvent);
-        var shadowRoot = (cov_1sdqx207bd().s[80]++, Util__default["default"].findShadowRoot(this.element));
-        var isInTheDom = (cov_1sdqx207bd().s[81]++, $__default["default"].contains(shadowRoot !== null ? (cov_1sdqx207bd().b[11][0]++, shadowRoot) : (cov_1sdqx207bd().b[11][1]++, this.element.ownerDocument.documentElement), this.element));
-        cov_1sdqx207bd().s[82]++;
-
-        if ((cov_1sdqx207bd().b[13][0]++, showEvent.isDefaultPrevented()) || (cov_1sdqx207bd().b[13][1]++, !isInTheDom)) {
-          cov_1sdqx207bd().b[12][0]++;
-          cov_1sdqx207bd().s[83]++;
+        var shadowRoot = (cov_18wxups0zb().s[80]++, Util__default["default"].findShadowRoot(this.element));
+        var isInTheDom = (cov_18wxups0zb().s[81]++, $__default["default"].contains(shadowRoot !== null ? (cov_18wxups0zb().b[11][0]++, shadowRoot) : (cov_18wxups0zb().b[11][1]++, this.element.ownerDocument.documentElement), this.element));
+        cov_18wxups0zb().s[82]++;
+        if ((cov_18wxups0zb().b[13][0]++, showEvent.isDefaultPrevented()) || (cov_18wxups0zb().b[13][1]++, !isInTheDom)) {
+          cov_18wxups0zb().b[12][0]++;
+          cov_18wxups0zb().s[83]++;
           return;
         } else {
-          cov_1sdqx207bd().b[12][1]++;
+          cov_18wxups0zb().b[12][1]++;
         }
-
-        var tip = (cov_1sdqx207bd().s[84]++, this.getTipElement());
-        var tipId = (cov_1sdqx207bd().s[85]++, Util__default["default"].getUID(this.constructor.NAME));
-        cov_1sdqx207bd().s[86]++;
+        var tip = (cov_18wxups0zb().s[84]++, this.getTipElement());
+        var tipId = (cov_18wxups0zb().s[85]++, Util__default["default"].getUID(this.constructor.NAME));
+        cov_18wxups0zb().s[86]++;
         tip.setAttribute('id', tipId);
-        cov_1sdqx207bd().s[87]++;
+        cov_18wxups0zb().s[87]++;
         this.element.setAttribute('aria-describedby', tipId);
-        cov_1sdqx207bd().s[88]++;
+        cov_18wxups0zb().s[88]++;
         this.setContent();
-        cov_1sdqx207bd().s[89]++;
-
+        cov_18wxups0zb().s[89]++;
         if (this.config.animation) {
-          cov_1sdqx207bd().b[14][0]++;
-          cov_1sdqx207bd().s[90]++;
+          cov_18wxups0zb().b[14][0]++;
+          cov_18wxups0zb().s[90]++;
           $__default["default"](tip).addClass(CLASS_NAME_FADE);
         } else {
-          cov_1sdqx207bd().b[14][1]++;
+          cov_18wxups0zb().b[14][1]++;
         }
-
-        var placement = (cov_1sdqx207bd().s[91]++, typeof this.config.placement === 'function' ? (cov_1sdqx207bd().b[15][0]++, this.config.placement.call(this, tip, this.element)) : (cov_1sdqx207bd().b[15][1]++, this.config.placement));
-        var attachment = (cov_1sdqx207bd().s[92]++, this._getAttachment(placement));
-        cov_1sdqx207bd().s[93]++;
+        var placement = (cov_18wxups0zb().s[91]++, typeof this.config.placement === 'function' ? (cov_18wxups0zb().b[15][0]++, this.config.placement.call(this, tip, this.element)) : (cov_18wxups0zb().b[15][1]++, this.config.placement));
+        var attachment = (cov_18wxups0zb().s[92]++, this._getAttachment(placement));
+        cov_18wxups0zb().s[93]++;
         this.addAttachmentClass(attachment);
-        var container = (cov_1sdqx207bd().s[94]++, this._getContainer());
-        cov_1sdqx207bd().s[95]++;
+        var container = (cov_18wxups0zb().s[94]++, this._getContainer());
+        cov_18wxups0zb().s[95]++;
         $__default["default"](tip).data(this.constructor.DATA_KEY, this);
-        cov_1sdqx207bd().s[96]++;
-
+        cov_18wxups0zb().s[96]++;
         if (!$__default["default"].contains(this.element.ownerDocument.documentElement, this.tip)) {
-          cov_1sdqx207bd().b[16][0]++;
-          cov_1sdqx207bd().s[97]++;
+          cov_18wxups0zb().b[16][0]++;
+          cov_18wxups0zb().s[97]++;
           $__default["default"](tip).appendTo(container);
         } else {
-          cov_1sdqx207bd().b[16][1]++;
+          cov_18wxups0zb().b[16][1]++;
         }
-
-        cov_1sdqx207bd().s[98]++;
+        cov_18wxups0zb().s[98]++;
         $__default["default"](this.element).trigger(this.constructor.Event.INSERTED);
-        cov_1sdqx207bd().s[99]++;
+        cov_18wxups0zb().s[99]++;
         this._popper = new Popper__default["default"](this.element, tip, this._getPopperConfig(attachment));
-        cov_1sdqx207bd().s[100]++;
+        cov_18wxups0zb().s[100]++;
         $__default["default"](tip).addClass(CLASS_NAME_SHOW);
-        cov_1sdqx207bd().s[101]++;
-        $__default["default"](tip).addClass(this.config.customClass); // If this is a touch-enabled device we add extra
+        cov_18wxups0zb().s[101]++;
+        $__default["default"](tip).addClass(this.config.customClass);
+
+        // If this is a touch-enabled device we add extra
         // empty mouseover listeners to the body's immediate children;
         // only needed because of broken event delegation on iOS
         // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
-
-        cov_1sdqx207bd().s[102]++;
-
+        cov_18wxups0zb().s[102]++;
         if ('ontouchstart' in document.documentElement) {
-          cov_1sdqx207bd().b[17][0]++;
-          cov_1sdqx207bd().s[103]++;
+          cov_18wxups0zb().b[17][0]++;
+          cov_18wxups0zb().s[103]++;
           $__default["default"](document.body).children().on('mouseover', null, $__default["default"].noop);
         } else {
-          cov_1sdqx207bd().b[17][1]++;
+          cov_18wxups0zb().b[17][1]++;
         }
-
-        cov_1sdqx207bd().s[104]++;
-
+        cov_18wxups0zb().s[104]++;
         var complete = function complete() {
-          cov_1sdqx207bd().f[14]++;
-          cov_1sdqx207bd().s[105]++;
-
+          cov_18wxups0zb().f[14]++;
+          cov_18wxups0zb().s[105]++;
           if (_this.config.animation) {
-            cov_1sdqx207bd().b[18][0]++;
-            cov_1sdqx207bd().s[106]++;
-
+            cov_18wxups0zb().b[18][0]++;
+            cov_18wxups0zb().s[106]++;
             _this._fixTransition();
           } else {
-            cov_1sdqx207bd().b[18][1]++;
+            cov_18wxups0zb().b[18][1]++;
           }
-
-          var prevHoverState = (cov_1sdqx207bd().s[107]++, _this._hoverState);
-          cov_1sdqx207bd().s[108]++;
+          var prevHoverState = (cov_18wxups0zb().s[107]++, _this._hoverState);
+          cov_18wxups0zb().s[108]++;
           _this._hoverState = null;
-          cov_1sdqx207bd().s[109]++;
+          cov_18wxups0zb().s[109]++;
           $__default["default"](_this.element).trigger(_this.constructor.Event.SHOWN);
-          cov_1sdqx207bd().s[110]++;
-
+          cov_18wxups0zb().s[110]++;
           if (prevHoverState === HOVER_STATE_OUT) {
-            cov_1sdqx207bd().b[19][0]++;
-            cov_1sdqx207bd().s[111]++;
-
+            cov_18wxups0zb().b[19][0]++;
+            cov_18wxups0zb().s[111]++;
             _this._leave(null, _this);
           } else {
-            cov_1sdqx207bd().b[19][1]++;
+            cov_18wxups0zb().b[19][1]++;
           }
         };
-
-        cov_1sdqx207bd().s[112]++;
-
+        cov_18wxups0zb().s[112]++;
         if ($__default["default"](this.tip).hasClass(CLASS_NAME_FADE)) {
-          cov_1sdqx207bd().b[20][0]++;
-          var transitionDuration = (cov_1sdqx207bd().s[113]++, Util__default["default"].getTransitionDurationFromElement(this.tip));
-          cov_1sdqx207bd().s[114]++;
+          cov_18wxups0zb().b[20][0]++;
+          var transitionDuration = (cov_18wxups0zb().s[113]++, Util__default["default"].getTransitionDurationFromElement(this.tip));
+          cov_18wxups0zb().s[114]++;
           $__default["default"](this.tip).one(Util__default["default"].TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
         } else {
-          cov_1sdqx207bd().b[20][1]++;
-          cov_1sdqx207bd().s[115]++;
+          cov_18wxups0zb().b[20][1]++;
+          cov_18wxups0zb().s[115]++;
           complete();
         }
       } else {
-        cov_1sdqx207bd().b[9][1]++;
+        cov_18wxups0zb().b[9][1]++;
       }
     };
-
     _proto.hide = function hide(callback) {
       var _this2 = this;
-
-      cov_1sdqx207bd().f[15]++;
-      var tip = (cov_1sdqx207bd().s[116]++, this.getTipElement());
-      var hideEvent = (cov_1sdqx207bd().s[117]++, $__default["default"].Event(this.constructor.Event.HIDE));
-      cov_1sdqx207bd().s[118]++;
-
+      cov_18wxups0zb().f[15]++;
+      var tip = (cov_18wxups0zb().s[116]++, this.getTipElement());
+      var hideEvent = (cov_18wxups0zb().s[117]++, $__default["default"].Event(this.constructor.Event.HIDE));
+      cov_18wxups0zb().s[118]++;
       var complete = function complete() {
-        cov_1sdqx207bd().f[16]++;
-        cov_1sdqx207bd().s[119]++;
-
-        if ((cov_1sdqx207bd().b[22][0]++, _this2._hoverState !== HOVER_STATE_SHOW) && (cov_1sdqx207bd().b[22][1]++, tip.parentNode)) {
-          cov_1sdqx207bd().b[21][0]++;
-          cov_1sdqx207bd().s[120]++;
+        cov_18wxups0zb().f[16]++;
+        cov_18wxups0zb().s[119]++;
+        if ((cov_18wxups0zb().b[22][0]++, _this2._hoverState !== HOVER_STATE_SHOW) && (cov_18wxups0zb().b[22][1]++, tip.parentNode)) {
+          cov_18wxups0zb().b[21][0]++;
+          cov_18wxups0zb().s[120]++;
           tip.parentNode.removeChild(tip);
         } else {
-          cov_1sdqx207bd().b[21][1]++;
+          cov_18wxups0zb().b[21][1]++;
         }
-
-        cov_1sdqx207bd().s[121]++;
-
+        cov_18wxups0zb().s[121]++;
         _this2._cleanTipClass();
-
-        cov_1sdqx207bd().s[122]++;
-
+        cov_18wxups0zb().s[122]++;
         _this2.element.removeAttribute('aria-describedby');
-
-        cov_1sdqx207bd().s[123]++;
+        cov_18wxups0zb().s[123]++;
         $__default["default"](_this2.element).trigger(_this2.constructor.Event.HIDDEN);
-        cov_1sdqx207bd().s[124]++;
-
+        cov_18wxups0zb().s[124]++;
         if (_this2._popper !== null) {
-          cov_1sdqx207bd().b[23][0]++;
-          cov_1sdqx207bd().s[125]++;
-
+          cov_18wxups0zb().b[23][0]++;
+          cov_18wxups0zb().s[125]++;
           _this2._popper.destroy();
         } else {
-          cov_1sdqx207bd().b[23][1]++;
+          cov_18wxups0zb().b[23][1]++;
         }
-
-        cov_1sdqx207bd().s[126]++;
-
+        cov_18wxups0zb().s[126]++;
         if (callback) {
-          cov_1sdqx207bd().b[24][0]++;
-          cov_1sdqx207bd().s[127]++;
+          cov_18wxups0zb().b[24][0]++;
+          cov_18wxups0zb().s[127]++;
           callback();
         } else {
-          cov_1sdqx207bd().b[24][1]++;
+          cov_18wxups0zb().b[24][1]++;
         }
       };
-
-      cov_1sdqx207bd().s[128]++;
+      cov_18wxups0zb().s[128]++;
       $__default["default"](this.element).trigger(hideEvent);
-      cov_1sdqx207bd().s[129]++;
-
+      cov_18wxups0zb().s[129]++;
       if (hideEvent.isDefaultPrevented()) {
-        cov_1sdqx207bd().b[25][0]++;
-        cov_1sdqx207bd().s[130]++;
+        cov_18wxups0zb().b[25][0]++;
+        cov_18wxups0zb().s[130]++;
         return;
       } else {
-        cov_1sdqx207bd().b[25][1]++;
+        cov_18wxups0zb().b[25][1]++;
       }
+      cov_18wxups0zb().s[131]++;
+      $__default["default"](tip).removeClass(CLASS_NAME_SHOW);
 
-      cov_1sdqx207bd().s[131]++;
-      $__default["default"](tip).removeClass(CLASS_NAME_SHOW); // If this is a touch-enabled device we remove the extra
+      // If this is a touch-enabled device we remove the extra
       // empty mouseover listeners we added for iOS support
-
-      cov_1sdqx207bd().s[132]++;
-
+      cov_18wxups0zb().s[132]++;
       if ('ontouchstart' in document.documentElement) {
-        cov_1sdqx207bd().b[26][0]++;
-        cov_1sdqx207bd().s[133]++;
+        cov_18wxups0zb().b[26][0]++;
+        cov_18wxups0zb().s[133]++;
         $__default["default"](document.body).children().off('mouseover', null, $__default["default"].noop);
       } else {
-        cov_1sdqx207bd().b[26][1]++;
+        cov_18wxups0zb().b[26][1]++;
       }
-
-      cov_1sdqx207bd().s[134]++;
+      cov_18wxups0zb().s[134]++;
       this._activeTrigger[TRIGGER_CLICK] = false;
-      cov_1sdqx207bd().s[135]++;
+      cov_18wxups0zb().s[135]++;
       this._activeTrigger[TRIGGER_FOCUS] = false;
-      cov_1sdqx207bd().s[136]++;
+      cov_18wxups0zb().s[136]++;
       this._activeTrigger[TRIGGER_HOVER] = false;
-      cov_1sdqx207bd().s[137]++;
-
+      cov_18wxups0zb().s[137]++;
       if ($__default["default"](this.tip).hasClass(CLASS_NAME_FADE)) {
-        cov_1sdqx207bd().b[27][0]++;
-        var transitionDuration = (cov_1sdqx207bd().s[138]++, Util__default["default"].getTransitionDurationFromElement(tip));
-        cov_1sdqx207bd().s[139]++;
+        cov_18wxups0zb().b[27][0]++;
+        var transitionDuration = (cov_18wxups0zb().s[138]++, Util__default["default"].getTransitionDurationFromElement(tip));
+        cov_18wxups0zb().s[139]++;
         $__default["default"](tip).one(Util__default["default"].TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
-        cov_1sdqx207bd().b[27][1]++;
-        cov_1sdqx207bd().s[140]++;
+        cov_18wxups0zb().b[27][1]++;
+        cov_18wxups0zb().s[140]++;
         complete();
       }
-
-      cov_1sdqx207bd().s[141]++;
+      cov_18wxups0zb().s[141]++;
       this._hoverState = '';
     };
-
     _proto.update = function update() {
-      cov_1sdqx207bd().f[17]++;
-      cov_1sdqx207bd().s[142]++;
-
+      cov_18wxups0zb().f[17]++;
+      cov_18wxups0zb().s[142]++;
       if (this._popper !== null) {
-        cov_1sdqx207bd().b[28][0]++;
-        cov_1sdqx207bd().s[143]++;
-
+        cov_18wxups0zb().b[28][0]++;
+        cov_18wxups0zb().s[143]++;
         this._popper.scheduleUpdate();
       } else {
-        cov_1sdqx207bd().b[28][1]++;
+        cov_18wxups0zb().b[28][1]++;
       }
-    } // Protected
-    ;
+    }
 
+    // Protected
+    ;
     _proto.isWithContent = function isWithContent() {
-      cov_1sdqx207bd().f[18]++;
-      cov_1sdqx207bd().s[144]++;
+      cov_18wxups0zb().f[18]++;
+      cov_18wxups0zb().s[144]++;
       return Boolean(this.getTitle());
     };
-
     _proto.addAttachmentClass = function addAttachmentClass(attachment) {
-      cov_1sdqx207bd().f[19]++;
-      cov_1sdqx207bd().s[145]++;
+      cov_18wxups0zb().f[19]++;
+      cov_18wxups0zb().s[145]++;
       $__default["default"](this.getTipElement()).addClass(CLASS_PREFIX + "-" + attachment);
     };
-
     _proto.getTipElement = function getTipElement() {
-      cov_1sdqx207bd().f[20]++;
-      cov_1sdqx207bd().s[146]++;
-      this.tip = (cov_1sdqx207bd().b[29][0]++, this.tip) || (cov_1sdqx207bd().b[29][1]++, $__default["default"](this.config.template)[0]);
-      cov_1sdqx207bd().s[147]++;
+      cov_18wxups0zb().f[20]++;
+      cov_18wxups0zb().s[146]++;
+      this.tip = (cov_18wxups0zb().b[29][0]++, this.tip) || (cov_18wxups0zb().b[29][1]++, $__default["default"](this.config.template)[0]);
+      cov_18wxups0zb().s[147]++;
       return this.tip;
     };
-
     _proto.setContent = function setContent() {
-      cov_1sdqx207bd().f[21]++;
-      var tip = (cov_1sdqx207bd().s[148]++, this.getTipElement());
-      cov_1sdqx207bd().s[149]++;
+      cov_18wxups0zb().f[21]++;
+      var tip = (cov_18wxups0zb().s[148]++, this.getTipElement());
+      cov_18wxups0zb().s[149]++;
       this.setElementContent($__default["default"](tip.querySelectorAll(SELECTOR_TOOLTIP_INNER)), this.getTitle());
-      cov_1sdqx207bd().s[150]++;
+      cov_18wxups0zb().s[150]++;
       $__default["default"](tip).removeClass(CLASS_NAME_FADE + " " + CLASS_NAME_SHOW);
     };
-
     _proto.setElementContent = function setElementContent($element, content) {
-      cov_1sdqx207bd().f[22]++;
-      cov_1sdqx207bd().s[151]++;
-
-      if ((cov_1sdqx207bd().b[31][0]++, typeof content === 'object') && ((cov_1sdqx207bd().b[31][1]++, content.nodeType) || (cov_1sdqx207bd().b[31][2]++, content.jquery))) {
-        cov_1sdqx207bd().b[30][0]++;
-        cov_1sdqx207bd().s[152]++;
-
+      cov_18wxups0zb().f[22]++;
+      cov_18wxups0zb().s[151]++;
+      if ((cov_18wxups0zb().b[31][0]++, typeof content === 'object') && ((cov_18wxups0zb().b[31][1]++, content.nodeType) || (cov_18wxups0zb().b[31][2]++, content.jquery))) {
+        cov_18wxups0zb().b[30][0]++;
+        cov_18wxups0zb().s[152]++;
         // Content is a DOM node or a jQuery
         if (this.config.html) {
-          cov_1sdqx207bd().b[32][0]++;
-          cov_1sdqx207bd().s[153]++;
-
+          cov_18wxups0zb().b[32][0]++;
+          cov_18wxups0zb().s[153]++;
           if (!$__default["default"](content).parent().is($element)) {
-            cov_1sdqx207bd().b[33][0]++;
-            cov_1sdqx207bd().s[154]++;
+            cov_18wxups0zb().b[33][0]++;
+            cov_18wxups0zb().s[154]++;
             $element.empty().append(content);
           } else {
-            cov_1sdqx207bd().b[33][1]++;
+            cov_18wxups0zb().b[33][1]++;
           }
         } else {
-          cov_1sdqx207bd().b[32][1]++;
-          cov_1sdqx207bd().s[155]++;
+          cov_18wxups0zb().b[32][1]++;
+          cov_18wxups0zb().s[155]++;
           $element.text($__default["default"](content).text());
         }
-
-        cov_1sdqx207bd().s[156]++;
+        cov_18wxups0zb().s[156]++;
         return;
       } else {
-        cov_1sdqx207bd().b[30][1]++;
+        cov_18wxups0zb().b[30][1]++;
       }
-
-      cov_1sdqx207bd().s[157]++;
-
+      cov_18wxups0zb().s[157]++;
       if (this.config.html) {
-        cov_1sdqx207bd().b[34][0]++;
-        cov_1sdqx207bd().s[158]++;
-
+        cov_18wxups0zb().b[34][0]++;
+        cov_18wxups0zb().s[158]++;
         if (this.config.sanitize) {
-          cov_1sdqx207bd().b[35][0]++;
-          cov_1sdqx207bd().s[159]++;
+          cov_18wxups0zb().b[35][0]++;
+          cov_18wxups0zb().s[159]++;
           content = sanitizeHtml(content, this.config.whiteList, this.config.sanitizeFn);
         } else {
-          cov_1sdqx207bd().b[35][1]++;
+          cov_18wxups0zb().b[35][1]++;
         }
-
-        cov_1sdqx207bd().s[160]++;
+        cov_18wxups0zb().s[160]++;
         $element.html(content);
       } else {
-        cov_1sdqx207bd().b[34][1]++;
-        cov_1sdqx207bd().s[161]++;
+        cov_18wxups0zb().b[34][1]++;
+        cov_18wxups0zb().s[161]++;
         $element.text(content);
       }
     };
-
     _proto.getTitle = function getTitle() {
-      cov_1sdqx207bd().f[23]++;
-      var title = (cov_1sdqx207bd().s[162]++, this.element.getAttribute('data-original-title'));
-      cov_1sdqx207bd().s[163]++;
-
+      cov_18wxups0zb().f[23]++;
+      var title = (cov_18wxups0zb().s[162]++, this.element.getAttribute('data-original-title'));
+      cov_18wxups0zb().s[163]++;
       if (!title) {
-        cov_1sdqx207bd().b[36][0]++;
-        cov_1sdqx207bd().s[164]++;
-        title = typeof this.config.title === 'function' ? (cov_1sdqx207bd().b[37][0]++, this.config.title.call(this.element)) : (cov_1sdqx207bd().b[37][1]++, this.config.title);
+        cov_18wxups0zb().b[36][0]++;
+        cov_18wxups0zb().s[164]++;
+        title = typeof this.config.title === 'function' ? (cov_18wxups0zb().b[37][0]++, this.config.title.call(this.element)) : (cov_18wxups0zb().b[37][1]++, this.config.title);
       } else {
-        cov_1sdqx207bd().b[36][1]++;
+        cov_18wxups0zb().b[36][1]++;
       }
-
-      cov_1sdqx207bd().s[165]++;
+      cov_18wxups0zb().s[165]++;
       return title;
-    } // Private
-    ;
+    }
 
+    // Private
+    ;
     _proto._getPopperConfig = function _getPopperConfig(attachment) {
       var _this3 = this;
-
-      cov_1sdqx207bd().f[24]++;
-      var defaultBsConfig = (cov_1sdqx207bd().s[166]++, {
+      cov_18wxups0zb().f[24]++;
+      var defaultBsConfig = (cov_18wxups0zb().s[166]++, {
         placement: attachment,
         modifiers: {
           offset: this._getOffset(),
@@ -9418,610 +9312,524 @@
           }
         },
         onCreate: function onCreate(data) {
-          cov_1sdqx207bd().f[25]++;
-          cov_1sdqx207bd().s[167]++;
-
+          cov_18wxups0zb().f[25]++;
+          cov_18wxups0zb().s[167]++;
           if (data.originalPlacement !== data.placement) {
-            cov_1sdqx207bd().b[38][0]++;
-            cov_1sdqx207bd().s[168]++;
-
+            cov_18wxups0zb().b[38][0]++;
+            cov_18wxups0zb().s[168]++;
             _this3._handlePopperPlacementChange(data);
           } else {
-            cov_1sdqx207bd().b[38][1]++;
+            cov_18wxups0zb().b[38][1]++;
           }
         },
         onUpdate: function onUpdate(data) {
-          cov_1sdqx207bd().f[26]++;
-          cov_1sdqx207bd().s[169]++;
+          cov_18wxups0zb().f[26]++;
+          cov_18wxups0zb().s[169]++;
           return _this3._handlePopperPlacementChange(data);
         }
       });
-      cov_1sdqx207bd().s[170]++;
+      cov_18wxups0zb().s[170]++;
       return _extends({}, defaultBsConfig, this.config.popperConfig);
     };
-
     _proto._getOffset = function _getOffset() {
       var _this4 = this;
-
-      cov_1sdqx207bd().f[27]++;
-      var offset = (cov_1sdqx207bd().s[171]++, {});
-      cov_1sdqx207bd().s[172]++;
-
+      cov_18wxups0zb().f[27]++;
+      var offset = (cov_18wxups0zb().s[171]++, {});
+      cov_18wxups0zb().s[172]++;
       if (typeof this.config.offset === 'function') {
-        cov_1sdqx207bd().b[39][0]++;
-        cov_1sdqx207bd().s[173]++;
-
+        cov_18wxups0zb().b[39][0]++;
+        cov_18wxups0zb().s[173]++;
         offset.fn = function (data) {
-          cov_1sdqx207bd().f[28]++;
-          cov_1sdqx207bd().s[174]++;
+          cov_18wxups0zb().f[28]++;
+          cov_18wxups0zb().s[174]++;
           data.offsets = _extends({}, data.offsets, _this4.config.offset(data.offsets, _this4.element));
-          cov_1sdqx207bd().s[175]++;
+          cov_18wxups0zb().s[175]++;
           return data;
         };
       } else {
-        cov_1sdqx207bd().b[39][1]++;
-        cov_1sdqx207bd().s[176]++;
+        cov_18wxups0zb().b[39][1]++;
+        cov_18wxups0zb().s[176]++;
         offset.offset = this.config.offset;
       }
-
-      cov_1sdqx207bd().s[177]++;
+      cov_18wxups0zb().s[177]++;
       return offset;
     };
-
     _proto._getContainer = function _getContainer() {
-      cov_1sdqx207bd().f[29]++;
-      cov_1sdqx207bd().s[178]++;
-
+      cov_18wxups0zb().f[29]++;
+      cov_18wxups0zb().s[178]++;
       if (this.config.container === false) {
-        cov_1sdqx207bd().b[40][0]++;
-        cov_1sdqx207bd().s[179]++;
+        cov_18wxups0zb().b[40][0]++;
+        cov_18wxups0zb().s[179]++;
         return document.body;
       } else {
-        cov_1sdqx207bd().b[40][1]++;
+        cov_18wxups0zb().b[40][1]++;
       }
-
-      cov_1sdqx207bd().s[180]++;
-
+      cov_18wxups0zb().s[180]++;
       if (Util__default["default"].isElement(this.config.container)) {
-        cov_1sdqx207bd().b[41][0]++;
-        cov_1sdqx207bd().s[181]++;
+        cov_18wxups0zb().b[41][0]++;
+        cov_18wxups0zb().s[181]++;
         return $__default["default"](this.config.container);
       } else {
-        cov_1sdqx207bd().b[41][1]++;
+        cov_18wxups0zb().b[41][1]++;
       }
-
-      cov_1sdqx207bd().s[182]++;
+      cov_18wxups0zb().s[182]++;
       return $__default["default"](document).find(this.config.container);
     };
-
     _proto._getAttachment = function _getAttachment(placement) {
-      cov_1sdqx207bd().f[30]++;
-      cov_1sdqx207bd().s[183]++;
+      cov_18wxups0zb().f[30]++;
+      cov_18wxups0zb().s[183]++;
       return AttachmentMap[placement.toUpperCase()];
     };
-
     _proto._setListeners = function _setListeners() {
       var _this5 = this;
-
-      cov_1sdqx207bd().f[31]++;
-      var triggers = (cov_1sdqx207bd().s[184]++, this.config.trigger.split(' '));
-      cov_1sdqx207bd().s[185]++;
+      cov_18wxups0zb().f[31]++;
+      var triggers = (cov_18wxups0zb().s[184]++, this.config.trigger.split(' '));
+      cov_18wxups0zb().s[185]++;
       triggers.forEach(function (trigger) {
-        cov_1sdqx207bd().f[32]++;
-        cov_1sdqx207bd().s[186]++;
-
+        cov_18wxups0zb().f[32]++;
+        cov_18wxups0zb().s[186]++;
         if (trigger === 'click') {
-          cov_1sdqx207bd().b[42][0]++;
-          cov_1sdqx207bd().s[187]++;
+          cov_18wxups0zb().b[42][0]++;
+          cov_18wxups0zb().s[187]++;
           $__default["default"](_this5.element).on(_this5.constructor.Event.CLICK, _this5.config.selector, function (event) {
-            cov_1sdqx207bd().f[33]++;
-            cov_1sdqx207bd().s[188]++;
+            cov_18wxups0zb().f[33]++;
+            cov_18wxups0zb().s[188]++;
             return _this5.toggle(event);
           });
         } else {
-          cov_1sdqx207bd().b[42][1]++;
-          cov_1sdqx207bd().s[189]++;
-
+          cov_18wxups0zb().b[42][1]++;
+          cov_18wxups0zb().s[189]++;
           if (trigger !== TRIGGER_MANUAL) {
-            cov_1sdqx207bd().b[43][0]++;
-            var eventIn = (cov_1sdqx207bd().s[190]++, trigger === TRIGGER_HOVER ? (cov_1sdqx207bd().b[44][0]++, _this5.constructor.Event.MOUSEENTER) : (cov_1sdqx207bd().b[44][1]++, _this5.constructor.Event.FOCUSIN));
-            var eventOut = (cov_1sdqx207bd().s[191]++, trigger === TRIGGER_HOVER ? (cov_1sdqx207bd().b[45][0]++, _this5.constructor.Event.MOUSELEAVE) : (cov_1sdqx207bd().b[45][1]++, _this5.constructor.Event.FOCUSOUT));
-            cov_1sdqx207bd().s[192]++;
+            cov_18wxups0zb().b[43][0]++;
+            var eventIn = (cov_18wxups0zb().s[190]++, trigger === TRIGGER_HOVER ? (cov_18wxups0zb().b[44][0]++, _this5.constructor.Event.MOUSEENTER) : (cov_18wxups0zb().b[44][1]++, _this5.constructor.Event.FOCUSIN));
+            var eventOut = (cov_18wxups0zb().s[191]++, trigger === TRIGGER_HOVER ? (cov_18wxups0zb().b[45][0]++, _this5.constructor.Event.MOUSELEAVE) : (cov_18wxups0zb().b[45][1]++, _this5.constructor.Event.FOCUSOUT));
+            cov_18wxups0zb().s[192]++;
             $__default["default"](_this5.element).on(eventIn, _this5.config.selector, function (event) {
-              cov_1sdqx207bd().f[34]++;
-              cov_1sdqx207bd().s[193]++;
+              cov_18wxups0zb().f[34]++;
+              cov_18wxups0zb().s[193]++;
               return _this5._enter(event);
             }).on(eventOut, _this5.config.selector, function (event) {
-              cov_1sdqx207bd().f[35]++;
-              cov_1sdqx207bd().s[194]++;
+              cov_18wxups0zb().f[35]++;
+              cov_18wxups0zb().s[194]++;
               return _this5._leave(event);
             });
           } else {
-            cov_1sdqx207bd().b[43][1]++;
+            cov_18wxups0zb().b[43][1]++;
           }
         }
       });
-      cov_1sdqx207bd().s[195]++;
-
+      cov_18wxups0zb().s[195]++;
       this._hideModalHandler = function () {
-        cov_1sdqx207bd().f[36]++;
-        cov_1sdqx207bd().s[196]++;
-
+        cov_18wxups0zb().f[36]++;
+        cov_18wxups0zb().s[196]++;
         if (_this5.element) {
-          cov_1sdqx207bd().b[46][0]++;
-          cov_1sdqx207bd().s[197]++;
-
+          cov_18wxups0zb().b[46][0]++;
+          cov_18wxups0zb().s[197]++;
           _this5.hide();
         } else {
-          cov_1sdqx207bd().b[46][1]++;
+          cov_18wxups0zb().b[46][1]++;
         }
       };
-
-      cov_1sdqx207bd().s[198]++;
+      cov_18wxups0zb().s[198]++;
       $__default["default"](this.element).closest('.modal').on('hide.bs.modal', this._hideModalHandler);
-      cov_1sdqx207bd().s[199]++;
-
+      cov_18wxups0zb().s[199]++;
       if (this.config.selector) {
-        cov_1sdqx207bd().b[47][0]++;
-        cov_1sdqx207bd().s[200]++;
+        cov_18wxups0zb().b[47][0]++;
+        cov_18wxups0zb().s[200]++;
         this.config = _extends({}, this.config, {
           trigger: 'manual',
           selector: ''
         });
       } else {
-        cov_1sdqx207bd().b[47][1]++;
-        cov_1sdqx207bd().s[201]++;
-
+        cov_18wxups0zb().b[47][1]++;
+        cov_18wxups0zb().s[201]++;
         this._fixTitle();
       }
     };
-
     _proto._fixTitle = function _fixTitle() {
-      cov_1sdqx207bd().f[37]++;
-      var titleType = (cov_1sdqx207bd().s[202]++, typeof this.element.getAttribute('data-original-title'));
-      cov_1sdqx207bd().s[203]++;
-
-      if ((cov_1sdqx207bd().b[49][0]++, this.element.getAttribute('title')) || (cov_1sdqx207bd().b[49][1]++, titleType !== 'string')) {
-        cov_1sdqx207bd().b[48][0]++;
-        cov_1sdqx207bd().s[204]++;
-        this.element.setAttribute('data-original-title', (cov_1sdqx207bd().b[50][0]++, this.element.getAttribute('title')) || (cov_1sdqx207bd().b[50][1]++, ''));
-        cov_1sdqx207bd().s[205]++;
+      cov_18wxups0zb().f[37]++;
+      var titleType = (cov_18wxups0zb().s[202]++, typeof this.element.getAttribute('data-original-title'));
+      cov_18wxups0zb().s[203]++;
+      if ((cov_18wxups0zb().b[49][0]++, this.element.getAttribute('title')) || (cov_18wxups0zb().b[49][1]++, titleType !== 'string')) {
+        cov_18wxups0zb().b[48][0]++;
+        cov_18wxups0zb().s[204]++;
+        this.element.setAttribute('data-original-title', (cov_18wxups0zb().b[50][0]++, this.element.getAttribute('title')) || (cov_18wxups0zb().b[50][1]++, ''));
+        cov_18wxups0zb().s[205]++;
         this.element.setAttribute('title', '');
       } else {
-        cov_1sdqx207bd().b[48][1]++;
+        cov_18wxups0zb().b[48][1]++;
       }
     };
-
     _proto._enter = function _enter(event, context) {
-      cov_1sdqx207bd().f[38]++;
-      var dataKey = (cov_1sdqx207bd().s[206]++, this.constructor.DATA_KEY);
-      cov_1sdqx207bd().s[207]++;
-      context = (cov_1sdqx207bd().b[51][0]++, context) || (cov_1sdqx207bd().b[51][1]++, $__default["default"](event.currentTarget).data(dataKey));
-      cov_1sdqx207bd().s[208]++;
-
+      cov_18wxups0zb().f[38]++;
+      var dataKey = (cov_18wxups0zb().s[206]++, this.constructor.DATA_KEY);
+      cov_18wxups0zb().s[207]++;
+      context = (cov_18wxups0zb().b[51][0]++, context) || (cov_18wxups0zb().b[51][1]++, $__default["default"](event.currentTarget).data(dataKey));
+      cov_18wxups0zb().s[208]++;
       if (!context) {
-        cov_1sdqx207bd().b[52][0]++;
-        cov_1sdqx207bd().s[209]++;
+        cov_18wxups0zb().b[52][0]++;
+        cov_18wxups0zb().s[209]++;
         context = new this.constructor(event.currentTarget, this._getDelegateConfig());
-        cov_1sdqx207bd().s[210]++;
+        cov_18wxups0zb().s[210]++;
         $__default["default"](event.currentTarget).data(dataKey, context);
       } else {
-        cov_1sdqx207bd().b[52][1]++;
+        cov_18wxups0zb().b[52][1]++;
       }
-
-      cov_1sdqx207bd().s[211]++;
-
+      cov_18wxups0zb().s[211]++;
       if (event) {
-        cov_1sdqx207bd().b[53][0]++;
-        cov_1sdqx207bd().s[212]++;
-        context._activeTrigger[event.type === 'focusin' ? (cov_1sdqx207bd().b[54][0]++, TRIGGER_FOCUS) : (cov_1sdqx207bd().b[54][1]++, TRIGGER_HOVER)] = true;
+        cov_18wxups0zb().b[53][0]++;
+        cov_18wxups0zb().s[212]++;
+        context._activeTrigger[event.type === 'focusin' ? (cov_18wxups0zb().b[54][0]++, TRIGGER_FOCUS) : (cov_18wxups0zb().b[54][1]++, TRIGGER_HOVER)] = true;
       } else {
-        cov_1sdqx207bd().b[53][1]++;
+        cov_18wxups0zb().b[53][1]++;
       }
-
-      cov_1sdqx207bd().s[213]++;
-
-      if ((cov_1sdqx207bd().b[56][0]++, $__default["default"](context.getTipElement()).hasClass(CLASS_NAME_SHOW)) || (cov_1sdqx207bd().b[56][1]++, context._hoverState === HOVER_STATE_SHOW)) {
-        cov_1sdqx207bd().b[55][0]++;
-        cov_1sdqx207bd().s[214]++;
+      cov_18wxups0zb().s[213]++;
+      if ((cov_18wxups0zb().b[56][0]++, $__default["default"](context.getTipElement()).hasClass(CLASS_NAME_SHOW)) || (cov_18wxups0zb().b[56][1]++, context._hoverState === HOVER_STATE_SHOW)) {
+        cov_18wxups0zb().b[55][0]++;
+        cov_18wxups0zb().s[214]++;
         context._hoverState = HOVER_STATE_SHOW;
-        cov_1sdqx207bd().s[215]++;
+        cov_18wxups0zb().s[215]++;
         return;
       } else {
-        cov_1sdqx207bd().b[55][1]++;
+        cov_18wxups0zb().b[55][1]++;
       }
-
-      cov_1sdqx207bd().s[216]++;
+      cov_18wxups0zb().s[216]++;
       clearTimeout(context._timeout);
-      cov_1sdqx207bd().s[217]++;
+      cov_18wxups0zb().s[217]++;
       context._hoverState = HOVER_STATE_SHOW;
-      cov_1sdqx207bd().s[218]++;
-
-      if ((cov_1sdqx207bd().b[58][0]++, !context.config.delay) || (cov_1sdqx207bd().b[58][1]++, !context.config.delay.show)) {
-        cov_1sdqx207bd().b[57][0]++;
-        cov_1sdqx207bd().s[219]++;
+      cov_18wxups0zb().s[218]++;
+      if ((cov_18wxups0zb().b[58][0]++, !context.config.delay) || (cov_18wxups0zb().b[58][1]++, !context.config.delay.show)) {
+        cov_18wxups0zb().b[57][0]++;
+        cov_18wxups0zb().s[219]++;
         context.show();
-        cov_1sdqx207bd().s[220]++;
+        cov_18wxups0zb().s[220]++;
         return;
       } else {
-        cov_1sdqx207bd().b[57][1]++;
+        cov_18wxups0zb().b[57][1]++;
       }
-
-      cov_1sdqx207bd().s[221]++;
+      cov_18wxups0zb().s[221]++;
       context._timeout = setTimeout(function () {
-        cov_1sdqx207bd().f[39]++;
-        cov_1sdqx207bd().s[222]++;
-
+        cov_18wxups0zb().f[39]++;
+        cov_18wxups0zb().s[222]++;
         if (context._hoverState === HOVER_STATE_SHOW) {
-          cov_1sdqx207bd().b[59][0]++;
-          cov_1sdqx207bd().s[223]++;
+          cov_18wxups0zb().b[59][0]++;
+          cov_18wxups0zb().s[223]++;
           context.show();
         } else {
-          cov_1sdqx207bd().b[59][1]++;
+          cov_18wxups0zb().b[59][1]++;
         }
       }, context.config.delay.show);
     };
-
     _proto._leave = function _leave(event, context) {
-      cov_1sdqx207bd().f[40]++;
-      var dataKey = (cov_1sdqx207bd().s[224]++, this.constructor.DATA_KEY);
-      cov_1sdqx207bd().s[225]++;
-      context = (cov_1sdqx207bd().b[60][0]++, context) || (cov_1sdqx207bd().b[60][1]++, $__default["default"](event.currentTarget).data(dataKey));
-      cov_1sdqx207bd().s[226]++;
-
+      cov_18wxups0zb().f[40]++;
+      var dataKey = (cov_18wxups0zb().s[224]++, this.constructor.DATA_KEY);
+      cov_18wxups0zb().s[225]++;
+      context = (cov_18wxups0zb().b[60][0]++, context) || (cov_18wxups0zb().b[60][1]++, $__default["default"](event.currentTarget).data(dataKey));
+      cov_18wxups0zb().s[226]++;
       if (!context) {
-        cov_1sdqx207bd().b[61][0]++;
-        cov_1sdqx207bd().s[227]++;
+        cov_18wxups0zb().b[61][0]++;
+        cov_18wxups0zb().s[227]++;
         context = new this.constructor(event.currentTarget, this._getDelegateConfig());
-        cov_1sdqx207bd().s[228]++;
+        cov_18wxups0zb().s[228]++;
         $__default["default"](event.currentTarget).data(dataKey, context);
       } else {
-        cov_1sdqx207bd().b[61][1]++;
+        cov_18wxups0zb().b[61][1]++;
       }
-
-      cov_1sdqx207bd().s[229]++;
-
+      cov_18wxups0zb().s[229]++;
       if (event) {
-        cov_1sdqx207bd().b[62][0]++;
-        cov_1sdqx207bd().s[230]++;
-        context._activeTrigger[event.type === 'focusout' ? (cov_1sdqx207bd().b[63][0]++, TRIGGER_FOCUS) : (cov_1sdqx207bd().b[63][1]++, TRIGGER_HOVER)] = false;
+        cov_18wxups0zb().b[62][0]++;
+        cov_18wxups0zb().s[230]++;
+        context._activeTrigger[event.type === 'focusout' ? (cov_18wxups0zb().b[63][0]++, TRIGGER_FOCUS) : (cov_18wxups0zb().b[63][1]++, TRIGGER_HOVER)] = false;
       } else {
-        cov_1sdqx207bd().b[62][1]++;
+        cov_18wxups0zb().b[62][1]++;
       }
-
-      cov_1sdqx207bd().s[231]++;
-
+      cov_18wxups0zb().s[231]++;
       if (context._isWithActiveTrigger()) {
-        cov_1sdqx207bd().b[64][0]++;
-        cov_1sdqx207bd().s[232]++;
+        cov_18wxups0zb().b[64][0]++;
+        cov_18wxups0zb().s[232]++;
         return;
       } else {
-        cov_1sdqx207bd().b[64][1]++;
+        cov_18wxups0zb().b[64][1]++;
       }
-
-      cov_1sdqx207bd().s[233]++;
+      cov_18wxups0zb().s[233]++;
       clearTimeout(context._timeout);
-      cov_1sdqx207bd().s[234]++;
+      cov_18wxups0zb().s[234]++;
       context._hoverState = HOVER_STATE_OUT;
-      cov_1sdqx207bd().s[235]++;
-
-      if ((cov_1sdqx207bd().b[66][0]++, !context.config.delay) || (cov_1sdqx207bd().b[66][1]++, !context.config.delay.hide)) {
-        cov_1sdqx207bd().b[65][0]++;
-        cov_1sdqx207bd().s[236]++;
+      cov_18wxups0zb().s[235]++;
+      if ((cov_18wxups0zb().b[66][0]++, !context.config.delay) || (cov_18wxups0zb().b[66][1]++, !context.config.delay.hide)) {
+        cov_18wxups0zb().b[65][0]++;
+        cov_18wxups0zb().s[236]++;
         context.hide();
-        cov_1sdqx207bd().s[237]++;
+        cov_18wxups0zb().s[237]++;
         return;
       } else {
-        cov_1sdqx207bd().b[65][1]++;
+        cov_18wxups0zb().b[65][1]++;
       }
-
-      cov_1sdqx207bd().s[238]++;
+      cov_18wxups0zb().s[238]++;
       context._timeout = setTimeout(function () {
-        cov_1sdqx207bd().f[41]++;
-        cov_1sdqx207bd().s[239]++;
-
+        cov_18wxups0zb().f[41]++;
+        cov_18wxups0zb().s[239]++;
         if (context._hoverState === HOVER_STATE_OUT) {
-          cov_1sdqx207bd().b[67][0]++;
-          cov_1sdqx207bd().s[240]++;
+          cov_18wxups0zb().b[67][0]++;
+          cov_18wxups0zb().s[240]++;
           context.hide();
         } else {
-          cov_1sdqx207bd().b[67][1]++;
+          cov_18wxups0zb().b[67][1]++;
         }
       }, context.config.delay.hide);
     };
-
     _proto._isWithActiveTrigger = function _isWithActiveTrigger() {
-      cov_1sdqx207bd().f[42]++;
-      cov_1sdqx207bd().s[241]++;
-
+      cov_18wxups0zb().f[42]++;
+      cov_18wxups0zb().s[241]++;
       for (var trigger in this._activeTrigger) {
-        cov_1sdqx207bd().s[242]++;
-
+        cov_18wxups0zb().s[242]++;
         if (this._activeTrigger[trigger]) {
-          cov_1sdqx207bd().b[68][0]++;
-          cov_1sdqx207bd().s[243]++;
+          cov_18wxups0zb().b[68][0]++;
+          cov_18wxups0zb().s[243]++;
           return true;
         } else {
-          cov_1sdqx207bd().b[68][1]++;
+          cov_18wxups0zb().b[68][1]++;
         }
       }
-
-      cov_1sdqx207bd().s[244]++;
+      cov_18wxups0zb().s[244]++;
       return false;
     };
-
     _proto._getConfig = function _getConfig(config) {
-      cov_1sdqx207bd().f[43]++;
-      var dataAttributes = (cov_1sdqx207bd().s[245]++, $__default["default"](this.element).data());
-      cov_1sdqx207bd().s[246]++;
+      cov_18wxups0zb().f[43]++;
+      var dataAttributes = (cov_18wxups0zb().s[245]++, $__default["default"](this.element).data());
+      cov_18wxups0zb().s[246]++;
       Object.keys(dataAttributes).forEach(function (dataAttr) {
-        cov_1sdqx207bd().f[44]++;
-        cov_1sdqx207bd().s[247]++;
-
+        cov_18wxups0zb().f[44]++;
+        cov_18wxups0zb().s[247]++;
         if (DISALLOWED_ATTRIBUTES.indexOf(dataAttr) !== -1) {
-          cov_1sdqx207bd().b[69][0]++;
-          cov_1sdqx207bd().s[248]++;
+          cov_18wxups0zb().b[69][0]++;
+          cov_18wxups0zb().s[248]++;
           delete dataAttributes[dataAttr];
         } else {
-          cov_1sdqx207bd().b[69][1]++;
+          cov_18wxups0zb().b[69][1]++;
         }
       });
-      cov_1sdqx207bd().s[249]++;
-      config = _extends({}, this.constructor.Default, dataAttributes, (cov_1sdqx207bd().b[71][0]++, typeof config === 'object') && (cov_1sdqx207bd().b[71][1]++, config) ? (cov_1sdqx207bd().b[70][0]++, config) : (cov_1sdqx207bd().b[70][1]++, {}));
-      cov_1sdqx207bd().s[250]++;
-
+      cov_18wxups0zb().s[249]++;
+      config = _extends({}, this.constructor.Default, dataAttributes, (cov_18wxups0zb().b[71][0]++, typeof config === 'object') && (cov_18wxups0zb().b[71][1]++, config) ? (cov_18wxups0zb().b[70][0]++, config) : (cov_18wxups0zb().b[70][1]++, {}));
+      cov_18wxups0zb().s[250]++;
       if (typeof config.delay === 'number') {
-        cov_1sdqx207bd().b[72][0]++;
-        cov_1sdqx207bd().s[251]++;
+        cov_18wxups0zb().b[72][0]++;
+        cov_18wxups0zb().s[251]++;
         config.delay = {
           show: config.delay,
           hide: config.delay
         };
       } else {
-        cov_1sdqx207bd().b[72][1]++;
+        cov_18wxups0zb().b[72][1]++;
       }
-
-      cov_1sdqx207bd().s[252]++;
-
+      cov_18wxups0zb().s[252]++;
       if (typeof config.title === 'number') {
-        cov_1sdqx207bd().b[73][0]++;
-        cov_1sdqx207bd().s[253]++;
+        cov_18wxups0zb().b[73][0]++;
+        cov_18wxups0zb().s[253]++;
         config.title = config.title.toString();
       } else {
-        cov_1sdqx207bd().b[73][1]++;
+        cov_18wxups0zb().b[73][1]++;
       }
-
-      cov_1sdqx207bd().s[254]++;
-
+      cov_18wxups0zb().s[254]++;
       if (typeof config.content === 'number') {
-        cov_1sdqx207bd().b[74][0]++;
-        cov_1sdqx207bd().s[255]++;
+        cov_18wxups0zb().b[74][0]++;
+        cov_18wxups0zb().s[255]++;
         config.content = config.content.toString();
       } else {
-        cov_1sdqx207bd().b[74][1]++;
+        cov_18wxups0zb().b[74][1]++;
       }
-
-      cov_1sdqx207bd().s[256]++;
+      cov_18wxups0zb().s[256]++;
       Util__default["default"].typeCheckConfig(NAME, config, this.constructor.DefaultType);
-      cov_1sdqx207bd().s[257]++;
-
+      cov_18wxups0zb().s[257]++;
       if (config.sanitize) {
-        cov_1sdqx207bd().b[75][0]++;
-        cov_1sdqx207bd().s[258]++;
+        cov_18wxups0zb().b[75][0]++;
+        cov_18wxups0zb().s[258]++;
         config.template = sanitizeHtml(config.template, config.whiteList, config.sanitizeFn);
       } else {
-        cov_1sdqx207bd().b[75][1]++;
+        cov_18wxups0zb().b[75][1]++;
       }
-
-      cov_1sdqx207bd().s[259]++;
+      cov_18wxups0zb().s[259]++;
       return config;
     };
-
     _proto._getDelegateConfig = function _getDelegateConfig() {
-      cov_1sdqx207bd().f[45]++;
-      var config = (cov_1sdqx207bd().s[260]++, {});
-      cov_1sdqx207bd().s[261]++;
-
+      cov_18wxups0zb().f[45]++;
+      var config = (cov_18wxups0zb().s[260]++, {});
+      cov_18wxups0zb().s[261]++;
       if (this.config) {
-        cov_1sdqx207bd().b[76][0]++;
-        cov_1sdqx207bd().s[262]++;
-
+        cov_18wxups0zb().b[76][0]++;
+        cov_18wxups0zb().s[262]++;
         for (var key in this.config) {
-          cov_1sdqx207bd().s[263]++;
-
+          cov_18wxups0zb().s[263]++;
           if (this.constructor.Default[key] !== this.config[key]) {
-            cov_1sdqx207bd().b[77][0]++;
-            cov_1sdqx207bd().s[264]++;
+            cov_18wxups0zb().b[77][0]++;
+            cov_18wxups0zb().s[264]++;
             config[key] = this.config[key];
           } else {
-            cov_1sdqx207bd().b[77][1]++;
+            cov_18wxups0zb().b[77][1]++;
           }
         }
       } else {
-        cov_1sdqx207bd().b[76][1]++;
+        cov_18wxups0zb().b[76][1]++;
       }
-
-      cov_1sdqx207bd().s[265]++;
+      cov_18wxups0zb().s[265]++;
       return config;
     };
-
     _proto._cleanTipClass = function _cleanTipClass() {
-      cov_1sdqx207bd().f[46]++;
-      var $tip = (cov_1sdqx207bd().s[266]++, $__default["default"](this.getTipElement()));
-      var tabClass = (cov_1sdqx207bd().s[267]++, $tip.attr('class').match(BSCLS_PREFIX_REGEX));
-      cov_1sdqx207bd().s[268]++;
-
-      if ((cov_1sdqx207bd().b[79][0]++, tabClass !== null) && (cov_1sdqx207bd().b[79][1]++, tabClass.length)) {
-        cov_1sdqx207bd().b[78][0]++;
-        cov_1sdqx207bd().s[269]++;
+      cov_18wxups0zb().f[46]++;
+      var $tip = (cov_18wxups0zb().s[266]++, $__default["default"](this.getTipElement()));
+      var tabClass = (cov_18wxups0zb().s[267]++, $tip.attr('class').match(BSCLS_PREFIX_REGEX));
+      cov_18wxups0zb().s[268]++;
+      if ((cov_18wxups0zb().b[79][0]++, tabClass !== null) && (cov_18wxups0zb().b[79][1]++, tabClass.length)) {
+        cov_18wxups0zb().b[78][0]++;
+        cov_18wxups0zb().s[269]++;
         $tip.removeClass(tabClass.join(''));
       } else {
-        cov_1sdqx207bd().b[78][1]++;
+        cov_18wxups0zb().b[78][1]++;
       }
     };
-
     _proto._handlePopperPlacementChange = function _handlePopperPlacementChange(popperData) {
-      cov_1sdqx207bd().f[47]++;
-      cov_1sdqx207bd().s[270]++;
+      cov_18wxups0zb().f[47]++;
+      cov_18wxups0zb().s[270]++;
       this.tip = popperData.instance.popper;
-      cov_1sdqx207bd().s[271]++;
-
+      cov_18wxups0zb().s[271]++;
       this._cleanTipClass();
-
-      cov_1sdqx207bd().s[272]++;
+      cov_18wxups0zb().s[272]++;
       this.addAttachmentClass(this._getAttachment(popperData.placement));
     };
-
     _proto._fixTransition = function _fixTransition() {
-      cov_1sdqx207bd().f[48]++;
-      var tip = (cov_1sdqx207bd().s[273]++, this.getTipElement());
-      var initConfigAnimation = (cov_1sdqx207bd().s[274]++, this.config.animation);
-      cov_1sdqx207bd().s[275]++;
-
+      cov_18wxups0zb().f[48]++;
+      var tip = (cov_18wxups0zb().s[273]++, this.getTipElement());
+      var initConfigAnimation = (cov_18wxups0zb().s[274]++, this.config.animation);
+      cov_18wxups0zb().s[275]++;
       if (tip.getAttribute('x-placement') !== null) {
-        cov_1sdqx207bd().b[80][0]++;
-        cov_1sdqx207bd().s[276]++;
+        cov_18wxups0zb().b[80][0]++;
+        cov_18wxups0zb().s[276]++;
         return;
       } else {
-        cov_1sdqx207bd().b[80][1]++;
+        cov_18wxups0zb().b[80][1]++;
       }
-
-      cov_1sdqx207bd().s[277]++;
+      cov_18wxups0zb().s[277]++;
       $__default["default"](tip).removeClass(CLASS_NAME_FADE);
-      cov_1sdqx207bd().s[278]++;
+      cov_18wxups0zb().s[278]++;
       this.config.animation = false;
-      cov_1sdqx207bd().s[279]++;
+      cov_18wxups0zb().s[279]++;
       this.hide();
-      cov_1sdqx207bd().s[280]++;
+      cov_18wxups0zb().s[280]++;
       this.show();
-      cov_1sdqx207bd().s[281]++;
+      cov_18wxups0zb().s[281]++;
       this.config.animation = initConfigAnimation;
-    } // Static
+    }
+
+    // Static
     ;
-
     Tooltip._jQueryInterface = function _jQueryInterface(config) {
-      cov_1sdqx207bd().f[49]++;
-      cov_1sdqx207bd().s[282]++;
+      cov_18wxups0zb().f[49]++;
+      cov_18wxups0zb().s[282]++;
       return this.each(function () {
-        cov_1sdqx207bd().f[50]++;
-        var $element = (cov_1sdqx207bd().s[283]++, $__default["default"](this));
-        var data = (cov_1sdqx207bd().s[284]++, $element.data(DATA_KEY));
-
-        var _config = (cov_1sdqx207bd().s[285]++, (cov_1sdqx207bd().b[81][0]++, typeof config === 'object') && (cov_1sdqx207bd().b[81][1]++, config));
-
-        cov_1sdqx207bd().s[286]++;
-
-        if ((cov_1sdqx207bd().b[83][0]++, !data) && (cov_1sdqx207bd().b[83][1]++, /dispose|hide/.test(config))) {
-          cov_1sdqx207bd().b[82][0]++;
-          cov_1sdqx207bd().s[287]++;
+        cov_18wxups0zb().f[50]++;
+        var $element = (cov_18wxups0zb().s[283]++, $__default["default"](this));
+        var data = (cov_18wxups0zb().s[284]++, $element.data(DATA_KEY));
+        var _config = (cov_18wxups0zb().s[285]++, (cov_18wxups0zb().b[81][0]++, typeof config === 'object') && (cov_18wxups0zb().b[81][1]++, config));
+        cov_18wxups0zb().s[286]++;
+        if ((cov_18wxups0zb().b[83][0]++, !data) && (cov_18wxups0zb().b[83][1]++, /dispose|hide/.test(config))) {
+          cov_18wxups0zb().b[82][0]++;
+          cov_18wxups0zb().s[287]++;
           return;
         } else {
-          cov_1sdqx207bd().b[82][1]++;
+          cov_18wxups0zb().b[82][1]++;
         }
-
-        cov_1sdqx207bd().s[288]++;
-
+        cov_18wxups0zb().s[288]++;
         if (!data) {
-          cov_1sdqx207bd().b[84][0]++;
-          cov_1sdqx207bd().s[289]++;
+          cov_18wxups0zb().b[84][0]++;
+          cov_18wxups0zb().s[289]++;
           data = new Tooltip(this, _config);
-          cov_1sdqx207bd().s[290]++;
+          cov_18wxups0zb().s[290]++;
           $element.data(DATA_KEY, data);
         } else {
-          cov_1sdqx207bd().b[84][1]++;
+          cov_18wxups0zb().b[84][1]++;
         }
-
-        cov_1sdqx207bd().s[291]++;
-
+        cov_18wxups0zb().s[291]++;
         if (typeof config === 'string') {
-          cov_1sdqx207bd().b[85][0]++;
-          cov_1sdqx207bd().s[292]++;
-
+          cov_18wxups0zb().b[85][0]++;
+          cov_18wxups0zb().s[292]++;
           if (typeof data[config] === 'undefined') {
-            cov_1sdqx207bd().b[86][0]++;
-            cov_1sdqx207bd().s[293]++;
+            cov_18wxups0zb().b[86][0]++;
+            cov_18wxups0zb().s[293]++;
             throw new TypeError("No method named \"" + config + "\"");
           } else {
-            cov_1sdqx207bd().b[86][1]++;
+            cov_18wxups0zb().b[86][1]++;
           }
-
-          cov_1sdqx207bd().s[294]++;
+          cov_18wxups0zb().s[294]++;
           data[config]();
         } else {
-          cov_1sdqx207bd().b[85][1]++;
+          cov_18wxups0zb().b[85][1]++;
         }
       });
     };
-
-    _createClass(Tooltip, null, [{
+    return _createClass(Tooltip, null, [{
       key: "VERSION",
       get: function get() {
-        cov_1sdqx207bd().f[1]++;
-        cov_1sdqx207bd().s[33]++;
+        cov_18wxups0zb().f[1]++;
+        cov_18wxups0zb().s[33]++;
         return VERSION;
       }
     }, {
       key: "Default",
       get: function get() {
-        cov_1sdqx207bd().f[2]++;
-        cov_1sdqx207bd().s[34]++;
+        cov_18wxups0zb().f[2]++;
+        cov_18wxups0zb().s[34]++;
         return Default;
       }
     }, {
       key: "NAME",
       get: function get() {
-        cov_1sdqx207bd().f[3]++;
-        cov_1sdqx207bd().s[35]++;
+        cov_18wxups0zb().f[3]++;
+        cov_18wxups0zb().s[35]++;
         return NAME;
       }
     }, {
       key: "DATA_KEY",
       get: function get() {
-        cov_1sdqx207bd().f[4]++;
-        cov_1sdqx207bd().s[36]++;
+        cov_18wxups0zb().f[4]++;
+        cov_18wxups0zb().s[36]++;
         return DATA_KEY;
       }
     }, {
       key: "Event",
       get: function get() {
-        cov_1sdqx207bd().f[5]++;
-        cov_1sdqx207bd().s[37]++;
+        cov_18wxups0zb().f[5]++;
+        cov_18wxups0zb().s[37]++;
         return Event;
       }
     }, {
       key: "EVENT_KEY",
       get: function get() {
-        cov_1sdqx207bd().f[6]++;
-        cov_1sdqx207bd().s[38]++;
+        cov_18wxups0zb().f[6]++;
+        cov_18wxups0zb().s[38]++;
         return EVENT_KEY;
       }
     }, {
       key: "DefaultType",
       get: function get() {
-        cov_1sdqx207bd().f[7]++;
-        cov_1sdqx207bd().s[39]++;
+        cov_18wxups0zb().f[7]++;
+        cov_18wxups0zb().s[39]++;
         return DefaultType;
       }
     }]);
-
-    return Tooltip;
   }();
   /**
    * jQuery
    */
-
-
-  cov_1sdqx207bd().s[295]++;
+  cov_18wxups0zb().s[295]++;
   $__default["default"].fn[NAME] = Tooltip._jQueryInterface;
-  cov_1sdqx207bd().s[296]++;
+  cov_18wxups0zb().s[296]++;
   $__default["default"].fn[NAME].Constructor = Tooltip;
-  cov_1sdqx207bd().s[297]++;
-
+  cov_18wxups0zb().s[297]++;
   $__default["default"].fn[NAME].noConflict = function () {
-    cov_1sdqx207bd().f[51]++;
-    cov_1sdqx207bd().s[298]++;
+    cov_18wxups0zb().f[51]++;
+    cov_18wxups0zb().s[298]++;
     $__default["default"].fn[NAME] = JQUERY_NO_CONFLICT;
-    cov_1sdqx207bd().s[299]++;
+    cov_18wxups0zb().s[299]++;
     return Tooltip._jQueryInterface;
   };
 

@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap scrollspy.js v4.6.2-1 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2022 https://github.com/MahdiMajidzadeh
+  * Bootstrap scrollspy.js v4.6.2-2 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2025 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -14,40 +14,39 @@
   var $__default = /*#__PURE__*/_interopDefaultLegacy($);
   var Util__default = /*#__PURE__*/_interopDefaultLegacy(Util);
 
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
+  function _defineProperties(e, r) {
+    for (var t = 0; t < r.length; t++) {
+      var o = r[t];
+      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o);
     }
   }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    Object.defineProperty(Constructor, "prototype", {
-      writable: false
-    });
-    return Constructor;
+  function _createClass(e, r, t) {
+    return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+      writable: !1
+    }), e;
   }
-
   function _extends() {
-    _extends = Object.assign ? Object.assign.bind() : function (target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
-        }
+    return _extends = Object.assign ? Object.assign.bind() : function (n) {
+      for (var e = 1; e < arguments.length; e++) {
+        var t = arguments[e];
+        for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]);
       }
-
-      return target;
-    };
-    return _extends.apply(this, arguments);
+      return n;
+    }, _extends.apply(null, arguments);
+  }
+  function _toPrimitive(t, r) {
+    if ("object" != typeof t || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+      var i = e.call(t, r || "default");
+      if ("object" != typeof i) return i;
+      throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return ("string" === r ? String : Number)(t);
+  }
+  function _toPropertyKey(t) {
+    var i = _toPrimitive(t, "string");
+    return "symbol" == typeof i ? i : i + "";
   }
 
   /**
@@ -85,14 +84,13 @@
     method: 'string',
     target: '(string|element)'
   };
+
   /**
    * Class definition
    */
-
   var ScrollSpy = /*#__PURE__*/function () {
     function ScrollSpy(element, config) {
       var _this = this;
-
       this._element = element;
       this._scrollElement = element.tagName === 'BODY' ? window : element;
       this._config = this._getConfig(config);
@@ -105,17 +103,14 @@
         return _this._process(event);
       });
       this.refresh();
-
       this._process();
-    } // Getters
+    }
 
-
+    // Getters
     var _proto = ScrollSpy.prototype;
-
     // Public
     _proto.refresh = function refresh() {
       var _this2 = this;
-
       var autoMethod = this._scrollElement === this._scrollElement.window ? METHOD_OFFSET : METHOD_POSITION;
       var offsetMethod = this._config.method === 'auto' ? autoMethod : this._config.method;
       var offsetBase = offsetMethod === METHOD_POSITION ? this._getScrollTop() : 0;
@@ -126,30 +121,24 @@
       targets.map(function (element) {
         var target;
         var targetSelector = Util__default["default"].getSelectorFromElement(element);
-
         if (targetSelector) {
           target = document.querySelector(targetSelector);
         }
-
         if (target) {
           var targetBCR = target.getBoundingClientRect();
-
           if (targetBCR.width || targetBCR.height) {
             // TODO (fat): remove sketch reliance on jQuery position/offset
             return [$__default["default"](target)[offsetMethod]().top + offsetBase, targetSelector];
           }
         }
-
         return null;
       }).filter(Boolean).sort(function (a, b) {
         return a[0] - b[0];
       }).forEach(function (item) {
         _this2._offsets.push(item[0]);
-
         _this2._targets.push(item[1]);
       });
     };
-
     _proto.dispose = function dispose() {
       $__default["default"].removeData(this._element, DATA_KEY);
       $__default["default"](this._scrollElement).off(EVENT_KEY);
@@ -161,137 +150,108 @@
       this._targets = null;
       this._activeTarget = null;
       this._scrollHeight = null;
-    } // Private
-    ;
+    }
 
+    // Private
+    ;
     _proto._getConfig = function _getConfig(config) {
       config = _extends({}, Default, typeof config === 'object' && config ? config : {});
-
       if (typeof config.target !== 'string' && Util__default["default"].isElement(config.target)) {
         var id = $__default["default"](config.target).attr('id');
-
         if (!id) {
           id = Util__default["default"].getUID(NAME);
           $__default["default"](config.target).attr('id', id);
         }
-
         config.target = "#" + id;
       }
-
       Util__default["default"].typeCheckConfig(NAME, config, DefaultType);
       return config;
     };
-
     _proto._getScrollTop = function _getScrollTop() {
       return this._scrollElement === window ? this._scrollElement.pageYOffset : this._scrollElement.scrollTop;
     };
-
     _proto._getScrollHeight = function _getScrollHeight() {
       return this._scrollElement.scrollHeight || Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
     };
-
     _proto._getOffsetHeight = function _getOffsetHeight() {
       return this._scrollElement === window ? window.innerHeight : this._scrollElement.getBoundingClientRect().height;
     };
-
     _proto._process = function _process() {
       var scrollTop = this._getScrollTop() + this._config.offset;
-
       var scrollHeight = this._getScrollHeight();
-
       var maxScroll = this._config.offset + scrollHeight - this._getOffsetHeight();
-
       if (this._scrollHeight !== scrollHeight) {
         this.refresh();
       }
-
       if (scrollTop >= maxScroll) {
         var target = this._targets[this._targets.length - 1];
-
         if (this._activeTarget !== target) {
           this._activate(target);
         }
-
         return;
       }
-
       if (this._activeTarget && scrollTop < this._offsets[0] && this._offsets[0] > 0) {
         this._activeTarget = null;
-
         this._clear();
-
         return;
       }
-
       for (var i = this._offsets.length; i--;) {
         var isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1]);
-
         if (isActiveTarget) {
           this._activate(this._targets[i]);
         }
       }
     };
-
     _proto._activate = function _activate(target) {
       this._activeTarget = target;
-
       this._clear();
-
       var queries = this._selector.split(',').map(function (selector) {
         return selector + "[data-target=\"" + target + "\"]," + selector + "[href=\"" + target + "\"]";
       });
-
       var $link = $__default["default"]([].slice.call(document.querySelectorAll(queries.join(','))));
-
       if ($link.hasClass(CLASS_NAME_DROPDOWN_ITEM)) {
         $link.closest(SELECTOR_DROPDOWN).find(SELECTOR_DROPDOWN_TOGGLE).addClass(CLASS_NAME_ACTIVE);
         $link.addClass(CLASS_NAME_ACTIVE);
       } else {
         // Set triggered link as active
-        $link.addClass(CLASS_NAME_ACTIVE); // Set triggered links parents as active
+        $link.addClass(CLASS_NAME_ACTIVE);
+        // Set triggered links parents as active
         // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
-
-        $link.parents(SELECTOR_NAV_LIST_GROUP).prev(SELECTOR_NAV_LINKS + ", " + SELECTOR_LIST_ITEMS).addClass(CLASS_NAME_ACTIVE); // Handle special case when .nav-link is inside .nav-item
-
+        $link.parents(SELECTOR_NAV_LIST_GROUP).prev(SELECTOR_NAV_LINKS + ", " + SELECTOR_LIST_ITEMS).addClass(CLASS_NAME_ACTIVE);
+        // Handle special case when .nav-link is inside .nav-item
         $link.parents(SELECTOR_NAV_LIST_GROUP).prev(SELECTOR_NAV_ITEMS).children(SELECTOR_NAV_LINKS).addClass(CLASS_NAME_ACTIVE);
       }
-
       $__default["default"](this._scrollElement).trigger(EVENT_ACTIVATE, {
         relatedTarget: target
       });
     };
-
     _proto._clear = function _clear() {
       [].slice.call(document.querySelectorAll(this._selector)).filter(function (node) {
         return node.classList.contains(CLASS_NAME_ACTIVE);
       }).forEach(function (node) {
         return node.classList.remove(CLASS_NAME_ACTIVE);
       });
-    } // Static
-    ;
+    }
 
+    // Static
+    ;
     ScrollSpy._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var data = $__default["default"](this).data(DATA_KEY);
-
         var _config = typeof config === 'object' && config;
-
         if (!data) {
           data = new ScrollSpy(this, _config);
           $__default["default"](this).data(DATA_KEY, data);
         }
-
         if (typeof config === 'string') {
           if (typeof data[config] === 'undefined') {
             throw new TypeError("No method named \"" + config + "\"");
           }
-
           data[config]();
         }
       });
     };
-
-    _createClass(ScrollSpy, null, [{
+    return _createClass(ScrollSpy, null, [{
       key: "VERSION",
       get: function get() {
         return VERSION;
@@ -302,31 +262,25 @@
         return Default;
       }
     }]);
-
-    return ScrollSpy;
   }();
   /**
    * Data API implementation
    */
-
-
   $__default["default"](window).on(EVENT_LOAD_DATA_API, function () {
     var scrollSpys = [].slice.call(document.querySelectorAll(SELECTOR_DATA_SPY));
     var scrollSpysLength = scrollSpys.length;
-
     for (var i = scrollSpysLength; i--;) {
       var $spy = $__default["default"](scrollSpys[i]);
-
       ScrollSpy._jQueryInterface.call($spy, $spy.data());
     }
   });
+
   /**
    * jQuery
    */
 
   $__default["default"].fn[NAME] = ScrollSpy._jQueryInterface;
   $__default["default"].fn[NAME].Constructor = ScrollSpy;
-
   $__default["default"].fn[NAME].noConflict = function () {
     $__default["default"].fn[NAME] = JQUERY_NO_CONFLICT;
     return ScrollSpy._jQueryInterface;
