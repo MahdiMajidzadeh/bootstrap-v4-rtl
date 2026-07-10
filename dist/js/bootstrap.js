@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap v4.6.2-2 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2025 https://github.com/MahdiMajidzadeh
+  * Bootstrap v4.6.2-4 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2026 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -263,7 +263,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._getRootElement = function _getRootElement(element) {
       var selector = Util.getSelectorFromElement(element);
       var parent = false;
@@ -297,7 +297,7 @@
     }
 
     // Static
-    ;
+  ;
     Alert._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var $element = $__default["default"](this);
@@ -423,7 +423,7 @@
     }
 
     // Static
-    ;
+  ;
     Button._jQueryInterface = function _jQueryInterface(config, avoidTriggerChange) {
       return this.each(function () {
         var $element = $__default["default"](this);
@@ -677,7 +677,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._getConfig = function _getConfig(config) {
       config = _extends({}, Default$7, config);
       Util.typeCheckConfig(NAME$8, config, DefaultType$7);
@@ -917,7 +917,7 @@
     }
 
     // Static
-    ;
+  ;
     Carousel._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var data = $__default["default"](this).data(DATA_KEY$8);
@@ -1173,7 +1173,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._getConfig = function _getConfig(config) {
       config = _extends({}, Default$6, config);
       config.toggle = Boolean(config.toggle); // Coerce string values
@@ -1212,7 +1212,7 @@
     }
 
     // Static
-    ;
+  ;
     Collapse._getTargetFromElement = function _getTargetFromElement(element) {
       var selector = Util.getSelectorFromElement(element);
       return selector ? document.querySelector(selector) : null;
@@ -1459,7 +1459,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._addEventListeners = function _addEventListeners() {
       var _this = this;
       $__default["default"](this._element).on(EVENT_CLICK, function (event) {
@@ -1538,7 +1538,7 @@
     }
 
     // Static
-    ;
+  ;
     Dropdown._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var data = $__default["default"](this).data(DATA_KEY$6);
@@ -1608,7 +1608,7 @@
     }
 
     // eslint-disable-next-line complexity
-    ;
+  ;
     Dropdown._dataApiKeydownHandler = function _dataApiKeydownHandler(event) {
       // If not input/textarea:
       //  - And not a key in REGEXP_KEYDOWN => not a dropdown command
@@ -1863,7 +1863,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._getConfig = function _getConfig(config) {
       config = _extends({}, Default$4, config);
       Util.typeCheckConfig(NAME$5, config, DefaultType$4);
@@ -2048,7 +2048,7 @@
     // the following methods are used to handle overflowing modals
     // todo (fat): these should probably be refactored out of modal.js
     // ----------------------------------------------------------------------
-    ;
+  ;
     _proto._adjustDialog = function _adjustDialog() {
       var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
       if (!this._isBodyOverflowing && isModalOverflowing) {
@@ -2068,7 +2068,7 @@
       this._scrollbarWidth = this._getScrollbarWidth();
     };
     _proto._setScrollbar = function _setScrollbar() {
-      var _this10 = this;
+      var _this0 = this;
       if (this._isBodyOverflowing) {
         // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
         //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
@@ -2079,14 +2079,14 @@
         $__default["default"](fixedContent).each(function (index, element) {
           var actualPadding = element.style.paddingRight;
           var calculatedPadding = $__default["default"](element).css('padding-right');
-          $__default["default"](element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this10._scrollbarWidth + "px");
+          $__default["default"](element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this0._scrollbarWidth + "px");
         });
 
         // Adjust sticky content margin
         $__default["default"](stickyContent).each(function (index, element) {
           var actualMargin = element.style.marginRight;
           var calculatedMargin = $__default["default"](element).css('margin-right');
-          $__default["default"](element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this10._scrollbarWidth + "px");
+          $__default["default"](element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this0._scrollbarWidth + "px");
         });
 
         // Adjust body padding
@@ -2130,7 +2130,7 @@
     }
 
     // Static
-    ;
+  ;
     Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
       return this.each(function () {
         var data = $__default["default"](this).data(DATA_KEY$5);
@@ -2165,7 +2165,7 @@
    * Data API implementation
    */
   $__default["default"](document).on(EVENT_CLICK_DATA_API$1, SELECTOR_DATA_TOGGLE$1, function (event) {
-    var _this11 = this;
+    var _this1 = this;
     var target;
     var selector = Util.getSelectorFromElement(this);
     if (selector) {
@@ -2181,8 +2181,8 @@
         return;
       }
       $target.one(EVENT_HIDDEN$2, function () {
-        if ($__default["default"](_this11).is(':visible')) {
-          _this11.focus();
+        if ($__default["default"](_this1).is(':visible')) {
+          _this1.focus();
         }
       });
     });
@@ -2576,7 +2576,7 @@
     }
 
     // Protected
-    ;
+  ;
     _proto.isWithContent = function isWithContent() {
       return Boolean(this.getTitle());
     };
@@ -2622,7 +2622,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._getPopperConfig = function _getPopperConfig(attachment) {
       var _this3 = this;
       var defaultBsConfig = {
@@ -2837,7 +2837,7 @@
     }
 
     // Static
-    ;
+  ;
     Tooltip._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var $element = $__default["default"](this);
@@ -2976,7 +2976,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._getContent = function _getContent() {
       return this.element.getAttribute('data-content') || this.config.content;
     };
@@ -2989,7 +2989,7 @@
     }
 
     // Static
-    ;
+  ;
     Popover._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var data = $__default["default"](this).data(DATA_KEY$3);
@@ -3162,7 +3162,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._getConfig = function _getConfig(config) {
       config = _extends({}, Default$1, typeof config === 'object' && config ? config : {});
       if (typeof config.target !== 'string' && Util.isElement(config.target)) {
@@ -3243,7 +3243,7 @@
     }
 
     // Static
-    ;
+  ;
     ScrollSpy._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var data = $__default["default"](this).data(DATA_KEY$2);
@@ -3387,7 +3387,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._activate = function _activate(element, container, callback) {
       var _this2 = this;
       var activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? $__default["default"](container).find(SELECTOR_ACTIVE_UL) : $__default["default"](container).children(SELECTOR_ACTIVE);
@@ -3440,7 +3440,7 @@
     }
 
     // Static
-    ;
+  ;
     Tab._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var $this = $__default["default"](this);
@@ -3581,7 +3581,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._getConfig = function _getConfig(config) {
       config = _extends({}, Default, $__default["default"](this._element).data(), typeof config === 'object' && config ? config : {});
       Util.typeCheckConfig(NAME, config, this.constructor.DefaultType);
@@ -3613,7 +3613,7 @@
     }
 
     // Static
-    ;
+  ;
     Toast._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var $element = $__default["default"](this);

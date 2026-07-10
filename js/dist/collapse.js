@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap collapse.js v4.6.2-2 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2025 https://github.com/MahdiMajidzadeh
+  * Bootstrap collapse.js v4.6.2-4 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2026 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -224,7 +224,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._getConfig = function _getConfig(config) {
       config = _extends({}, Default, config);
       config.toggle = Boolean(config.toggle); // Coerce string values
@@ -263,7 +263,7 @@
     }
 
     // Static
-    ;
+  ;
     Collapse._getTargetFromElement = function _getTargetFromElement(element) {
       var selector = Util__default["default"].getSelectorFromElement(element);
       return selector ? document.querySelector(selector) : null;

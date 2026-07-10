@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap tooltip.js v4.6.2-2 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2025 https://github.com/MahdiMajidzadeh
+  * Bootstrap tooltip.js v4.6.2-4 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2026 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -426,7 +426,7 @@
     }
 
     // Protected
-    ;
+  ;
     _proto.isWithContent = function isWithContent() {
       return Boolean(this.getTitle());
     };
@@ -472,7 +472,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._getPopperConfig = function _getPopperConfig(attachment) {
       var _this3 = this;
       var defaultBsConfig = {
@@ -687,7 +687,7 @@
     }
 
     // Static
-    ;
+  ;
     Tooltip._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var $element = $__default["default"](this);

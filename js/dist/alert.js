@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap alert.js v4.6.2-2 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2025 https://github.com/MahdiMajidzadeh
+  * Bootstrap alert.js v4.6.2-4 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2026 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -86,7 +86,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._getRootElement = function _getRootElement(element) {
       var selector = Util__default["default"].getSelectorFromElement(element);
       var parent = false;
@@ -120,7 +120,7 @@
     }
 
     // Static
-    ;
+  ;
     Alert._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var $element = $__default["default"](this);

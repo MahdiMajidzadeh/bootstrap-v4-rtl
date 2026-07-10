@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap dropdown.js v4.6.2-2 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2025 https://github.com/MahdiMajidzadeh
+  * Bootstrap dropdown.js v4.6.2-4 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2026 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -230,7 +230,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._addEventListeners = function _addEventListeners() {
       var _this = this;
       $__default["default"](this._element).on(EVENT_CLICK, function (event) {
@@ -309,7 +309,7 @@
     }
 
     // Static
-    ;
+  ;
     Dropdown._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var data = $__default["default"](this).data(DATA_KEY);
@@ -379,7 +379,7 @@
     }
 
     // eslint-disable-next-line complexity
-    ;
+  ;
     Dropdown._dataApiKeydownHandler = function _dataApiKeydownHandler(event) {
       // If not input/textarea:
       //  - And not a key in REGEXP_KEYDOWN => not a dropdown command

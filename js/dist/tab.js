@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap tab.js v4.6.2-2 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2025 https://github.com/MahdiMajidzadeh
+  * Bootstrap tab.js v4.6.2-4 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2026 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -132,7 +132,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._activate = function _activate(element, container, callback) {
       var _this2 = this;
       var activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? $__default["default"](container).find(SELECTOR_ACTIVE_UL) : $__default["default"](container).children(SELECTOR_ACTIVE);
@@ -185,7 +185,7 @@
     }
 
     // Static
-    ;
+  ;
     Tab._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var $this = $__default["default"](this);

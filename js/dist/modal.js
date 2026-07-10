@@ -1,6 +1,6 @@
 /*!
-  * Bootstrap modal.js v4.6.2-2 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
-  * Copyright 2011-2025 https://github.com/MahdiMajidzadeh
+  * Bootstrap modal.js v4.6.2-4 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Copyright 2011-2026 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 (function (global, factory) {
@@ -216,7 +216,7 @@
     }
 
     // Private
-    ;
+  ;
     _proto._getConfig = function _getConfig(config) {
       config = _extends({}, Default, config);
       Util__default["default"].typeCheckConfig(NAME, config, DefaultType);
@@ -401,7 +401,7 @@
     // the following methods are used to handle overflowing modals
     // todo (fat): these should probably be refactored out of modal.js
     // ----------------------------------------------------------------------
-    ;
+  ;
     _proto._adjustDialog = function _adjustDialog() {
       var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
       if (!this._isBodyOverflowing && isModalOverflowing) {
@@ -421,7 +421,7 @@
       this._scrollbarWidth = this._getScrollbarWidth();
     };
     _proto._setScrollbar = function _setScrollbar() {
-      var _this10 = this;
+      var _this0 = this;
       if (this._isBodyOverflowing) {
         // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
         //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
@@ -432,14 +432,14 @@
         $__default["default"](fixedContent).each(function (index, element) {
           var actualPadding = element.style.paddingRight;
           var calculatedPadding = $__default["default"](element).css('padding-right');
-          $__default["default"](element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this10._scrollbarWidth + "px");
+          $__default["default"](element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this0._scrollbarWidth + "px");
         });
 
         // Adjust sticky content margin
         $__default["default"](stickyContent).each(function (index, element) {
           var actualMargin = element.style.marginRight;
           var calculatedMargin = $__default["default"](element).css('margin-right');
-          $__default["default"](element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this10._scrollbarWidth + "px");
+          $__default["default"](element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this0._scrollbarWidth + "px");
         });
 
         // Adjust body padding
@@ -483,7 +483,7 @@
     }
 
     // Static
-    ;
+  ;
     Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
       return this.each(function () {
         var data = $__default["default"](this).data(DATA_KEY);
@@ -518,7 +518,7 @@
    * Data API implementation
    */
   $__default["default"](document).on(EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
-    var _this11 = this;
+    var _this1 = this;
     var target;
     var selector = Util__default["default"].getSelectorFromElement(this);
     if (selector) {
@@ -534,8 +534,8 @@
         return;
       }
       $target.one(EVENT_HIDDEN, function () {
-        if ($__default["default"](_this11).is(':visible')) {
-          _this11.focus();
+        if ($__default["default"](_this1).is(':visible')) {
+          _this1.focus();
         }
       });
     });
