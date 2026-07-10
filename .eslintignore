@@ -1,6 +1,7 @@
 **/*.min.js
 **/dist/
 **/vendor/
+/demo/
 /_site/
 /js/coverage/
 /site/static/sw.js
