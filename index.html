@@ -2,1407 +2,908 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Bootstrap V4 rtl</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="dist/css/bootstrap-rtl.min.css" media="screen">
-    <link rel="stylesheet" href="demo/custom.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap 4 RTL — live demo</title>
+    <meta name="description" content="Live demo of bootstrap-v4-rtl: flip any Bootstrap 4 layout to right-to-left by adding a single rtl class.">
     <link rel="icon" sizes="32x32" href="favicon.png">
-    <script></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Vazirmatn:wght@400;500;700&amp;display=swap">
+    <link rel="stylesheet" href="dist/css/bootstrap-rtl.min.css">
+    <link rel="stylesheet" href="demo/demo.css">
 </head>
-<body class="rtl">
-    <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
-        <div class="container">
-            <a href="../" class="navbar-brand">Bootstrap-v4-rtl</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a class="nav-link" href="./index-fa.html">دموی فارسی</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl" target="_blank">Github</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.npmjs.com/package/bootstrap-v4-rtl" target="_blank">NPM package</a>
-                    </li>
-                </ul>
+<body class="lang-en" data-spy="scroll" data-target="#demo-nav" data-offset="120">
+
+<!-- ============================================================== navbar -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top demo-navbar">
+    <div class="container">
+        <a class="navbar-brand order-1" href="#top"><span class="demo-dot"></span>Bootstrap 4 RTL</a>
+
+        <!-- Kept outside the collapse: on phones the switches are the point of the page. -->
+        <div class="form-inline flex-nowrap demo-switches order-2 order-lg-3 ml-auto ml-lg-0">
+            <span class="demo-switch-label demo-ltr d-none d-lg-inline">dir</span>
+            <div class="btn-group btn-group-sm" role="group" aria-label="Text direction">
+                <button type="button" class="btn btn-outline-primary active" data-set-dir="ltr">LTR</button>
+                <button type="button" class="btn btn-outline-primary" data-set-dir="rtl">RTL</button>
+            </div>
+            <span class="demo-switch-label demo-ltr d-none d-lg-inline">lang</span>
+            <div class="btn-group btn-group-sm" role="group" aria-label="Language">
+                <button type="button" class="btn btn-outline-primary active" data-set-lang="en">EN</button>
+                <button type="button" class="btn btn-outline-primary" data-set-lang="fa">فا</button>
+            </div>
+        </div>
+
+        <button class="navbar-toggler order-3 order-lg-4" type="button" data-toggle="collapse" data-target="#demoNav" aria-controls="demoNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse order-4 order-lg-2" id="demoNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index-fa.html" data-en="Classic demo" data-fa="نمونه‌ی قدیمی">Classic demo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl" target="_blank" rel="noopener">GitHub</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.npmjs.com/package/bootstrap-v4-rtl" target="_blank" rel="noopener">npm</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ================================================================ hero -->
+<header class="demo-hero" id="top">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <span class="demo-pill" data-en="Bootstrap 4.6.2 · RTL build" data-fa="بوت‌استرپ ۴.۶.۲ · نسخه‌ی راستچین">Bootstrap 4.6.2 · RTL build</span>
+                <h1 data-en="One class flips the whole layout." data-fa="یک کلاس، کل چیدمان را برمی‌گرداند.">One class flips the whole layout.</h1>
+                <p class="lead" data-en="Every component below is plain Bootstrap 4 markup. Nothing on this page is duplicated for right-to-left — the rtl class does the work. Use the switches in the top bar to flip direction and language live." data-fa="همه‌ی اجزای این صفحه، مارک‌آپ استاندارد بوت‌استرپ ۴ هستند. هیچ چیزی برای راست‌به‌چپ تکرار نشده — کلاس rtl کار را انجام می‌دهد. با کلیدهای بالای صفحه، جهت و زبان را زنده عوض کنید.">Every component below is plain Bootstrap 4 markup. Nothing on this page is duplicated for right-to-left — the rtl class does the work. Use the switches in the top bar to flip direction and language live.</p>
+
+                <div class="my-4">
+                    <code class="demo-live-code demo-ltr" id="demo-live-code">&lt;body class="<b>&nbsp;</b>"&gt;</code>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-7">
+                        <div class="demo-install">
+                            <code class="demo-ltr">npm i bootstrap-v4-rtl</code>
+                            <button class="btn btn-sm btn-light" type="button" data-copy-text="npm i bootstrap-v4-rtl" data-en="Copy" data-fa="کپی">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 mt-4 mt-lg-0">
+                <div class="row text-center">
+                    <div class="col-4 demo-stat">
+                        <span class="demo-stat-value">1</span>
+                        <span class="demo-stat-label" data-en="class to add" data-fa="کلاس برای افزودن">class to add</span>
+                    </div>
+                    <div class="col-4 demo-stat">
+                        <span class="demo-stat-value">0</span>
+                        <span class="demo-stat-label" data-en="markup changes" data-fa="تغییر در مارک‌آپ">markup changes</span>
+                    </div>
+                    <div class="col-4 demo-stat">
+                        <span class="demo-stat-value">2</span>
+                        <span class="demo-stat-label" data-en="directions, one build" data-fa="جهت، یک خروجی">directions, one build</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="page-header" id="banner">
-            <div class="row">
-                <div class="col-lg-8 col-md-7 col-sm-6">
-                    <h1>Bootstrap-v4-rtl</h1>
-                    <p class="lead">demo</p>
-                </div>
-                <div class="col-lg-4 col-md-5 col-sm-6">
-                </div>
-            </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <!-- ========================================================= sidebar -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <nav class="demo-sidebar" id="demo-nav">
+                <div class="demo-sidebar-title" data-en="Components" data-fa="اجزا">Components</div>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="#overview" data-en="The idea" data-fa="ایده">The idea</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#navbars" data-en="Navbars" data-fa="نوار ناوبری">Navbars</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#buttons" data-en="Buttons" data-fa="دکمه‌ها">Buttons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#typography" data-en="Typography" data-fa="تایپوگرافی">Typography</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tables" data-en="Tables" data-fa="جدول‌ها">Tables</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#forms" data-en="Forms" data-fa="فرم‌ها">Forms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#navs" data-en="Navs &amp; pagination" data-fa="ناوبری و صفحه‌بندی">Navs &amp; pagination</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#feedback" data-en="Alerts &amp; badges" data-fa="هشدارها و نشان‌ها">Alerts &amp; badges</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#progress" data-en="Progress &amp; spinners" data-fa="پیشرفت و اسپینر">Progress &amp; spinners</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cards" data-en="Cards &amp; lists" data-fa="کارت‌ها و فهرست‌ها">Cards &amp; lists</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#overlays" data-en="Dropdowns &amp; overlays" data-fa="بازشو و لایه‌ها">Dropdowns &amp; overlays</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#carousel" data-en="Carousel &amp; collapse" data-fa="اسلایدر و آکاردئون">Carousel &amp; collapse</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#utilities" data-en="Utilities that flip" data-fa="کلاس‌های کمکی">Utilities that flip</a></li>
+                </ul>
+            </nav>
         </div>
-            <!-- Navbar
-                ================================================== -->
-                <div class="bs-docs-section clearfix">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="page-header">
-                                <h1 id="navbars">Navbars</h1>
-                            </div>
-                            <div class="bs-component">
-                                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                                    <a class="navbar-brand" href="#">Navbar</a>
-                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                                        <span class="navbar-toggler-icon"></span>
-                                    </button>
-                                    <div class="collapse navbar-collapse" id="navbarColor01">
-                                        <ul class="navbar-nav mr-auto">
-                                            <li class="nav-item active">
-                                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Features</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Pricing</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">About</a>
-                                            </li>
-                                            <li class="nav-item dropdown">
-                                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                      Dropdown
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                      <a class="dropdown-item" href="#">Action</a>
-                                                      <a class="dropdown-item" href="#">Another action</a>
-                                                      <div class="dropdown-divider"></div>
-                                                      <a class="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                  </li>
-                                        </ul>
-                                        <form class="form-inline my-2 my-lg-0">
-                                            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                                            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                                        </form>
-                                    </div>
-                                </nav>
-                            </div>
-                            <div class="bs-component">
-                                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                                    <a class="navbar-brand" href="#">Navbar</a>
-                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                                        <span class="navbar-toggler-icon"></span>
-                                    </button>
-                                    <div class="collapse navbar-collapse" id="navbarColor02">
-                                        <ul class="navbar-nav mr-auto">
-                                            <li class="nav-item active">
-                                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Features</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Pricing</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">About</a>
-                                            </li>
-                                            <li class="nav-item dropdown">
-                                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                      Dropdown
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                      <a class="dropdown-item" href="#">Action</a>
-                                                      <a class="dropdown-item" href="#">Another action</a>
-                                                      <div class="dropdown-divider"></div>
-                                                      <a class="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                  </li>
-                                        </ul>
-                                        <form class="form-inline my-2 my-lg-0">
-                                            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                                            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                                        </form>
-                                    </div>
-                                </nav>
-                            </div>
-                            <div class="bs-component">
-                                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                                    <a class="navbar-brand" href="#">Navbar</a>
-                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                                        <span class="navbar-toggler-icon"></span>
-                                    </button>
-                                    <div class="collapse navbar-collapse" id="navbarColor03">
-                                        <ul class="navbar-nav mr-auto">
-                                            <li class="nav-item active">
-                                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Features</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">Pricing</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#">About</a>
-                                            </li>
-                                            <li class="nav-item dropdown">
-                                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                      Dropdown
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                      <a class="dropdown-item" href="#">Action</a>
-                                                      <a class="dropdown-item" href="#">Another action</a>
-                                                      <div class="dropdown-divider"></div>
-                                                      <a class="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                  </li>
-                                        </ul>
-                                        <form class="form-inline my-2 my-lg-0">
-                                            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                                            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                                        </form>
-                                    </div>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <!-- Buttons
-                ================================================== -->
-                <div class="bs-docs-section">
-                    <div class="page-header">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h1 id="buttons">Buttons</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <p class="bs-component">
-                                <button type="button" class="btn btn-primary">Primary</button>
-                                <button type="button" class="btn btn-secondary">Secondary</button>
-                                <button type="button" class="btn btn-success">Success</button>
-                                <button type="button" class="btn btn-info">Info</button>
-                                <button type="button" class="btn btn-warning">Warning</button>
-                                <button type="button" class="btn btn-danger">Danger</button>
-                                <button type="button" class="btn btn-link">Link</button>
-                            </p>
-                            <p class="bs-component">
-                                <button type="button" class="btn btn-primary disabled">Primary</button>
-                                <button type="button" class="btn btn-secondary disabled">Secondary</button>
-                                <button type="button" class="btn btn-success disabled">Success</button>
-                                <button type="button" class="btn btn-info disabled">Info</button>
-                                <button type="button" class="btn btn-warning disabled">Warning</button>
-                                <button type="button" class="btn btn-danger disabled">Danger</button>
-                                <button type="button" class="btn btn-link disabled">Link</button>
-                            </p>
-                            <p class="bs-component">
-                                <button type="button" class="btn btn-outline-primary">Primary</button>
-                                <button type="button" class="btn btn-outline-secondary">Secondary</button>
-                                <button type="button" class="btn btn-outline-success">Success</button>
-                                <button type="button" class="btn btn-outline-info">Info</button>
-                                <button type="button" class="btn btn-outline-warning">Warning</button>
-                                <button type="button" class="btn btn-outline-danger">Danger</button>
-                            </p>
-                            <div class="bs-component">
-                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                                    <button type="button" class="btn btn-primary">Primary</button>
-                                    <div class="btn-group" role="group">
-                                        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                            <a class="dropdown-item" href="#">Dropdown link</a>
-                                            <a class="dropdown-item" href="#">Dropdown link</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                                    <button type="button" class="btn btn-success">Success</button>
-                                    <div class="btn-group" role="group">
-                                        <button id="btnGroupDrop2" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
-                                            <a class="dropdown-item" href="#">Dropdown link</a>
-                                            <a class="dropdown-item" href="#">Dropdown link</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                                    <button type="button" class="btn btn-info">Info</button>
-                                    <div class="btn-group" role="group">
-                                        <button id="btnGroupDrop3" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
-                                            <a class="dropdown-item" href="#">Dropdown link</a>
-                                            <a class="dropdown-item" href="#">Dropdown link</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                                    <button type="button" class="btn btn-danger">Danger</button>
-                                    <div class="btn-group" role="group">
-                                        <button id="btnGroupDrop4" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
-                                            <a class="dropdown-item" href="#">Dropdown link</a>
-                                            <a class="dropdown-item" href="#">Dropdown link</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bs-component">
-                                <button type="button" class="btn btn-primary btn-lg">Large button</button>
-                                <button type="button" class="btn btn-primary">Default button</button>
-                                <button type="button" class="btn btn-primary btn-sm">Small button</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-5">
-                            <p class="bs-component">
-                                <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
-                            </p>
-                            <div class="bs-component" style="margin-bottom: 15px;">
-                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-primary active">
-                                        <input type="checkbox" checked autocomplete="off"> Active
-                                    </label>
-                                    <label class="btn btn-primary">
-                                        <input type="checkbox" autocomplete="off"> Check
-                                    </label>
-                                    <label class="btn btn-primary">
-                                        <input type="checkbox" autocomplete="off"> Check
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="bs-component" style="margin-bottom: 15px;">
-                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-primary active">
-                                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
-                                    </label>
-                                    <label class="btn btn-primary">
-                                        <input type="radio" name="options" id="option2" autocomplete="off"> Radio
-                                    </label>
-                                    <label class="btn btn-primary">
-                                        <input type="radio" name="options" id="option3" autocomplete="off"> Radio
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="bs-component">
-                                <div class="btn-group-vertical" data-toggle="buttons">
-                                    <button type="button" class="btn btn-primary">Button</button>
-                                    <button type="button" class="btn btn-primary">Button</button>
-                                    <button type="button" class="btn btn-primary">Button</button>
-                                    <button type="button" class="btn btn-primary">Button</button>
-                                    <button type="button" class="btn btn-primary">Button</button>
-                                    <button type="button" class="btn btn-primary">Button</button>
-                                </div>
-                            </div>
-                            <div class="bs-component" style="margin-bottom: 15px;">
-                                <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" class="btn btn-secondary">Left</button>
-                                    <button type="button" class="btn btn-secondary">Middle</button>
-                                    <button type="button" class="btn btn-secondary">Right</button>
-                                </div>
-                            </div>
-                            <div class="bs-component" style="margin-bottom: 15px;">
-                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                                    <div class="btn-group mr-2" role="group" aria-label="First group">
-                                        <button type="button" class="btn btn-secondary">1</button>
-                                        <button type="button" class="btn btn-secondary">2</button>
-                                        <button type="button" class="btn btn-secondary">3</button>
-                                        <button type="button" class="btn btn-secondary">4</button>
-                                    </div>
-                                    <div class="btn-group mr-2" role="group" aria-label="Second group">
-                                        <button type="button" class="btn btn-secondary">5</button>
-                                        <button type="button" class="btn btn-secondary">6</button>
-                                        <button type="button" class="btn btn-secondary">7</button>
-                                    </div>
-                                    <div class="btn-group" role="group" aria-label="Third group">
-                                        <button type="button" class="btn btn-secondary">8</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <!-- Typography
-                ================================================== -->
-                <div class="bs-docs-section">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="page-header">
-                                <h1 id="typography">Typography</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Headings -->
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <h1>Heading 1</h1>
-                                <h2>Heading 2</h2>
-                                <h3>Heading 3</h3>
-                                <h4>Heading 4</h4>
-                                <h5>Heading 5</h5>
-                                <h6>Heading 6</h6>
-                                <h3>
-                                    Heading
-                                    <small class="text-muted">with muted text</small>
-                                </h3>
-                                <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <h2>Example body text</h2>
-                                <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
-                                <p><small>This line of text is meant to be treated as fine print.</small></p>
-                                <p>The following is <strong>rendered as bold text</strong>.</p>
-                                <p>The following is <em>rendered as italicized text</em>.</p>
-                                <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <h2>Emphasis classes</h2>
-                                <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
-                                <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
-                                <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
-                                <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-                                <p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Blockquotes -->
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h2 id="type-blockquotes">Blockquotes</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <blockquote class="blockquote">
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <blockquote class="blockquote text-center">
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <blockquote class="blockquote text-right">
-                                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <!-- Tables
-                ================================================== -->
-                <div class="bs-docs-section">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="page-header">
-                                <h1 id="tables">Tables</h1>
-                            </div>
-                            <div class="bs-component">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Type</th>
-                                            <th scope="col">Column heading</th>
-                                            <th scope="col">Column heading</th>
-                                            <th scope="col">Column heading</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="table-active">
-                                            <th scope="row">Active</th>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Default</th>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                        </tr>
-                                        <tr class="table-primary">
-                                            <th scope="row">Primary</th>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                        </tr>
-                                        <tr class="table-secondary">
-                                            <th scope="row">Secondary</th>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                        </tr>
-                                        <tr class="table-success">
-                                            <th scope="row">Success</th>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                        </tr>
-                                        <tr class="table-danger">
-                                            <th scope="row">Danger</th>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                        </tr>
-                                        <tr class="table-warning">
-                                            <th scope="row">Warning</th>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                        </tr>
-                                        <tr class="table-info">
-                                            <th scope="row">Info</th>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                        </tr>
-                                        <tr class="table-light">
-                                            <th scope="row">Light</th>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                        </tr>
-                                        <tr class="table-dark">
-                                            <th scope="row">Dark</th>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /example -->
-                        </div>
-                    </div>
-                </div>
-            <!-- Forms
-                ================================================== -->
-                <div class="bs-docs-section">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="page-header">
-                                <h1 id="forms">Forms</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="bs-component">
-                                <form>
-                                    <fieldset>
-                                        <legend>Legend</legend>
-                                        <div class="form-group row">
-                                            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleSelect1">Example select</label>
-                                            <select class="form-control" id="exampleSelect1">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleSelect2">Example multiple select</label>
-                                            <select multiple class="form-control" id="exampleSelect2">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleTextarea">Example textarea</label>
-                                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">File input</label>
-                                            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                                            <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-                                        </div>
-                                        <fieldset class="form-group">
-                                            <legend>Radio buttons</legend>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                                                    Option one is this and that&mdash;be sure to include why it's great
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-                                                    Option two can be something else and selecting it will deselect option one
-                                                </label>
-                                            </div>
-                                            <div class="form-check disabled">
-                                                <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-                                                    Option three is disabled
-                                                </label>
-                                            </div>
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <legend>Checkboxes</legend>
-                                            <div class="form-check">
-                                                <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox" value="" checked>
-                                                    Option one is this and that&mdash;be sure to include why it's great
-                                                </label>
-                                            </div>
-                                            <div class="form-check disabled">
-                                                <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox" value="" disabled>
-                                                    Option two is disabled
-                                                </label>
-                                            </div>
-                                        </fieldset>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 offset-lg-1">
-                            <form class="bs-component">
-                                <div class="form-group">
-                                    <fieldset disabled>
-                                        <label class="control-label" for="disabledInput">Disabled input</label>
-                                        <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
-                                    </fieldset>
-                                </div>
-                                <div class="form-group">
-                                    <fieldset>
-                                        <label class="control-label" for="readOnlyInput">Readonly input</label>
-                                        <input class="form-control" id="readOnlyInput" type="text" placeholder="Readonly input here…" readonly>
-                                    </fieldset>
-                                </div>
-                                <div class="form-group has-success">
-                                    <label class="form-control-label" for="inputSuccess1">Valid input</label>
-                                    <input type="text" value="correct value" class="form-control is-valid" id="inputValid">
-                                    <div class="valid-feedback">Success! You've done it.</div>
-                                </div>
-                                <div class="form-group has-danger">
-                                    <label class="form-control-label" for="inputDanger1">Invalid input</label>
-                                    <input type="text" value="wrong value" class="form-control is-invalid" id="inputInvalid">
-                                    <div class="invalid-feedback">Sorry, that username's taken. Try another?</div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-form-label col-form-label-lg" for="inputLarge">Large input</label>
-                                    <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" id="inputLarge">
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-form-label" for="inputDefault">Default input</label>
-                                    <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-form-label col-form-label-sm" for="inputSmall">Small input</label>
-                                    <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" id="inputSmall">
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label">Input addons</label>
-                                    <div class="form-group">
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">$</span>
-                                            </div>
-                                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">.00</span>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <button class="btn btn-outline-secondary" type="button">Button</button>
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-                                    </div>
+        <!-- ========================================================= content -->
+        <main class="col-lg-9">
 
-                                    <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button">Button</button>
-                                        </div>
-                                    </div>
+            <!-- ---------------------------------------------------- overview -->
+            <section class="demo-section" id="overview">
+                <h2 data-en="The idea" data-fa="ایده">The idea</h2>
+                <p class="demo-section-note" data-en="Add rtl to any element and everything inside it flips: text direction, floats, spacing utilities, dropdown alignment, border radii and grid offsets. The two panes below share identical markup — only the wrapper differs." data-fa="کلاس rtl را به هر عنصری اضافه کنید تا همه‌ی محتوای داخل آن برگردد: جهت متن، شناورها، کلاس‌های فاصله، تراز منوهای بازشو، گردی گوشه‌ها و آفست‌های گرید. دو ستون زیر مارک‌آپ یکسانی دارند و فقط کلاس عنصر دربرگیرنده فرق می‌کند.">Add rtl to any element and everything inside it flips: text direction, floats, spacing utilities, dropdown alignment, border radii and grid offsets. The two panes below share identical markup — only the wrapper differs.</p>
+
+                <div class="demo-compare mb-4">
+                    <div>
+                        <div class="demo-pane">
+                            <div class="demo-pane-head">
+                                <span>Left to right</span>
+                                <span class="badge badge-secondary">&lt;div&gt;</span>
+                            </div>
+                            <div class="demo-pane-body">
+                                <h5 data-en="Shipping address" data-fa="نشانی ارسال">Shipping address</h5>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend"><span class="input-group-text">@</span></div>
+                                    <input type="text" class="form-control" placeholder="username" aria-label="username">
+                                    <div class="input-group-append"><button class="btn btn-primary" type="button" data-en="Check" data-fa="بررسی">Check</button></div>
                                 </div>
-                            </form>
-                            <div class="bs-component">
-                                <fieldset>
-                                    <legend>Custom forms</legend>
-                                    <div class="form-group">
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
-                                            <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
-                                        </div>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                                            <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
-                                        </div>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" disabled>
-                                            <label class="custom-control-label" for="customRadio3">Disabled custom radio</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
-                                            <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck2" disabled>
-                                            <label class="custom-control-label" for="customCheck2">Disabled custom checkbox</label>
-                                        </div>
-                                    </div>
-                                    <div class="custom-control custom-switch">
-                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                                        <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
-                                      </div>
-                                    <div class="custom-control custom-switch">
-                                        <input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
-                                        <label class="custom-control-label" for="customSwitch2">Disabled switch element</label>
-                                    </div>
-                                    <div class="form-group">
-                                        <select class="custom-select">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="custom-file">
-                                            <input type="file" id="file2" class="custom-file-input">
-                                            <span class="custom-file-control"></span>
-                                        </label>
-                                    </div>
-                                </fieldset>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <!-- Navs
-                ================================================== -->
-                <div class="bs-docs-section">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="page-header">
-                                <h1 id="navs">Navs</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" style="margin-bottom: 2rem;">
-                        <div class="col-lg-6">
-                            <h2 id="nav-tabs">Tabs</h2>
-                            <div class="bs-component">
-                                <ul class="nav nav-tabs">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#profile">Profile</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link disabled" href="#">Disabled</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Separated link</a>
-                                        </div>
-                                    </li>
+                                <ul class="list-group list-group-flush mb-3">
+                                    <li class="list-group-item d-flex justify-content-between px-0" data-en="Standard" data-fa="عادی">Standard <span class="badge badge-primary badge-pill">3d</span></li>
+                                    <li class="list-group-item d-flex justify-content-between px-0" data-en="Express" data-fa="سریع">Express <span class="badge badge-primary badge-pill">1d</span></li>
                                 </ul>
-                                <div id="myTabContent" class="tab-content">
-                                    <div class="tab-pane fade show active" id="home">
-                                        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-                                    </div>
-                                    <div class="tab-pane fade" id="profile">
-                                        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
-                                    </div>
-                                    <div class="tab-pane fade" id="dropdown1">
-                                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
-                                    </div>
-                                    <div class="tab-pane fade" id="dropdown2">
-                                        <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <h2 id="nav-pills">Pills</h2>
-                            <div class="bs-component">
-                                <ul class="nav nav-pills">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="#">Active</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Separated link</a>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Link</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link disabled" href="#">Disabled</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <br>
-                            <div class="bs-component">
-                                <ul class="nav nav-pills flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="#">Active</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Separated link</a>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Link</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link disabled" href="#">Disabled</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <h2 id="nav-breadcrumbs">Breadcrumbs</h2>
-                            <div class="bs-component">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item active">Home</li>
-                                </ol>
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active">Library</li>
-                                </ol>
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="#">Library</a></li>
-                                    <li class="breadcrumb-item active">Data</li>
-                                </ol>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <h2 id="pagination">Pagination</h2>
-                            <div class="bs-component">
-                                <div>
-                                    <ul class="pagination">
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#">&laquo;</a>
-                                        </li>
-                                        <li class="page-item active">
-                                            <a class="page-link" href="#">1</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">2</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">3</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">4</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">5</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">&raquo;</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <ul class="pagination pagination-lg">
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#">&laquo;</a>
-                                        </li>
-                                        <li class="page-item active">
-                                            <a class="page-link" href="#">1</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">2</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">3</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">4</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">5</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">&raquo;</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <ul class="pagination pagination-sm">
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#">&laquo;</a>
-                                        </li>
-                                        <li class="page-item active">
-                                            <a class="page-link" href="#">1</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">2</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">3</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">4</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">5</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">&raquo;</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <!-- Indicators
-                ================================================== -->
-                <div class="bs-docs-section">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="page-header">
-                                <h1 id="indicators">Indicators</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h2>Alerts</h2>
-                            <div class="bs-component">
-                                <div class="alert alert-dismissible alert-warning">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <h4 class="alert-heading">Warning!</h4>
-                                    <p class="mb-0">Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <div class="alert alert-dismissible alert-danger">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <div class="alert alert-dismissible alert-success">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <div class="alert alert-dismissible alert-info">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <div class="alert alert-dismissible alert-primary">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <div class="alert alert-dismissible alert-secondary">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <div class="alert alert-dismissible alert-light">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super important.
-                                </div>
+                                <button class="btn btn-primary btn-sm" data-en="Continue" data-fa="ادامه">Continue</button>
+                                <button class="btn btn-link btn-sm" data-en="Cancel" data-fa="انصراف">Cancel</button>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <h2>Badges</h2>
-                        <div class="bs-component" style="margin-bottom: 40px;">
-                            <span class="badge badge-primary">Primary</span>
-                            <span class="badge badge-secondary">Secondary</span>
-                            <span class="badge badge-success">Success</span>
-                            <span class="badge badge-danger">Danger</span>
-                            <span class="badge badge-warning">Warning</span>
-                            <span class="badge badge-info">Info</span>
-                            <span class="badge badge-light">Light</span>
-                            <span class="badge badge-dark">Dark</span>
-                        </div>
-                        <div class="bs-component">
-                            <span class="badge badge-pill badge-primary">Primary</span>
-                            <span class="badge badge-pill badge-secondary">Secondary</span>
-                            <span class="badge badge-pill badge-success">Success</span>
-                            <span class="badge badge-pill badge-danger">Danger</span>
-                            <span class="badge badge-pill badge-warning">Warning</span>
-                            <span class="badge badge-pill badge-info">Info</span>
-                            <span class="badge badge-pill badge-light">Light</span>
-                            <span class="badge badge-pill badge-dark">Dark</span>
-                        </div>
-                    </div>
-                </div>
-            <!-- Progress
-                ================================================== -->
-                <div class="bs-docs-section">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="page-header">
-                                <h1 id="progress">Progress</h1>
+                        <div class="demo-pane">
+                            <div class="demo-pane-head">
+                                <span>Right to left</span>
+                                <span class="badge badge-primary">&lt;div class="rtl"&gt;</span>
                             </div>
-                            <h3 id="progress-basic">Basic</h3>
-                            <div class="bs-component">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="demo-pane-body rtl">
+                                <h5 data-en="Shipping address" data-fa="نشانی ارسال">Shipping address</h5>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend"><span class="input-group-text">@</span></div>
+                                    <input type="text" class="form-control" placeholder="username" aria-label="username">
+                                    <div class="input-group-append"><button class="btn btn-primary" type="button" data-en="Check" data-fa="بررسی">Check</button></div>
                                 </div>
-                            </div>
-                            <h3 id="progress-alternatives">Contextual alternatives</h3>
-                            <div class="bs-component">
-                                <div class="progress">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <h3 id="progress-multiple">Multiple bars</h3>
-                            <div class="bs-component">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <h3 id="progress-striped">Striped</h3>
-                            <div class="bs-component">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <h3 id="progress-animated">Animated</h3>
-                            <div class="bs-component">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-                                </div>
+                                <ul class="list-group list-group-flush mb-3">
+                                    <li class="list-group-item d-flex justify-content-between px-0" data-en="Standard" data-fa="عادی">Standard <span class="badge badge-primary badge-pill">3d</span></li>
+                                    <li class="list-group-item d-flex justify-content-between px-0" data-en="Express" data-fa="سریع">Express <span class="badge badge-primary badge-pill">1d</span></li>
+                                </ul>
+                                <button class="btn btn-primary btn-sm" data-en="Continue" data-fa="ادامه">Continue</button>
+                                <button class="btn btn-link btn-sm" data-en="Cancel" data-fa="انصراف">Cancel</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            <!-- Containers
-                ================================================== -->
-                <div class="bs-docs-section">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="page-header">
-                                <h1 id="containers">Containers</h1>
-                            </div>
-                            <div class="bs-component">
-                                <div class="jumbotron">
-                                    <h1 class="display-3">Hello, world!</h1>
-                                    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                                    <hr class="my-4">
-                                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                                    <p class="lead">
-                                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+
+                <div class="demo-block" data-title-en="How to include it" data-title-fa="روش استفاده">
+                    <div class="demo-preview">
+                        <p class="mb-2" data-en="Load the RTL build once, then flip whatever you need:" data-fa="فایل راستچین را یک‌بار صدا بزنید و بعد هر بخشی را که می‌خواهید برگردانید:">Load the RTL build once, then flip whatever you need:</p>
+                        <pre class="demo-ltr mb-0"><code>&lt;link rel="stylesheet" href="dist/css/bootstrap-rtl.min.css"&gt;
+
+&lt;!-- whole page --&gt;
+&lt;body class="rtl"&gt; ... &lt;/body&gt;
+
+&lt;!-- or a single region --&gt;
+&lt;div class="rtl"&gt; ... &lt;/div&gt;
+
+&lt;!-- the dir attribute works too --&gt;
+&lt;div dir="rtl"&gt; ... &lt;/div&gt;</code></pre>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h2>List groups</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <ul class="list-group">
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Cras justo odio
-                                        <span class="badge badge-primary badge-pill">14</span>
+                </div>
+            </section>
+
+            <!-- ----------------------------------------------------- navbars -->
+            <section class="demo-section" id="navbars">
+                <h2 data-en="Navbars" data-fa="نوار ناوبری">Navbars</h2>
+                <p class="demo-section-note" data-en="Brand, nav items and the mr-auto spacer all switch sides." data-fa="نام برند، آیتم‌های ناوبری و فاصله‌گذار mr-auto همگی جابه‌جا می‌شوند.">Brand, nav items and the mr-auto spacer all switch sides.</p>
+
+                <div class="demo-block" data-title-en="Primary navbar" data-title-fa="نوار ناوبری اصلی">
+                    <div class="demo-preview">
+                        <nav class="navbar navbar-expand-lg navbar-dark bg-primary rounded">
+                            <a class="navbar-brand" href="#" data-en="Brand" data-fa="برند">Brand</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navDemo1" aria-controls="navDemo1" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navDemo1">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#" data-en="Home" data-fa="خانه">Home</a>
                                     </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Dapibus ac facilisis in
-                                        <span class="badge badge-primary badge-pill">2</span>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" data-en="Features" data-fa="امکانات">Features</a>
                                     </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Morbi leo risus
-                                        <span class="badge badge-primary badge-pill">1</span>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" data-en="More" data-fa="بیشتر">More</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#" data-en="Documentation" data-fa="مستندات">Documentation</a>
+                                            <a class="dropdown-item" href="#" data-en="Changelog" data-fa="تغییرات">Changelog</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#" data-en="Support" data-fa="پشتیبانی">Support</a>
+                                        </div>
                                     </li>
                                 </ul>
+                                <form class="form-inline">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                    <button class="btn btn-outline-light my-2 my-sm-0" type="button" data-en="Search" data-fa="جستجو">Search</button>
+                                </form>
                             </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item list-group-item-action active">
-                                        Cras justo odio
-                                    </a>
-                                    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in
-                                    </a>
-                                    <a href="#" class="list-group-item list-group-item-action disabled">Morbi leo risus
-                                    </a>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="demo-block" data-title-en="Light navbar" data-title-fa="نوار ناوبری روشن">
+                    <div class="demo-preview">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+                            <a class="navbar-brand" href="#" data-en="Store" data-fa="فروشگاه">Store</a>
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item"><a class="nav-link" href="#" data-en="Catalog" data-fa="محصولات">Catalog</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#" data-en="Orders" data-fa="سفارش‌ها">Orders</a></li>
+                            </ul>
+                            <span class="navbar-text" data-en="Signed in as Sara" data-fa="ورود به‌عنوان سارا">Signed in as Sara</span>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ----------------------------------------------------- buttons -->
+            <section class="demo-section" id="buttons">
+                <h2 data-en="Buttons" data-fa="دکمه‌ها">Buttons</h2>
+                <p class="demo-section-note" data-en="Button groups keep their rounded corners on the correct outer edges in both directions." data-fa="در گروه دکمه‌ها، گردی گوشه‌ها در هر دو جهت روی لبه‌های درست قرار می‌گیرد.">Button groups keep their rounded corners on the correct outer edges in both directions.</p>
+
+                <div class="demo-block" data-title-en="Variants" data-title-fa="انواع">
+                    <div class="demo-preview">
+                        <button type="button" class="btn btn-primary mb-1" data-en="Primary" data-fa="اصلی">Primary</button>
+                        <button type="button" class="btn btn-secondary mb-1" data-en="Secondary" data-fa="ثانویه">Secondary</button>
+                        <button type="button" class="btn btn-success mb-1" data-en="Success" data-fa="موفق">Success</button>
+                        <button type="button" class="btn btn-danger mb-1" data-en="Danger" data-fa="خطر">Danger</button>
+                        <button type="button" class="btn btn-warning mb-1" data-en="Warning" data-fa="هشدار">Warning</button>
+                        <button type="button" class="btn btn-info mb-1" data-en="Info" data-fa="اطلاعات">Info</button>
+                        <button type="button" class="btn btn-light mb-1" data-en="Light" data-fa="روشن">Light</button>
+                        <button type="button" class="btn btn-dark mb-1" data-en="Dark" data-fa="تیره">Dark</button>
+                        <button type="button" class="btn btn-link mb-1" data-en="Link" data-fa="پیوند">Link</button>
+                    </div>
+                </div>
+
+                <div class="demo-block" data-title-en="Outline, sizes and states" data-title-fa="خطی، اندازه‌ها و وضعیت‌ها">
+                    <div class="demo-preview">
+                        <p class="mb-3">
+                            <button type="button" class="btn btn-outline-primary mb-1" data-en="Primary" data-fa="اصلی">Primary</button>
+                            <button type="button" class="btn btn-outline-success mb-1" data-en="Success" data-fa="موفق">Success</button>
+                            <button type="button" class="btn btn-outline-danger mb-1" data-en="Danger" data-fa="خطر">Danger</button>
+                            <button type="button" class="btn btn-outline-dark mb-1" data-en="Dark" data-fa="تیره">Dark</button>
+                        </p>
+                        <p class="mb-3">
+                            <button type="button" class="btn btn-primary btn-lg" data-en="Large" data-fa="بزرگ">Large</button>
+                            <button type="button" class="btn btn-primary" data-en="Default" data-fa="معمولی">Default</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-en="Small" data-fa="کوچک">Small</button>
+                            <button type="button" class="btn btn-primary" disabled data-en="Disabled" data-fa="غیرفعال">Disabled</button>
+                        </p>
+                        <button class="btn btn-primary" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm mr-1" role="status" aria-hidden="true"></span>
+                            <span data-en="Loading…" data-fa="در حال بارگذاری…">Loading…</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="demo-block" data-title-en="Button groups &amp; toolbar" data-title-fa="گروه دکمه و نوار ابزار">
+                    <div class="demo-preview">
+                        <div class="btn-toolbar mb-3" role="toolbar">
+                            <div class="btn-group mr-2" role="group">
+                                <button type="button" class="btn btn-secondary" data-en="First" data-fa="اول">First</button>
+                                <button type="button" class="btn btn-secondary" data-en="Second" data-fa="دوم">Second</button>
+                                <button type="button" class="btn btn-secondary" data-en="Third" data-fa="سوم">Third</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-en="Actions" data-fa="کارها">Actions</button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#" data-en="Duplicate" data-fa="تکثیر">Duplicate</a>
+                                    <a class="dropdown-item" href="#" data-en="Archive" data-fa="بایگانی">Archive</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-                                        <div class="d-flex w-100 justify-content-between">
-                                            <h5 class="mb-1">List group item heading</h5>
-                                            <small>3 days ago</small>
-                                        </div>
-                                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                        <small>Donec id elit non mi porta.</small>
-                                    </a>
-                                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                                        <div class="d-flex w-100 justify-content-between">
-                                            <h5 class="mb-1">List group item heading</h5>
-                                            <small class="text-muted">3 days ago</small>
-                                        </div>
-                                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                        <small class="text-muted">Donec id elit non mi porta.</small>
-                                    </a>
-                                </div>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-outline-primary active">
+                                <input type="radio" name="options" checked> <span data-en="Day" data-fa="روز">Day</span>
+                            </label>
+                            <label class="btn btn-outline-primary">
+                                <input type="radio" name="options"> <span data-en="Week" data-fa="هفته">Week</span>
+                            </label>
+                            <label class="btn btn-outline-primary">
+                                <input type="radio" name="options"> <span data-en="Month" data-fa="ماه">Month</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- -------------------------------------------------- typography -->
+            <section class="demo-section" id="typography">
+                <h2 data-en="Typography" data-fa="تایپوگرافی">Typography</h2>
+                <p class="demo-section-note" data-en="Headings, lists and blockquotes align to the reading side automatically." data-fa="عنوان‌ها، فهرست‌ها و نقل‌قول‌ها به‌طور خودکار به سمت خواندن تراز می‌شوند.">Headings, lists and blockquotes align to the reading side automatically.</p>
+
+                <div class="demo-block" data-title-en="Headings and body copy" data-title-fa="عنوان‌ها و متن">
+                    <div class="demo-preview">
+                        <h1 data-en="Heading 1" data-fa="عنوان ۱">Heading 1</h1>
+                        <h3 data-en="Heading 3" data-fa="عنوان ۳">Heading 3</h3>
+                        <h5 data-en="Heading 5" data-fa="عنوان ۵">Heading 5</h5>
+                        <p class="lead" data-en="A lead paragraph stands out from the rest of the copy." data-fa="پاراگراف شاخص، از بقیه‌ی متن متمایز دیده می‌شود.">A lead paragraph stands out from the rest of the copy.</p>
+                        <p data-en="Regular body text with a link, some bold text and inline code." data-fa="متن معمولی همراه با یک پیوند، بخشی از متن پررنگ و کد درون‌خطی.">Regular body text with a link, some bold text and inline code.</p>
+                        <p class="text-muted mb-0"><small data-en="Muted small print." data-fa="متن کوچک و کم‌رنگ.">Muted small print.</small></p>
+                    </div>
+                </div>
+
+                <div class="demo-block" data-title-en="Lists and blockquote" data-title-fa="فهرست‌ها و نقل‌قول">
+                    <div class="demo-preview">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li data-en="Unordered item" data-fa="آیتم بدون شماره">Unordered item</li>
+                                    <li data-en="Another item" data-fa="آیتم دیگر">Another item</li>
+                                </ul>
+                                <ol>
+                                    <li data-en="First step" data-fa="گام اول">First step</li>
+                                    <li data-en="Second step" data-fa="گام دوم">Second step</li>
+                                </ol>
+                            </div>
+                            <div class="col-md-6">
+                                <blockquote class="blockquote">
+                                    <p class="mb-0" data-en="Design is not just what it looks like. Design is how it works." data-fa="طراحی فقط ظاهر نیست؛ طراحی یعنی این‌که چیزی چطور کار می‌کند.">Design is not just what it looks like. Design is how it works.</p>
+                                    <footer class="blockquote-footer" data-en="Steve Jobs" data-fa="استیو جابز">Steve Jobs</footer>
+                                </blockquote>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h2>Cards</h2>
+                </div>
+            </section>
+
+            <!-- ------------------------------------------------------ tables -->
+            <section class="demo-section" id="tables">
+                <h2 data-en="Tables" data-fa="جدول‌ها">Tables</h2>
+                <p class="demo-section-note" data-en="Column order follows the direction — the first column starts on the reading side." data-fa="ترتیب ستون‌ها از جهت متن پیروی می‌کند؛ اولین ستون از سمت شروع خواندن قرار می‌گیرد.">Column order follows the direction — the first column starts on the reading side.</p>
+
+                <div class="demo-block" data-title-en="Striped and hoverable" data-title-fa="راه‌راه و هاوردار">
+                    <div class="demo-preview">
+                        <table class="table table-striped table-hover mb-0">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col" data-en="Name" data-fa="نام">Name</th>
+                                    <th scope="col" data-en="Role" data-fa="نقش">Role</th>
+                                    <th scope="col" class="text-right" data-en="Amount" data-fa="مبلغ">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td data-en="Sara Ahmadi" data-fa="سارا احمدی">Sara Ahmadi</td>
+                                    <td data-en="Designer" data-fa="طراح">Designer</td>
+                                    <td class="text-right">1,250</td>
+                                </tr>
+                                <tr class="table-primary">
+                                    <th scope="row">2</th>
+                                    <td data-en="Reza Karimi" data-fa="رضا کریمی">Reza Karimi</td>
+                                    <td data-en="Developer" data-fa="توسعه‌دهنده">Developer</td>
+                                    <td class="text-right">980</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td data-en="Mina Rad" data-fa="مینا راد">Mina Rad</td>
+                                    <td data-en="Product manager" data-fa="مدیر محصول">Product manager</td>
+                                    <td class="text-right">2,410</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="demo-block" data-title-en="Bordered and compact" data-title-fa="کادردار و فشرده">
+                    <div class="demo-preview">
+                        <table class="table table-bordered table-sm mb-0">
+                            <thead>
+                                <tr>
+                                    <th data-en="Plan" data-fa="طرح">Plan</th>
+                                    <th data-en="Seats" data-fa="کاربر">Seats</th>
+                                    <th data-en="Status" data-fa="وضعیت">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-en="Starter" data-fa="پایه">Starter</td>
+                                    <td>3</td>
+                                    <td><span class="badge badge-success" data-en="Active" data-fa="فعال">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td data-en="Team" data-fa="تیمی">Team</td>
+                                    <td>12</td>
+                                    <td><span class="badge badge-warning" data-en="Trial" data-fa="آزمایشی">Trial</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ------------------------------------------------------- forms -->
+            <section class="demo-section" id="forms">
+                <h2 data-en="Forms" data-fa="فرم‌ها">Forms</h2>
+                <p class="demo-section-note" data-en="Labels, checkboxes, switches, select arrows, input group add-ons and validation feedback all move to the correct side." data-fa="برچسب‌ها، چک‌باکس‌ها، کلیدها، فلش سلکت، افزونه‌های گروه ورودی و پیام‌های اعتبارسنجی همگی به سمت درست منتقل می‌شوند.">Labels, checkboxes, switches, select arrows, input group add-ons and validation feedback all move to the correct side.</p>
+
+                <div class="demo-block" data-title-en="Basic form" data-title-fa="فرم پایه">
+                    <div class="demo-preview">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="demoEmail" data-en="Email address" data-fa="نشانی ایمیل">Email address</label>
+                                    <input type="email" class="form-control" id="demoEmail" placeholder="name@example.com">
+                                    <small class="form-text text-muted" data-en="We never share your email." data-fa="ایمیل شما با کسی به اشتراک گذاشته نمی‌شود.">We never share your email.</small>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="demoSelect" data-en="Country" data-fa="کشور">Country</label>
+                                    <select class="custom-select" id="demoSelect">
+                                        <option selected data-en="Choose…" data-fa="انتخاب کنید…">Choose…</option>
+                                        <option data-en="Iran" data-fa="ایران">Iran</option>
+                                        <option data-en="Germany" data-fa="آلمان">Germany</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="demoTextarea" data-en="Message" data-fa="پیام">Message</label>
+                                <textarea class="form-control" id="demoTextarea" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="demoCheck1" checked>
+                                    <label class="custom-control-label" for="demoCheck1" data-en="Email me about updates" data-fa="خبر به‌روزرسانی‌ها را برایم ایمیل کن">Email me about updates</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="demoRadio1" name="demoRadio" checked>
+                                    <label class="custom-control-label" for="demoRadio1" data-en="Personal account" data-fa="حساب شخصی">Personal account</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" id="demoRadio2" name="demoRadio">
+                                    <label class="custom-control-label" for="demoRadio2" data-en="Business account" data-fa="حساب سازمانی">Business account</label>
+                                </div>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="demoSwitch1" checked>
+                                    <label class="custom-control-label" for="demoSwitch1" data-en="Enable two-factor auth" data-fa="ورود دومرحله‌ای فعال باشد">Enable two-factor auth</label>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" data-en="Submit" data-fa="ثبت">Submit</button>
+                            <button type="button" class="btn btn-light" data-en="Reset" data-fa="بازنشانی">Reset</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="demo-block" data-title-en="Input groups" data-title-fa="گروه‌های ورودی">
+                    <div class="demo-preview">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend"><span class="input-group-text">@</span></div>
+                            <input type="text" class="form-control" placeholder="username" aria-label="username">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button" data-en="Go" data-fa="برو">Go</button>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                            <input type="text" class="form-control" aria-label="Amount">
+                            <div class="input-group-append"><span class="input-group-text">.00</span></div>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="demoFile">
+                            <label class="custom-file-label" for="demoFile" data-en="Choose file" data-fa="انتخاب فایل">Choose file</label>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Primary card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                                <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Secondary card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                                <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Success card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                                <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Danger card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                                <div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Warning card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                                <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Info card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                                <div class="card bg-light mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Light card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                                <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Dark card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
+                </div>
+
+                <div class="demo-block" data-title-en="Validation states" data-title-fa="وضعیت‌های اعتبارسنجی">
+                    <div class="demo-preview">
+                        <div class="form-group">
+                            <label for="demoValid" data-en="Username" data-fa="نام کاربری">Username</label>
+                            <input type="text" class="form-control is-valid" id="demoValid" value="sara">
+                            <div class="valid-feedback" data-en="Looks good!" data-fa="عالی است!">Looks good!</div>
+                        </div>
+                        <div class="form-group mb-0">
+                            <label for="demoInvalid" data-en="Password" data-fa="گذرواژه">Password</label>
+                            <input type="password" class="form-control is-invalid" id="demoInvalid" value="123">
+                            <div class="invalid-feedback" data-en="Use at least 8 characters." data-fa="حداقل ۸ نویسه وارد کنید.">Use at least 8 characters.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- -------------------------------------------------------- navs -->
+            <section class="demo-section" id="navs">
+                <h2 data-en="Navs &amp; pagination" data-fa="ناوبری و صفحه‌بندی">Navs &amp; pagination</h2>
+                <p class="demo-section-note" data-en="Breadcrumb separators, tab order and pagination corners are mirrored." data-fa="جداکننده‌های مسیر راهنما، ترتیب تب‌ها و گوشه‌های صفحه‌بندی آینه‌ای می‌شوند.">Breadcrumb separators, tab order and pagination corners are mirrored.</p>
+
+                <div class="demo-block" data-title-en="Tabs" data-title-fa="تب‌ها">
+                    <div class="demo-preview">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#demoTab1" role="tab" data-en="Overview" data-fa="نمای کلی">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#demoTab2" role="tab" data-en="Activity" data-fa="فعالیت">Activity</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" href="#" data-en="Archived" data-fa="بایگانی">Archived</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content pt-3">
+                            <div class="tab-pane active" id="demoTab1" role="tabpanel">
+                                <p class="mb-0" data-en="The first tab panel — its content aligns with the current direction." data-fa="اولین پنل تب؛ محتوای آن با جهت فعلی تراز می‌شود.">The first tab panel — its content aligns with the current direction.</p>
+                            </div>
+                            <div class="tab-pane" id="demoTab2" role="tabpanel">
+                                <p class="mb-0" data-en="The second tab panel." data-fa="دومین پنل تب.">The second tab panel.</p>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <div class="card border-primary mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">Header</div>
+                    </div>
+                </div>
+
+                <div class="demo-block" data-title-en="Pills, breadcrumb and pagination" data-title-fa="دانه‌ها، مسیر راهنما و صفحه‌بندی">
+                    <div class="demo-preview">
+                        <ul class="nav nav-pills mb-3">
+                            <li class="nav-item"><a class="nav-link active" href="#" data-en="All" data-fa="همه">All</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#" data-en="Open" data-fa="باز">Open</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#" data-en="Closed" data-fa="بسته">Closed</a></li>
+                        </ul>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#" data-en="Home" data-fa="خانه">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#" data-en="Library" data-fa="کتابخانه">Library</a></li>
+                                <li class="breadcrumb-item active" aria-current="page" data-en="Data" data-fa="داده">Data</li>
+                            </ol>
+                        </nav>
+                        <nav aria-label="pagination">
+                            <ul class="pagination mb-0">
+                                <li class="page-item disabled"><a class="page-link" href="#" data-en="Previous" data-fa="قبلی">Previous</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#" data-en="Next" data-fa="بعدی">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ---------------------------------------------------- feedback -->
+            <section class="demo-section" id="feedback">
+                <h2 data-en="Alerts &amp; badges" data-fa="هشدارها و نشان‌ها">Alerts &amp; badges</h2>
+                <p class="demo-section-note" data-en="Dismiss buttons jump to the opposite corner, and toast headers reorder." data-fa="دکمه‌ی بستن به گوشه‌ی مقابل می‌رود و ترتیب اجزای هدر توست عوض می‌شود.">Dismiss buttons jump to the opposite corner, and toast headers reorder.</p>
+
+                <div class="demo-block" data-title-en="Alerts" data-title-fa="هشدارها">
+                    <div class="demo-preview">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong data-en="Saved." data-fa="ذخیره شد.">Saved.</strong>
+                            <span data-en="Your changes are live." data-fa="تغییرات شما اعمال شد.">Your changes are live.</span>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <span data-en="Your trial ends in three days." data-fa="دوره‌ی آزمایشی شما سه روز دیگر تمام می‌شود.">Your trial ends in three days.</span>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="alert alert-info mb-0" role="alert">
+                            <h4 class="alert-heading" data-en="Heads up" data-fa="توجه">Heads up</h4>
+                            <p class="mb-0" data-en="Alerts can hold headings, paragraphs and dividers." data-fa="هشدارها می‌توانند شامل عنوان، پاراگراف و جداکننده باشند.">Alerts can hold headings, paragraphs and dividers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-block" data-title-en="Badges and toast" data-title-fa="نشان‌ها و توست">
+                    <div class="demo-preview">
+                        <p>
+                            <span class="badge badge-primary" data-en="Primary" data-fa="اصلی">Primary</span>
+                            <span class="badge badge-success" data-en="Success" data-fa="موفق">Success</span>
+                            <span class="badge badge-danger" data-en="Danger" data-fa="خطر">Danger</span>
+                            <span class="badge badge-pill badge-info">42</span>
+                            <span class="badge badge-secondary" data-en="New" data-fa="جدید">New</span>
+                        </p>
+                        <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+                            <div class="toast-header">
+                                <strong class="mr-auto" data-en="Notification" data-fa="اعلان">Notification</strong>
+                                <small data-en="2 min ago" data-fa="۲ دقیقه پیش">2 min ago</small>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="toast-body" data-en="A new comment was added to your issue." data-fa="یک دیدگاه تازه روی مسئله‌ی شما ثبت شد.">A new comment was added to your issue.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ---------------------------------------------------- progress -->
+            <section class="demo-section" id="progress">
+                <h2 data-en="Progress &amp; spinners" data-fa="پیشرفت و اسپینر">Progress &amp; spinners</h2>
+                <p class="demo-section-note" data-en="Progress bars fill from the reading side." data-fa="نوارهای پیشرفت از سمت شروع خواندن پر می‌شوند.">Progress bars fill from the reading side.</p>
+
+                <div class="demo-block" data-title-en="Progress bars" data-title-fa="نوارهای پیشرفت">
+                    <div class="demo-preview">
+                        <div class="progress mb-2">
+                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                        </div>
+                        <div class="progress mb-2">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                        </div>
+                        <div class="progress mb-2">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="progress mb-0">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-block" data-title-en="Spinners" data-title-fa="اسپینرها">
+                    <div class="demo-preview">
+                        <div class="spinner-border text-primary" role="status"><span class="sr-only">Loading…</span></div>
+                        <div class="spinner-border text-success" role="status"><span class="sr-only">Loading…</span></div>
+                        <div class="spinner-grow text-danger" role="status"><span class="sr-only">Loading…</span></div>
+                        <div class="spinner-grow text-secondary" role="status"><span class="sr-only">Loading…</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ------------------------------------------------------- cards -->
+            <section class="demo-section" id="cards">
+                <h2 data-en="Cards &amp; lists" data-fa="کارت‌ها و فهرست‌ها">Cards &amp; lists</h2>
+                <p class="demo-section-note" data-en="Card decks, list groups and media objects reverse their internal order." data-fa="دسته‌کارت‌ها، گروه‌های فهرست و آبجکت‌های رسانه‌ای ترتیب داخلی‌شان برعکس می‌شود.">Card decks, list groups and media objects reverse their internal order.</p>
+
+                <div class="demo-block" data-title-en="Cards" data-title-fa="کارت‌ها">
+                    <div class="demo-preview">
+                        <div class="row">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <div class="card">
+                                    <div class="card-header" data-en="Featured" data-fa="ویژه">Featured</div>
                                     <div class="card-body">
-                                        <h4 class="card-title">Primary card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <h5 class="card-title" data-en="Card title" data-fa="عنوان کارت">Card title</h5>
+                                        <p class="card-text" data-en="Some quick example text to build on the card title." data-fa="متن نمونه‌ی کوتاهی برای تکمیل عنوان کارت.">Some quick example text to build on the card title.</p>
+                                        <a href="#" class="btn btn-primary btn-sm" data-en="Go somewhere" data-fa="برو">Go somewhere</a>
                                     </div>
-                                </div>
-                                <div class="card border-secondary mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Secondary card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                                <div class="card border-success mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Success card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                                <div class="card border-danger mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Danger card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                                <div class="card border-warning mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Warning card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                                <div class="card border-info mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Info card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                                <div class="card border-light mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Light card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                                <div class="card border-dark mb-3" style="max-width: 20rem;">
-                                    <div class="card-header">Header</div>
-                                    <div class="card-body">
-                                        <h4 class="card-title">Dark card title</h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
+                                    <div class="card-footer text-muted"><small data-en="Updated 3 mins ago" data-fa="۳ دقیقه پیش به‌روز شد">Updated 3 mins ago</small></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="bs-component">
-                                <div class="card mb-3">
-                                    <h3 class="card-header">Card header</h3>
+                            <div class="col-md-6">
+                                <div class="card text-white bg-primary">
                                     <div class="card-body">
-                                        <h5 class="card-title">Special title treatment</h5>
-                                        <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-                                    </div>
-                                    <img style="height: 200px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
-                                    <div class="card-body">
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <h5 class="card-title" data-en="Coloured card" data-fa="کارت رنگی">Coloured card</h5>
+                                        <p class="card-text" data-en="Background utilities work in both directions." data-fa="کلاس‌های پس‌زمینه در هر دو جهت کار می‌کنند.">Background utilities work in both directions.</p>
                                     </div>
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">Cras justo odio</li>
-                                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                                        <li class="list-group-item">Vestibulum at eros</li>
+                                        <li class="list-group-item" data-en="An item" data-fa="یک آیتم">An item</li>
+                                        <li class="list-group-item" data-en="A second item" data-fa="آیتم دوم">A second item</li>
                                     </ul>
-                                    <div class="card-body">
-                                        <a href="#" class="card-link">Card link</a>
-                                        <a href="#" class="card-link">Another link</a>
-                                    </div>
-                                    <div class="card-footer text-muted">
-                                        2 days ago
-                                    </div>
                                 </div>
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title">Card title</h4>
-                                        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="card-link">Card link</a>
-                                        <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-block" data-title-en="List group and media" data-title-fa="گروه فهرست و رسانه">
+                    <div class="demo-preview">
+                        <div class="row">
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item list-group-item-action active d-flex justify-content-between align-items-center">
+                                        <span data-en="Inbox" data-fa="صندوق ورودی">Inbox</span>
+                                        <span class="badge badge-light badge-pill">14</span>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                        <span data-en="Drafts" data-fa="پیش‌نویس‌ها">Drafts</span>
+                                        <span class="badge badge-primary badge-pill">2</span>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action disabled" data-en="Spam" data-fa="هرزنامه">Spam</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="media">
+                                    <div class="mr-3 rounded demo-swatch bg-secondary" style="width: 64px; height: 64px;"></div>
+                                    <div class="media-body">
+                                        <h5 class="mt-0" data-en="Media object" data-fa="آبجکت رسانه">Media object</h5>
+                                        <p class="mb-0" data-en="The mr-3 spacing utility becomes a margin on the other side once flipped." data-fa="کلاس فاصله‌ی mr-3 پس از برگردان، به حاشیه‌ی سمت مقابل تبدیل می‌شود.">The mr-3 spacing utility becomes a margin on the other side once flipped.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            <!-- Dialogs
-                ================================================== -->
-                <div class="bs-docs-section">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="page-header">
-                                <h1 id="dialogs">Dialogs</h1>
+            </section>
+
+            <!-- ---------------------------------------------------- overlays -->
+            <section class="demo-section" id="overlays">
+                <h2 data-en="Dropdowns &amp; overlays" data-fa="بازشو و لایه‌ها">Dropdowns &amp; overlays</h2>
+                <p class="demo-section-note" data-en="Dropdown menus anchor to the correct edge, and modal footers reverse their button order." data-fa="منوهای بازشو به لبه‌ی درست می‌چسبند و ترتیب دکمه‌های پاورقی مودال برعکس می‌شود.">Dropdown menus anchor to the correct edge, and modal footers reverse their button order.</p>
+
+                <div class="demo-block" data-title-en="Dropdowns, tooltip and popover" data-title-fa="بازشوها، تولتیپ و پاپ‌اور">
+                    <div class="demo-preview">
+                        <div class="dropdown d-inline-block mb-2">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-en="Open menu" data-fa="باز کردن منو">Open menu</button>
+                            <div class="dropdown-menu">
+                                <h6 class="dropdown-header" data-en="Settings" data-fa="تنظیمات">Settings</h6>
+                                <a class="dropdown-item" href="#" data-en="Profile" data-fa="پروفایل">Profile</a>
+                                <a class="dropdown-item active" href="#" data-en="Billing" data-fa="صورت‌حساب">Billing</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-en="Sign out" data-fa="خروج">Sign out</a>
                             </div>
                         </div>
+                        <button type="button" class="btn btn-outline-secondary mb-2" data-toggle="tooltip" data-placement="top" title="Tooltip text" data-en="Hover for tooltip" data-fa="برای تولتیپ نشانگر را نگه دارید">Hover for tooltip</button>
+                        <button type="button" class="btn btn-outline-secondary mb-2" data-toggle="popover" data-placement="bottom" data-content="Popover body content goes here." title="Popover title" data-en="Click for popover" data-fa="برای پاپ‌اور کلیک کنید">Click for popover</button>
+                        <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#demoModal" data-en="Launch modal" data-fa="نمایش مودال">Launch modal</button>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <h2>Modals</h2>
-                            <div class="bs-component">
-                                <div class="modal">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Modal title</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p>Modal body text goes here.</p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-primary">Save changes</button>
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
+                </div>
+
+                <div class="demo-block" data-title-en="Modal (shown inline)" data-title-fa="مودال (نمایش درون‌خطی)">
+                    <div class="demo-preview bg-light">
+                        <div class="modal" tabindex="-1" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" data-en="Delete project" data-fa="حذف پروژه">Delete project</h5>
+                                        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="mb-0" data-en="This action cannot be undone. All files in this project will be removed." data-fa="این کار برگشت‌پذیر نیست. همه‌ی فایل‌های این پروژه حذف می‌شوند.">This action cannot be undone. All files in this project will be removed.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-en="Cancel" data-fa="انصراف">Cancel</button>
+                                        <button type="button" class="btn btn-danger" data-en="Delete" data-fa="حذف">Delete</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <h2>Popovers</h2>
-                            <div class="bs-component" style="margin-bottom: 3em;">
-                                <button type="button" class="btn btn-secondary" title="Popover Title" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Left</button>
-                                <button type="button" class="btn btn-secondary" title="Popover Title" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Top</button>
-                                <button type="button" class="btn btn-secondary" title="Popover Title" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
-                                sagittis lacus vel augue laoreet rutrum faucibus.">Bottom</button>
-                                <button type="button" class="btn btn-secondary" title="Popover Title" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Right</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ---------------------------------------------------- carousel -->
+            <section class="demo-section" id="carousel">
+                <h2 data-en="Carousel &amp; collapse" data-fa="اسلایدر و آکاردئون">Carousel &amp; collapse</h2>
+                <p class="demo-section-note" data-en="Carousel controls swap places; accordion headers align to the reading side." data-fa="کنترل‌های اسلایدر جابه‌جا می‌شوند و عنوان‌های آکاردئون به سمت خواندن تراز می‌شوند.">Carousel controls swap places; accordion headers align to the reading side.</p>
+
+                <div class="demo-block" data-title-en="Carousel" data-title-fa="اسلایدر">
+                    <div class="demo-preview">
+                        <div id="demoCarousel" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#demoCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#demoCarousel" data-slide-to="1"></li>
+                                <li data-target="#demoCarousel" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner rounded">
+                                <div class="carousel-item active">
+                                    <div class="bg-primary text-white text-center py-5">
+                                        <h3 data-en="Slide one" data-fa="اسلاید یک">Slide one</h3>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="bg-success text-white text-center py-5">
+                                        <h3 data-en="Slide two" data-fa="اسلاید دو">Slide two</h3>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="bg-dark text-white text-center py-5">
+                                        <h3 data-en="Slide three" data-fa="اسلاید سه">Slide three</h3>
+                                    </div>
+                                </div>
                             </div>
-                            <h2>Tooltips</h2>
-                            <div class="bs-component">
-                                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Left</button>
-                                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Top</button>
-                                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Bottom</button>
-                                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Right</button>
+                            <a class="carousel-control-prev" href="#demoCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#demoCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-block" data-title-en="Accordion" data-title-fa="آکاردئون">
+                    <div class="demo-preview">
+                        <div class="accordion" id="demoAccordion">
+                            <div class="card">
+                                <div class="card-header p-0">
+                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#demoCollapse1" data-en="What does the rtl class change?" data-fa="کلاس rtl چه چیزهایی را عوض می‌کند؟">What does the rtl class change?</button>
+                                </div>
+                                <div id="demoCollapse1" class="collapse show" data-parent="#demoAccordion">
+                                    <div class="card-body" data-en="Direction and text alignment, spacing utilities, text alignment utilities, grid offsets, dropdown anchoring, breadcrumbs, pagination and input group radii." data-fa="جهت و تراز متن، کلاس‌های فاصله، کلاس‌های تراز متن، آفست‌های گرید، تراز منوی بازشو، مسیر راهنما، صفحه‌بندی و گردی گوشه‌های گروه ورودی.">Direction and text alignment, spacing utilities, text alignment utilities, grid offsets, dropdown anchoring, breadcrumbs, pagination and input group radii.</div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header p-0">
+                                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#demoCollapse2" data-en="Can I mix both directions on one page?" data-fa="می‌شود هر دو جهت را در یک صفحه داشت؟">Can I mix both directions on one page?</button>
+                                </div>
+                                <div id="demoCollapse2" class="collapse" data-parent="#demoAccordion">
+                                    <div class="card-body" data-en="Yes. The rtl class is scoped to the element it sits on, so a right-to-left sidebar can live next to left-to-right content." data-fa="بله. کلاس rtl فقط روی همان عنصر و محتوای داخلش اثر می‌گذارد، پس یک ستون راست‌به‌چپ می‌تواند کنار محتوای چپ‌به‌راست قرار بگیرد.">Yes. The rtl class is scoped to the element it sits on, so a right-to-left sidebar can live next to left-to-right content.</div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header p-0">
+                                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#demoCollapse3" data-en="Do I need a separate build per language?" data-fa="برای هر زبان به خروجی جدا نیاز دارم؟">Do I need a separate build per language?</button>
+                                </div>
+                                <div id="demoCollapse3" class="collapse" data-parent="#demoAccordion">
+                                    <div class="card-body" data-en="No. bootstrap-rtl.css contains the regular Bootstrap rules plus the rtl overrides, so one stylesheet serves both directions." data-fa="نه. فایل bootstrap-rtl.css شامل قواعد معمول بوت‌استرپ به‌همراه بازنویسی‌های rtl است؛ یک فایل برای هر دو جهت کافی است.">No. bootstrap-rtl.css contains the regular Bootstrap rules plus the rtl overrides, so one stylesheet serves both directions.</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="source-modal" class="modal fade">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Source Code</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <pre></pre>
-                            </div>
+            </section>
+
+            <!-- --------------------------------------------------- utilities -->
+            <section class="demo-section" id="utilities">
+                <h2 data-en="Utilities that flip" data-fa="کلاس‌های کمکی که برمی‌گردند">Utilities that flip</h2>
+                <p class="demo-section-note" data-en="Spacing, text alignment and grid offsets are rewritten inside rtl. Flip the direction switch and watch these boxes move." data-fa="کلاس‌های فاصله، تراز متن و آفست گرید درون rtl بازنویسی می‌شوند. کلید جهت را عوض کنید و جابه‌جایی این جعبه‌ها را ببینید.">Spacing, text alignment and grid offsets are rewritten inside rtl. Flip the direction switch and watch these boxes move.</p>
+
+                <div class="demo-block" data-title-en="Spacing and alignment" data-title-fa="فاصله و تراز">
+                    <div class="demo-preview">
+                        <div class="demo-flip-box"><code>ml-5</code> <span class="badge badge-secondary ml-5" data-en="pushed" data-fa="جابه‌جا شده">pushed</span></div>
+                        <div class="demo-flip-box"><span class="badge badge-secondary mr-5" data-en="pushed" data-fa="جابه‌جا شده">pushed</span> <code>mr-5</code></div>
+                        <div class="demo-flip-box text-right"><code>text-right</code></div>
+                        <div class="demo-flip-box text-left"><code>text-left</code></div>
+                        <div class="demo-flip-box text-center"><code>text-center</code></div>
+                    </div>
+                </div>
+
+                <div class="demo-block" data-title-en="Grid offsets" data-title-fa="آفست‌های گرید">
+                    <div class="demo-preview">
+                        <div class="row mb-2">
+                            <div class="col-4"><div class="demo-swatch bg-primary"></div></div>
+                            <div class="col-4 offset-4"><div class="demo-swatch bg-info"></div></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 offset-6"><div class="demo-swatch bg-secondary"></div></div>
                         </div>
                     </div>
                 </div>
-                <footer id="footer">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <ul class="list-unstyled">
-                                <li class="float-lg-right"><a href="#top">Back to top</a></li>
-                            </ul>
-                        </div>
+
+                <div class="demo-block" data-title-en="Good to know" data-title-fa="خوب است بدانید">
+                    <div class="demo-preview">
+                        <ul class="mb-0">
+                            <li data-en="float-left and float-right are not mirrored — they stay physical. Use them when you truly mean a fixed side." data-fa="کلاس‌های float-left و float-right آینه نمی‌شوند و فیزیکی باقی می‌مانند؛ وقتی واقعاً سمت ثابتی می‌خواهید از آن‌ها استفاده کنید.">float-left and float-right are not mirrored — they stay physical. Use them when you truly mean a fixed side.</li>
+                            <li data-en="Code samples should keep direction: ltr so snippets stay readable inside a flipped page." data-fa="بهتر است نمونه‌کدها با direction: ltr بمانند تا داخل صفحه‌ی برگردانده‌شده هم خوانا باشند.">Code samples should keep direction: ltr so snippets stay readable inside a flipped page.</li>
+                            <li data-en="dir=&quot;rtl&quot; is styled identically to the rtl class, so either hook works." data-fa="ویژگی dir=&quot;rtl&quot; دقیقاً مانند کلاس rtl استایل می‌گیرد، پس هر کدام را بخواهید می‌توانید به‌کار ببرید.">dir="rtl" is styled identically to the rtl class, so either hook works.</li>
+                        </ul>
                     </div>
-                </footer>
+                </div>
+            </section>
+
+            <footer class="demo-footer">
+                <p class="mb-1">
+                    <span data-en="bootstrap-v4-rtl — based on Bootstrap 4.6.2. Maintained by" data-fa="bootstrap-v4-rtl — بر پایه‌ی بوت‌استرپ ۴.۶.۲. نگهداری توسط">bootstrap-v4-rtl — based on Bootstrap 4.6.2. Maintained by</span>
+                    <a href="https://github.com/MahdiMajidzadeh" target="_blank" rel="noopener">Mahdi Majidzadeh</a>.
+                </p>
+                <p class="mb-0"><a href="#top" data-en="Back to top" data-fa="بازگشت به بالا">Back to top</a></p>
+            </footer>
+        </main>
+    </div>
+</div>
+
+<!-- interactive modal target -->
+<div class="modal fade" id="demoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" data-en="Invite a teammate" data-fa="دعوت هم‌تیمی">Invite a teammate</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
-            <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-            <script src="dist/js/bootstrap.bundle.min.js"></script>
-            <script src="demo/custom.js"></script>
-        </body>
-        </html>
+            <div class="modal-body">
+                <div class="form-group mb-0">
+                    <label for="demoModalEmail" data-en="Email address" data-fa="نشانی ایمیل">Email address</label>
+                    <input type="email" class="form-control" id="demoModalEmail" placeholder="name@example.com">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" data-en="Close" data-fa="بستن">Close</button>
+                <button type="button" class="btn btn-primary" data-en="Send invite" data-fa="ارسال دعوت">Send invite</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="demo-flash" id="demo-flash" role="status" aria-live="polite"></div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="node_modules/jquery/dist/jquery.min.js"><\/script>')</script>
+<script src="dist/js/bootstrap.bundle.min.js"></script>
+<script src="demo/demo.js"></script>
+</body>
+</html>

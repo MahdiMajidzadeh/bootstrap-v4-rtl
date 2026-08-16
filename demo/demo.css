@@ -1,0 +1,437 @@
+/*!
+ * Demo styles for bootstrap-v4-rtl
+ * These styles are for the demo page chrome only — they are not part of the package.
+ */
+
+:root {
+  --demo-bg: #f6f8fb;
+  --demo-surface: #fff;
+  --demo-border: #e4e8ef;
+  --demo-ink: #1c2434;
+  --demo-muted: #6b7686;
+  --demo-brand: #2f6fed;
+  --demo-brand-dark: #1b4dbb;
+  --demo-code-bg: #16202f;
+  --demo-code-ink: #d7e3f4;
+  --demo-radius: .6rem;
+  --demo-shadow: 0 1px 2px rgba(23, 35, 55, .06), 0 8px 24px -12px rgba(23, 35, 55, .18);
+}
+
+html {
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  padding-top: 4.25rem;
+  background-color: var(--demo-bg);
+  color: var(--demo-ink);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.lang-fa {
+  font-family: Vazirmatn, Tahoma, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Code must always read left-to-right, even while the page is flipped. */
+.demo-ltr,
+pre,
+code,
+kbd,
+samp {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+  font-family: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+/* ------------------------------------------------------------------ navbar */
+
+.demo-navbar {
+  background-color: rgba(255, 255, 255, .92);
+  border-bottom: 1px solid var(--demo-border);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+}
+
+.demo-navbar .navbar-brand {
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+.demo-navbar .navbar-brand .demo-dot {
+  display: inline-block;
+  width: .6rem;
+  height: .6rem;
+  margin: 0 .45rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--demo-brand), #8f5cf7);
+  vertical-align: middle;
+}
+
+.demo-switches .btn {
+  min-width: 3rem;
+  font-weight: 600;
+}
+
+.demo-switch-label {
+  margin: 0 .5rem;
+  color: var(--demo-muted);
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+/* -------------------------------------------------------------------- hero */
+
+.demo-hero {
+  margin-bottom: 2.5rem;
+  padding: 3.5rem 0 3rem;
+  background:
+    radial-gradient(1000px 380px at 15% -10%, rgba(143, 92, 247, .35), transparent 60%),
+    linear-gradient(135deg, #1b3050, #24457a 55%, #2f6fed);
+  color: #fff;
+}
+
+.demo-hero h1 {
+  font-size: calc(2rem + 1.6vw);
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+
+.demo-hero .lead {
+  max-width: 42rem;
+  color: rgba(255, 255, 255, .82);
+}
+
+.demo-hero .demo-pill {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: .3rem .8rem;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 2rem;
+  background-color: rgba(255, 255, 255, .12);
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.demo-live-code {
+  display: block;
+  padding: .85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: var(--demo-radius);
+  background-color: rgba(9, 16, 28, .5);
+  color: #9fd0ff;
+  font-size: .95rem;
+  overflow-x: auto;
+}
+
+.demo-live-code b {
+  color: #ffd479;
+}
+
+.demo-install {
+  display: flex;
+  align-items: center;
+  padding: .35rem .35rem .35rem .9rem;
+  border-radius: var(--demo-radius);
+  background-color: rgba(9, 16, 28, .5);
+}
+
+.demo-install code {
+  flex: 1 1 auto;
+  color: #d7e3f4;
+  background: none;
+}
+
+.demo-stat {
+  padding: 1rem 0;
+}
+
+.demo-stat .demo-stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.demo-stat .demo-stat-label {
+  color: rgba(255, 255, 255, .7);
+  font-size: .8rem;
+}
+
+/* ----------------------------------------------------------------- sidebar */
+
+.demo-sidebar {
+  position: sticky;
+  top: 5.5rem;
+  max-height: calc(100vh - 7rem);
+  overflow-y: auto;
+}
+
+.demo-sidebar .nav-link {
+  padding: .35rem .75rem;
+  border-radius: .4rem;
+  color: var(--demo-muted);
+  font-size: .9rem;
+}
+
+.demo-sidebar .nav-link:hover {
+  background-color: rgba(47, 111, 237, .07);
+  color: var(--demo-brand-dark);
+}
+
+.demo-sidebar .nav-link.active {
+  background-color: rgba(47, 111, 237, .12);
+  color: var(--demo-brand-dark);
+  font-weight: 600;
+}
+
+.demo-sidebar-title {
+  margin: 0 .75rem .5rem;
+  color: var(--demo-muted);
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+/* ---------------------------------------------------------------- sections */
+
+.demo-section {
+  padding-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.demo-section > h2 {
+  margin-bottom: .25rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+.demo-section > .demo-section-note {
+  margin-bottom: 1.25rem;
+  color: var(--demo-muted);
+}
+
+/* ------------------------------------------------------------------ blocks */
+
+.demo-block {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--demo-border);
+  border-radius: var(--demo-radius);
+  background-color: var(--demo-surface);
+  box-shadow: var(--demo-shadow);
+  overflow: hidden;
+}
+
+.demo-block-header {
+  display: flex;
+  align-items: center;
+  padding: .55rem .5rem .55rem 1rem;
+  border-bottom: 1px solid var(--demo-border);
+  background-color: #fbfcfe;
+}
+
+.rtl .demo-block-header {
+  padding: .55rem 1rem .55rem .5rem;
+}
+
+.demo-block-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--demo-muted);
+}
+
+.demo-block-actions .btn {
+  padding: .15rem .55rem;
+  font-size: .75rem;
+}
+
+.demo-preview {
+  padding: 1.5rem;
+}
+
+.demo-preview > :last-child {
+  margin-bottom: 0;
+}
+
+.demo-code {
+  display: none;
+  border-top: 1px solid var(--demo-border);
+  background-color: var(--demo-code-bg);
+}
+
+.demo-code.show {
+  display: block;
+}
+
+.demo-code pre {
+  max-height: 26rem;
+  margin: 0;
+  padding: 1rem 1.25rem;
+  color: var(--demo-code-ink);
+  background: none;
+  font-size: .8rem;
+  line-height: 1.55;
+  overflow: auto;
+}
+
+/* Static modal / popover previews, borrowed from the original demo. */
+
+.demo-preview .modal {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: 1;
+  display: block;
+}
+
+.demo-preview .modal-dialog {
+  width: 100%;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.demo-preview .popover {
+  position: relative;
+  display: inline-block;
+  width: 15rem;
+  margin: .5rem;
+}
+
+/* --------------------------------------------------------------- compare */
+
+.demo-compare {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -.5rem;
+}
+
+.demo-compare > div {
+  flex: 1 1 20rem;
+  padding: 0 .5rem;
+}
+
+.demo-pane {
+  height: 100%;
+  border: 1px solid var(--demo-border);
+  border-radius: var(--demo-radius);
+  background-color: var(--demo-surface);
+  overflow: hidden;
+}
+
+.demo-pane-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+  border-bottom: 1px solid var(--demo-border);
+  font-size: .8rem;
+  font-weight: 600;
+  direction: ltr;
+}
+
+.demo-pane-head .badge {
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+.demo-pane-body {
+  padding: 1.25rem;
+}
+
+.demo-pane-body > :last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------- helpers */
+
+.demo-flip-box {
+  padding: .75rem 1rem;
+  border: 1px dashed #b9c4d4;
+  border-radius: .4rem;
+  background-color: #fbfcfe;
+  font-size: .85rem;
+}
+
+.demo-flip-box + .demo-flip-box {
+  margin-top: .5rem;
+}
+
+.demo-swatch {
+  display: inline-block;
+  width: 100%;
+  height: 3rem;
+  border-radius: .4rem;
+}
+
+.demo-flash {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 2000;
+  padding: .55rem 1rem;
+  border-radius: 2rem;
+  background-color: #16202f;
+  color: #fff;
+  font-size: .85rem;
+  opacity: 0;
+  transform: translateY(.5rem);
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+}
+
+.demo-flash.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.demo-footer {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--demo-border);
+  color: var(--demo-muted);
+  font-size: .9rem;
+}
+
+.demo-footer a {
+  color: var(--demo-brand-dark);
+}
+
+@media (max-width: 991.98px) {
+  body {
+    padding-top: 3.75rem;
+  }
+
+  .demo-navbar .navbar-toggler {
+    margin: 0 .5rem;
+    padding: .2rem .5rem;
+  }
+}
+
+/* Keep brand + both switches + toggler on one row on small phones. */
+@media (max-width: 575.98px) {
+  .demo-navbar .navbar-brand {
+    font-size: .95rem;
+  }
+
+  .demo-switches .btn {
+    min-width: 0;
+    padding: .15rem .4rem;
+    font-size: .7rem;
+  }
+
+  .demo-switches .btn-group + .btn-group {
+    margin: 0 .35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-flash {
+    transition: none;
+  }
+}

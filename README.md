@@ -29,6 +29,14 @@ Add `rtl` class to any element and every thing inside that turn to RTL layout
 
 **NOTE:** This package is designed for multilanguage projects to change all page direction just with adding `rtl` class, so all left and right classes is reversed when you are in rtl
 
+## Demo
+
+Open `index.html` for the interactive demo: every component is plain Bootstrap 4 markup with live LTR/RTL and English/Persian switches, side-by-side direction comparison, and a copyable source view per component. Its assets live in `demo/demo.css` and `demo/demo.js`.
+
+You can link to a specific view with query parameters, e.g. `index.html?dir=rtl&lang=fa`.
+
+The previous Persian-only page is still available as `index-fa.html`.
+
 ## What's included
 
 Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
