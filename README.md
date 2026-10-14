@@ -25,9 +25,30 @@ Install with npm:
 
 ## Quick start
 
-Add `rtl` class to any element and every thing inside that turn to RTL layout
+Add the `rtl` class (or `dir="rtl"`) to any element and everything inside it turns into an RTL layout. Put it on `<html>` or `<body>` to flip the whole page.
 
 **NOTE:** This package is designed for multilanguage projects to change all page direction just with adding `rtl` class, so all left and right classes is reversed when you are in rtl
+
+### What flips
+
+Inside `.rtl` / `[dir="rtl"]` the layout is an exact mirror of Bootstrap 4.6.2:
+
+- Components: forms and validation icons, custom controls and switches, custom select and file input, input groups and button groups (including `sm`/`lg` corner radii), dropdowns (`dropleft`/`dropright` and their carets), navs and navbars, cards and card groups, breadcrumb, pagination, list groups (also horizontal), alerts, modals, progress stripes and the carousel.
+- Grid offsets.
+- Utilities: `.mr-*`/`.ml-*`/`.pr-*`/`.pl-*` (including negative and `auto`), `.text-left`/`.text-right`, `.float-left`/`.float-right`, `.border-left`/`.border-right` (and `-0`), `.rounded-left`/`.rounded-right`, `.dropdown-menu-left`/`.dropdown-menu-right`. Responsive variants flip too.
+
+The JavaScript is RTL-aware as well. It checks the computed `direction` of the component, so both `.rtl` and `dir="rtl"` work:
+
+- Dropdowns: Popper placements are mirrored, so `.dropdown-menu-right` aligns to the left edge and `.dropright` opens to the left.
+- Tooltips and popovers: `placement: 'left'`/`'right'` flip. The arrow classes (`.bs-tooltip-*`) stay physical, because they describe where the tip actually is.
+- Carousel: the arrow keys and swipe directions follow the slide direction.
+
+### Limitations
+
+- Tooltips and popovers are appended to `<body>` by default. Put `.rtl` on `<html>`/`<body>`, or set the `container` option to an element inside `.rtl`, so they get RTL text.
+- An LTR island (`dir="ltr"`) inside an `.rtl` element is still styled as RTL.
+- A directional utility zeroes the opposite side in RTL. For example `.pl-0` on `.nav-link` removes its natural padding on both sides.
+- `.border-left-0`/`.border-right-0` restore the other side with the default border color (or the component's own, for `.form-control`, `.custom-select`, `.input-group-text` and `.card`). Focus and validation colors don't apply to that side.
 
 ## Demo
 

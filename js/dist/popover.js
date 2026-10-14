@@ -1,5 +1,5 @@
 /*!
-  * Bootstrap popover.js v4.6.2-4 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Bootstrap popover.js v4.6.2-5 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
   * Copyright 2011-2026 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */

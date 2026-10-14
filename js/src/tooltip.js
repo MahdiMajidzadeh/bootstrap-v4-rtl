@@ -262,7 +262,7 @@ class Tooltip {
         this.config.placement.call(this, tip, this.element) :
         this.config.placement
 
-      const attachment = this._getAttachment(placement)
+      const attachment = this._getRTLAttachment(this._getAttachment(placement))
       this.addAttachmentClass(attachment)
 
       const container = this._getContainer()
@@ -491,6 +491,25 @@ class Tooltip {
 
   _getAttachment(placement) {
     return AttachmentMap[placement.toUpperCase()]
+  }
+
+  // RTL support: `left`/`right` are logical, Popper's placements are physical.
+  // Only the requested placement is flipped; the class Popper reports back
+  // stays physical so it matches the arrow CSS.
+  _getRTLAttachment(attachment) {
+    if (!Util.isRTL(this.element)) {
+      return attachment
+    }
+
+    if (attachment === AttachmentMap.LEFT) {
+      return AttachmentMap.RIGHT
+    }
+
+    if (attachment === AttachmentMap.RIGHT) {
+      return AttachmentMap.LEFT
+    }
+
+    return attachment
   }
 
   _setListeners() {

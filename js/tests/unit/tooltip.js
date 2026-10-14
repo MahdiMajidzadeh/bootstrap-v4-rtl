@@ -1315,4 +1315,32 @@ $(function () {
     assert.strictEqual(tooltip1Image.attr('src'), 'test.jpg')
     assert.strictEqual(tooltip2Image.attr('src'), 'test.jpg')
   })
+
+  QUnit.test('should flip left and right placements in RTL', function (assert) {
+    assert.expect(4)
+    var $rtl = $('<div dir="rtl"/>').appendTo('#qunit-fixture')
+    var expected = {
+      left: 'right',
+      right: 'left',
+      top: 'top',
+      bottom: 'bottom'
+    }
+
+    Object.keys(expected).forEach(function (placement) {
+      var $trigger = $('<a href="#" title="Another tooltip"/>')
+        .appendTo($rtl)
+        .bootstrapTooltip({
+          placement: placement,
+          trigger: 'manual'
+        })
+
+      $trigger.on('inserted.bs.tooltip', function () {
+        var $tooltip = $($(this).data('bs.tooltip').tip)
+        assert.true($tooltip.hasClass('bs-tooltip-' + expected[placement]), placement + ' -> ' + expected[placement])
+      })
+
+      $trigger.bootstrapTooltip('show')
+      $trigger.bootstrapTooltip('dispose')
+    })
+  })
 })

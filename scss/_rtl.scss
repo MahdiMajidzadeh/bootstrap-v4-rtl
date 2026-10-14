@@ -1,93 +1,285 @@
+// stylelint-disable declaration-no-important, property-disallowed-list, no-duplicate-selectors
+
+// RTL support
+//
+// Everything below mirrors a rule from Bootstrap 4.6.2 and only applies inside
+// an element with `.rtl` or `[dir="rtl"]`, so one stylesheet serves LTR and RTL
+// pages and the direction can be switched at runtime.
+//
+// Directional classes are mirrored too: `.mr-3`, `.text-left`, `.float-right`,
+// `.border-left`, `.rounded-right`, `.dropdown-menu-right`, `.dropleft`, ...
+// all flip with the page. Tooltip and popover arrows are positioned by Popper
+// in physical coordinates and are intentionally left alone; the JavaScript
+// plugins flip the requested placement instead.
+
+// Background positions used by the RTL custom select and validation icons
+$custom-select-background-position-rtl:     left $custom-select-padding-x center !default;
+$custom-select-feedback-icon-position-rtl:  center left ($custom-select-padding-x + $custom-select-indicator-padding) !default;
+
+
+// Helpers
+
+// Selector for a validation state of `$selectors` (comma separated). Unlike
+// upstream's `form-validation-state-selector()` it doesn't rely on `&`, which
+// would put `.was-validated` outside of `.rtl` once nested.
+@mixin rtl-validation-state($state, $selectors) {
+  $list: ();
+
+  @each $selector in $selectors {
+    @if $state == "valid" or $state == "invalid" {
+      $list: append($list, unquote(".was-validated #{$selector}:#{$state}"), comma);
+    }
+    $list: append($list, unquote("#{$selector}.is-#{$state}"), comma);
+  }
+
+  #{$list} {
+    @content;
+  }
+}
+
+// Restores the rounded side of the outermost buttons in a `.btn-group`.
+// The selectors never match an element that the zeroing rules match, so they
+// can't fight them regardless of specificity or size modifiers.
+@mixin rtl-btn-group-radius($group, $btn, $radius, $nested: true) {
+  #{$group} > #{$btn}:first-child:not(:last-child):not(.dropdown-toggle) {
+    @include border-right-radius($radius);
+  }
+
+  #{$group} > #{$btn}:not(:first-child):last-child,
+  #{$group} > #{$btn}.dropdown-toggle:not(:first-child) {
+    @include border-left-radius($radius);
+  }
+
+  @if $nested {
+    #{$group} > .btn-group:first-child:not(:last-child) > #{$btn}:first-child {
+      @include border-right-radius($radius);
+    }
+
+    #{$group} > .btn-group:not(:first-child):last-child > #{$btn}:last-child,
+    #{$group} > .btn-group:not(:first-child):last-child > #{$btn}.dropdown-toggle {
+      @include border-left-radius($radius);
+    }
+  }
+}
+
+// Same idea for `.input-group`: restore the outer corners of the first and last
+// controls/addons. `$controls` is a list of `(selector, radius)` pairs.
+@mixin rtl-input-group-radius($group, $controls, $addon-radius, $btn-radius) {
+  @each $control, $radius in $controls {
+    #{$group}:not(.has-validation) > #{$control}:first-child:not(:last-child),
+    #{$group}.has-validation > #{$control}:first-child:nth-last-child(n + 3) {
+      @include border-right-radius($radius);
+    }
+
+    #{$group}:not(.has-validation) > #{$control}:not(:first-child):last-child,
+    #{$group}.has-validation > #{$control}:not(:first-child):not(:nth-last-child(n + 3)) {
+      @include border-left-radius($radius);
+    }
+  }
+
+  @each $addon, $radius in (".input-group-text": $addon-radius, ".btn": $btn-radius) {
+    #{$group} > .input-group-prepend:first-child > #{$addon}:first-child {
+      @include border-right-radius($radius);
+    }
+
+    #{$group} > .input-group-append:last-child > #{$addon}:last-child,
+    #{$group}.has-validation > .input-group-append:nth-last-child(2) > #{$addon} {
+      @include border-left-radius($radius);
+    }
+  }
+
+  #{$group} > .input-group-append:last-child > .btn.dropdown-toggle {
+    @include border-left-radius($btn-radius);
+  }
+}
+
+
 .rtl,
 [dir="rtl"] {
   text-align: right;
   direction: rtl;
 
-  .nav {
+  //
+  // Reboot & typography
+  //
+
+  // Reboot sets `text-align: left` on `body`, which would win over the value
+  // inherited from `html.rtl` / `html[dir="rtl"]`.
+  body {
+    text-align: right;
+  }
+
+  dd {
+    margin-right: 0;
+  }
+
+  caption {
+    text-align: right;
+  }
+
+  .list-unstyled,
+  .list-inline {
     padding-right: 0;
   }
 
-  .navbar-nav .nav-item {
-    float: right;
+  .list-inline-item:not(:last-child) {
+    margin-right: 0;
+    margin-left: $list-inline-padding;
   }
 
-  .navbar-nav .nav-item + .nav-item {
-    margin-right: inherit;
-    margin-left: 1rem;
+  //
+  // Grid offsets
+  //
+
+  @if $enable-grid-classes {
+    @each $breakpoint in map-keys($grid-breakpoints) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+      @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+        @for $i from 0 through ($grid-columns - 1) {
+          @if not ($infix == "" and $i == 0) {
+            $offset: divide($i, $grid-columns);
+
+            .offset#{$infix}-#{$i} {
+              margin-right: if($offset == 0, 0, percentage($offset));
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
   }
 
-  th {
-    text-align: right;
+  //
+  // Forms
+  //
+
+  .form-check {
+    padding-right: $form-check-input-gutter;
+    padding-left: 0;
   }
 
-  .alert-dismissible {
-    padding-right: 1.25rem;
-    padding-left: 4rem;
+  .form-check-input {
+    margin-right: -$form-check-input-gutter;
+    margin-left: 0;
   }
 
-  .dropdown-menu {
-    right: 0;
-    left: inherit;
-    text-align: right;
+  .form-check-inline {
+    padding-right: 0;
+    margin-right: 0;
+    margin-left: $form-check-inline-margin-x;
+
+    .form-check-input {
+      margin-right: 0;
+      margin-left: $form-check-inline-input-margin-x;
+    }
   }
 
-  .checkbox label {
-    padding-right: 1.25rem;
-    padding-left: inherit;
+  .form-inline {
+    @include media-breakpoint-up(sm) {
+      .form-check {
+        padding-right: 0;
+      }
+
+      .form-check-input {
+        margin-right: 0;
+        margin-left: $form-check-input-margin-x;
+      }
+    }
   }
 
-  .btn-group > .btn:not(:first-child),
-  .btn-group > .btn-group:not(:first-child) {
-    margin-right: -$btn-border-width;
-    margin-left: initial;
+  // Validation
+
+  @each $state, $data in $form-validation-states {
+    .#{$state}-tooltip {
+      right: 0;
+      left: auto;
+    }
+
+    .form-row > .col > .#{$state}-tooltip,
+    .form-row > [class*="col-"] > .#{$state}-tooltip {
+      right: $form-grid-gutter-width * .5;
+      left: auto;
+    }
+
+    @if $enable-validation-icons {
+      @include rtl-validation-state($state, ".form-control") {
+        padding-right: $input-padding-x !important;
+        padding-left: $input-height-inner !important;
+        background-position: left $input-height-inner-quarter center;
+      }
+
+      @include rtl-validation-state($state, ".form-control.form-control-sm, .input-group-sm > .form-control") {
+        padding-right: $input-padding-x-sm !important;
+      }
+
+      @include rtl-validation-state($state, ".form-control.form-control-lg, .input-group-lg > .form-control") {
+        padding-right: $input-padding-x-lg !important;
+      }
+
+      @include rtl-validation-state($state, "select.form-control") {
+        padding-left: $input-padding-x * 4 !important;
+        background-position: left $input-padding-x * 2 center;
+      }
+
+      @include rtl-validation-state($state, "textarea.form-control") {
+        background-position: top $input-height-inner-quarter left $input-height-inner-quarter;
+      }
+
+      @include rtl-validation-state($state, ".custom-select") {
+        padding-right: $custom-select-padding-x !important;
+        padding-left: $custom-select-feedback-icon-padding-right !important;
+        background-position: $custom-select-background-position-rtl, $custom-select-feedback-icon-position-rtl;
+      }
+
+      @include rtl-validation-state($state, ".custom-select.custom-select-sm") {
+        padding-right: $custom-select-padding-x-sm !important;
+      }
+
+      @include rtl-validation-state($state, ".custom-select.custom-select-lg") {
+        padding-right: $custom-select-padding-x-lg !important;
+      }
+
+      @include rtl-validation-state($state, ".input-group-sm > .custom-select") {
+        padding-right: $input-padding-x-sm !important;
+      }
+
+      @include rtl-validation-state($state, ".input-group-lg > .custom-select") {
+        padding-right: $input-padding-x-lg !important;
+      }
+    }
   }
 
-  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
-    @include border-radius(0 $border-radius $border-radius 0);
-  }
-
-  .btn-group > .btn:last-child:not(:first-child),
-  .btn-group > .dropdown-toggle:not(:first-child) {
-    @include border-radius($border-radius 0 0 $border-radius);
-  }
-
-  .btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
-    @include border-radius($border-radius 0 0 $border-radius);
-  }
+  //
+  // Custom forms
+  //
 
   .custom-control {
-    padding-right: 1.5rem;
-    padding-left: inherit;
-    margin-right: inherit;
-    margin-left: 1rem;
+    padding-right: $custom-control-gutter + $custom-control-indicator-size;
+    padding-left: 0;
   }
 
-  .custom-control-indicator {
+  .custom-control-inline {
+    margin-right: 0;
+    margin-left: $custom-control-spacer-x;
+  }
+
+  .custom-control-input {
     right: 0;
-    left: inherit;
+    left: auto;
   }
 
-  .custom-file-label::after {
-    right: initial;
-    left: -1px;
-    @include border-radius($custom-file-border-radius 0 0 $custom-file-border-radius);
-  }
-
-  .custom-control-label::after,
-  .custom-control-label::before {
-    right: -1.5rem;
-    left: inherit;
-  }
-
-  .custom-select {
-    padding: $custom-select-padding-y $custom-select-padding-x $custom-select-padding-y ($custom-select-padding-x + $custom-select-indicator-padding);
-    background: $custom-select-bg $custom-select-indicator no-repeat left $custom-select-padding-x center;
-    background-size: $custom-select-bg-size;
+  .custom-control-label {
+    &::before,
+    &::after {
+      right: -($custom-control-gutter + $custom-control-indicator-size);
+      left: auto;
+    }
   }
 
   .custom-switch {
     padding-right: $custom-switch-width + $custom-control-gutter;
-    padding-left: inherit;
+    padding-left: 0;
 
     .custom-control-label {
       &::before {
@@ -106,210 +298,775 @@
     }
   }
 
-  .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
-  .input-group > .input-group-append:last-child > .input-group-text:not(:last-child),
-  .input-group > .input-group-append:not(:last-child) > .btn,
-  .input-group > .input-group-append:not(:last-child) > .input-group-text,
-  .input-group > .input-group-prepend > .btn,
-  .input-group > .input-group-prepend > .input-group-text {
-    @include border-radius(0 $border-radius $border-radius 0);
+  // Only the position changes, so states like `:disabled` keep their colors.
+  .custom-select {
+    padding-right: $custom-select-padding-x;
+    padding-left: $custom-select-padding-x + $custom-select-indicator-padding;
+    background-position: $custom-select-background-position-rtl;
+
+    &[multiple],
+    &[size]:not([size="1"]) {
+      padding-left: $custom-select-padding-x;
+    }
   }
 
-  .input-group > .input-group-append > .btn,
-  .input-group > .input-group-append > .input-group-text,
-  .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
-  .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child),
-  .input-group > .input-group-prepend:not(:first-child) > .btn,
-  .input-group > .input-group-prepend:not(:first-child) > .input-group-text {
-    @include border-radius($border-radius 0 0 $border-radius);
+  .custom-select-sm {
+    padding-right: $custom-select-padding-x-sm;
   }
 
-  .input-group > .custom-select:not(:first-child),
-  .input-group > .form-control:not(:first-child) {
-    @include border-radius($border-radius 0 0 $border-radius);
+  .custom-select-lg {
+    padding-right: $custom-select-padding-x-lg;
   }
 
-  .input-group > .custom-select:not(:last-child),
-  .input-group > .form-control:not(:last-child) {
-    @include border-radius(0 $border-radius $border-radius 0);
+  .custom-file-label::after {
+    right: auto;
+    left: 0;
+    border-right: inherit;
+    border-left: 0;
+    @include border-radius($custom-file-border-radius 0 0 $custom-file-border-radius);
   }
 
-  .input-group > .custom-select:not(:last-child):not(:first-child),
-  .input-group > .form-control:not(:last-child):not(:first-child) {
-    @include border-radius(0);
-  }
+  //
+  // Dropdowns
+  //
 
-  .radio input,
-  .radio-inline,
-  .checkbox input,
-  .checkbox-inline input {
-    margin-right: -1.25rem;
-    margin-left: inherit;
-  }
-
-  .breadcrumb-item {
-    + .breadcrumb-item {
-      padding-right: $breadcrumb-item-padding;
-      padding-left: 0;
-
-      &::before {
-        float: right;
-        padding-right: 0;
-        padding-left: $breadcrumb-item-padding;
+  @if $enable-caret {
+    .dropdown-toggle {
+      &::after {
+        margin-right: $caret-spacing;
+        margin-left: 0;
       }
 
-      color: $breadcrumb-divider-color;
-      content: $breadcrumb-divider;
+      &:empty::after {
+        margin-right: 0;
+      }
     }
   }
 
-  .list-group {
-    padding-right: 0;
-    padding-left: 40px;
+  .dropdown-menu {
+    right: 0;
+    left: auto;
+    float: right;
+    text-align: right;
   }
 
-  .close {
-    float: left;
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+      .dropdown-menu#{$infix}-left {
+        right: 0;
+        left: auto;
+      }
+
+      .dropdown-menu#{$infix}-right {
+        right: auto;
+        left: 0;
+      }
+    }
   }
 
-  .modal-header .close {
-    margin: -15px auto -15px -15px;
-  }
-
-  .modal-footer {
-    > :not(:first-child) {
-      margin-right: .25rem;
+  .dropright {
+    .dropdown-menu {
+      right: 100%;
+      left: auto;
+      margin-right: $dropdown-spacer;
+      margin-left: 0;
     }
 
-    > :not(:last-child) {
-      margin-left: .25rem;
+    @if $enable-caret {
+      .dropdown-toggle {
+        &::after {
+          margin-right: $caret-spacing;
+          margin-left: 0;
+          border-right: $caret-width solid;
+          border-left: 0;
+        }
+
+        &:empty::after {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .dropleft {
+    .dropdown-menu {
+      right: auto;
+      left: 100%;
+      margin-right: 0;
+      margin-left: $dropdown-spacer;
     }
 
-    > :first-child {
+    @if $enable-caret {
+      .dropdown-toggle::before {
+        margin-right: 0;
+        margin-left: $caret-spacing;
+        border-right: 0;
+        border-left: $caret-width solid;
+      }
+    }
+  }
+
+  // Popper positions the menu with inline `left`/`top`; don't stretch it.
+  .dropdown-menu {
+    &[x-placement^="top"],
+    &[x-placement^="right"],
+    &[x-placement^="bottom"],
+    &[x-placement^="left"] {
+      right: auto;
+    }
+  }
+
+  //
+  // Button groups
+  //
+
+  .btn-group {
+    > .btn:not(:first-child),
+    > .btn-group:not(:first-child) {
+      margin-right: -$btn-border-width;
+      margin-left: 0;
+    }
+
+    > .btn:not(:last-child):not(.dropdown-toggle),
+    > .btn-group:not(:last-child) > .btn {
+      @include border-left-radius(0);
+    }
+
+    > .btn:not(:first-child),
+    > .btn-group:not(:first-child) > .btn {
+      @include border-right-radius(0);
+    }
+  }
+
+  @include rtl-btn-group-radius(".btn-group", ".btn", $btn-border-radius);
+  @include rtl-btn-group-radius(".btn-group", ".btn-sm", $btn-border-radius-sm);
+  @include rtl-btn-group-radius(".btn-group", ".btn-lg", $btn-border-radius-lg);
+  @include rtl-btn-group-radius(".btn-group-sm", ".btn", $btn-border-radius-sm, false);
+  @include rtl-btn-group-radius(".btn-group-lg", ".btn", $btn-border-radius-lg, false);
+
+  @if $enable-caret {
+    .dropdown-toggle-split {
+      &::after {
+        margin-right: 0;
+      }
+    }
+
+    .dropup .dropdown-toggle-split::after,
+    .dropright .dropdown-toggle-split::after {
       margin-right: 0;
     }
 
-    > :last-child {
+    .dropleft .dropdown-toggle-split::before {
       margin-left: 0;
     }
   }
 
-  .alert-dismissible .close {
-    right: inherit;
-    left: 0;
-  }
+  //
+  // Input groups
+  //
 
-  .dropdown-toggle::after {
-    margin-right: .255em;
-    margin-left: 0;
-  }
-
-  .form-check-input {
-    margin-right: -1.25rem;
-    margin-left: inherit;
-  }
-
-  .form-check-label {
-    padding-right: 1.25rem;
-    padding-left: inherit;
-  }
-
-  .pagination,
-  .list-unstyled,
-  .list-inline {
-    padding-right: 0;
-    padding-left: inherit;
-  }
-
-  .pagination {
-    .page-item {
-      &:first-child {
-        .page-link {
-          @include border-right-radius($border-radius);
-          @include border-left-radius(0);
-        }
+  .input-group {
+    > .form-control,
+    > .form-control-plaintext,
+    > .custom-select,
+    > .custom-file {
+      + .form-control,
+      + .custom-select,
+      + .custom-file {
+        margin-right: -$input-border-width;
+        margin-left: 0;
       }
+    }
 
-      &:last-child {
-        .page-link {
-          @include border-right-radius(0);
-          @include border-left-radius($border-radius);
-        }
+    // Mirror of the upstream "zero the left side" rules
+    > .form-control,
+    > .custom-select {
+      &:not(:first-child) { @include border-right-radius(0); }
+    }
+
+    > .custom-file {
+      &:not(:first-child) .custom-file-label { @include border-right-radius(0); }
+    }
+
+    > .input-group-append > .btn,
+    > .input-group-append > .input-group-text,
+    > .input-group-prepend:not(:first-child) > .btn,
+    > .input-group-prepend:not(:first-child) > .input-group-text,
+    > .input-group-prepend:first-child > .btn:not(:first-child),
+    > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
+      @include border-right-radius(0);
+    }
+
+    // Mirror of the upstream "zero the right side" rules
+    > .custom-file {
+      &:not(:last-child) .custom-file-label,
+      &:not(:last-child) .custom-file-label::after { @include border-left-radius(0); }
+    }
+
+    &:not(.has-validation) {
+      > .form-control:not(:last-child),
+      > .custom-select:not(:last-child),
+      > .custom-file:not(:last-child) .custom-file-label,
+      > .custom-file:not(:last-child) .custom-file-label::after {
+        @include border-left-radius(0);
       }
+    }
+
+    &.has-validation {
+      > .form-control:nth-last-child(n + 3),
+      > .custom-select:nth-last-child(n + 3),
+      > .custom-file:nth-last-child(n + 3) .custom-file-label,
+      > .custom-file:nth-last-child(n + 3) .custom-file-label::after {
+        @include border-left-radius(0);
+      }
+    }
+
+    > .input-group-prepend > .btn,
+    > .input-group-prepend > .input-group-text,
+    &:not(.has-validation) > .input-group-append:not(:last-child) > .btn,
+    &:not(.has-validation) > .input-group-append:not(:last-child) > .input-group-text,
+    &.has-validation > .input-group-append:nth-last-child(n + 3) > .btn,
+    &.has-validation > .input-group-append:nth-last-child(n + 3) > .input-group-text,
+    > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+    > .input-group-append:last-child > .input-group-text:not(:last-child) {
+      @include border-left-radius(0);
+    }
+
+    > .custom-file:first-child:not(:last-child) .custom-file-label {
+      @include border-right-radius($custom-file-border-radius);
+    }
+
+    > .custom-file:not(:first-child):last-child .custom-file-label {
+      @include border-left-radius($custom-file-border-radius);
     }
   }
 
-  @mixin make-col-offset($size, $columns: $grid-columns) {
-    $num: divide($size, $columns);
-    margin-right: if($num == 0, 0, percentage($num));
+  @include rtl-input-group-radius(
+    ".input-group",
+    (".form-control": $input-border-radius, ".custom-select": $custom-select-border-radius),
+    $input-border-radius,
+    $btn-border-radius
+  );
+  @include rtl-input-group-radius(
+    ".input-group-sm",
+    (".form-control": $input-border-radius-sm, ".custom-select": $input-border-radius-sm),
+    $input-border-radius-sm,
+    $input-border-radius-sm
+  );
+  @include rtl-input-group-radius(
+    ".input-group-lg",
+    (".form-control": $input-border-radius-lg, ".custom-select": $input-border-radius-lg),
+    $input-border-radius-lg,
+    $input-border-radius-lg
+  );
+
+  .input-group-prepend,
+  .input-group-append {
+    .btn + .btn,
+    .btn + .input-group-text,
+    .input-group-text + .input-group-text,
+    .input-group-text + .btn {
+      margin-right: -$input-border-width;
+      margin-left: 0;
+    }
+  }
+
+  .input-group-prepend {
+    margin-right: 0;
+    margin-left: -$input-border-width;
+  }
+
+  .input-group-append {
+    margin-right: -$input-border-width;
     margin-left: 0;
   }
 
-  @mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
-    @each $breakpoint in map-keys($breakpoints) {
-      $infix: breakpoint-infix($breakpoint, $breakpoints);
-      @include media-breakpoint-up($breakpoint, $breakpoints) {
-        @for $i from 0 through ($columns - 1) {
-          @if not ($infix == "" and $i == 0) {
-            .offset#{$infix}-#{$i} {
-              @include make-col-offset($i, $columns);
+  .input-group-sm > .custom-select {
+    padding-right: $input-padding-x-sm;
+    padding-left: $custom-select-padding-x + $custom-select-indicator-padding;
+  }
+
+  .input-group-lg > .custom-select {
+    padding-right: $input-padding-x-lg;
+    padding-left: $custom-select-padding-x + $custom-select-indicator-padding;
+  }
+
+  //
+  // Navs
+  //
+
+  .nav,
+  .navbar-nav {
+    padding-right: 0;
+  }
+
+  .navbar-brand {
+    margin-right: 0;
+    margin-left: $navbar-padding-x;
+  }
+
+  // Undo the `float` from `.dropdown-menu` above for static navbar menus
+  .navbar-nav .dropdown-menu {
+    float: none;
+  }
+
+  //
+  // Cards
+  //
+
+  .card-link + .card-link {
+    margin-right: $card-spacer-x;
+    margin-left: 0;
+  }
+
+  .card-group {
+    @include media-breakpoint-up(sm) {
+      > .card {
+        + .card {
+          border-right: 0;
+          border-left: $card-border-width solid $card-border-color;
+        }
+
+        @if $enable-rounded {
+          &:not(:last-child) {
+            @include border-left-radius(0);
+
+            .card-img-top,
+            .card-header {
+              border-top-left-radius: 0;
+            }
+            .card-img-bottom,
+            .card-footer {
+              border-bottom-left-radius: 0;
+            }
+          }
+
+          &:not(:first-child) {
+            @include border-right-radius(0);
+
+            .card-img-top,
+            .card-header {
+              border-top-right-radius: 0;
+            }
+            .card-img-bottom,
+            .card-footer {
+              border-bottom-right-radius: 0;
+            }
+          }
+
+          &:first-child:not(:last-child) {
+            @include border-right-radius($card-border-radius);
+
+            .card-img-top,
+            .card-header:first-child {
+              border-top-right-radius: $card-inner-border-radius;
+            }
+            .card-img-bottom,
+            .card-footer:last-child {
+              border-bottom-right-radius: $card-inner-border-radius;
+            }
+          }
+
+          &:last-child:not(:first-child) {
+            @include border-left-radius($card-border-radius);
+
+            .card-img-top,
+            .card-header:first-child {
+              border-top-left-radius: $card-inner-border-radius;
+            }
+            .card-img-bottom,
+            .card-footer:last-child {
+              border-bottom-left-radius: $card-inner-border-radius;
             }
           }
         }
       }
     }
   }
-  @if $enable-grid-classes {
-    @include make-grid-columns();
+
+  //
+  // Breadcrumb
+  //
+
+  .breadcrumb-item + .breadcrumb-item {
+    padding-right: $breadcrumb-item-padding;
+    padding-left: 0;
+
+    &::before {
+      float: right;
+      padding-right: 0;
+      padding-left: $breadcrumb-item-padding;
+    }
   }
 
-  // stylelint-disable declaration-no-important
+  //
+  // Pagination
+  //
+
+  .pagination {
+    padding-right: 0;
+  }
+
+  .page-link {
+    margin-right: -$pagination-border-width;
+    margin-left: 0;
+  }
+
+  .page-item:first-child .page-link {
+    margin-right: 0;
+  }
+
+  @each $size, $radius in ("": $border-radius, "-lg": $pagination-border-radius-lg, "-sm": $pagination-border-radius-sm) {
+    $pagination: if($size == "", ".pagination", ".pagination#{$size}");
+
+    #{$pagination} .page-item {
+      &:first-child .page-link {
+        @include border-right-radius($radius);
+      }
+
+      &:first-child:not(:last-child) .page-link {
+        @include border-left-radius(0);
+      }
+
+      &:last-child .page-link {
+        @include border-left-radius($radius);
+      }
+
+      &:last-child:not(:first-child) .page-link {
+        @include border-right-radius(0);
+      }
+    }
+  }
+
+  //
+  // Alerts & close
+  //
+
+  .alert-dismissible {
+    padding-right: $alert-padding-x;
+    padding-left: $close-font-size + $alert-padding-x * 2;
+
+    .close {
+      right: auto;
+      left: 0;
+    }
+  }
+
+  .close {
+    float: left;
+  }
+
+  //
+  // Progress
+  //
+
+  .progress-bar-striped {
+    @include gradient-striped(rgba($white, .15), -45deg);
+  }
+
+  @if $enable-transitions {
+    .progress-bar-animated {
+      animation-name: progress-bar-stripes-rtl;
+    }
+  }
+
+  //
+  // List group
+  //
+
+  .list-group {
+    padding-right: 0;
+  }
+
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+      .list-group-horizontal#{$infix} > .list-group-item {
+        &:first-child {
+          @include border-top-left-radius(0);
+          @include border-top-right-radius(inherit);
+          @include border-bottom-right-radius($list-group-border-radius);
+          @include border-bottom-left-radius(0);
+        }
+
+        &:last-child {
+          @include border-top-left-radius($list-group-border-radius);
+          @include border-bottom-right-radius(0);
+          @include border-bottom-left-radius(inherit);
+        }
+
+        &:last-child:not(:first-child) {
+          @include border-top-right-radius(0);
+        }
+
+        + .list-group-item {
+          border-right-width: 0;
+          border-left-width: $list-group-border-width;
+
+          &.active {
+            margin-right: -$list-group-border-width;
+            margin-left: 0;
+            border-right-width: $list-group-border-width;
+          }
+        }
+      }
+    }
+  }
+
+  //
+  // Modal
+  //
+
+  .modal-header .close {
+    margin: (-$modal-header-padding-y) auto (-$modal-header-padding-y) (-$modal-header-padding-x);
+  }
+
+  //
+  // Carousel
+  //
+
+  .carousel-item {
+    float: right;
+    margin-right: 0;
+    margin-left: -100%;
+  }
+
+  .carousel-item-next:not(.carousel-item-left),
+  .active.carousel-item-right {
+    transform: translateX(-100%);
+  }
+
+  .carousel-item-prev:not(.carousel-item-right),
+  .active.carousel-item-left {
+    transform: translateX(100%);
+  }
+
+  .carousel-fade .carousel-item {
+    transform: none;
+  }
+
+  .carousel-control-prev {
+    right: 0;
+    left: auto;
+  }
+
+  .carousel-control-next {
+    right: auto;
+    left: 0;
+  }
+
+  .carousel-control-prev-icon {
+    background-image: escape-svg($carousel-control-next-icon-bg);
+  }
+
+  .carousel-control-next-icon {
+    background-image: escape-svg($carousel-control-prev-icon-bg);
+  }
+
+  .carousel-indicators {
+    padding-right: 0;
+  }
+
+  //
+  // Utilities
+  //
+  // Each group first neutralises what the LTR utility did to the "wrong" side,
+  // then re-applies the whole family mirrored and in upstream source order, so
+  // combinations such as `.ml-auto.mr-2` resolve exactly like they do in LTR.
+
+  // Borders
+
+  .border-right {
+    border-right: 0 !important;
+  }
+
+  .border-left {
+    border-left: 0 !important;
+  }
+
+  .border-right-0 {
+    border-right: $border-width solid $border-color !important;
+  }
+
+  .border-left-0 {
+    border-left: $border-width solid $border-color !important;
+  }
+
+  // Components whose own border differs from `.border`
+  @each $component, $border in (
+    ".form-control": $input-border-width solid $input-border-color,
+    ".input-group-text": $input-border-width solid $input-group-addon-border-color,
+    ".custom-select": $custom-select-border-width solid $custom-select-border-color,
+    ".card": $card-border-width solid $card-border-color
+  ) {
+    #{$component}.border-right-0 {
+      border-right: $border !important;
+    }
+
+    #{$component}.border-left-0 {
+      border-left: $border !important;
+    }
+  }
+
+  .border { border: $border-width solid $border-color !important; }
+  .border-right { border-left: $border-width solid $border-color !important; }
+  .border-left { border-right: $border-width solid $border-color !important; }
+  .border-0 { border: 0 !important; }
+  .border-right-0 { border-left: 0 !important; }
+  .border-left-0 { border-right: 0 !important; }
+
+  @each $color, $value in map-merge($theme-colors, ("white": $white)) {
+    .border-#{$color} {
+      &.border,
+      &.border-right,
+      &.border-left,
+      &.border-right-0,
+      &.border-left-0 {
+        border-color: $value !important;
+      }
+    }
+  }
+
+  // Border radius
+
+  .rounded-right {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  .rounded-left {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+  }
+
+  .rounded-sm {
+    border-radius: $border-radius-sm !important;
+  }
+
+  .rounded {
+    border-radius: $border-radius !important;
+  }
+
+  .rounded-top {
+    border-top-left-radius: $border-radius !important;
+    border-top-right-radius: $border-radius !important;
+  }
+
+  .rounded-right {
+    border-top-left-radius: $border-radius !important;
+    border-bottom-left-radius: $border-radius !important;
+  }
+
+  .rounded-bottom {
+    border-bottom-right-radius: $border-radius !important;
+    border-bottom-left-radius: $border-radius !important;
+  }
+
+  .rounded-left {
+    border-top-right-radius: $border-radius !important;
+    border-bottom-right-radius: $border-radius !important;
+  }
+
+  .rounded-lg {
+    border-radius: $border-radius-lg !important;
+  }
+
+  .rounded-circle {
+    border-radius: 50% !important;
+  }
+
+  .rounded-pill {
+    border-radius: $rounded-pill !important;
+  }
+
+  .rounded-0 {
+    border-radius: 0 !important;
+  }
+
+  // Float & text alignment
+
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+      .float#{$infix}-left  { float: right !important; }
+      .float#{$infix}-right { float: left !important; }
+      .text#{$infix}-left   { text-align: right !important; }
+      .text#{$infix}-right  { text-align: left !important; }
+    }
+  }
+
+  // Spacing
+
+  @each $abbrev, $prop in (m: margin, p: padding) {
+    [class^="#{$abbrev}r-"],
+    [class*=" #{$abbrev}r-"] {
+      #{$prop}-right: 0 !important;
+    }
+
+    [class^="#{$abbrev}l-"],
+    [class*=" #{$abbrev}l-"] {
+      #{$prop}-left: 0 !important;
+    }
+  }
+
   @each $breakpoint in map-keys($grid-breakpoints) {
     @include media-breakpoint-up($breakpoint) {
       $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
       @each $prop, $abbrev in (margin: m, padding: p) {
         @each $size, $length in $spacers {
-
-          .#{$abbrev}r#{$infix}-#{$size} {
-            #{$prop}-right: 0 !important;
-            #{$prop}-left: $length !important;
-          }
+          .#{$abbrev}#{$infix}-#{$size},
+          .#{$abbrev}x#{$infix}-#{$size},
           .#{$abbrev}l#{$infix}-#{$size} {
-            #{$prop}-left: 0 !important;
             #{$prop}-right: $length !important;
           }
-          .#{$abbrev}x#{$infix}-#{$size} {
-            #{$prop}-right: $length !important;
+
+          .#{$abbrev}#{$infix}-#{$size},
+          .#{$abbrev}x#{$infix}-#{$size},
+          .#{$abbrev}r#{$infix}-#{$size} {
             #{$prop}-left: $length !important;
           }
         }
       }
 
-      .mr#{$infix}-auto {
-        margin-right: 0 !important;
-        margin-left: auto !important;
+      @each $size, $length in $spacers {
+        @if "#{$size}" != "0" {
+          .m#{$infix}-n#{$size},
+          .mx#{$infix}-n#{$size},
+          .ml#{$infix}-n#{$size} {
+            margin-right: -$length !important;
+          }
+
+          .m#{$infix}-n#{$size},
+          .mx#{$infix}-n#{$size},
+          .mr#{$infix}-n#{$size} {
+            margin-left: -$length !important;
+          }
+        }
       }
+
+      .m#{$infix}-auto,
+      .mx#{$infix}-auto,
       .ml#{$infix}-auto {
         margin-right: auto !important;
-        margin-left: 0 !important;
       }
-      .mx#{$infix}-auto {
-        margin-right: auto !important;
+
+      .m#{$infix}-auto,
+      .mx#{$infix}-auto,
+      .mr#{$infix}-auto {
         margin-left: auto !important;
       }
     }
   }
+}
 
-  @each $breakpoint in map-keys($grid-breakpoints) {
-    @include media-breakpoint-up($breakpoint) {
-      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
-      .text#{$infix}-right {
-        text-align: left !important;
-      }
-      .text#{$infix}-left {
-        text-align: right !important;
-      }
-    }
+@if $enable-transitions {
+  @keyframes progress-bar-stripes-rtl {
+    from { background-position: -$progress-height 0; }
+    to { background-position: 0 0; }
   }
 }

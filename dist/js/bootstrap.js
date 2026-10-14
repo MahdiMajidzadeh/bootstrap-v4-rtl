@@ -1,5 +1,5 @@
 /*!
-  * Bootstrap v4.6.2-4 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Bootstrap v4.6.2-5 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
   * Copyright 2011-2026 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
@@ -178,6 +178,10 @@
           }
         }
       }
+    },
+    // RTL support: `.rtl` and `[dir="rtl"]` both end up as `direction: rtl`
+    isRTL: function isRTL(element) {
+      return Boolean(element) && element.nodeType === Node.ELEMENT_NODE && window.getComputedStyle(element).direction === 'rtl';
     },
     findShadowRoot: function findShadowRoot(element) {
       if (!document.documentElement.attachShadow) {
@@ -691,6 +695,11 @@
       var direction = absDeltax / this.touchDeltaX;
       this.touchDeltaX = 0;
 
+      // RTL support: slides move the other way, and so does the swipe
+      if (Util.isRTL(this._element)) {
+        direction = -direction;
+      }
+
       // swipe left
       if (direction > 0) {
         this.prev();
@@ -785,14 +794,23 @@
       if (/input|textarea/i.test(event.target.tagName)) {
         return;
       }
+      var isRTL = Util.isRTL(this._element);
       switch (event.which) {
         case ARROW_LEFT_KEYCODE:
           event.preventDefault();
-          this.prev();
+          if (isRTL) {
+            this.next();
+          } else {
+            this.prev();
+          }
           break;
         case ARROW_RIGHT_KEYCODE:
           event.preventDefault();
-          this.next();
+          if (isRTL) {
+            this.prev();
+          } else {
+            this.next();
+          }
           break;
       }
     };
@@ -1495,6 +1513,12 @@
         placement = PLACEMENT_LEFT;
       } else if ($__default["default"](this._menu).hasClass(CLASS_NAME_MENURIGHT)) {
         placement = PLACEMENT_BOTTOMEND;
+      }
+
+      // RTL support: mirror the placement, like the CSS does
+      if (Util.isRTL(this._element)) {
+        var _PLACEMENT_TOP$PLACEM;
+        placement = (_PLACEMENT_TOP$PLACEM = {}, _PLACEMENT_TOP$PLACEM[PLACEMENT_TOP] = PLACEMENT_TOPEND, _PLACEMENT_TOP$PLACEM[PLACEMENT_TOPEND] = PLACEMENT_TOP, _PLACEMENT_TOP$PLACEM[PLACEMENT_BOTTOM] = PLACEMENT_BOTTOMEND, _PLACEMENT_TOP$PLACEM[PLACEMENT_BOTTOMEND] = PLACEMENT_BOTTOM, _PLACEMENT_TOP$PLACEM[PLACEMENT_RIGHT] = PLACEMENT_LEFT, _PLACEMENT_TOP$PLACEM[PLACEMENT_LEFT] = PLACEMENT_RIGHT, _PLACEMENT_TOP$PLACEM)[placement];
       }
       return placement;
     };
@@ -2491,7 +2515,7 @@
           $__default["default"](tip).addClass(CLASS_NAME_FADE$3);
         }
         var placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
-        var attachment = this._getAttachment(placement);
+        var attachment = this._getRTLAttachment(this._getAttachment(placement));
         this.addAttachmentClass(attachment);
         var container = this._getContainer();
         $__default["default"](tip).data(this.constructor.DATA_KEY, this);
@@ -2674,6 +2698,23 @@
     };
     _proto._getAttachment = function _getAttachment(placement) {
       return AttachmentMap[placement.toUpperCase()];
+    }
+
+    // RTL support: `left`/`right` are logical, Popper's placements are physical.
+    // Only the requested placement is flipped; the class Popper reports back
+    // stays physical so it matches the arrow CSS.
+  ;
+    _proto._getRTLAttachment = function _getRTLAttachment(attachment) {
+      if (!Util.isRTL(this.element)) {
+        return attachment;
+      }
+      if (attachment === AttachmentMap.LEFT) {
+        return AttachmentMap.RIGHT;
+      }
+      if (attachment === AttachmentMap.RIGHT) {
+        return AttachmentMap.LEFT;
+      }
+      return attachment;
     };
     _proto._setListeners = function _setListeners() {
       var _this5 = this;

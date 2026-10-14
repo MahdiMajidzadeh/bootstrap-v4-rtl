@@ -144,6 +144,14 @@ samp {
   background: none;
 }
 
+.rtl .demo-install {
+  padding: .35rem .9rem .35rem .35rem;
+}
+
+.rtl .demo-install code {
+  text-align: right;
+}
+
 .demo-stat {
   padding: 1rem 0;
 }

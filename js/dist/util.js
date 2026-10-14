@@ -1,5 +1,5 @@
 /*!
-  * Bootstrap util.js v4.6.2-4 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Bootstrap util.js v4.6.2-5 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
   * Copyright 2011-2026 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
@@ -134,6 +134,10 @@
           }
         }
       }
+    },
+    // RTL support: `.rtl` and `[dir="rtl"]` both end up as `direction: rtl`
+    isRTL: function isRTL(element) {
+      return Boolean(element) && element.nodeType === Node.ELEMENT_NODE && window.getComputedStyle(element).direction === 'rtl';
     },
     findShadowRoot: function findShadowRoot(element) {
       if (!document.documentElement.attachShadow) {
