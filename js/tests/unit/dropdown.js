@@ -1658,4 +1658,45 @@ $(function () {
 
     $dropdown.trigger('click')
   })
+
+  QUnit.test('should mirror the placement in RTL', function (assert) {
+    assert.expect(6)
+
+    var cases = [
+      ['dropdown', '', 'bottom-end'],
+      ['dropdown', 'dropdown-menu-right', 'bottom-start'],
+      ['dropup', '', 'top-end'],
+      ['dropup', 'dropdown-menu-right', 'top-start'],
+      ['dropright', '', 'left-start'],
+      ['dropleft', '', 'right-start']
+    ]
+
+    cases.forEach(function (testCase) {
+      $('#qunit-fixture').html(
+        '<div dir="rtl"><div class="' + testCase[0] + '">' +
+        '  <button class="btn" data-toggle="dropdown">Dropdown</button>' +
+        '  <div class="dropdown-menu ' + testCase[1] + '"><a class="dropdown-item" href="#">Item</a></div>' +
+        '</div></div>'
+      )
+
+      var dropdown = $('#qunit-fixture').find('[data-toggle="dropdown"]').bootstrapDropdown().data('bs.dropdown')
+
+      assert.strictEqual(dropdown._getPlacement(), testCase[2], testCase.join(' '))
+    })
+  })
+
+  QUnit.test('should not mirror the placement in LTR', function (assert) {
+    assert.expect(1)
+
+    $('#qunit-fixture').html(
+      '<div dir="ltr"><div class="dropright">' +
+      '  <button class="btn" data-toggle="dropdown">Dropdown</button>' +
+      '  <div class="dropdown-menu"><a class="dropdown-item" href="#">Item</a></div>' +
+      '</div></div>'
+    )
+
+    var dropdown = $('#qunit-fixture').find('[data-toggle="dropdown"]').bootstrapDropdown().data('bs.dropdown')
+
+    assert.strictEqual(dropdown._getPlacement(), 'right-start')
+  })
 })

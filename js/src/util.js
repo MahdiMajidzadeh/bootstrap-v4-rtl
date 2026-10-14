@@ -148,6 +148,12 @@ const Util = {
     }
   },
 
+  // RTL support: `.rtl` and `[dir="rtl"]` both end up as `direction: rtl`
+  isRTL(element) {
+    return Boolean(element) && element.nodeType === Node.ELEMENT_NODE &&
+      window.getComputedStyle(element).direction === 'rtl'
+  },
+
   findShadowRoot(element) {
     if (!document.documentElement.attachShadow) {
       return null

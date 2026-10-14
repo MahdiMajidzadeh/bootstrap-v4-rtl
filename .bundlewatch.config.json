@@ -17,6 +17,14 @@
       "maxSize": "2 kB"
     },
     {
+      "path": "./dist/css/bootstrap-rtl.css",
+      "maxSize": "37 kB"
+    },
+    {
+      "path": "./dist/css/bootstrap-rtl.min.css",
+      "maxSize": "34 kB"
+    },
+    {
       "path": "./dist/css/bootstrap.css",
       "maxSize": "26 kB"
     },

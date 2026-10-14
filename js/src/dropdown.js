@@ -284,6 +284,18 @@ class Dropdown {
       placement = PLACEMENT_BOTTOMEND
     }
 
+    // RTL support: mirror the placement, like the CSS does
+    if (Util.isRTL(this._element)) {
+      placement = {
+        [PLACEMENT_TOP]: PLACEMENT_TOPEND,
+        [PLACEMENT_TOPEND]: PLACEMENT_TOP,
+        [PLACEMENT_BOTTOM]: PLACEMENT_BOTTOMEND,
+        [PLACEMENT_BOTTOMEND]: PLACEMENT_BOTTOM,
+        [PLACEMENT_RIGHT]: PLACEMENT_LEFT,
+        [PLACEMENT_LEFT]: PLACEMENT_RIGHT
+      }[placement]
+    }
+
     return placement
   }
 

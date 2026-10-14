@@ -483,4 +483,21 @@ $(function () {
 
     $popover.trigger($.Event('click'))
   })
+
+  QUnit.test('should flip left and right placements in RTL', function (assert) {
+    assert.expect(1)
+    var done = assert.async()
+
+    $('<a href="#" title="Title" data-content="Content"/>')
+      .appendTo($('<div dir="rtl"/>').appendTo('#qunit-fixture'))
+      .on('inserted.bs.popover', function () {
+        assert.true($($(this).data('bs.popover').tip).hasClass('bs-popover-left'))
+        done()
+      })
+      .bootstrapPopover({
+        placement: 'right',
+        trigger: 'manual'
+      })
+      .bootstrapPopover('show')
+  })
 })

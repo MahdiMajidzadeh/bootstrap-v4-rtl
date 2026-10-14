@@ -231,9 +231,14 @@ class Carousel {
       return
     }
 
-    const direction = absDeltax / this.touchDeltaX
+    let direction = absDeltax / this.touchDeltaX
 
     this.touchDeltaX = 0
+
+    // RTL support: slides move the other way, and so does the swipe
+    if (Util.isRTL(this._element)) {
+      direction = -direction
+    }
 
     // swipe left
     if (direction > 0) {
@@ -326,14 +331,26 @@ class Carousel {
       return
     }
 
+    const isRTL = Util.isRTL(this._element)
+
     switch (event.which) {
       case ARROW_LEFT_KEYCODE:
         event.preventDefault()
-        this.prev()
+        if (isRTL) {
+          this.next()
+        } else {
+          this.prev()
+        }
+
         break
       case ARROW_RIGHT_KEYCODE:
         event.preventDefault()
-        this.next()
+        if (isRTL) {
+          this.prev()
+        } else {
+          this.next()
+        }
+
         break
       default:
     }

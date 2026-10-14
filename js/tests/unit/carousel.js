@@ -1345,4 +1345,60 @@ $(function () {
     assert.false(spy.called)
     spy.restore()
   })
+
+  QUnit.test('should swap arrow keys in RTL', function (assert) {
+    assert.expect(3)
+    var $carousel = $('<div class="carousel" data-interval="false">' +
+        '<div class="carousel-inner">' +
+        '<div class="carousel-item"><img alt=""></div>' +
+        '<div class="carousel-item active"><img alt=""></div>' +
+        '<div class="carousel-item"><img alt=""></div>' +
+        '</div>' +
+        '</div>')
+      .appendTo($('<div dir="rtl"/>').appendTo('#qunit-fixture'))
+
+    $carousel.bootstrapCarousel()
+    var $items = $carousel.find('.carousel-item')
+
+    $carousel.trigger($.Event('keydown', {
+      which: 37
+    }))
+    assert.strictEqual($carousel.find('.active')[0], $items[2], 'left arrow goes to the next item')
+
+    $carousel.trigger($.Event('keydown', {
+      which: 39
+    }))
+    assert.strictEqual($carousel.find('.active')[0], $items[1], 'right arrow goes to the previous item')
+
+    $carousel.trigger($.Event('keydown', {
+      which: 39
+    }))
+    assert.strictEqual($carousel.find('.active')[0], $items[0], 'right arrow goes to the previous item')
+  })
+
+  QUnit.test('should swap swipe directions in RTL', function (assert) {
+    assert.expect(4)
+    var $carousel = $('<div class="carousel" data-interval="false">' +
+        '<div class="carousel-inner">' +
+        '<div class="carousel-item active"><img alt=""></div>' +
+        '<div class="carousel-item"><img alt=""></div>' +
+        '</div>' +
+        '</div>')
+      .appendTo($('<div dir="rtl"/>').appendTo('#qunit-fixture'))
+
+    $carousel.bootstrapCarousel()
+    var carousel = $carousel.data('bs.carousel')
+    var next = sinon.stub(carousel, 'next')
+    var prev = sinon.stub(carousel, 'prev')
+
+    carousel.touchDeltaX = 100
+    carousel._handleSwipe()
+    assert.true(next.calledOnce, 'swipe right goes to the next item')
+    assert.false(prev.called)
+
+    carousel.touchDeltaX = -100
+    carousel._handleSwipe()
+    assert.true(prev.calledOnce, 'swipe left goes to the previous item')
+    assert.true(next.calledOnce)
+  })
 })
