@@ -28,24 +28,25 @@ npm login
 
 ### 3. Publish the package
 
-To publish the package to npm:
+Versions follow `<bootstrap version>-<release>` (e.g. `4.6.2-5`). npm treats these as prereleases, so it requires an explicit tag. Use `latest` so `npm i bootstrap-v4-rtl` installs the new release:
 
 ```bash
-npm publish
+npm publish --tag latest
 ```
 
-For prerelease versions (like the current 4.6.2-2), you must specify a tag:
+To prepare a new release:
 
 ```bash
-npm publish --tag beta
+# Update the version everywhere (package.json, lockfile, dist banners), then rebuild
+node build/change-version.js 4.6.2-5 4.6.2-6
+npm run dist
 ```
 
-If you want to publish a new version:
+After publishing, tag the release commit on `main` and push the tag:
 
 ```bash
-# Update version in package.json first
-npm version patch|minor|major
-npm publish
+git tag v4.6.2-6
+git push origin v4.6.2-6
 ```
 
 ### 4. Verify the publication
