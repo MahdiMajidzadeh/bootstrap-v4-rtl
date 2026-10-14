@@ -2,9 +2,15 @@
 
 'use strict'
 
+const os = require('os')
 const path = require('path')
-const ip = require('ip')
 const { browsers, browsersKeys } = require('./browsers')
+
+const getLocalIp = () => {
+  const addresses = Object.values(os.networkInterfaces()).flat()
+  const external = addresses.find(({ family, internal }) => (family === 'IPv4' || family === 4) && !internal)
+  return external ? external.address : '127.0.0.1'
+}
 
 const USE_OLD_JQUERY = Boolean(process.env.USE_OLD_JQUERY)
 const BUNDLE = Boolean(process.env.BUNDLE)
@@ -80,7 +86,7 @@ if (BUNDLE) {
     JQUERY_FILE,
     'dist/js/bootstrap.js']
 } else if (BROWSERSTACK) {
-  conf.hostname = ip.address()
+  conf.hostname = getLocalIp()
   conf.browserStack = {
     username: process.env.BROWSER_STACK_USERNAME,
     accessKey: process.env.BROWSER_STACK_ACCESS_KEY,
