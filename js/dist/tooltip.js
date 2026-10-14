@@ -1,5 +1,5 @@
 /*!
-  * Bootstrap tooltip.js v4.6.2-4 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Bootstrap tooltip.js v4.6.2-5 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
   * Copyright 2011-2026 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
@@ -341,7 +341,7 @@
           $__default["default"](tip).addClass(CLASS_NAME_FADE);
         }
         var placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
-        var attachment = this._getAttachment(placement);
+        var attachment = this._getRTLAttachment(this._getAttachment(placement));
         this.addAttachmentClass(attachment);
         var container = this._getContainer();
         $__default["default"](tip).data(this.constructor.DATA_KEY, this);
@@ -524,6 +524,23 @@
     };
     _proto._getAttachment = function _getAttachment(placement) {
       return AttachmentMap[placement.toUpperCase()];
+    }
+
+    // RTL support: `left`/`right` are logical, Popper's placements are physical.
+    // Only the requested placement is flipped; the class Popper reports back
+    // stays physical so it matches the arrow CSS.
+  ;
+    _proto._getRTLAttachment = function _getRTLAttachment(attachment) {
+      if (!Util__default["default"].isRTL(this.element)) {
+        return attachment;
+      }
+      if (attachment === AttachmentMap.LEFT) {
+        return AttachmentMap.RIGHT;
+      }
+      if (attachment === AttachmentMap.RIGHT) {
+        return AttachmentMap.LEFT;
+      }
+      return attachment;
     };
     _proto._setListeners = function _setListeners() {
       var _this5 = this;

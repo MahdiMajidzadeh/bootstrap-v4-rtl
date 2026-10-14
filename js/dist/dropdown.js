@@ -1,5 +1,5 @@
 /*!
-  * Bootstrap dropdown.js v4.6.2-4 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Bootstrap dropdown.js v4.6.2-5 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
   * Copyright 2011-2026 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
@@ -266,6 +266,12 @@
         placement = PLACEMENT_LEFT;
       } else if ($__default["default"](this._menu).hasClass(CLASS_NAME_MENURIGHT)) {
         placement = PLACEMENT_BOTTOMEND;
+      }
+
+      // RTL support: mirror the placement, like the CSS does
+      if (Util__default["default"].isRTL(this._element)) {
+        var _PLACEMENT_TOP$PLACEM;
+        placement = (_PLACEMENT_TOP$PLACEM = {}, _PLACEMENT_TOP$PLACEM[PLACEMENT_TOP] = PLACEMENT_TOPEND, _PLACEMENT_TOP$PLACEM[PLACEMENT_TOPEND] = PLACEMENT_TOP, _PLACEMENT_TOP$PLACEM[PLACEMENT_BOTTOM] = PLACEMENT_BOTTOMEND, _PLACEMENT_TOP$PLACEM[PLACEMENT_BOTTOMEND] = PLACEMENT_BOTTOM, _PLACEMENT_TOP$PLACEM[PLACEMENT_RIGHT] = PLACEMENT_LEFT, _PLACEMENT_TOP$PLACEM[PLACEMENT_LEFT] = PLACEMENT_RIGHT, _PLACEMENT_TOP$PLACEM)[placement];
       }
       return placement;
     };

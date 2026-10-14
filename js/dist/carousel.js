@@ -1,5 +1,5 @@
 /*!
-  * Bootstrap carousel.js v4.6.2-4 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
+  * Bootstrap carousel.js v4.6.2-5 (https://github.com/MahdiMajidzadeh/bootstrap-v4-rtl)
   * Copyright 2011-2026 https://github.com/MahdiMajidzadeh
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
@@ -232,6 +232,11 @@
       var direction = absDeltax / this.touchDeltaX;
       this.touchDeltaX = 0;
 
+      // RTL support: slides move the other way, and so does the swipe
+      if (Util__default["default"].isRTL(this._element)) {
+        direction = -direction;
+      }
+
       // swipe left
       if (direction > 0) {
         this.prev();
@@ -326,14 +331,23 @@
       if (/input|textarea/i.test(event.target.tagName)) {
         return;
       }
+      var isRTL = Util__default["default"].isRTL(this._element);
       switch (event.which) {
         case ARROW_LEFT_KEYCODE:
           event.preventDefault();
-          this.prev();
+          if (isRTL) {
+            this.next();
+          } else {
+            this.prev();
+          }
           break;
         case ARROW_RIGHT_KEYCODE:
           event.preventDefault();
-          this.next();
+          if (isRTL) {
+            this.prev();
+          } else {
+            this.next();
+          }
           break;
       }
     };
